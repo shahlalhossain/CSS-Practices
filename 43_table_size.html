@@ -35,7 +35,47 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
+    .section_content {
+      overflow: auto;
+    }
 
+    .col_left {
+      width: 30%;
+      float: left;
+      border: 1px solid;
+      border-radius: 5px;
+      padding: 10px;
+    }
+
+    .col_right {
+      width: 70%;
+      float: right;
+      padding-left: 10px;
+    }
+
+    #width_table, #height_table, #column_width_table {
+      border-collapse: collapse;
+    }
+
+    #width_table th, #width_table td,
+    #height_table th, #height_table td,
+    #column_width_table th, #column_width_table td {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+
+    #width_table {
+      width: 100%;
+    }
+
+    #height_table tr {
+      height: 50px;
+    }
+
+    #column_width_table th:first-child,
+    #column_width_table td:first-child {
+      width: 70%;
+    }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -705,35 +745,93 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS Table Size</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The width and height of a table are usually defined by the <span class="code">width</span> and <span class="code">height</span> properties of the &lt;table&gt; element, or of its &lt;th&gt; and &lt;td&gt; elements.
+  </p>
+</section>
+
+<section class="content">
+  <h3>Table Width</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    To set the width of a table, add the <span class="code">width</span> property to the &lt;table&gt; element. It can be a fixed number of pixels, or a percentage of the surrounding container:
   </p>
 
-  <table>
-    <thead>
-    <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
-    </tr>
-    </tbody>
-  </table>
+  <div class="section_content">
+    <div class="col_left">
+      &lt;style&gt; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; table, th, td { border: 1px solid; } <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; table { width: 100%; } <br>
+      &lt;/style&gt;
+    </div>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+    <div class="col_right">
+      <table id="width_table">
+        <tr><th>Firstname</th><th>Lastname</th><th>Savings</th></tr>
+        <tr><td>Shahlal</td><td>Hossain</td><td>$50</td></tr>
+        <tr><td>Kamal</td><td>Hossain</td><td>$94</td></tr>
+        <tr><td>Habiba</td><td>Khan</td><td>$67</td></tr>
+      </table>
+    </div>
+  </div>
 </section>
+
+<section class="content">
+  <h3>Table Height</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Likewise, add the <span class="code">height</span> property to the &lt;table&gt; element, or to a &lt;tr&gt;, to set the height of a table or a row:
+  </p>
+
+  <div class="section_content">
+    <div class="col_left">
+      &lt;style&gt; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; table, th, td { border: 1px solid; } <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; tr { height: 50px; } <br>
+      &lt;/style&gt;
+    </div>
+
+    <div class="col_right">
+      <table id="height_table">
+        <tr><th>Firstname</th><th>Lastname</th><th>Savings</th></tr>
+        <tr><td>Shahlal</td><td>Hossain</td><td>$50</td></tr>
+        <tr><td>Kamal</td><td>Hossain</td><td>$94</td></tr>
+        <tr><td>Habiba</td><td>Khan</td><td>$67</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="content">
+  <h3>Column Width</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    To set the width of a specific column, add the <span class="code">width</span> property on a &lt;th&gt; or &lt;td&gt; element. Note that browsers may adjust other columns to make room for the specified width, so you cannot assume a fixed width for the rest of the table.
+  </p>
+
+  <div class="section_content">
+    <div class="col_left">
+      &lt;style&gt; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; table, th, td { border: 1px solid; } <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; th:first-child, td:first-child { width: 70%; } <br>
+      &lt;/style&gt;
+    </div>
+
+    <div class="col_right">
+      <table id="column_width_table">
+        <tr><th>Firstname</th><th>Savings</th></tr>
+        <tr><td>Shahlal Hossain</td><td>$50</td></tr>
+        <tr><td>Kamal Hossain</td><td>$94</td></tr>
+        <tr><td>Habiba Khan</td><td>$67</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <p><strong><i>Note: </i></strong>Setting both <span class="code">width</span> and <span class="code">height</span> allows you to control the table's proportions, but the content inside a cell can still force it to grow if it does not fit.</p>
+</section>
+<br>
 <!--Main Section End-->
 
 <!--External JavaScript Library Inclusion Start-->
