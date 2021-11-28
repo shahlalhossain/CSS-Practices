@@ -35,7 +35,70 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
+    .section_content {
+      overflow: auto;
+    }
 
+    .col_left {
+      width: 30%;
+      float: left;
+      border: 1px solid;
+      border-radius: 5px;
+      padding: 10px;
+    }
+
+    .col_right {
+      width: 70%;
+      float: right;
+      padding-left: 10px;
+    }
+
+    #padding_table, #divider_table, #hover_table, #zebra_table, #color_table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    #padding_table th, #padding_table td {
+      padding: 10px;
+      text-align: left;
+    }
+
+    #divider_table th, #divider_table td {
+      border-bottom: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    #hover_table th, #hover_table td {
+      border-bottom: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    #hover_table tr:hover {
+      background-color: coral;
+    }
+
+    #zebra_table th, #zebra_table td {
+      border-bottom: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    #zebra_table tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    #color_table th, #color_table td {
+      border-bottom: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    #color_table th {
+      background-color: #04AA6D;
+      color: white;
+    }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -704,35 +767,152 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS Table Styling</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    CSS can be used to style tables far beyond plain borders: padding, dividers, hover highlights, zebra-striping, and header colors all help make a table easier to read.
+  </p>
+</section>
+
+<section class="content">
+  <h3>Table Padding</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Add <span class="code">padding</span> to &lt;th&gt; and &lt;td&gt; elements to control the spacing between the border and the content:
   </p>
 
-  <table>
-    <thead>
-    <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
-    </tr>
-    </tbody>
-  </table>
+  <div class="section_content">
+    <div class="col_left">
+      &lt;style&gt; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; th, td { <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 10px; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; text-align: left; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; } <br>
+      &lt;/style&gt;
+    </div>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+    <div class="col_right">
+      <table id="padding_table">
+        <tr><th>Firstname</th><th>Lastname</th><th>Savings</th></tr>
+        <tr><td>Shahlal</td><td>Hossain</td><td>$50</td></tr>
+        <tr><td>Kamal</td><td>Hossain</td><td>$94</td></tr>
+        <tr><td>Habiba</td><td>Khan</td><td>$67</td></tr>
+      </table>
+    </div>
+  </div>
 </section>
+
+<section class="content">
+  <h3>Horizontal Dividers</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Add <span class="code">border-bottom</span> to &lt;th&gt; and &lt;td&gt; to create horizontal dividers between rows, instead of a full grid of borders:
+  </p>
+
+  <div class="section_content">
+    <div class="col_left">
+      &lt;style&gt; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; th, td { <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border-bottom: 1px solid #ddd; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; } <br>
+      &lt;/style&gt;
+    </div>
+
+    <div class="col_right">
+      <table id="divider_table">
+        <tr><th>Firstname</th><th>Lastname</th><th>Savings</th></tr>
+        <tr><td>Shahlal</td><td>Hossain</td><td>$50</td></tr>
+        <tr><td>Kamal</td><td>Hossain</td><td>$94</td></tr>
+        <tr><td>Habiba</td><td>Khan</td><td>$67</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="content">
+  <h3>Hoverable Table</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Use the <span class="code">:hover</span> pseudo-class on &lt;tr&gt; to highlight the row the mouse is currently over:
+  </p>
+
+  <div class="section_content">
+    <div class="col_left">
+      &lt;style&gt; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; tr:hover { <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: coral; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; } <br>
+      &lt;/style&gt;
+    </div>
+
+    <div class="col_right">
+      <table id="hover_table">
+        <tr><th>Firstname</th><th>Lastname</th><th>Savings</th></tr>
+        <tr><td>Shahlal</td><td>Hossain</td><td>$50</td></tr>
+        <tr><td>Kamal</td><td>Hossain</td><td>$94</td></tr>
+        <tr><td>Habiba</td><td>Khan</td><td>$67</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="content">
+  <h3>Zebra-striped Table</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Use <span class="code">tr:nth-child(even)</span> to add a background color to every other row, making wide tables easier to scan:
+  </p>
+
+  <div class="section_content">
+    <div class="col_left">
+      &lt;style&gt; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; tr:nth-child(even) { <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: #f2f2f2; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; } <br>
+      &lt;/style&gt;
+    </div>
+
+    <div class="col_right">
+      <table id="zebra_table">
+        <tr><th>Firstname</th><th>Lastname</th><th>Savings</th></tr>
+        <tr><td>Shahlal</td><td>Hossain</td><td>$50</td></tr>
+        <tr><td>Kamal</td><td>Hossain</td><td>$94</td></tr>
+        <tr><td>Habiba</td><td>Khan</td><td>$67</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="content">
+  <h3>Table Color</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Set <span class="code">background-color</span> and <span class="code">color</span> on &lt;th&gt; to make the header row stand out from the data rows:
+  </p>
+
+  <div class="section_content">
+    <div class="col_left">
+      &lt;style&gt; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; th { <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: #04AA6D; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: white; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; } <br>
+      &lt;/style&gt;
+    </div>
+
+    <div class="col_right">
+      <table id="color_table">
+        <tr><th>Firstname</th><th>Lastname</th><th>Savings</th></tr>
+        <tr><td>Shahlal</td><td>Hossain</td><td>$50</td></tr>
+        <tr><td>Kamal</td><td>Hossain</td><td>$94</td></tr>
+        <tr><td>Habiba</td><td>Khan</td><td>$67</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <p><strong><i>Note: </i></strong>These styles can be combined on the same table — padding, dividers, hover, striping, and header color are independent and often used together.</p>
+</section>
+<br>
 <!--Main Section End-->
 
 <!--External JavaScript Library Inclusion Start-->
