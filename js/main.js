@@ -39,3 +39,8 @@ if (window.innerWidth < 768) {
 } else {
   sidebar.classList.remove("close");
 }
+
+const activeItem = sidebar.querySelector(".item.active");
+if (activeItem) {
+  activeItem.scrollIntoView({ block: "center" });
+}

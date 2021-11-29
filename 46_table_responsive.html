@@ -35,7 +35,26 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
+    div.tablecontainer {
+      overflow-x: auto;
+      max-width: 500px;
+    }
 
+    #responsive_table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    #responsive_table th, #responsive_table td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      white-space: nowrap;
+    }
+
+    #responsive_table th {
+      background-color: #04AA6D;
+      color: white;
+    }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -704,35 +723,62 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS Responsive Tables</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    A responsive table displays a horizontal scrollbar if the screen (or its container) is too small to show the full content, instead of letting the table break the page layout.
+  </p>
+</section>
+
+<section class="content">
+  <h3>How To Create a Responsive Table</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Wrap the &lt;table&gt; element inside a &lt;div&gt; and set <span class="code">overflow-x: auto</span> on that container. The table itself does not need to change:
   </p>
 
-  <table>
-    <thead>
-    <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
-    </tr>
-    </tbody>
-  </table>
+  <div class="section_content">
+    <div class="col_left">
+      &lt;style&gt; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; div.tablecontainer { <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; overflow-x: auto; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; } <br>
+      &lt;/style&gt; <br><br>
+      &lt;div class="tablecontainer"&gt; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; &lt;table&gt;...&lt;/table&gt; <br>
+      &lt;/div&gt;
+    </div>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+    <div class="col_right">
+      <div class="tablecontainer">
+        <table id="responsive_table">
+          <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Points1</th>
+            <th>Points2</th>
+            <th>Points3</th>
+            <th>Points4</th>
+            <th>Points5</th>
+            <th>Points6</th>
+          </tr>
+          <tr>
+            <td>Shahlal</td><td>Hossain</td><td>50</td><td>80</td><td>10</td><td>62</td><td>95</td><td>73</td>
+          </tr>
+          <tr>
+            <td>Kamal</td><td>Hossain</td><td>94</td><td>23</td><td>56</td><td>33</td><td>19</td><td>74</td>
+          </tr>
+          <tr>
+            <td>Habiba</td><td>Khan</td><td>67</td><td>40</td><td>88</td><td>12</td><td>51</td><td>29</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <p><strong><i>Note: </i></strong>On macOS, scrollbars are hidden by default and only appear while actively scrolling, even when <span class="code">overflow-x: auto</span> (or <span class="code">scroll</span>) is set — the responsive behavior is still working.</p>
 </section>
+<br>
 <!--Main Section End-->
 
 <!--External JavaScript Library Inclusion Start-->

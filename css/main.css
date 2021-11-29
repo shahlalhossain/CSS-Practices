@@ -163,7 +163,7 @@ hr {
   background: var(--blue-color);
 }
 
-.active {
+.active .nav_link {
     border-radius: 8px;
     color: var(--white-color);
     background: var(--blue-color);
