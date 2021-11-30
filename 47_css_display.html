@@ -35,7 +35,66 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
+    .section_content {
+      overflow: auto;
+    }
 
+    .col_left {
+      width: 30%;
+      float: left;
+      border: 1px solid;
+      border-radius: 5px;
+      padding: 10px;
+    }
+
+    .col_right {
+      width: 70%;
+      float: right;
+      padding-left: 10px;
+    }
+
+    .demo_box {
+      background-color: #f2f2f2;
+      border: 1px solid #ddd;
+      padding: 6px 10px;
+      margin-bottom: 4px;
+    }
+
+    .inline_menu li {
+      display: inline;
+      margin-right: 15px;
+    }
+
+    .block_span {
+      display: block;
+      background-color: #f2f2f2;
+      border: 1px solid #ddd;
+      margin-bottom: 4px;
+    }
+
+    .display_none {
+      display: none;
+    }
+
+    .display_inline {
+      display: inline;
+      background-color: #f2f2f2;
+      border: 1px solid #ddd;
+    }
+
+    .display_block {
+      display: block;
+      background-color: #f2f2f2;
+      border: 1px solid #ddd;
+    }
+
+    .display_inline_block {
+      display: inline-block;
+      width: 120px;
+      height: 50px;
+      background-color: #f2f2f2;
+      border: 1px solid #ddd;
+    }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -704,35 +763,161 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>The CSS display Property</h3>
   <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">display</span> property is the most important CSS property for controlling layout — it specifies how an element is treated: as a block, an inline element, or something else entirely. Every HTML element has a default display value depending on what kind of element it is.
+  </p>
+</section>
+
+<section class="content">
+  <h3>Block-level Elements</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    A block-level element always starts on a new line and takes up the full width available (stretches out to the left and right as far as it can). Common block elements: <span class="code">&lt;div&gt;</span>, <span class="code">&lt;h1&gt;-&lt;h6&gt;</span>, <span class="code">&lt;p&gt;</span>, <span class="code">&lt;form&gt;</span>, <span class="code">&lt;header&gt;</span>, <span class="code">&lt;footer&gt;</span>, <span class="code">&lt;section&gt;</span>.
+  </p>
+
+  <div class="demo_box">First block-level div</div>
+  <div class="demo_box">Second block-level div</div>
+</section>
+
+<section class="content">
+  <h3>Inline Elements</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    An inline element does not start on a new line, and only takes up as much width as necessary. Common inline elements: <span class="code">&lt;span&gt;</span>, <span class="code">&lt;a&gt;</span>, <span class="code">&lt;img&gt;</span>.
+  </p>
+
   <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+    This is <span class="code">&lt;span&gt;</span> text sitting <span style="background-color:#f2f2f2; border:1px solid #ddd;">inline</span> inside a paragraph, flowing with the surrounding words.
+  </p>
+</section>
+
+<section class="content">
+  <h3>Common display Values</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Some of the most commonly used <span class="code">display</span> values:
   </p>
 
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th>Value</th>
+      <th>Description</th>
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
-    </tr>
+    <tr><td><span class="code">inline</span></td><td>Displays an element as an inline element (like &lt;span&gt;)</td></tr>
+    <tr><td><span class="code">block</span></td><td>Displays an element as a block element (like &lt;p&gt;); starts on a new line, takes full width</td></tr>
+    <tr><td><span class="code">contents</span></td><td>Makes the container disappear, its children behave as if they were direct children of the parent</td></tr>
+    <tr><td><span class="code">flex</span></td><td>Displays an element as a block-level flex container</td></tr>
+    <tr><td><span class="code">grid</span></td><td>Displays an element as a block-level grid container</td></tr>
+    <tr><td><span class="code">inline-block</span></td><td>Displays an element as an inline-level block container; allows setting width/height/padding/margin, but still flows inline</td></tr>
+    <tr><td><span class="code">none</span></td><td>Completely hides the element — it is removed from the page as if it did not exist</td></tr>
     </tbody>
   </table>
-
-  <p><strong><i>Note: </i></strong>xxxxx</p>
 </section>
+
+<section class="content">
+  <h3>Override The Default display Value</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Changing an element's default <span class="code">display</span> value can restructure the whole page layout. A common example: turning a vertical list (&lt;li&gt; are block by default) into a horizontal navigation menu:
+  </p>
+
+  <div class="section_content">
+    <div class="col_left">
+      &lt;style&gt; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; li { <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: inline; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; } <br>
+      &lt;/style&gt;
+    </div>
+
+    <div class="col_right">
+      <ul class="inline_menu" style="list-style:none; padding:0;">
+        <li>Home</li>
+        <li>News</li>
+        <li>Contact</li>
+        <li>About</li>
+      </ul>
+    </div>
+  </div>
+
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Likewise, <span class="code">&lt;span&gt;</span> (inline by default) can be made to behave like a block element:
+  </p>
+
+  <div class="section_content">
+    <div class="col_left">
+      &lt;style&gt; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; span.block_span { <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: block; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; } <br>
+      &lt;/style&gt;
+    </div>
+
+    <div class="col_right">
+      <span class="block_span">This span now starts on its own line.</span>
+      <span class="block_span">So does this one.</span>
+    </div>
+  </div>
+</section>
+
+<section class="content">
+  <h3>Hiding Elements With display: none</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Setting <span class="code">display: none</span> hides an element completely — unlike <span class="code">visibility: hidden</span>, it also removes the space the element would have occupied:
+  </p>
+
+  <div class="section_content">
+    <div class="col_left">
+      &lt;style&gt; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; .hide-me { <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: none; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; } <br>
+      &lt;/style&gt;
+    </div>
+
+    <div class="col_right">
+      <p>This paragraph is visible.</p>
+      <p class="display_none">This paragraph is hidden with display: none and takes up no space.</p>
+      <p>This paragraph follows right after, with no gap left behind.</p>
+    </div>
+  </div>
+</section>
+
+<section class="content">
+  <h3>Display Values Demo</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    A side-by-side look at <span class="code">inline</span>, <span class="code">block</span>, and <span class="code">inline-block</span>:
+  </p>
+
+  <div class="section_content">
+    <div class="col_left">
+      &lt;style&gt; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; .ex1 { display: inline; } <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; .ex2 { display: block; } <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; .ex3 { display: inline-block; } <br>
+      &lt;/style&gt;
+    </div>
+
+    <div class="col_right">
+      <span class="display_inline">inline #1</span>
+      <span class="display_inline">inline #2</span>
+      <div class="display_block">block #1</div>
+      <div class="display_block">block #2</div>
+      <span class="display_inline_block">inline-block #1</span>
+      <span class="display_inline_block">inline-block #2</span>
+    </div>
+  </div>
+
+  <p><strong><i>Note: </i></strong><span class="code">inline-block</span> is the one to reach for when you need an element to sit inline with its neighbors but still respect <span class="code">width</span>, <span class="code">height</span>, and vertical <span class="code">margin</span>/<span class="code">padding</span> — plain <span class="code">inline</span> elements ignore those.</p>
+</section>
+<br>
 <!--Main Section End-->
 
 <!--External JavaScript Library Inclusion Start-->
