@@ -35,7 +35,20 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
+    div.ex1 {
+      width: 500px;
+      margin: auto;
+      border: 3px solid #73AD21;
+      padding: 10px;
+      margin-bottom: 15px;
+    }
 
+    div.ex2 {
+      max-width: 500px;
+      margin: auto;
+      border: 3px solid #73AD21;
+      padding: 10px;
+    }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -704,35 +717,54 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS The max-width Property</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">max-width</span> property sets the maximum width an element is allowed to reach. It can still shrink smaller than that value, which makes it a much better fit for responsive design than a fixed <span class="code">width</span>.
+  </p>
+</section>
+
+<section class="content">
+  <h3>The Problem With width</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    An element with a fixed <span class="code">width</span> always stays that size, no matter the browser window size. If the window is narrower than the element, a horizontal scrollbar appears on the page — not ideal on a mobile device:
   </p>
 
-  <table>
-    <thead>
-    <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
-    </tr>
-    </tbody>
-  </table>
-
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+  <div class="ex1">
+    This &lt;div&gt; has <span class="code">width: 500px</span>. Shrink the browser window narrower than 500px and this box will force a horizontal scrollbar instead of adapting.
+  </div>
 </section>
+
+<section class="content">
+  <h3>Using max-width Instead</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Using <span class="code">max-width</span> instead of <span class="code">width</span> improves how the browser handles small windows: the element shrinks to fit a narrow viewport, but never grows past the limit on larger screens:
+  </p>
+
+  <div class="section_content">
+    <div class="col_left">
+      &lt;style&gt; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; div.ex1 { <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; width: 500px; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; } <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; div.ex2 { <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; max-width: 500px; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; } <br>
+      &lt;/style&gt;
+    </div>
+
+    <div class="col_right">
+      <div class="ex2">
+        This &lt;div&gt; has <span class="code">max-width: 500px</span> instead. Shrink the browser window narrower than 500px and this box will shrink right along with it — no scrollbar.
+      </div>
+    </div>
+  </div>
+
+  <p><strong><i>Note: </i></strong>Try resizing your browser window narrower than 500px to see the difference between the two boxes above — the first keeps overflowing; the second adapts.</p>
+</section>
+<br>
 <!--Main Section End-->
 
 <!--External JavaScript Library Inclusion Start-->
