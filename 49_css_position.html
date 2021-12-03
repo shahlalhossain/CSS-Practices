@@ -35,7 +35,136 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
+    .section_content {
+      overflow: auto;
+    }
 
+    .col_left {
+      width: 30%;
+      float: left;
+      border: 1px solid;
+      border-radius: 5px;
+      padding: 10px;
+    }
+
+    .col_right {
+      width: 70%;
+      float: right;
+      padding-left: 10px;
+    }
+
+    div.static_demo {
+      position: static;
+      border: 3px solid #73AD21;
+      padding: 10px;
+    }
+
+    div.relative_demo {
+      position: relative;
+      left: 30px;
+      border: 3px solid #73AD21;
+      padding: 10px;
+    }
+
+    .fixed_demo_wrap {
+      position: relative;
+      height: 160px;
+      border: 1px dashed #aaa;
+      overflow: hidden;
+    }
+
+    div.fixed_demo {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      width: 220px;
+      border: 3px solid #73AD21;
+      padding: 10px;
+      background-color: #f2f2f2;
+    }
+
+    div.relative_container {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      border: 3px solid green;
+      padding: 10px;
+    }
+
+    div.absolute_demo {
+      position: absolute;
+      top: 80px;
+      right: 20px;
+      width: 200px;
+      border: 3px solid red;
+      padding: 10px;
+      background-color: #fff;
+    }
+
+    .sticky_demo_wrap {
+      height: 220px;
+      overflow-y: auto;
+      border: 1px dashed #aaa;
+    }
+
+    div.sticky_demo {
+      position: sticky;
+      top: 0;
+      background-color: #04AA6D;
+      color: white;
+      border: 2px solid #4CAF50;
+      padding: 8px 10px;
+    }
+
+    .image_text_demo {
+      position: relative;
+      width: 100%;
+      max-width: 650px;
+    }
+
+    .image_text_demo img {
+      display: block;
+      width: 100%;
+    }
+
+    .image_text_demo .top_left,
+    .image_text_demo .top_right,
+    .image_text_demo .bottom_left,
+    .image_text_demo .bottom_right,
+    .image_text_demo .centered {
+      position: absolute;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 2px 8px;
+      border-radius: 3px;
+      white-space: nowrap;
+    }
+
+    .image_text_demo .top_left {
+      top: 8px;
+      left: 8px;
+    }
+
+    .image_text_demo .top_right {
+      top: 8px;
+      right: 8px;
+    }
+
+    .image_text_demo .bottom_left {
+      bottom: 8px;
+      left: 8px;
+    }
+
+    .image_text_demo .bottom_right {
+      bottom: 8px;
+      right: 8px;
+    }
+
+    .image_text_demo .centered {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -552,35 +681,225 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS Positioning</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    With CSS positioning, you can override the normal document flow and control exactly where an element appears.
   </p>
+
+  <h3 style="padding-top: 20px;">The CSS position Property</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">position</span> property specifies the positioning type for an element.
+  </p>
+
+  <p style="padding-bottom: 10px;">This property can have one of the following values:</p>
+
+  <ul style="padding-left: 20px; padding-bottom: 10px;">
+    <li><span class="code">static</span> - This is default. Element is positioned according to the normal document flow</li>
+    <li><span class="code">relative</span> - Element is positioned relative to its normal position in the document flow</li>
+    <li><span class="code">fixed</span> - Element is positioned relative to the viewport</li>
+    <li><span class="code">absolute</span> - Element is positioned relative to the nearest positioned ancestor</li>
+    <li><span class="code">sticky</span> - Element toggles between a relative and fixed position, depending on the scroll position</li>
+  </ul>
+
+  <p>
+    Elements are then positioned to their final location with the <span class="code">top</span>, <span class="code">bottom</span>, <span class="code">left</span>, and <span class="code">right</span> properties.
+  </p>
+</section>
+
+<section class="content">
+  <h3>position: static</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    This is the default value — every element is <span class="code">static</span> unless set otherwise. Static elements are not affected by <span class="code">top</span>, <span class="code">bottom</span>, <span class="code">left</span>, or <span class="code">right</span>; they simply follow the normal page flow.
+  </p>
+
+  <div class="section_content">
+    <div class="col_left">
+      &lt;style&gt; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; div.static_demo { <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; position: static; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; } <br>
+      &lt;/style&gt;
+    </div>
+
+    <div class="col_right">
+      <div class="static_demo">This div has position: static — it sits exactly where it would in normal flow.</div>
+    </div>
+  </div>
+</section>
+
+<section class="content">
+  <h3>position: relative</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    An element with <span class="code">position: relative</span> is positioned relative to its own normal position. Setting an offset (like <span class="code">left: 30px</span>) shifts the element away from where it would normally sit, without affecting the layout of surrounding elements — the space it originally occupied is preserved:
+  </p>
+
+  <div class="section_content">
+    <div class="col_left">
+      &lt;style&gt; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; div.relative_demo { <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; position: relative; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; left: 30px; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; } <br>
+      &lt;/style&gt;
+    </div>
+
+    <div class="col_right">
+      <div class="relative_demo">This div has position: relative and left: 30px — shifted 30px from its normal spot.</div>
+    </div>
+  </div>
+</section>
+
+<section class="content">
+  <h3>position: fixed</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    An element with <span class="code">position: fixed</span> is positioned relative to the viewport, so it stays in the same place even when the page scrolls. A fixed element is removed from the normal flow and leaves no gap behind. (Scaled down here into a bordered demo box instead of the real viewport, so the effect stays visible on the page.)
+  </p>
+
+  <div class="section_content">
+    <div class="col_left">
+      &lt;style&gt; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; div.fixed_demo { <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; position: fixed; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; bottom: 0; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; right: 0; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; width: 300px; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; } <br>
+      &lt;/style&gt;
+    </div>
+
+    <div class="col_right">
+      <div class="fixed_demo_wrap">
+        <div class="fixed_demo">This box uses position: fixed with bottom: 0; right: 0 — pinned to a corner regardless of scrolling.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="content">
+  <h3>position: absolute</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    An element with <span class="code">position: absolute</span> is positioned relative to its nearest ancestor that has a <span class="code">position</span> other than <span class="code">static</span> (often a <span class="code">relative</span> parent). If no such ancestor exists, it falls back to the document body. Absolute elements are removed from the normal flow and can overlap other elements:
+  </p>
+
+  <div class="section_content">
+    <div class="col_left">
+      &lt;style&gt; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; div.relative_container { <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; position: relative; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; } <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; div.absolute_demo { <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; position: absolute; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; top: 80px; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; right: 20px; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; } <br>
+      &lt;/style&gt;
+    </div>
+
+    <div class="col_right">
+      <div class="relative_container">
+        This is the positioned ancestor (position: relative).
+        <div class="absolute_demo">position: absolute, top: 80px, right: 20px — overlaps the parent's content.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="content">
+  <h3>position: sticky</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    An element with <span class="code">position: sticky</span> toggles between <span class="code">relative</span> and <span class="code">fixed</span> depending on scroll position: it behaves normally until the scroll reaches a given offset, then sticks in place. A <span class="code">top</span>, <span class="code">right</span>, <span class="code">bottom</span>, or <span class="code">left</span> offset is required for it to work. Scroll the box below to see it in action:
+  </p>
+
+  <div class="section_content">
+    <div class="col_left">
+      &lt;style&gt; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; div.sticky_demo { <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; position: sticky; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; top: 0; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; } <br>
+      &lt;/style&gt;
+    </div>
+
+    <div class="col_right">
+      <div class="sticky_demo_wrap">
+        <div class="sticky_demo">I stick to the top once you scroll past me</div>
+        <p style="padding:10px;">Scroll content line 1</p>
+        <p style="padding:10px;">Scroll content line 2</p>
+        <p style="padding:10px;">Scroll content line 3</p>
+        <p style="padding:10px;">Scroll content line 4</p>
+        <p style="padding:10px;">Scroll content line 5</p>
+        <p style="padding:10px;">Scroll content line 6</p>
+        <p style="padding:10px;">Scroll content line 7</p>
+        <p style="padding:10px;">Scroll content line 8</p>
+      </div>
+    </div>
+  </div>
 
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th>Feature</th>
+      <th>sticky</th>
+      <th>fixed</th>
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
-    </tr>
+    <tr><td>Initial behavior</td><td>Acts like relative</td><td>Always fixed to viewport</td></tr>
+    <tr><td>Space in document</td><td>Takes up space initially</td><td>Does not take up space</td></tr>
+    <tr><td>Scroll behavior</td><td>Sticks after a scroll threshold</td><td>Always fixed</td></tr>
+    <tr><td>Container bound</td><td>Yes, respects parent boundaries</td><td>No, always relative to the viewport</td></tr>
     </tbody>
   </table>
-
-  <p><strong><i>Note: </i></strong>xxxxx</p>
 </section>
+
+<section class="content">
+  <h3>Positioning Text On an Image</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    A common practical use of <span class="code">position: absolute</span> inside a <span class="code">position: relative</span> container: placing a text caption at a specific spot over an image.
+  </p>
+
+  <div class="image_text_demo">
+    <img src="images/background.jpg" alt="Mountains">
+    <div class="top_left">Top Left</div>
+    <div class="top_right">Top Right</div>
+    <div class="centered">Centered</div>
+    <div class="bottom_left">Bottom Left</div>
+    <div class="bottom_right">Bottom Right</div>
+  </div>
+
+  <p><strong><i>Note: </i></strong>Each caption is <span class="code">position: absolute</span>, and the image wrapper is <span class="code">position: relative</span> — that's what makes the captions position relative to the image instead of the whole page.</p>
+</section>
+
+<section class="content">
+  <h3>All CSS Positioning Properties</h3>
+  <hr>
+
+  <table>
+    <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr><td><span class="code">bottom</span></td><td>Sets the bottom margin edge for a positioned box</td></tr>
+    <tr><td><span class="code">clip</span></td><td>Clips an absolutely positioned element</td></tr>
+    <tr><td><span class="code">left</span></td><td>Sets the left margin edge for a positioned box</td></tr>
+    <tr><td><span class="code">position</span></td><td>Specifies the type of positioning for an element</td></tr>
+    <tr><td><span class="code">right</span></td><td>Sets the right margin edge for a positioned box</td></tr>
+    <tr><td><span class="code">top</span></td><td>Sets the top margin edge for a positioned box</td></tr>
+    </tbody>
+  </table>
+</section>
+<br>
 <!--Main Section End-->
 
 <!--External JavaScript Library Inclusion Start-->
