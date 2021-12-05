@@ -35,7 +35,66 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
+    .section_content {
+      overflow: auto;
+    }
 
+    .col_left {
+      width: 30%;
+      float: left;
+      border: 1px solid;
+      border-radius: 5px;
+      padding: 10px;
+    }
+
+    .col_right {
+      width: 70%;
+      float: right;
+      padding-left: 10px;
+    }
+
+    .overflow_demo {
+      width: 200px;
+      height: 65px;
+      background-color: coral;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .overflow_visible {
+      overflow: visible;
+    }
+
+    .overflow_hidden {
+      overflow: hidden;
+    }
+
+    .overflow_scroll {
+      overflow: scroll;
+    }
+
+    .overflow_auto {
+      overflow: auto;
+    }
+
+    .overflow_xy_demo {
+      width: 200px;
+      height: 100px;
+      background-color: coral;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .overflow_x_hidden_y_scroll {
+      overflow-x: hidden;
+      overflow-y: scroll;
+    }
+
+    .overflow_x_scroll_y_hidden {
+      overflow-x: scroll;
+      overflow-y: hidden;
+      white-space: nowrap;
+    }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -704,35 +763,161 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>The CSS overflow Property</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">overflow</span> property controls what happens to content that is too big to fit into its box. It can take one of four values: <span class="code">visible</span>, <span class="code">hidden</span>, <span class="code">scroll</span>, or <span class="code">auto</span>.
+  </p>
+</section>
+
+<section class="content">
+  <h3>overflow: visible (default)</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The overflow is not clipped — the content simply renders outside the element's box, overlapping whatever is around it:
   </p>
 
-  <table>
-    <thead>
-    <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
-    </tr>
-    </tbody>
-  </table>
+  <div class="section_content">
+    <div class="col_left">
+      &lt;style&gt; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; div { <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; width: 200px; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; height: 65px; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; overflow: visible; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; } <br>
+      &lt;/style&gt;
+    </div>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+    <div class="col_right">
+      <div class="overflow_demo overflow_visible">
+        This div has a fixed width and height, and the text inside it is long enough to overflow its box. With overflow: visible, it simply spills out past the box edges instead of being clipped.
+      </div>
+    </div>
+  </div>
 </section>
+
+<section class="content">
+  <h3>overflow: hidden</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The overflow is clipped, and the rest of the content becomes invisible and inaccessible:
+  </p>
+
+  <div class="section_content">
+    <div class="col_left">
+      &lt;style&gt; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; div { <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; overflow: hidden; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; } <br>
+      &lt;/style&gt;
+    </div>
+
+    <div class="col_right">
+      <div class="overflow_demo overflow_hidden">
+        This div has a fixed width and height, and the text inside it is long enough to overflow its box. With overflow: hidden, the excess content is simply clipped off and not shown.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="content">
+  <h3>overflow: scroll</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Scrollbars are added so the user can scroll to see the rest of the content — both horizontal and vertical scrollbars are shown, even if not all of the content needs them:
+  </p>
+
+  <div class="section_content">
+    <div class="col_left">
+      &lt;style&gt; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; div { <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; overflow: scroll; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; } <br>
+      &lt;/style&gt;
+    </div>
+
+    <div class="col_right">
+      <div class="overflow_demo overflow_scroll">
+        This div has a fixed width and height, and the text inside it is long enough to overflow its box. With overflow: scroll, both scrollbars always appear, whether or not they're needed.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="content">
+  <h3>overflow: auto</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Similar to <span class="code">scroll</span>, but the browser only adds scrollbars when they're actually necessary to see the hidden content:
+  </p>
+
+  <div class="section_content">
+    <div class="col_left">
+      &lt;style&gt; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; div { <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; overflow: auto; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; } <br>
+      &lt;/style&gt;
+    </div>
+
+    <div class="col_right">
+      <div class="overflow_demo overflow_auto">
+        This div has a fixed width and height, and the text inside it is long enough to overflow its box. With overflow: auto, only the scrollbar(s) actually needed are shown.
+      </div>
+    </div>
+  </div>
+
+  <p><strong><i>Note: </i></strong><span class="code">overflow: auto</span> is almost always the better choice over <span class="code">scroll</span> — it avoids showing an empty, unnecessary scrollbar when the content actually fits.</p>
+</section>
+
+<section class="content">
+  <h3>overflow-x and overflow-y</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">overflow-x</span> property controls overflow on the left/right edges (horizontal), and <span class="code">overflow-y</span> controls overflow on the top/bottom edges (vertical). They work independently, so you can mix behaviors — for example, hide horizontal overflow while keeping vertical scrolling enabled:
+  </p>
+
+  <div class="section_content">
+    <div class="col_left">
+      &lt;style&gt; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; div { <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; overflow-x: hidden; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; overflow-y: scroll; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; } <br>
+      &lt;/style&gt;
+    </div>
+
+    <div class="col_right">
+      <div class="overflow_xy_demo overflow_x_hidden_y_scroll">
+        This div hides horizontal overflow but always shows a vertical scrollbar. Scroll down to see the rest of this paragraph's text, which keeps going and going to prove the point.
+      </div>
+    </div>
+  </div>
+
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The reverse combination — horizontal scrolling with vertical overflow hidden — suits content that flows sideways, like a wide table or a single long line of code:
+  </p>
+
+  <div class="section_content">
+    <div class="col_left">
+      &lt;style&gt; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; div { <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; overflow-x: scroll; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; overflow-y: hidden; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; } <br>
+      &lt;/style&gt;
+    </div>
+
+    <div class="col_right">
+      <div class="overflow_xy_demo overflow_x_scroll_y_hidden">
+        This single long line of text never wraps, so it needs a horizontal scrollbar to be read in full, while any vertical overflow is simply hidden.
+      </div>
+    </div>
+  </div>
+
+  <p><strong><i>Note: </i></strong>A wide data table is a common real use for <span class="code">overflow-x: auto</span> on a wrapping container, so the table can scroll sideways on small screens instead of breaking the page layout.</p>
+</section>
+<br>
 <!--Main Section End-->
 
 <!--External JavaScript Library Inclusion Start-->
