@@ -35,24 +35,6 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
-    .section_content {
-      overflow: auto;
-    }
-
-    .col_left {
-      width: 30%;
-      float: left;
-      border: 1px solid;
-      border-radius: 5px;
-      padding: 10px;
-    }
-
-    .col_right {
-      width: 70%;
-      float: right;
-      padding-left: 10px;
-    }
-
     div.static_demo {
       position: static;
       border: 3px solid #73AD21;
@@ -715,19 +697,34 @@
     This is the default value — every element is <span class="code">static</span> unless set otherwise. Static elements are not affected by <span class="code">top</span>, <span class="code">bottom</span>, <span class="code">left</span>, or <span class="code">right</span>; they simply follow the normal page flow.
   </p>
 
-  <div class="section_content">
-    <div class="col_left">
-      &lt;style&gt; <br>
-      &nbsp;&nbsp;&nbsp;&nbsp; div.static_demo { <br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; position: static; <br>
-      &nbsp;&nbsp;&nbsp;&nbsp; } <br>
-      &lt;/style&gt;
-    </div>
-
-    <div class="col_right">
-      <div class="static_demo">This div has position: static — it sits exactly where it would in normal flow.</div>
-    </div>
-  </div>
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; div.static_demo { position: static; border: 3px solid #73AD21; padding: 10px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="static_demo"&gt;This div has position: static — it sits exactly where it would in normal flow.&lt;&sol;div&gt; <br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <div class="static_demo">This div has position: static — it sits exactly where it would in normal flow.</div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
 </section>
 
 <section class="content">
@@ -737,20 +734,34 @@
     An element with <span class="code">position: relative</span> is positioned relative to its own normal position. Setting an offset (like <span class="code">left: 30px</span>) shifts the element away from where it would normally sit, without affecting the layout of surrounding elements — the space it originally occupied is preserved:
   </p>
 
-  <div class="section_content">
-    <div class="col_left">
-      &lt;style&gt; <br>
-      &nbsp;&nbsp;&nbsp;&nbsp; div.relative_demo { <br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; position: relative; <br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; left: 30px; <br>
-      &nbsp;&nbsp;&nbsp;&nbsp; } <br>
-      &lt;/style&gt;
-    </div>
-
-    <div class="col_right">
-      <div class="relative_demo">This div has position: relative and left: 30px — shifted 30px from its normal spot.</div>
-    </div>
-  </div>
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; div.relative_demo { position: relative; left: 30px; border: 3px solid #73AD21; padding: 10px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="relative_demo"&gt;This div has position: relative and left: 30px — shifted 30px from its normal spot.&lt;&sol;div&gt; <br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <div class="relative_demo">This div has position: relative and left: 30px — shifted 30px from its normal spot.</div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
 </section>
 
 <section class="content">
@@ -760,24 +771,43 @@
     An element with <span class="code">position: fixed</span> is positioned relative to the viewport, so it stays in the same place even when the page scrolls. A fixed element is removed from the normal flow and leaves no gap behind. (Scaled down here into a bordered demo box instead of the real viewport, so the effect stays visible on the page.)
   </p>
 
-  <div class="section_content">
-    <div class="col_left">
-      &lt;style&gt; <br>
-      &nbsp;&nbsp;&nbsp;&nbsp; div.fixed_demo { <br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; position: fixed; <br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; bottom: 0; <br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; right: 0; <br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; width: 300px; <br>
-      &nbsp;&nbsp;&nbsp;&nbsp; } <br>
-      &lt;/style&gt;
-    </div>
-
-    <div class="col_right">
-      <div class="fixed_demo_wrap">
-        <div class="fixed_demo">This box uses position: fixed with bottom: 0; right: 0 — pinned to a corner regardless of scrolling.</div>
-      </div>
-    </div>
-  </div>
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; div.fixed_demo { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; position: absolute; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; bottom: 10px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; right: 10px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; width: 220px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="fixed_demo_wrap"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="fixed_demo"&gt;This box uses position: fixed with bottom: 0; right: 0 — pinned to a corner regardless of scrolling.&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <div class="fixed_demo_wrap">
+          <div class="fixed_demo">This box uses position: fixed with bottom: 0; right: 0 — pinned to a corner regardless of scrolling.</div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
 </section>
 
 <section class="content">
@@ -787,27 +817,41 @@
     An element with <span class="code">position: absolute</span> is positioned relative to its nearest ancestor that has a <span class="code">position</span> other than <span class="code">static</span> (often a <span class="code">relative</span> parent). If no such ancestor exists, it falls back to the document body. Absolute elements are removed from the normal flow and can overlap other elements:
   </p>
 
-  <div class="section_content">
-    <div class="col_left">
-      &lt;style&gt; <br>
-      &nbsp;&nbsp;&nbsp;&nbsp; div.relative_container { <br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; position: relative; <br>
-      &nbsp;&nbsp;&nbsp;&nbsp; } <br>
-      &nbsp;&nbsp;&nbsp;&nbsp; div.absolute_demo { <br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; position: absolute; <br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; top: 80px; <br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; right: 20px; <br>
-      &nbsp;&nbsp;&nbsp;&nbsp; } <br>
-      &lt;/style&gt;
-    </div>
-
-    <div class="col_right">
-      <div class="relative_container">
-        This is the positioned ancestor (position: relative).
-        <div class="absolute_demo">position: absolute, top: 80px, right: 20px — overlaps the parent's content.</div>
-      </div>
-    </div>
-  </div>
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; div.relative_container { position: relative; width: 100%; height: 200px; border: 3px solid green; padding: 10px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; div.absolute_demo { position: absolute; top: 80px; right: 20px; width: 200px; border: 3px solid red; padding: 10px; background-color: #fff; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="relative_container"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This is the positioned ancestor (position: relative). <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="absolute_demo"&gt;position: absolute, top: 80px, right: 20px — overlaps the parent's content.&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <div class="relative_container">
+          This is the positioned ancestor (position: relative).
+          <div class="absolute_demo">position: absolute, top: 80px, right: 20px — overlaps the parent's content.</div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
 </section>
 
 <section class="content">
@@ -817,30 +861,55 @@
     An element with <span class="code">position: sticky</span> toggles between <span class="code">relative</span> and <span class="code">fixed</span> depending on scroll position: it behaves normally until the scroll reaches a given offset, then sticks in place. A <span class="code">top</span>, <span class="code">right</span>, <span class="code">bottom</span>, or <span class="code">left</span> offset is required for it to work. Scroll the box below to see it in action:
   </p>
 
-  <div class="section_content">
-    <div class="col_left">
-      &lt;style&gt; <br>
-      &nbsp;&nbsp;&nbsp;&nbsp; div.sticky_demo { <br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; position: sticky; <br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; top: 0; <br>
-      &nbsp;&nbsp;&nbsp;&nbsp; } <br>
-      &lt;/style&gt;
-    </div>
-
-    <div class="col_right">
-      <div class="sticky_demo_wrap">
-        <div class="sticky_demo">I stick to the top once you scroll past me</div>
-        <p style="padding:10px;">Scroll content line 1</p>
-        <p style="padding:10px;">Scroll content line 2</p>
-        <p style="padding:10px;">Scroll content line 3</p>
-        <p style="padding:10px;">Scroll content line 4</p>
-        <p style="padding:10px;">Scroll content line 5</p>
-        <p style="padding:10px;">Scroll content line 6</p>
-        <p style="padding:10px;">Scroll content line 7</p>
-        <p style="padding:10px;">Scroll content line 8</p>
-      </div>
-    </div>
-  </div>
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .sticky_demo_wrap { height: 220px; overflow-y: auto; border: 1px dashed #aaa; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; div.sticky_demo { position: sticky; top: 0; background-color: #04AA6D; color: white; border: 2px solid #4CAF50; padding: 8px 10px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="sticky_demo_wrap"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="sticky_demo"&gt;I stick to the top once you scroll past me&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Scroll content line 1&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Scroll content line 2&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Scroll content line 3&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Scroll content line 4&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Scroll content line 5&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Scroll content line 6&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Scroll content line 7&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Scroll content line 8&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <div class="sticky_demo_wrap">
+          <div class="sticky_demo">I stick to the top once you scroll past me</div>
+          <p style="padding:10px;">Scroll content line 1</p>
+          <p style="padding:10px;">Scroll content line 2</p>
+          <p style="padding:10px;">Scroll content line 3</p>
+          <p style="padding:10px;">Scroll content line 4</p>
+          <p style="padding:10px;">Scroll content line 5</p>
+          <p style="padding:10px;">Scroll content line 6</p>
+          <p style="padding:10px;">Scroll content line 7</p>
+          <p style="padding:10px;">Scroll content line 8</p>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
 
   <table>
     <thead>

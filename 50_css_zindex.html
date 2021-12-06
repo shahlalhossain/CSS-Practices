@@ -35,24 +35,6 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
-    .section_content {
-      overflow: auto;
-    }
-
-    .col_left {
-      width: 30%;
-      float: left;
-      border: 1px solid;
-      border-radius: 5px;
-      padding: 10px;
-    }
-
-    .col_right {
-      width: 70%;
-      float: right;
-      padding-left: 10px;
-    }
-
     .no_zindex_wrap {
       position: relative;
       height: 160px;
@@ -827,22 +809,42 @@
     When positioned elements overlap with no <span class="code">z-index</span> set, they stack in the order they appear in the HTML — later elements in the source render on top of earlier ones:
   </p>
 
-  <div class="section_content">
-    <div class="col_left">
-      &lt;style&gt; <br>
-      &nbsp;&nbsp;&nbsp;&nbsp; .black { position: absolute; } <br>
-      &nbsp;&nbsp;&nbsp;&nbsp; .green { position: absolute; } <br>
-      &lt;/style&gt; <br><br>
-      No z-index set — the green box (later in the HTML) covers the black box.
-    </div>
-
-    <div class="col_right">
-      <div class="no_zindex_wrap">
-        <div class="no_zindex_black">Black box (first in HTML)</div>
-        <div class="no_zindex_green">Green box (second in HTML)</div>
-      </div>
-    </div>
-  </div>
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .wrap { position: relative; height: 160px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .black { position: absolute; top: 20px; left: 20px; width: 220px; height: 100px; background-color: black; color: white; padding: 10px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .green { position: absolute; top: 60px; left: 120px; width: 220px; height: 100px; background-color: #4CAF50; color: white; padding: 10px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="wrap"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="black"&gt;Black box (first in HTML)&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="green"&gt;Green box (second in HTML)&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <div class="no_zindex_wrap">
+          <div class="no_zindex_black">Black box (first in HTML)</div>
+          <div class="no_zindex_green">Green box (second in HTML)</div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
 </section>
 
 <section class="content">
@@ -852,32 +854,57 @@
     Setting <span class="code">z-index</span> overrides that document-order stacking. Here the black box has <span class="code">z-index: 1</span>, the green box has <span class="code">z-index: 2</span>, and the gray box has <span class="code">z-index: 3</span> — so the gray box ends up on top, regardless of where it sits in the HTML:
   </p>
 
-  <div class="section_content">
-    <div class="col_left">
-      &lt;style&gt; <br>
-      &nbsp;&nbsp;&nbsp;&nbsp; .black { <br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; position: relative; <br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; z-index: 1; <br>
-      &nbsp;&nbsp;&nbsp;&nbsp; } <br>
-      &nbsp;&nbsp;&nbsp;&nbsp; .green { <br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; position: absolute; <br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; z-index: 2; <br>
-      &nbsp;&nbsp;&nbsp;&nbsp; } <br>
-      &nbsp;&nbsp;&nbsp;&nbsp; .gray { <br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; position: absolute; <br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; z-index: 3; <br>
-      &nbsp;&nbsp;&nbsp;&nbsp; } <br>
-      &lt;/style&gt;
-    </div>
-
-    <div class="col_right">
-      <div class="zindex_wrap">
-        <div class="zindex_black">Black box, z-index: 1</div>
-        <div class="zindex_green">Green box, z-index: 2</div>
-        <div class="zindex_gray">Gray box, z-index: 3 (on top)</div>
-      </div>
-    </div>
-  </div>
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .wrap { position: relative; height: 160px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .black { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; position: relative; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; z-index: 1; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; top: 20px; left: 20px; width: 220px; height: 100px; background-color: black; color: white; padding: 10px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .green { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; position: absolute; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; z-index: 2; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; top: 60px; left: 120px; width: 220px; height: 100px; background-color: #4CAF50; color: white; padding: 10px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .gray { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; position: absolute; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; z-index: 3; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; top: 10px; left: 170px; width: 220px; height: 100px; background-color: lightgray; padding: 10px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="wrap"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="black"&gt;Black box, z-index: 1&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="green"&gt;Green box, z-index: 2&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="gray"&gt;Gray box, z-index: 3 (on top)&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <div class="zindex_wrap">
+          <div class="zindex_black">Black box, z-index: 1</div>
+          <div class="zindex_green">Green box, z-index: 2</div>
+          <div class="zindex_gray">Gray box, z-index: 3 (on top)</div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
 
   <p><strong><i>Note: </i></strong><span class="code">z-index</span> values are only compared between elements that share the same stacking context — in practice, usually elements that are siblings or share a common positioned ancestor.</p>
 </section>
@@ -889,23 +916,42 @@
     A negative <span class="code">z-index</span> (like <span class="code">-1</span>) pushes an element behind the elements around it. Here the image is absolutely positioned with <span class="code">z-index: -1</span>, which sends it behind the ordinary, normal-flow heading sitting on top of it:
   </p>
 
-  <div class="section_content">
-    <div class="col_left">
-      &lt;style&gt; <br>
-      &nbsp;&nbsp;&nbsp;&nbsp; img { <br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; position: absolute; <br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; z-index: -1; <br>
-      &nbsp;&nbsp;&nbsp;&nbsp; } <br>
-      &lt;/style&gt;
-    </div>
-
-    <div class="col_right">
-      <div class="negative_zindex_demo">
-        <h1>This is a heading</h1>
-        <img src="images/background.jpg" alt="Mountains">
-      </div>
-    </div>
-  </div>
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .demo { position: relative; width: 100%; height: 300px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .demo img { position: absolute; top: 0; left: 0; z-index: -1; width: 100%; height: 100%; object-fit: cover; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .demo h1 { color: #222; font-size: 48px; padding-top: 20px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="demo"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;This is a heading&lt;&sol;h1&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;img src="background.jpg" alt="Mountains"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <div class="negative_zindex_demo">
+          <h1>This is a heading</h1>
+          <img src="images/background.jpg" alt="Mountains">
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
 
   <p><strong><i>Note: </i></strong>The heading is plain, normal-flow text — it isn't positioned at all. Because the image carries <span class="code">z-index: -1</span>, it drops behind the heading instead of covering it. Remove the <span class="code">z-index</span> (or make it positive) and the image would cover the text instead.</p>
 </section>

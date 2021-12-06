@@ -35,24 +35,6 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
-    .section_content {
-      overflow: auto;
-    }
-
-    .col_left {
-      width: 30%;
-      float: left;
-      border: 1px solid;
-      border-radius: 5px;
-      padding: 10px;
-    }
-
-    .col_right {
-      width: 70%;
-      float: right;
-      padding-left: 10px;
-    }
-
     #text_align_table, #vertical_align_table {
       border-collapse: collapse;
       width: 100%;
@@ -761,22 +743,46 @@
     The <span class="code">text-align</span> property sets the horizontal alignment (<span class="code">left</span>, <span class="code">right</span> or <span class="code">center</span>) of the content inside &lt;th&gt; or &lt;td&gt;:
   </p>
 
-  <div class="section_content">
-    <div class="col_left">
-      &lt;style&gt; <br>
-      &nbsp;&nbsp;&nbsp;&nbsp; td:nth-child(2) { text-align: right; } <br>
-      &lt;/style&gt;
-    </div>
-
-    <div class="col_right">
-      <table id="text_align_table">
-        <tr><th>Firstname</th><th>Savings</th></tr>
-        <tr><td>Shahlal Hossain</td><td>$50</td></tr>
-        <tr><td>Kamal Hossain</td><td>$94</td></tr>
-        <tr><td>Habiba Khan</td><td>$67</td></tr>
-      </table>
-    </div>
-  </div>
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #text_align_table { border-collapse: collapse; width: 100%; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #text_align_table th, #text_align_table td { border: 1px solid #ddd; padding: 8px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #text_align_table td:nth-child(2) { text-align: right; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;table id="text_align_table"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;tr&gt;&lt;th&gt;Firstname&lt;&sol;th&gt;&lt;th&gt;Savings&lt;&sol;th&gt;&lt;&sol;tr&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;tr&gt;&lt;td&gt;Shahlal Hossain&lt;&sol;td&gt;&lt;td&gt;$50&lt;&sol;td&gt;&lt;&sol;tr&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;tr&gt;&lt;td&gt;Kamal Hossain&lt;&sol;td&gt;&lt;td&gt;$94&lt;&sol;td&gt;&lt;&sol;tr&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;tr&gt;&lt;td&gt;Habiba Khan&lt;&sol;td&gt;&lt;td&gt;$67&lt;&sol;td&gt;&lt;&sol;tr&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;table&gt; <br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <table id="text_align_table">
+          <tr><th>Firstname</th><th>Savings</th></tr>
+          <tr><td>Shahlal Hossain</td><td>$50</td></tr>
+          <tr><td>Kamal Hossain</td><td>$94</td></tr>
+          <tr><td>Habiba Khan</td><td>$67</td></tr>
+        </table>
+      </td>
+    </tr>
+    </tbody>
+  </table>
 </section>
 
 <section class="content">
@@ -786,22 +792,44 @@
     The <span class="code">vertical-align</span> property sets the vertical alignment (<span class="code">top</span>, <span class="code">bottom</span> or <span class="code">middle</span>) of the content inside &lt;th&gt; or &lt;td&gt;, which matters once a row has extra height:
   </p>
 
-  <div class="section_content">
-    <div class="col_left">
-      &lt;style&gt; <br>
-      &nbsp;&nbsp;&nbsp;&nbsp; td { height: 80px; } <br>
-      &nbsp;&nbsp;&nbsp;&nbsp; td:nth-child(2) { vertical-align: top; } <br>
-      &nbsp;&nbsp;&nbsp;&nbsp; td:nth-child(3) { vertical-align: bottom; } <br>
-      &lt;/style&gt;
-    </div>
-
-    <div class="col_right">
-      <table id="vertical_align_table">
-        <tr><th>Default (middle)</th><th>Top</th><th>Bottom</th></tr>
-        <tr><td>Centered content</td><td>Top-aligned content</td><td>Bottom-aligned content</td></tr>
-      </table>
-    </div>
-  </div>
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #vertical_align_table { border-collapse: collapse; width: 100%; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #vertical_align_table th, #vertical_align_table td { border: 1px solid #ddd; padding: 8px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #vertical_align_table td { height: 80px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #vertical_align_table td:nth-child(2) { vertical-align: top; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #vertical_align_table td:nth-child(3) { vertical-align: bottom; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;table id="vertical_align_table"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;tr&gt;&lt;th&gt;Default (middle)&lt;&sol;th&gt;&lt;th&gt;Top&lt;&sol;th&gt;&lt;th&gt;Bottom&lt;&sol;th&gt;&lt;&sol;tr&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;tr&gt;&lt;td&gt;Centered content&lt;&sol;td&gt;&lt;td&gt;Top-aligned content&lt;&sol;td&gt;&lt;td&gt;Bottom-aligned content&lt;&sol;td&gt;&lt;&sol;tr&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;table&gt; <br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <table id="vertical_align_table">
+          <tr><th>Default (middle)</th><th>Top</th><th>Bottom</th></tr>
+          <tr><td>Centered content</td><td>Top-aligned content</td><td>Bottom-aligned content</td></tr>
+        </table>
+      </td>
+    </tr>
+    </tbody>
+  </table>
 
   <p><strong><i>Note: </i></strong><span class="code">text-align</span> and <span class="code">vertical-align</span> can be combined on the same cell, and are often set on <span class="code">th, td</span> together rather than per column.</p>
 </section>

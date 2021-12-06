@@ -737,44 +737,74 @@
     Wrap the &lt;table&gt; element inside a &lt;div&gt; and set <span class="code">overflow-x: auto</span> on that container. The table itself does not need to change:
   </p>
 
-  <div class="section_content">
-    <div class="col_left">
-      &lt;style&gt; <br>
-      &nbsp;&nbsp;&nbsp;&nbsp; div.tablecontainer { <br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; overflow-x: auto; <br>
-      &nbsp;&nbsp;&nbsp;&nbsp; } <br>
-      &lt;/style&gt; <br><br>
-      &lt;div class="tablecontainer"&gt; <br>
-      &nbsp;&nbsp;&nbsp;&nbsp; &lt;table&gt;...&lt;/table&gt; <br>
-      &lt;/div&gt;
-    </div>
-
-    <div class="col_right">
-      <div class="tablecontainer">
-        <table id="responsive_table">
-          <tr>
-            <th>Firstname</th>
-            <th>Lastname</th>
-            <th>Points1</th>
-            <th>Points2</th>
-            <th>Points3</th>
-            <th>Points4</th>
-            <th>Points5</th>
-            <th>Points6</th>
-          </tr>
-          <tr>
-            <td>Shahlal</td><td>Hossain</td><td>50</td><td>80</td><td>10</td><td>62</td><td>95</td><td>73</td>
-          </tr>
-          <tr>
-            <td>Kamal</td><td>Hossain</td><td>94</td><td>23</td><td>56</td><td>33</td><td>19</td><td>74</td>
-          </tr>
-          <tr>
-            <td>Habiba</td><td>Khan</td><td>67</td><td>40</td><td>88</td><td>12</td><td>51</td><td>29</td>
-          </tr>
-        </table>
-      </div>
-    </div>
-  </div>
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; div.tablecontainer { overflow-x: auto; max-width: 500px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #responsive_table { border-collapse: collapse; width: 100%; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #responsive_table th, #responsive_table td { border: 1px solid #ddd; padding: 8px; white-space: nowrap; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #responsive_table th { background-color: #04AA6D; color: white; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="tablecontainer"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;table id="responsive_table"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;tr&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;th&gt;Firstname&lt;&sol;th&gt;&lt;th&gt;Lastname&lt;&sol;th&gt;&lt;th&gt;Points1&lt;&sol;th&gt;&lt;th&gt;Points2&lt;&sol;th&gt;&lt;th&gt;Points3&lt;&sol;th&gt;&lt;th&gt;Points4&lt;&sol;th&gt;&lt;th&gt;Points5&lt;&sol;th&gt;&lt;th&gt;Points6&lt;&sol;th&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;tr&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;tr&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;td&gt;Shahlal&lt;&sol;td&gt;&lt;td&gt;Hossain&lt;&sol;td&gt;&lt;td&gt;50&lt;&sol;td&gt;&lt;td&gt;80&lt;&sol;td&gt;&lt;td&gt;10&lt;&sol;td&gt;&lt;td&gt;62&lt;&sol;td&gt;&lt;td&gt;95&lt;&sol;td&gt;&lt;td&gt;73&lt;&sol;td&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;tr&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;tr&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;td&gt;Kamal&lt;&sol;td&gt;&lt;td&gt;Hossain&lt;&sol;td&gt;&lt;td&gt;94&lt;&sol;td&gt;&lt;td&gt;23&lt;&sol;td&gt;&lt;td&gt;56&lt;&sol;td&gt;&lt;td&gt;33&lt;&sol;td&gt;&lt;td&gt;19&lt;&sol;td&gt;&lt;td&gt;74&lt;&sol;td&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;tr&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;tr&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;td&gt;Habiba&lt;&sol;td&gt;&lt;td&gt;Khan&lt;&sol;td&gt;&lt;td&gt;67&lt;&sol;td&gt;&lt;td&gt;40&lt;&sol;td&gt;&lt;td&gt;88&lt;&sol;td&gt;&lt;td&gt;12&lt;&sol;td&gt;&lt;td&gt;51&lt;&sol;td&gt;&lt;td&gt;29&lt;&sol;td&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;tr&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;table&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <div class="tablecontainer">
+          <table id="responsive_table">
+            <tr>
+              <th>Firstname</th>
+              <th>Lastname</th>
+              <th>Points1</th>
+              <th>Points2</th>
+              <th>Points3</th>
+              <th>Points4</th>
+              <th>Points5</th>
+              <th>Points6</th>
+            </tr>
+            <tr>
+              <td>Shahlal</td><td>Hossain</td><td>50</td><td>80</td><td>10</td><td>62</td><td>95</td><td>73</td>
+            </tr>
+            <tr>
+              <td>Kamal</td><td>Hossain</td><td>94</td><td>23</td><td>56</td><td>33</td><td>19</td><td>74</td>
+            </tr>
+            <tr>
+              <td>Habiba</td><td>Khan</td><td>67</td><td>40</td><td>88</td><td>12</td><td>51</td><td>29</td>
+            </tr>
+          </table>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
 
   <p><strong><i>Note: </i></strong>On macOS, scrollbars are hidden by default and only appear while actively scrolling, even when <span class="code">overflow-x: auto</span> (or <span class="code">scroll</span>) is set — the responsive behavior is still working.</p>
 </section>

@@ -35,7 +35,173 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
+    .section_content {
+      overflow: auto;
+    }
 
+    .float_right_demo {
+      overflow: auto;
+    }
+
+    .float_right_demo img {
+      float: right;
+      width: 100px;
+      margin-left: 15px;
+    }
+
+    .float_left_demo {
+      overflow: auto;
+    }
+
+    .float_left_demo img {
+      float: left;
+      width: 100px;
+      margin-right: 15px;
+    }
+
+    .float_none_demo {
+      overflow: auto;
+    }
+
+    .float_none_demo img {
+      float: none;
+      width: 100px;
+    }
+
+    .float_layout_demo {
+      overflow: auto;
+    }
+
+    .float_layout_demo div {
+      float: left;
+      padding: 15px;
+      color: white;
+      text-align: center;
+    }
+
+    .float_layout_demo .div1 {
+      background: red;
+    }
+
+    .float_layout_demo .div2 {
+      background: yellow;
+      color: #333;
+    }
+
+    .float_layout_demo .div3 {
+      background: green;
+    }
+
+    .clear_demo_wrap {
+      border: 1px dashed #aaa;
+      padding: 10px;
+    }
+
+    .clear_demo_float {
+      float: left;
+      width: 150px;
+      padding: 10px;
+      background-color: lightblue;
+    }
+
+    .clear_demo_none {
+      background-color: #f2f2f2;
+      padding: 10px;
+    }
+
+    .clear_demo_cleared {
+      clear: left;
+      background-color: #f2f2f2;
+      padding: 10px;
+    }
+
+    .clearfix_problem {
+      border: 3px solid #4CAF50;
+    }
+
+    .clearfix_problem .clearfix_float {
+      float: left;
+      width: 150px;
+      padding: 10px;
+      background-color: lightblue;
+      margin: 10px;
+    }
+
+    .clearfix_fixed {
+      border: 3px solid #4CAF50;
+    }
+
+    .clearfix_fixed::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    .clearfix_fixed .clearfix_float {
+      float: left;
+      width: 150px;
+      padding: 10px;
+      background-color: lightblue;
+      margin: 10px;
+    }
+
+    .equal_width_demo {
+      box-sizing: border-box;
+      overflow: auto;
+    }
+
+    .equal_width_demo .box {
+      float: left;
+      width: 33.33%;
+      padding: 20px;
+      box-sizing: border-box;
+      color: white;
+      text-align: center;
+    }
+
+    .equal_width_demo .box1 { background: #4070f4; }
+    .equal_width_demo .box2 { background: #04AA6D; }
+    .equal_width_demo .box3 { background: #73AD21; }
+
+    .img_gallery_demo {
+      box-sizing: border-box;
+      overflow: auto;
+    }
+
+    .img_gallery_demo .img_container {
+      float: left;
+      width: 33.33%;
+      padding: 5px;
+      box-sizing: border-box;
+    }
+
+    .img_gallery_demo .img_container img {
+      width: 100%;
+    }
+
+    .nav_menu_demo ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: auto;
+      background-color: #333;
+    }
+
+    .nav_menu_demo li {
+      float: left;
+    }
+
+    .nav_menu_demo li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .nav_menu_demo li a:hover {
+      background-color: #4070f4;
+    }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -704,35 +870,556 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>The CSS float Property</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">float</span> property specifies how an element should float within its container.
+  </p>
+
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    It places an element on the left or right side of its container, allowing text and inline elements to wrap around it.
+  </p>
+
+  <p style="padding-bottom: 10px;">The <span class="code">float</span> property can have one of the following values:</p>
+
+  <ul style="padding-left: 20px; padding-bottom: 10px;">
+    <li><span class="code">left</span> - The element floats to the left of its container</li>
+    <li><span class="code">right</span> - The element floats to the right of its container</li>
+    <li><span class="code">none</span> - Default. The element does not float and is displayed just where it occurs in the text</li>
+    <li><span class="code">inherit</span> - The element inherits the float value of its parent</li>
+  </ul>
+
+  <p><strong>Tip:</strong> The <span class="code">float</span> property is often used to wrap text around images!</p>
+</section>
+
+<section class="content">
+  <h3>float: right</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    With <span class="code">float: right</span>, the image is pushed to the right edge of its container, and the surrounding text flows around its left side:
   </p>
 
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .float_right_demo { overflow: auto; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .float_right_demo img { float: right; width: 100px; margin-left: 15px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="float_right_demo"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;img src="pineapple.jpg" alt="Pineapple"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; In this paragraph, the image floats to the right, and the text wraps around its left edge. This is one of the oldest CSS layout tricks, long used in print-style web articles to run text beside an illustration or photo instead of leaving the image isolated on its own line. <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <div class="float_right_demo">
+          <img src="images/pineapple.jpg" alt="Pineapple">
+          In this paragraph, the image floats to the right, and the text wraps around its left edge. This is one of the oldest CSS layout tricks, long used in print-style web articles to run text beside an illustration or photo instead of leaving the image isolated on its own line.
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content">
+  <h3>float: left</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    With <span class="code">float: left</span>, the image moves to the left edge, and text flows around its right side instead:
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .float_left_demo { overflow: auto; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .float_left_demo img { float: left; width: 100px; margin-right: 15px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="float_left_demo"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;img src="pineapple.jpg" alt="Pineapple"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; In this paragraph, the image floats to the left, and the text wraps around its right edge instead. The rest of the layout logic is identical to float: right — only the side changes. <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <div class="float_left_demo">
+          <img src="images/pineapple.jpg" alt="Pineapple">
+          In this paragraph, the image floats to the left, and the text wraps around its right edge instead. The rest of the layout logic is identical to float: right — only the side changes.
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content">
+  <h3>float: none</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    This is the default. The element is not floated — it displays right where it appears in the normal flow, with no text wrapping around it:
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .float_none_demo { overflow: auto; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .float_none_demo img { float: none; width: 100px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="float_none_demo"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;img src="pineapple.jpg" alt="Pineapple"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; With float: none, the image is simply inline&sol;block content like any other element — the text here does not wrap around it. <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <div class="float_none_demo">
+          <img src="images/pineapple.jpg" alt="Pineapple">
+          With float: none, the image is simply inline/block content like any other element — the text here does not wrap around it.
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content">
+  <h3>CSS Float for Layout</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Floats are also used to build horizontal layouts. Block-level &lt;div&gt; elements normally stack vertically and take the full available width — floating them left instead makes them sit side-by-side:
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .float_layout_demo { overflow: auto; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .float_layout_demo div { float: left; padding: 15px; color: white; text-align: center; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .div1 { background: red; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .div2 { background: yellow; color: #333; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .div3 { background: green; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="float_layout_demo"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="div1"&gt;div1&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="div2"&gt;div2&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="div3"&gt;div3&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <div class="float_layout_demo section_content">
+          <div class="div1">div1</div>
+          <div class="div2">div2</div>
+          <div class="div3">div3</div>
+        </div>
+      </td>
     </tr>
     </tbody>
   </table>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+  <p><strong><i>Note: </i></strong>This float-based layout technique is largely obsolete now that Flexbox and Grid exist, but it's still common in older codebases and worth recognizing.</p>
 </section>
+
+<section class="content">
+  <h3>The CSS clear Property</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">clear</span> property specifies what should happen with the element that is NEXT to a floating element.
+  </p>
+
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">clear</span> property prevents elements from wrapping around or beside the floated content.
+  </p>
+
+  <p style="padding-bottom: 10px;">This property can have one of the following values:</p>
+
+  <ul style="padding-left: 20px; padding-bottom: 10px;">
+    <li><span class="code">none</span> - Default. Allows elements to float on either side</li>
+    <li><span class="code">left</span> - The element is pushed below floated elements on its left side</li>
+    <li><span class="code">right</span> - The element is pushed below floated elements, on its right side</li>
+    <li><span class="code">both</span> - The element is pushed below floated elements, on both its left and right side</li>
+    <li><span class="code">inherit</span> - The element inherits the clear value from its parent</li>
+  </ul>
+
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Here's a practical demonstration — <span class="code">div2</span> below has <span class="code">clear: left</span> set, forcing it below the floated <span class="code">div1</span> instead of wrapping up beside it:
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .clear_demo_wrap { border: 1px dashed #aaa; padding: 10px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .clear_demo_float { float: left; width: 150px; padding: 10px; background-color: lightblue; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .clear_demo_none { background-color: #f2f2f2; padding: 10px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .clear_demo_cleared { clear: left; background-color: #f2f2f2; padding: 10px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="clear_demo_wrap"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="clear_demo_float"&gt;Floated div (float: left)&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="clear_demo_none"&gt;No clear — this div wraps up beside the float instead of starting below it.&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;br&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="clear_demo_wrap"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="clear_demo_float"&gt;Floated div (float: left)&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="clear_demo_cleared"&gt;clear: left — this div is forced below the float instead.&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <div class="clear_demo_wrap section_content">
+          <div class="clear_demo_float">Floated div (float: left)</div>
+          <div class="clear_demo_none">No clear — this div wraps up beside the float instead of starting below it.</div>
+        </div>
+        <br>
+        <div class="clear_demo_wrap section_content">
+          <div class="clear_demo_float">Floated div (float: left)</div>
+          <div class="clear_demo_cleared">clear: left — this div is forced below the float instead.</div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content">
+  <h3>The Clearfix Hack</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    When every child inside a container is floated, the container itself collapses to zero height — because floated elements are taken out of the normal flow, the parent no longer "sees" them. Here, the green-bordered container has no floated children clearing inside it, so it collapses around them:
+  </p>
+
+  <div class="clearfix_problem">
+    <div class="clearfix_float">Floating box 1</div>
+    <div class="clearfix_float">Floating box 2</div>
+  </div>
+
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The fix is to add a <span class="code">::after</span> pseudo-element to the container that clears both floats, forcing the container to properly enclose its floated children — commonly called the "clearfix" hack:
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .clearfix_fixed { border: 3px solid #4CAF50; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .clearfix_fixed::after { content: ""; clear: both; display: table; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .clearfix_float { float: left; width: 150px; padding: 10px; background-color: lightblue; margin: 10px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="clearfix_fixed"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="clearfix_float"&gt;Floating box 1&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="clearfix_float"&gt;Floating box 2&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <div class="clearfix_fixed">
+          <div class="clearfix_float">Floating box 1</div>
+          <div class="clearfix_float">Floating box 2</div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p><strong><i>Note: </i></strong>Setting <span class="code">overflow: auto</span> (or <span class="code">hidden</span>) on the parent is a simpler alternative that also clears floats, since it forces the container to establish a new block formatting context — but the <span class="code">::after</span> clearfix is the more explicit, widely documented solution and avoids any unwanted scrollbars or clipped content.</p>
+</section>
+
+<section class="content">
+  <h3>Create Equal Width Boxes</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    With <span class="code">float</span>, it's easy to lay out boxes of content side by side using percentage widths — three boxes at <span class="code">33.33%</span>, four at <span class="code">25%</span>, two at <span class="code">50%</span>, and so on. Adding <span class="code">box-sizing: border-box</span> keeps padding and borders inside the declared width, so the boxes don't overflow and break the layout:
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * { box-sizing: border-box; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .equal_width_demo { overflow: auto; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .box { float: left; width: 33.33%; padding: 20px; color: white; text-align: center; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .box1 { background: #4070f4; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .box2 { background: #04AA6D; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .box3 { background: #73AD21; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="equal_width_demo"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="box box1"&gt;Box 1&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="box box2"&gt;Box 2&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="box box3"&gt;Box 3&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <div class="equal_width_demo section_content">
+          <div class="box box1">Box 1</div>
+          <div class="box box2">Box 2</div>
+          <div class="box box3">Box 3</div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content">
+  <h3>Images Side By Side</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The same technique works for an image gallery: wrap each image in a container, float the containers left, and give each one a percentage width:
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * { box-sizing: border-box; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .img_gallery_demo { overflow: auto; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .img_container { float: left; width: 33.33%; padding: 5px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .img_container img { width: 100%; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="img_gallery_demo"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="img_container"&gt;&lt;img src="img_5terre.jpg" alt="Cinque Terre, Italy"&gt;&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="img_container"&gt;&lt;img src="img_forest.jpg" alt="Forest"&gt;&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="img_container"&gt;&lt;img src="img_mountains.jpg" alt="Mountains"&gt;&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <div class="img_gallery_demo section_content">
+          <div class="img_container"><img src="images/img_5terre.jpg" alt="Cinque Terre, Italy"></div>
+          <div class="img_container"><img src="images/img_forest.jpg" alt="Forest"></div>
+          <div class="img_container"><img src="images/img_mountains.jpg" alt="Mountains"></div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content">
+  <h3>Boxes With Equal Heights</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Floated boxes don't automatically match each other's height — if one box has more content than its neighbors, it simply grows taller on its own. A fixed <span class="code">height</span> can force equal heights, but breaks down the moment content doesn't fit, especially on smaller screens:
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .box { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; height: 500px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* breaks if content overflows */ <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="box"&gt;...&lt;&sol;div&gt; <br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        A fixed height is a fragile fix — it only works as long as every box's content happens to fit.
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p><strong><i>Note: </i></strong>Float was never really designed for equal-height columns. CSS Flexbox solves this properly — a flex container automatically stretches every item to match the height of the tallest one, with no fixed height or guesswork needed.</p>
+</section>
+
+<section class="content">
+  <h3>Float-based Navigation Menu</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Another classic use of <span class="code">float</span>: turning a plain &lt;ul&gt; list into a horizontal navigation bar, by floating each &lt;li&gt; left:
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .nav_menu_demo ul { list-style-type: none; margin: 0; padding: 0; overflow: auto; background-color: #333; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .nav_menu_demo li { float: left; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .nav_menu_demo li a { display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .nav_menu_demo li a:hover { background-color: #4070f4; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;nav class="nav_menu_demo"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;ul&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;&lt;a href="#"&gt;Home&lt;&sol;a&gt;&lt;&sol;li&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;&lt;a href="#"&gt;News&lt;&sol;a&gt;&lt;&sol;li&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;&lt;a href="#"&gt;Contact&lt;&sol;a&gt;&lt;&sol;li&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;&lt;a href="#"&gt;About&lt;&sol;a&gt;&lt;&sol;li&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;ul&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;nav&gt; <br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <nav class="nav_menu_demo">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </nav>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p><strong><i>Note: </i></strong>The &lt;ul&gt; needs <span class="code">overflow: auto</span> (a clearfix) so it doesn't collapse around its floated &lt;li&gt; children — the same problem covered earlier in this lesson.</p>
+</section>
+
+<section class="content">
+  <h3>Float and Clear Properties</h3>
+  <hr>
+
+  <table>
+    <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr><td><span class="code">box-sizing</span></td><td>Specifies whether padding/borders are included in an element's total width and height</td></tr>
+    <tr><td><span class="code">clear</span></td><td>Specifies what should happen with an element that is next to a floated element</td></tr>
+    <tr><td><span class="code">float</span></td><td>Specifies whether an element should float to the left, right, or not at all</td></tr>
+    </tbody>
+  </table>
+</section>
+<br>
 <!--Main Section End-->
 
 <!--External JavaScript Library Inclusion Start-->

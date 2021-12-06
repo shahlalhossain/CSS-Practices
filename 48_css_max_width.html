@@ -743,24 +743,38 @@
     Using <span class="code">max-width</span> instead of <span class="code">width</span> improves how the browser handles small windows: the element shrinks to fit a narrow viewport, but never grows past the limit on larger screens:
   </p>
 
-  <div class="section_content">
-    <div class="col_left">
-      &lt;style&gt; <br>
-      &nbsp;&nbsp;&nbsp;&nbsp; div.ex1 { <br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; width: 500px; <br>
-      &nbsp;&nbsp;&nbsp;&nbsp; } <br>
-      &nbsp;&nbsp;&nbsp;&nbsp; div.ex2 { <br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; max-width: 500px; <br>
-      &nbsp;&nbsp;&nbsp;&nbsp; } <br>
-      &lt;/style&gt;
-    </div>
-
-    <div class="col_right">
-      <div class="ex2">
-        This &lt;div&gt; has <span class="code">max-width: 500px</span> instead. Shrink the browser window narrower than 500px and this box will shrink right along with it — no scrollbar.
-      </div>
-    </div>
-  </div>
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; div.ex2 { max-width: 500px; margin: auto; border: 3px solid #73AD21; padding: 10px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="ex2"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This &amp;lt;div&amp;gt; has max-width: 500px instead. Shrink the browser window narrower than 500px and this box will shrink right along with it — no scrollbar. <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <div class="ex2">
+          This &lt;div&gt; has <span class="code">max-width: 500px</span> instead. Shrink the browser window narrower than 500px and this box will shrink right along with it — no scrollbar.
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
 
   <p><strong><i>Note: </i></strong>Try resizing your browser window narrower than 500px to see the difference between the two boxes above — the first keeps overflowing; the second adapts.</p>
 </section>

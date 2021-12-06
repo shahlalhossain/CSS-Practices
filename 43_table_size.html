@@ -35,24 +35,6 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
-    .section_content {
-      overflow: auto;
-    }
-
-    .col_left {
-      width: 30%;
-      float: left;
-      border: 1px solid;
-      border-radius: 5px;
-      padding: 10px;
-    }
-
-    .col_right {
-      width: 70%;
-      float: right;
-      padding-left: 10px;
-    }
-
     #width_table, #height_table, #column_width_table {
       border-collapse: collapse;
     }
@@ -758,23 +740,45 @@
     To set the width of a table, add the <span class="code">width</span> property to the &lt;table&gt; element. It can be a fixed number of pixels, or a percentage of the surrounding container:
   </p>
 
-  <div class="section_content">
-    <div class="col_left">
-      &lt;style&gt; <br>
-      &nbsp;&nbsp;&nbsp;&nbsp; table, th, td { border: 1px solid; } <br>
-      &nbsp;&nbsp;&nbsp;&nbsp; table { width: 100%; } <br>
-      &lt;/style&gt;
-    </div>
-
-    <div class="col_right">
-      <table id="width_table">
-        <tr><th>Firstname</th><th>Lastname</th><th>Savings</th></tr>
-        <tr><td>Shahlal</td><td>Hossain</td><td>$50</td></tr>
-        <tr><td>Kamal</td><td>Hossain</td><td>$94</td></tr>
-        <tr><td>Habiba</td><td>Khan</td><td>$67</td></tr>
-      </table>
-    </div>
-  </div>
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #width_table { border-collapse: collapse; width: 100%; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #width_table th, #width_table td { border: 1px solid #ddd; padding: 8px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;table id="width_table"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;tr&gt;&lt;th&gt;Firstname&lt;&sol;th&gt;&lt;th&gt;Lastname&lt;&sol;th&gt;&lt;th&gt;Savings&lt;&sol;th&gt;&lt;&sol;tr&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;tr&gt;&lt;td&gt;Shahlal&lt;&sol;td&gt;&lt;td&gt;Hossain&lt;&sol;td&gt;&lt;td&gt;$50&lt;&sol;td&gt;&lt;&sol;tr&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;tr&gt;&lt;td&gt;Kamal&lt;&sol;td&gt;&lt;td&gt;Hossain&lt;&sol;td&gt;&lt;td&gt;$94&lt;&sol;td&gt;&lt;&sol;tr&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;tr&gt;&lt;td&gt;Habiba&lt;&sol;td&gt;&lt;td&gt;Khan&lt;&sol;td&gt;&lt;td&gt;$67&lt;&sol;td&gt;&lt;&sol;tr&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;table&gt; <br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <table id="width_table">
+          <tr><th>Firstname</th><th>Lastname</th><th>Savings</th></tr>
+          <tr><td>Shahlal</td><td>Hossain</td><td>$50</td></tr>
+          <tr><td>Kamal</td><td>Hossain</td><td>$94</td></tr>
+          <tr><td>Habiba</td><td>Khan</td><td>$67</td></tr>
+        </table>
+      </td>
+    </tr>
+    </tbody>
+  </table>
 </section>
 
 <section class="content">
@@ -784,23 +788,46 @@
     Likewise, add the <span class="code">height</span> property to the &lt;table&gt; element, or to a &lt;tr&gt;, to set the height of a table or a row:
   </p>
 
-  <div class="section_content">
-    <div class="col_left">
-      &lt;style&gt; <br>
-      &nbsp;&nbsp;&nbsp;&nbsp; table, th, td { border: 1px solid; } <br>
-      &nbsp;&nbsp;&nbsp;&nbsp; tr { height: 50px; } <br>
-      &lt;/style&gt;
-    </div>
-
-    <div class="col_right">
-      <table id="height_table">
-        <tr><th>Firstname</th><th>Lastname</th><th>Savings</th></tr>
-        <tr><td>Shahlal</td><td>Hossain</td><td>$50</td></tr>
-        <tr><td>Kamal</td><td>Hossain</td><td>$94</td></tr>
-        <tr><td>Habiba</td><td>Khan</td><td>$67</td></tr>
-      </table>
-    </div>
-  </div>
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #height_table { border-collapse: collapse; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #height_table th, #height_table td { border: 1px solid #ddd; padding: 8px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #height_table tr { height: 50px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;table id="height_table"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;tr&gt;&lt;th&gt;Firstname&lt;&sol;th&gt;&lt;th&gt;Lastname&lt;&sol;th&gt;&lt;th&gt;Savings&lt;&sol;th&gt;&lt;&sol;tr&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;tr&gt;&lt;td&gt;Shahlal&lt;&sol;td&gt;&lt;td&gt;Hossain&lt;&sol;td&gt;&lt;td&gt;$50&lt;&sol;td&gt;&lt;&sol;tr&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;tr&gt;&lt;td&gt;Kamal&lt;&sol;td&gt;&lt;td&gt;Hossain&lt;&sol;td&gt;&lt;td&gt;$94&lt;&sol;td&gt;&lt;&sol;tr&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;tr&gt;&lt;td&gt;Habiba&lt;&sol;td&gt;&lt;td&gt;Khan&lt;&sol;td&gt;&lt;td&gt;$67&lt;&sol;td&gt;&lt;&sol;tr&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;table&gt; <br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <table id="height_table">
+          <tr><th>Firstname</th><th>Lastname</th><th>Savings</th></tr>
+          <tr><td>Shahlal</td><td>Hossain</td><td>$50</td></tr>
+          <tr><td>Kamal</td><td>Hossain</td><td>$94</td></tr>
+          <tr><td>Habiba</td><td>Khan</td><td>$67</td></tr>
+        </table>
+      </td>
+    </tr>
+    </tbody>
+  </table>
 </section>
 
 <section class="content">
@@ -810,23 +837,46 @@
     To set the width of a specific column, add the <span class="code">width</span> property on a &lt;th&gt; or &lt;td&gt; element. Note that browsers may adjust other columns to make room for the specified width, so you cannot assume a fixed width for the rest of the table.
   </p>
 
-  <div class="section_content">
-    <div class="col_left">
-      &lt;style&gt; <br>
-      &nbsp;&nbsp;&nbsp;&nbsp; table, th, td { border: 1px solid; } <br>
-      &nbsp;&nbsp;&nbsp;&nbsp; th:first-child, td:first-child { width: 70%; } <br>
-      &lt;/style&gt;
-    </div>
-
-    <div class="col_right">
-      <table id="column_width_table">
-        <tr><th>Firstname</th><th>Savings</th></tr>
-        <tr><td>Shahlal Hossain</td><td>$50</td></tr>
-        <tr><td>Kamal Hossain</td><td>$94</td></tr>
-        <tr><td>Habiba Khan</td><td>$67</td></tr>
-      </table>
-    </div>
-  </div>
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #column_width_table { border-collapse: collapse; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #column_width_table th, #column_width_table td { border: 1px solid #ddd; padding: 8px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #column_width_table th:first-child, #column_width_table td:first-child { width: 70%; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;table id="column_width_table"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;tr&gt;&lt;th&gt;Firstname&lt;&sol;th&gt;&lt;th&gt;Savings&lt;&sol;th&gt;&lt;&sol;tr&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;tr&gt;&lt;td&gt;Shahlal Hossain&lt;&sol;td&gt;&lt;td&gt;$50&lt;&sol;td&gt;&lt;&sol;tr&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;tr&gt;&lt;td&gt;Kamal Hossain&lt;&sol;td&gt;&lt;td&gt;$94&lt;&sol;td&gt;&lt;&sol;tr&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;tr&gt;&lt;td&gt;Habiba Khan&lt;&sol;td&gt;&lt;td&gt;$67&lt;&sol;td&gt;&lt;&sol;tr&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;table&gt; <br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <table id="column_width_table">
+          <tr><th>Firstname</th><th>Savings</th></tr>
+          <tr><td>Shahlal Hossain</td><td>$50</td></tr>
+          <tr><td>Kamal Hossain</td><td>$94</td></tr>
+          <tr><td>Habiba Khan</td><td>$67</td></tr>
+        </table>
+      </td>
+    </tr>
+    </tbody>
+  </table>
 
   <p><strong><i>Note: </i></strong>Setting both <span class="code">width</span> and <span class="code">height</span> allows you to control the table's proportions, but the content inside a cell can still force it to grow if it does not fit.</p>
 </section>
