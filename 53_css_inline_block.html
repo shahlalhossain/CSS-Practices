@@ -35,7 +35,40 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
+    span.a {
+      display: inline; /* the default for span */
+      padding: 5px;
+      border: 2px solid red;
+    }
 
+    span.b {
+      display: inline-block;
+      width: 100px;
+      height: 35px;
+      padding: 5px;
+      border: 2px solid red;
+    }
+
+    span.c {
+      display: block;
+      width: 100px;
+      height: 35px;
+      padding: 5px;
+      border: 2px solid red;
+    }
+
+    .nav {
+      background-color: lightgray;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .nav li {
+      display: inline-block;
+      font-size: 18px;
+      padding: 15px;
+    }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -704,35 +737,154 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>The CSS display: inline-block</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Compared to <span class="code">display: inline</span>, the major difference is that <span class="code">display: inline-block</span> allows setting a <span class="code">width</span> and <span class="code">height</span> on the element. Also, with <span class="code">inline-block</span>, the top and bottom margins/paddings are respected, which is not the case with <span class="code">inline</span>.
+  </p>
+
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Compared to <span class="code">display: block</span>, the major difference is that <span class="code">display: inline-block</span> does not add a line-break after the element, so it can sit right beside other elements.
   </p>
 
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; span.a { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: inline; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 5px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 2px solid red; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; span.b { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: inline-block; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; width: 100px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; height: 35px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 5px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 2px solid red; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; span.c { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: block; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; width: 100px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; height: 35px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 5px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 2px solid red; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;display: inline&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat scelerisque elit sit amet consequat. Aliquam erat volutpat. &lt;span class="a"&gt;Aliquam&lt;&sol;span&gt; &lt;span class="a"&gt;venenatis&lt;&sol;span&gt; gravida nisl sit amet facilisis. Nullam cursus fermentum velit sed laoreet.&lt;&sol;div&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;display: inline-block&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat scelerisque elit sit amet consequat. Aliquam erat volutpat. &lt;span class="b"&gt;Aliquam&lt;&sol;span&gt; &lt;span class="b"&gt;venenatis&lt;&sol;span&gt; gravida nisl sit amet facilisis. Nullam cursus fermentum velit sed laoreet.&lt;&sol;div&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;display: block&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat scelerisque elit sit amet consequat. Aliquam erat volutpat. &lt;span class="c"&gt;Aliquam&lt;&sol;span&gt; &lt;span class="c"&gt;venenatis&lt;&sol;span&gt; gravida nisl sit amet facilisis. Nullam cursus fermentum velit sed laoreet.&lt;&sol;div&gt; <br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="padding-left: 20px;">
+        <h2>display: inline</h2>
+        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat scelerisque elit sit amet consequat. Aliquam erat volutpat. <span class="a">Aliquam</span> <span class="a">venenatis</span> gravida nisl sit amet facilisis. Nullam cursus fermentum velit sed laoreet. </div>
+
+        <h2>display: inline-block</h2>
+        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat scelerisque elit sit amet consequat. Aliquam erat volutpat. <span class="b">Aliquam</span> <span class="b">venenatis</span> gravida nisl sit amet facilisis. Nullam cursus fermentum velit sed laoreet. </div>
+
+        <h2>display: block</h2>
+        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat scelerisque elit sit amet consequat. Aliquam erat volutpat. <span class="c">Aliquam</span> <span class="c">venenatis</span> gravida nisl sit amet facilisis. Nullam cursus fermentum velit sed laoreet. </div>
+      </td>
     </tr>
     </tbody>
   </table>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+  <p><strong><i>Note: </i></strong>With <span class="code">display: inline</span> and <span class="code">inline-block</span>, the "Aliquam" and "venenatis" spans sit inline with the surrounding paragraph text. With <span class="code">display: block</span>, those same two words are forced onto their own lines instead, breaking the sentence apart — because a block-level element always starts on a new line and takes up the full width available.</p>
 </section>
+
+<section class="content">
+  <h3>Create a Horizontal Navigation Menu</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    A common use for <span class="code">display: inline-block</span> is to display list items horizontally instead of vertically, to build a horizontal navigation menu:
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .nav { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: lightgray; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; list-style-type: none; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 0; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin: 0; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .nav li { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: inline-block; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-size: 18px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 15px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;ul class="nav"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;Home&lt;&sol;li&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;News&lt;&sol;li&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;Contact&lt;&sol;li&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;About&lt;&sol;li&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;ul&gt; <br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <ul class="nav">
+          <li>Home</li>
+          <li>News</li>
+          <li>Contact</li>
+          <li>About</li>
+        </ul>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p><strong><i>Note: </i></strong>Unlike the float-based nav menu from the previous lesson, this one needs no clearfix — <span class="code">inline-block</span> list items don't pull out of the normal document flow, so the &lt;ul&gt; still wraps around them correctly on its own.</p>
+</section>
+
+<section class="content">
+  <h3>CSS Display Properties</h3>
+  <hr>
+
+  <table>
+    <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr><td><span class="code">display</span></td><td>Specifies how an element is displayed</td></tr>
+    </tbody>
+  </table>
+</section>
+<br>
 <!--Main Section End-->
 
 <!--External JavaScript Library Inclusion Start-->
