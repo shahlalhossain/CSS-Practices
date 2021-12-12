@@ -35,7 +35,21 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
+    .descendant_demo div p {
+      background-color: yellow;
+    }
 
+    .child_demo div > p {
+      background-color: yellow;
+    }
+
+    .adjacent_demo div + p {
+      background-color: yellow;
+    }
+
+    .general_demo div ~ p {
+      background-color: yellow;
+    }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -704,35 +718,267 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS Combinators</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    A combinator explains the relationship between two or more selectors. There are four different combinators in CSS:
+  </p>
+  <ul style="padding-left: 20px; padding-bottom: 10px;">
+    <li>Descendant combinator (space)</li>
+    <li>Child combinator (<span class="code">&gt;</span>)</li>
+    <li>Next sibling combinator (<span class="code">+</span>)</li>
+    <li>Subsequent-sibling combinator (<span class="code">~</span>)</li>
+  </ul>
+</section>
+
+<section class="content">
+  <h3>Descendant Combinator</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The descendant combinator (a single space) matches all elements that are descendants of a specified element — children, grandchildren, and so on, no matter how deeply nested. The example below selects all &lt;p&gt; elements inside a &lt;div&gt; element:
   </p>
 
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; div p { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: yellow; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Paragraph 1 in the div.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Paragraph 1 in the div.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Paragraph 2 in the div.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;section&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Paragraph 3 in the div (inside a section).&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;section&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Paragraph 4. Not in a div.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Paragraph 5. Not in a div.&lt;&sol;p&gt; <br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <div class="descendant_demo" style="text-align: left;">
+          <p>Paragraph 1. Not in a div.</p>
+          <div>
+            <p>Paragraph 1 in the div.</p>
+            <p>Paragraph 2 in the div.</p>
+            <section>
+              <p>Paragraph 3 in the div (inside a section).</p>
+            </section>
+          </div>
+          <p>Paragraph 4. Not in a div.</p>
+          <p>Paragraph 5. Not in a div.</p>
+        </div>
+      </td>
     </tr>
     </tbody>
   </table>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+  <p><strong><i>Note: </i></strong>Paragraph 3 is highlighted too, even though it's wrapped in a &lt;section&gt; — the descendant combinator matches at any depth, not just direct children.</p>
 </section>
+
+<section class="content">
+  <h3>Child Combinator</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The child combinator (<span class="code">&gt;</span>) selects all elements that are the direct children of a specified element — only one level deep, unlike the descendant combinator. The example below selects all &lt;p&gt; elements that are direct children of a &lt;div&gt; element:
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; div &gt; p { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: yellow; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Paragraph 1 (direct child).&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Paragraph 2 (direct child).&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;section&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Paragraph 3 (grandchild, inside a section).&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;section&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Paragraph 4 (direct child).&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Paragraph 5. Not in a div.&lt;&sol;p&gt; <br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <div class="child_demo" style="text-align: left;">
+          <div>
+            <p>Paragraph 1 (direct child).</p>
+            <p>Paragraph 2 (direct child).</p>
+            <section>
+              <p>Paragraph 3 (grandchild, inside a section).</p>
+            </section>
+            <p>Paragraph 4 (direct child).</p>
+          </div>
+          <p>Paragraph 5. Not in a div.</p>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p><strong><i>Note: </i></strong>Paragraph 3 is NOT highlighted this time — it's a grandchild of the &lt;div&gt;, nested one level deeper inside the &lt;section&gt;, so the child combinator skips it.</p>
+</section>
+
+<section class="content">
+  <h3>Next Sibling Combinator</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The next sibling combinator (<span class="code">+</span>) selects an element that is immediately preceded by a specified element — both must share the same parent. The example below selects the first &lt;p&gt; element that comes immediately after a &lt;div&gt;:
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; div + p { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: yellow; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Paragraph 1.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Paragraph 2 (inside the div).&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Paragraph 3 (first sibling right after the div).&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Paragraph 4 (follows another p, not the div).&lt;&sol;p&gt; <br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <div class="adjacent_demo" style="text-align: left;">
+          <p>Paragraph 1.</p>
+          <div>
+            <p>Paragraph 2 (inside the div).</p>
+          </div>
+          <p>Paragraph 3 (first sibling right after the div).</p>
+          <p>Paragraph 4 (follows another p, not the div).</p>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p><strong><i>Note: </i></strong>Only Paragraph 3 is highlighted. Paragraph 4 is also a sibling of the &lt;div&gt;, but it doesn't come immediately after it — Paragraph 3 is in the way — so the next sibling combinator only ever matches one element.</p>
+</section>
+
+<section class="content">
+  <h3>Subsequent-sibling Combinator</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The subsequent-sibling combinator (<span class="code">~</span>) selects all elements that are siblings of a specified element and come after it, no matter how many other elements sit in between. The example below selects every &lt;p&gt; element that is a sibling of, and appears after, a &lt;div&gt;:
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; div ~ p { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: yellow; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Paragraph 1.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Paragraph 2.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Paragraph 3.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;code&gt;Some code.&lt;&sol;code&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Paragraph 4.&lt;&sol;p&gt; <br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <div class="general_demo" style="text-align: left;">
+          <p>Paragraph 1.</p>
+          <div>
+            <p>Paragraph 2.</p>
+          </div>
+          <p>Paragraph 3.</p>
+          <code>Some code.</code>
+          <p>Paragraph 4.</p>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p><strong><i>Note: </i></strong>Both Paragraph 3 and Paragraph 4 are highlighted, even with the &lt;code&gt; element sitting between them — unlike <span class="code">+</span>, the <span class="code">~</span> combinator doesn't require the match to be immediately adjacent, only that it comes after and shares the same parent.</p>
+</section>
+
+<section class="content">
+  <h3>CSS Combinators Reference</h3>
+  <hr>
+
+  <table>
+    <thead>
+    <tr>
+      <th>Combinator</th>
+      <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr><td><span class="code">element element</span></td><td>Descendant combinator — matches all elements that are descendants of a specified element</td></tr>
+    <tr><td><span class="code">element &gt; element</span></td><td>Child combinator — matches all elements that are direct children of a specified element</td></tr>
+    <tr><td><span class="code">element + element</span></td><td>Next sibling combinator — matches an element that is directly after a specified element, sharing the same parent</td></tr>
+    <tr><td><span class="code">element ~ element</span></td><td>Subsequent-sibling combinator — matches every element that is a sibling of, and comes after, a specified element</td></tr>
+    </tbody>
+  </table>
+</section>
+<br>
 <!--Main Section End-->
 
 <!--External JavaScript Library Inclusion Start-->
