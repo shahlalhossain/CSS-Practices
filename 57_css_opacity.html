@@ -35,7 +35,65 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
+    .opacity-demo img { width: 150px; margin-right: 10px; }
+    .opacity-demo span { display: inline-block; text-align: center; width: 150px; margin-right: 10px; }
 
+    img.op02 { opacity: 0.2; }
+    img.op05 { opacity: 0.5; }
+    img.op10 { opacity: 1.0; }
+
+    img.hoverbright { opacity: 0.5; width: 150px; }
+    img.hoverbright:hover { opacity: 1.0; }
+
+    img.hoverfade { opacity: 1.0; width: 150px; }
+    img.hoverfade:hover { opacity: 0.5; }
+
+    .transbox-demo { position: relative; width: 100%; }
+    .box1, .box2, .box3, .box4 {
+      display: inline-block;
+      width: 110px;
+      height: 90px;
+      background: #04aa6d;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-right: 10px;
+    }
+    .box1 { opacity: 1; }
+    .box2 { opacity: 0.6; }
+    .box3 { opacity: 0.3; }
+    .box4 { opacity: 0.1; }
+
+    .rbox1, .rbox2, .rbox3, .rbox4 {
+      display: inline-block;
+      width: 110px;
+      height: 90px;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-right: 10px;
+    }
+    .rbox1 { background: rgba(4, 170, 109, 1); }
+    .rbox2 { background: rgba(4, 170, 109, 0.6); }
+    .rbox3 { background: rgba(4, 170, 109, 0.3); }
+    .rbox4 { background: rgba(4, 170, 109, 0.1); }
+
+    div.background {
+      background: url(images/background.jpg) repeat;
+      border: 2px solid black;
+    }
+
+    div.transbox {
+      margin: 30px;
+      background-color: rgba(255, 255, 255, 0.6);
+      border: 1px solid black;
+    }
+
+    div.transbox p {
+      margin: 5%;
+      font-weight: bold;
+      color: #000000;
+    }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -704,34 +762,261 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS Opacity / Transparency</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">opacity</span> property sets how see-through an element is, on a scale from <span class="code">0.0</span> to <span class="code">1.0</span>. The lower the value, the more transparent the element. A value of <span class="code">1</span> (the default) means fully opaque — not transparent at all.
   </p>
 
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; img.op02 { opacity: 0.2; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; img.op05 { opacity: 0.5; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; img.op10 { opacity: 1.0; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;Opacity Example&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Opacity 0.2:&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;img class="op02" src="img_forest.jpg"&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Opacity 0.5:&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;img class="op05" src="img_forest.jpg"&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Opacity 1.0 (default):&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;img class="op10" src="img_forest.jpg"&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <h2>Opacity Example</h2>
+        <div class="opacity-demo">
+          <span>
+            <img class="op02" src="images/img_forest.jpg" alt="forest"><br>Opacity 0.2
+          </span>
+          <span>
+            <img class="op05" src="images/img_forest.jpg" alt="forest"><br>Opacity 0.5
+          </span>
+          <span>
+            <img class="op10" src="images/img_forest.jpg" alt="forest"><br>Opacity 1.0
+          </span>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content">
+  <h3>Opacity and the :hover Selector</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Combining <span class="code">opacity</span> with the <span class="code">:hover</span> selector creates an interactive fade effect: an image can start semi-transparent and become fully visible on mouse-over, or do the reverse and fade out when hovered.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; img { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; opacity: 0.5; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; img:hover { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; opacity: 1.0; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;Hover to Brighten&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;img src="img_mountains.jpg"&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <h2>Hover to Brighten</h2>
+        <img class="hoverbright" src="images/img_mountains.jpg" alt="mountains">
+      </td>
     </tr>
     </tbody>
   </table>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+  <p><strong><i>Note: </i></strong>The reverse effect, an image that fades on hover instead, is created by swapping the two opacity values: <span class="code">img { opacity: 1.0; }</span> and <span class="code">img:hover { opacity: 0.5; }</span>.</p>
+</section>
+
+<section class="content">
+  <h3>Transparent Boxes</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Setting <span class="code">opacity</span> on an element also fades everything inside it, including its text, since opacity applies to the element as a whole, not just its background. This can make text hard to read when the opacity value is low.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; div.box1 { background: #04aa6d; opacity: 1; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; div.box2 { background: #04aa6d; opacity: 0.6; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; div.box3 { background: #04aa6d; opacity: 0.3; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; div.box4 { background: #04aa6d; opacity: 0.1; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="box1"&gt;Opacity 1&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="box2"&gt;Opacity 0.6&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="box3"&gt;Opacity 0.3&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="box4"&gt;Opacity 0.1&lt;&sol;div&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <div class="transbox-demo">
+          <div class="box1">Opacity 1</div>
+          <div class="box2">Opacity 0.6</div>
+          <div class="box3">Opacity 0.3</div>
+          <div class="box4">Opacity 0.1</div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content">
+  <h3>Transparency Using RGBA Background Color</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    To fade only the background of an element and keep its text fully readable, use an <span class="code">rgba()</span> background-color instead of the <span class="code">opacity</span> property. The fourth value in <span class="code">rgba()</span> is the alpha channel, which controls the background's transparency without affecting any child content.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; div.rbox1 { background: rgba(4, 170, 109, 1); } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; div.rbox2 { background: rgba(4, 170, 109, 0.6); } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; div.rbox3 { background: rgba(4, 170, 109, 0.3); } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; div.rbox4 { background: rgba(4, 170, 109, 0.1); } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="rbox1"&gt;100% opacity&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="rbox2"&gt;60% opacity&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="rbox3"&gt;30% opacity&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="rbox4"&gt;10% opacity&lt;&sol;div&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <div class="transbox-demo">
+          <div class="rbox1">100% opacity</div>
+          <div class="rbox2">60% opacity</div>
+          <div class="rbox3">30% opacity</div>
+          <div class="rbox4">10% opacity</div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content">
+  <h3>Text in a Transparent Box</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Putting these ideas together: a background image sits inside an outer <span class="code">&lt;div&gt;</span>, and a semi-transparent white <span class="code">rgba()</span> box is placed on top of it, containing fully opaque text.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; div.background { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background: url(background.jpg) repeat; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 2px solid black; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; div.transbox { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin: 30px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: rgba(255, 255, 255, 0.6); <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 1px solid black; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; div.transbox p { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin: 5%; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-weight: bold; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: #000000; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="background"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="transbox"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;This is some text that is placed in the transparent box.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <div class="background">
+          <div class="transbox">
+            <p>This is some text that is placed in the transparent box.</p>
+          </div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p><strong><i>Note: </i></strong>The reference example tiles a flower photo (<span class="code">klematis.jpg</span>); this page reuses the repo's existing <span class="code">background.jpg</span> tile instead of downloading a new image.</p>
 </section>
 <!--Main Section End-->
 
