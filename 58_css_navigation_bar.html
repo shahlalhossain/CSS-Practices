@@ -35,7 +35,9 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
-
+    ul.navbar-base-raw li {
+      margin-left: 20px;
+    }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -704,34 +706,98 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS Navigation Bar</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    A navigation bar is one of the most important parts of a website — it lets users jump between pages or sections. Rather than being a special HTML element, a navbar is really just a styled list of links, which makes <span class="code">&lt;ul&gt;</span> and <span class="code">&lt;li&gt;</span> a natural fit for building one. It is usually placed either at the top of the page as a horizontal bar, or along the side as a vertical sidebar.
   </p>
 
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;ul&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;&lt;a href="default.asp"&gt;Home&lt;&sol;a&gt;&lt;&sol;li&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;&lt;a href="news.asp"&gt;News&lt;&sol;a&gt;&lt;&sol;li&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;&lt;a href="contact.asp"&gt;Contact&lt;&sol;a&gt;&lt;&sol;li&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;&lt;a href="about.asp"&gt;About&lt;&sol;a&gt;&lt;&sol;li&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;ul&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <ul class="navbar-base-raw">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">News</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content">
+  <h3>Remove the Default List Styling</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The raw list above still looks like a list: bulleted and indented. The usual next step strips that away with <span class="code">list-style-type: none</span> to remove the bullets, and resets the browser's default <span class="code">margin</span> and <span class="code">padding</span> on the <span class="code">&lt;ul&gt;</span> to zero.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ul { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; list-style-type: none; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin: 0; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 0; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;ul&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;&lt;a href="default.asp"&gt;Home&lt;&sol;a&gt;&lt;&sol;li&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;&lt;a href="news.asp"&gt;News&lt;&sol;a&gt;&lt;&sol;li&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;&lt;a href="contact.asp"&gt;Contact&lt;&sol;a&gt;&lt;&sol;li&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;&lt;a href="about.asp"&gt;About&lt;&sol;a&gt;&lt;&sol;li&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;ul&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <ul style="list-style-type: none; margin: 0; padding: 0;">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">News</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </td>
     </tr>
     </tbody>
   </table>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+  <p><strong><i>Note: </i></strong>This reset list is the shared starting point for both kinds of navbar covered next: a <span class="code">display: block</span> vertical navbar (see the next lesson), and an <span class="code">inline</span> or <span class="code">float</span> horizontal navbar (see the lesson after that).</p>
 </section>
 <!--Main Section End-->
 
