@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-  <title>CSS | Rough</title>
+  <title>CSS | Image Sprites</title>
 
   <!--Meta Section Start-->
   <meta charset="UTF-8">
@@ -35,7 +35,97 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
+    #home {
+      width: 46px;
+      height: 44px;
+      background: url(images/img_navsprites.gif) 0 0;
+    }
 
+    #prev {
+      width: 43px;
+      height: 44px;
+      background: url(images/img_navsprites.gif) -47px 0;
+    }
+
+    #next {
+      width: 43px;
+      height: 44px;
+      background: url(images/img_navsprites.gif) -91px 0;
+    }
+
+    #home:hover {
+      background: url(images/img_navsprites_hover.gif) 0 -45px;
+    }
+
+    #prev:hover {
+      background: url(images/img_navsprites_hover.gif) -47px -45px;
+    }
+
+    #next:hover {
+      background: url(images/img_navsprites_hover.gif) -91px -45px;
+    }
+
+    .sprite-nav img {
+      border: 0;
+      display: inline-block;
+    }
+
+    ul.sprite-list {
+      position: relative;
+      width: 100%;
+      height: 45px;
+    }
+
+    ul.sprite-list li {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      position: absolute;
+      top: 0;
+    }
+
+    ul.sprite-list li a {
+      display: block;
+      width: 46px;
+      height: 44px;
+      text-indent: -9999px;
+    }
+
+    #li-home {
+      left: 0;
+    }
+
+    #li-prev {
+      left: 63px;
+    }
+
+    #li-next {
+      left: 129px;
+    }
+
+    #li-home a {
+      background: url(images/img_navsprites.gif) 0 0;
+    }
+
+    #li-prev a {
+      background: url(images/img_navsprites.gif) -47px 0;
+    }
+
+    #li-next a {
+      background: url(images/img_navsprites.gif) -91px 0;
+    }
+
+    #li-home a:hover {
+      background: url(images/img_navsprites_hover.gif) 0 -45px;
+    }
+
+    #li-prev a:hover {
+      background: url(images/img_navsprites_hover.gif) -47px -45px;
+    }
+
+    #li-next a:hover {
+      background: url(images/img_navsprites_hover.gif) -91px -45px;
+    }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -704,34 +794,132 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS Image Sprites</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    An <span class="code">image sprite</span> is a single image file that bundles several smaller images together. Combining images this way cuts down the number of server requests a page needs and often saves bandwidth, since one larger file loads faster than many small ones. Showing just one piece of the sprite is done with the <span class="code">background-image</span> and <span class="code">background-position</span> properties.
+  </p>
+
+  <h3>Image Sprites - Simple Example</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Instead of using three separate images for a Home, Previous, and Next icon, this sprite sheet (<span class="code">img_navsprites.gif</span>) holds all three side by side in one file:
+  </p>
+  <p style="text-align: center; padding: 10px;">
+    <img src="images/img_navsprites.gif" alt="Navigation Sprites" style="border: 1px solid #ccc;">
+  </p>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    With CSS, only the part of the sprite image we need is shown, by setting a fixed element size and shifting the background with a negative <span class="code">background-position</span>.
   </p>
 
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #home { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; width: 46px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; height: 44px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background: url(img_navsprites.gif) 0 0; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div id="home"&gt;&lt;&sol;div&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <div id="home"></div>
+      </td>
     </tr>
     </tbody>
   </table>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+  <p><strong><i>Note: </i></strong>The width/height is set to match the size of the part of the image we want to show (here the Home icon, 46&times;44 pixels), and overflow of the rest of the sprite sheet is clipped off automatically since the element is smaller than the full background image.</p>
+</section>
+
+<section class="content">
+  <h3>Image Sprites - Create a Navigation List</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The same sprite sheet can be used to build a horizontal icon navigation bar: an unordered list is positioned with <span class="code">position: relative</span>, each <span class="code">&lt;li&gt;</span> is positioned absolutely at the left offset where its icon should sit, and the anchor inside each item is sized to exactly one icon with its own slice of the background.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #navlist { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; position: relative; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #navlist li { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin: 0; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 0; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; list-style: none; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; position: absolute; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; top: 0; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #home { left: 0px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #prev { left: 63px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #next { left: 129px; } <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #navlist li, #navlist a { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; height: 44px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: block; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #home a { width: 46px; background: url('img_navsprites.gif') 0 0; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #prev a { width: 43px; background: url('img_navsprites.gif') -47px 0; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #next a { width: 43px; background: url('img_navsprites.gif') -91px 0; } <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #home a:hover { background: url('img_navsprites_hover.gif') 0 -45px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #prev a:hover { background: url('img_navsprites_hover.gif') -47px -45px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #next a:hover { background: url('img_navsprites_hover.gif') -91px -45px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;ul id="navlist"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li id="home"&gt;&lt;a href="default.asp"&gt;&lt;&sol;a&gt;&lt;&sol;li&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li id="prev"&gt;&lt;a href="css_intro.asp"&gt;&lt;&sol;a&gt;&lt;&sol;li&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li id="next"&gt;&lt;a href="css_syntax.asp"&gt;&lt;&sol;a&gt;&lt;&sol;li&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;ul&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <ul class="sprite-list">
+          <li id="li-home"><a href="#">Home</a></li>
+          <li id="li-prev"><a href="#">Previous</a></li>
+          <li id="li-next"><a href="#">Next</a></li>
+        </ul>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p><strong><i>Note: </i></strong>Hover your mouse over each icon in the output column &mdash; the <span class="code">:hover</span> rule swaps in a second sprite sheet (<span class="code">img_navsprites_hover.gif</span>) whose matching icon sits 45 pixels lower, so only the <span class="code">background-position</span> y-offset changes on hover, not the image itself.</p>
 </section>
 <!--Main Section End-->
 
