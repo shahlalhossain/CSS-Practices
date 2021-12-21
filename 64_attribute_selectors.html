@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-  <title>CSS | Rough</title>
+  <title>CSS | Attribute Selectors</title>
 
   <!--Meta Section Start-->
   <meta charset="UTF-8">
@@ -35,7 +35,48 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
+    .attr-demo a[target] {
+      background-color: yellow;
+    }
 
+    .attr-demo a[title="w3s"] {
+      color: #ff5722;
+      font-weight: bold;
+    }
+
+    .attr-demo [class~="flower"] {
+      border: 2px dashed green;
+      padding: 4px;
+      display: inline-block;
+    }
+
+    .attr-demo [lang|="en"] {
+      background: #e8f4ff;
+      padding: 2px 6px;
+    }
+
+    .attr-demo a[href^="https"] {
+      color: green;
+      font-weight: bold;
+    }
+
+    .attr-demo a[href$=".pdf"] {
+      color: #cc0000;
+      font-weight: bold;
+    }
+
+    .attr-demo a[href*="w3schools"] {
+      text-decoration: underline wavy;
+    }
+
+    .attr-demo input[type="text" i] {
+      border: 2px solid #ff5722;
+      padding: 4px;
+    }
+
+    .attr-demo form {
+      margin-top: 8px;
+    }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -704,34 +745,362 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS Attribute Selectors</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Instead of matching by tag, class or id, an <span class="code">attribute selector</span> matches HTML elements based on an attribute or attribute value, written inside square brackets. This is handy for styling elements that share a particular attribute &mdash; such as every link that opens in a new tab &mdash; without needing to add a class to each one by hand.
+  </p>
+
+  <h3>CSS [attribute] Selector</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">[attribute]</span> selector matches every element that simply has the given attribute present, no matter its value.
   </p>
 
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a[target] { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: yellow; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;CSS [attribute] Selector&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Select and style the links with a target attribute:&lt;&sol;p&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;a href="https://www.w3schools.com" target="_blank"&gt;W3schools.com&lt;&sol;a&gt; &lt;br&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;a href="https://www.w3schools.com/css/"&gt;CSS&lt;&sol;a&gt; &lt;br&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;a href="https://www.w3schools.com/html/" target="_blank"&gt;HTML&lt;&sol;a&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;" class="attr-demo">
+        <p>Select and style the links with a target attribute:</p>
+        <a href="https://www.w3schools.com" target="_blank">W3schools.com</a> <br>
+        <a href="https://www.w3schools.com/css/">CSS</a> <br>
+        <a href="https://www.w3schools.com/html/" target="_blank">HTML</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content">
+  <h3>CSS [attribute="value"] Selector</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">[attribute="value"]</span> selector matches elements whose attribute equals an exact given value.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a[title="w3s"] { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: #ff5722; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-weight: bold; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;CSS [attribute="value"] Selector&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Only the link whose title is exactly "w3s" is styled:&lt;&sol;p&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;a href="https://www.w3schools.com" title="w3s"&gt;W3Schools&lt;&sol;a&gt; &lt;br&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;a href="https://www.w3schools.com" title="other"&gt;Another link&lt;&sol;a&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;" class="attr-demo">
+        <p>Only the link whose title is exactly "w3s" is styled:</p>
+        <a href="https://www.w3schools.com" title="w3s">W3Schools</a> <br>
+        <a href="https://www.w3schools.com" title="other">Another link</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content">
+  <h3>CSS [attribute~="value"] Selector</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">[attribute~="value"]</span> selector matches elements whose attribute value is a space-separated list of words, one of which is exactly the given value &mdash; for example, matching <span class="code">class="flower rose"</span> but also <span class="code">class="rose flower new"</span>, as long as "flower" appears as a whole word.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [class~="flower"] { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 2px dashed green; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;CSS [attribute~="value"] Selector&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="flower rose"&gt;flower rose&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="rose flower new"&gt;rose flower new&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="flowering"&gt;flowering (no exact word match)&lt;&sol;div&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;" class="attr-demo">
+        <div class="flower rose">flower rose</div>
+        <div class="rose flower new">rose flower new</div>
+        <div class="flowering">flowering (no exact word match)</div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content">
+  <h3>CSS [attribute|="value"] Selector</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">[attribute|="value"]</span> selector matches elements whose attribute value is exactly the given value, or starts with that value immediately followed by a hyphen (<span class="code">value-</span>). It's commonly used with the <span class="code">lang</span> attribute to match language sub-codes, e.g. <span class="code">en</span> and <span class="code">en-US</span>.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [lang|="en"] { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background: #e8f4ff; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;CSS [attribute|="value"] Selector&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p lang="en"&gt;Hello (lang="en")&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p lang="en-us"&gt;Hello, y'all (lang="en-us")&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p lang="es"&gt;Hola (lang="es", not matched)&lt;&sol;p&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;" class="attr-demo">
+        <p lang="en">Hello (lang="en")</p>
+        <p lang="en-us">Hello, y'all (lang="en-us")</p>
+        <p lang="es">Hola (lang="es", not matched)</p>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content">
+  <h3>CSS [attribute^="value"] Selector</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">[attribute^="value"]</span> selector matches elements whose attribute value <strong>starts with</strong> the given value.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a[href^="https"] { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: green; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;CSS [attribute^="value"] Selector&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;a href="https://www.w3schools.com"&gt;Secure (https) link&lt;&sol;a&gt; &lt;br&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;a href="http://www.w3schools.com"&gt;Plain (http) link&lt;&sol;a&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;" class="attr-demo">
+        <a href="https://www.w3schools.com">Secure (https) link</a> <br>
+        <a href="http://www.w3schools.com">Plain (http) link</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content">
+  <h3>CSS [attribute$="value"] Selector</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">[attribute$="value"]</span> selector matches elements whose attribute value <strong>ends with</strong> the given value &mdash; useful for styling links by file type.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a[href$=".pdf"] { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: #cc0000; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;CSS [attribute$="value"] Selector&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;a href="/files/report.pdf"&gt;Download report.pdf&lt;&sol;a&gt; &lt;br&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;a href="/files/notes.docx"&gt;Download notes.docx&lt;&sol;a&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;" class="attr-demo">
+        <a href="/files/report.pdf">Download report.pdf</a> <br>
+        <a href="/files/notes.docx">Download notes.docx</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content">
+  <h3>CSS [attribute*="value"] Selector</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">[attribute*="value"]</span> selector matches elements whose attribute value <strong>contains</strong> the given value anywhere within it &mdash; the broadest substring match of the group.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a[href*="w3schools"] { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; text-decoration: underline wavy; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;CSS [attribute*="value"] Selector&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;a href="https://www.w3schools.com/css/"&gt;CSS Tutorial&lt;&sol;a&gt; &lt;br&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;a href="https://example.com"&gt;Unrelated link&lt;&sol;a&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;" class="attr-demo">
+        <a href="https://www.w3schools.com/css/">CSS Tutorial</a> <br>
+        <a href="https://example.com">Unrelated link</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content">
+  <h3>CSS Styling Forms with Attribute Selectors</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Attribute selectors are frequently used on HTML forms, to style specific <span class="code">&lt;input&gt;</span> types without adding a class to every field, e.g. <span class="code">input[type="text"]</span>.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; input[type="text" i] { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 2px solid #ff5722; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;Styling Form Inputs&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;form&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;input type="TEXT" placeholder="Text input (type=TEXT, matched case-insensitively)"&gt; &lt;br&gt;&lt;br&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;input type="checkbox"&gt; &lt;label&gt;Checkbox input (not matched)&lt;&sol;label&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;form&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;" class="attr-demo">
+        <form>
+          <input type="TEXT" placeholder="Text input (type=TEXT, matched case-insensitively)" style="width: 90%;"> <br><br>
+          <input type="checkbox"> <label>Checkbox input (not matched)</label>
+        </form>
+      </td>
     </tr>
     </tbody>
   </table>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+  <p><strong><i>Note: </i></strong>Adding a lowercase <span class="code">i</span> just before the closing bracket, as in <span class="code">[type="text" i]</span>, makes the value match case-insensitively &mdash; so <span class="code">type="TEXT"</span> above still matches even though the selector's value is written in lowercase.</p>
 </section>
 <!--Main Section End-->
 
