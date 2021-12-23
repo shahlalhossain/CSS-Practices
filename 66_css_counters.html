@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-  <title>CSS | Rough</title>
+  <title>CSS | Counters</title>
 
   <!--Meta Section Start-->
   <meta charset="UTF-8">
@@ -35,7 +35,32 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
+    .counter-increment {
+      counter-reset: section-inc;
+    }
 
+    .counter-increment h4::before {
+      counter-increment: section-inc;
+      content: "Section " counter(section-inc) ": ";
+    }
+
+    .counter-decrement {
+      counter-reset: section-dec;
+    }
+
+    .counter-decrement h4::before {
+      counter-increment: section-dec -1;
+      content: "Section " counter(section-dec) ": ";
+    }
+
+    .counter-custom {
+      counter-reset: section-custom;
+    }
+
+    .counter-custom h4::before {
+      counter-increment: section-custom 2;
+      content: "Section " counter(section-custom) ": ";
+    }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -704,34 +729,192 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS Counters</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    A <span class="code">CSS counter</span> works like a variable maintained by CSS, whose value can be incremented by CSS rules to track how many times it's used. This makes it possible to auto-number headings, list items or other repeated elements purely in CSS, with no manual numbering and no JavaScript.
+  </p>
+
+  <h3>CSS Automatic Numbering With Counters</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Four properties work together to maintain a counter:
   </p>
 
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr><td><span class="code">counter-reset</span></td><td>Creates or resets a counter</td></tr>
+    <tr><td><span class="code">counter-increment</span></td><td>Increments a counter's value</td></tr>
+    <tr><td><span class="code">content</span></td><td>Inserts generated content, often together with <span class="code">counter()</span></td></tr>
+    <tr><td><span class="code">counter()</span> / <span class="code">counters()</span></td><td>Adds the value of a counter to an element, as a string</td></tr>
+    </tbody>
+  </table>
+
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    A counter must first be created with <span class="code">counter-reset</span> &mdash; usually on a shared ancestor such as <span class="code">body</span> &mdash; before it can be incremented and displayed elsewhere.
+  </p>
+</section>
+
+<section class="content">
+  <h3>Increment a Counter</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    This example creates a counter named <span class="code">section</span> on the <span class="code">body</span>, then increments it once per heading and inserts the running total before each one via <span class="code">::before</span>.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; body { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; counter-reset: section; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h2::before { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; counter-increment: section; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; content: "Section " counter(section) ": "; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;HTML Tutorial&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;CSS Tutorial&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;JavaScript Tutorial&lt;&sol;h2&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;" class="counter-increment">
+        <h4>HTML Tutorial</h4>
+        <h4>CSS Tutorial</h4>
+        <h4>JavaScript Tutorial</h4>
+      </td>
     </tr>
     </tbody>
   </table>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+  <p><strong><i>Note: </i></strong>This page's own <span class="code">h2</span> style is already used for the lesson heading above, so the live output column uses <span class="code">h4</span> instead to avoid a visual clash; the CSS logic (<span class="code">counter-reset</span> / <span class="code">counter-increment</span> / <span class="code">content</span>) is otherwise identical to the reference, which targets <span class="code">h2</span>.</p>
+</section>
+
+<section class="content">
+  <h3>Decrement a Counter</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    <span class="code">counter-increment</span> accepts an optional second value, the step size &mdash; a negative number counts the counter down instead of up.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; body { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; counter-reset: section; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h2::before { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; counter-increment: section -1; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; content: "Section " counter(section) ": "; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;HTML Tutorial&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;CSS Tutorial&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;JavaScript Tutorial&lt;&sol;h2&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;" class="counter-decrement">
+        <h4>HTML Tutorial</h4>
+        <h4>CSS Tutorial</h4>
+        <h4>JavaScript Tutorial</h4>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p><strong><i>Note: </i></strong>Since the counter starts at 0 and steps by -1, the labels read "Section -1", "Section -2", "Section -3" &mdash; the same substitution of <span class="code">h4</span> for <span class="code">h2</span> applies here as in the previous example.</p>
+</section>
+
+<section class="content">
+  <h3>Increment a Counter by a Custom Value</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The step size can be any number, not just 1 or -1 &mdash; here the counter steps by 2 each time.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; body { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; counter-reset: section; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h2::before { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; counter-increment: section 2; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; content: "Section " counter(section) ": "; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;HTML Tutorial&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;CSS Tutorial&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;JavaScript Tutorial&lt;&sol;h2&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;" class="counter-custom">
+        <h4>HTML Tutorial</h4>
+        <h4>CSS Tutorial</h4>
+        <h4>JavaScript Tutorial</h4>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p><strong><i>Note: </i></strong>The labels read "Section 2", "Section 4", "Section 6" since the counter steps by 2 each time instead of 1.</p>
 </section>
 <!--Main Section End-->
 
