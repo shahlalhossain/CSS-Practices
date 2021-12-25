@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-  <title>CSS | Rough</title>
+  <title>CSS | Units</title>
 
   <!--Meta Section Start-->
   <meta charset="UTF-8">
@@ -35,7 +35,7 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
-
+    .units-table th, .units-table td { text-align: left; }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -704,34 +704,197 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS Units</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Many CSS properties take a "length" value &mdash; <span class="code">font-size</span>, <span class="code">width</span>, <span class="code">margin</span>, <span class="code">padding</span>, <span class="code">border</span>, and more all need a unit attached to a number before the browser can size them. CSS units fall into two groups:
+  </p>
+  <ul style="padding-left: 30px;">
+    <li><strong>Absolute units</strong> &mdash; fixed, screen-size independent</li>
+    <li><strong>Relative units</strong> &mdash; sized relative to another length, such as a parent element, the root element, or the viewport</li>
+  </ul>
+</section>
+
+<section class="content">
+  <h3>CSS Absolute Units</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Absolute units are fixed — a length expressed in any of them renders at exactly that physical size no matter the screen. Because they don't adapt when the screen size changes, they're generally discouraged for everyday web layout, but they do make sense when the output medium is known in advance, such as a print stylesheet. <span class="code">px</span> (pixels) is by far the most commonly used absolute unit on the web.
+  </p>
+
+  <table class="units-table">
+    <thead>
+    <tr>
+      <th style="width: 15%;">Unit</th>
+      <th style="width: 65%;">Description</th>
+      <th style="width: 20%;">Example</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr><td><span class="code">cm</span></td><td>Centimeters</td><td>2cm</td></tr>
+    <tr><td><span class="code">mm</span></td><td>Millimeters</td><td>20mm</td></tr>
+    <tr><td><span class="code">in</span></td><td>Inches (1in = 96px = 2.54cm)</td><td>1in</td></tr>
+    <tr><td><span class="code">px</span></td><td>Pixels (1px = 1/96th of 1in). The most used absolute unit; a reliable reference for screen displays.</td><td>16px</td></tr>
+    <tr><td><span class="code">pt</span></td><td>Points (1pt = 1/72 of 1in)</td><td>12pt</td></tr>
+    <tr><td><span class="code">pc</span></td><td>Picas (1pc = 12pt)</td><td>3pc</td></tr>
+    </tbody>
+  </table>
+
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Setting font sizes with <span class="code">px</span> gives full, precise control over text size, but a pixel value does not scale with the user's screen — and browsers that let a reader change their default font size (not just zoom) won't affect <span class="code">px</span>-based text the way they will relative units.
   </p>
 
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h1 { font-size: 40px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h2 { font-size: 30px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p { font-size: 17px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;This is heading 1&lt;&sol;h1&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;This is heading 2&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;This is a paragraph, set with a fixed pixel size.&lt;&sol;p&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <h1 style="font-size: 40px; margin: 0;">This is heading 1</h1>
+        <h2 style="font-size: 30px; margin: 0;">This is heading 2</h2>
+        <p style="font-size: 17px;">This is a paragraph, set with a fixed pixel size.</p>
+      </td>
     </tr>
     </tbody>
   </table>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+  <p><strong><i>Note: </i></strong>No whitespace is allowed between the number and the unit (<span class="code">20 px</span> is invalid, <span class="code">20px</span> is correct) &mdash; except for a value of zero, which never needs a unit at all (<span class="code">margin: 0;</span>).</p>
+</section>
+
+<section class="content">
+  <h3>CSS Relative Units</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Relative units size an element in relation to something else — a parent's font size, the root element's font size, or the viewport — rather than to a fixed physical measurement. Because of that, they scale naturally across different screen sizes and are the better default for responsive design. The two most used relative units are <span class="code">em</span> and <span class="code">rem</span>.
+  </p>
+
+  <table class="units-table">
+    <thead>
+    <tr>
+      <th style="width: 15%;">Unit</th>
+      <th style="width: 85%;">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr><td><span class="code">em</span></td><td>Relative to the font-size of the element's parent (2em means 2 times the size of the parent's font)</td></tr>
+    <tr><td><span class="code">rem</span></td><td>Relative to the font-size of the root (<span class="code">&lt;html&gt;</span>) element, regardless of nesting depth</td></tr>
+    <tr><td><span class="code">%</span></td><td>Relative to the parent element's corresponding value</td></tr>
+    <tr><td><span class="code">vw</span></td><td>1% of the viewport's width</td></tr>
+    <tr><td><span class="code">vh</span></td><td>1% of the viewport's height</td></tr>
+    <tr><td><span class="code">vmin</span></td><td>1% of the viewport's smaller dimension (width or height)</td></tr>
+    <tr><td><span class="code">vmax</span></td><td>1% of the viewport's larger dimension (width or height)</td></tr>
+    <tr><td><span class="code">ch</span></td><td>Relative to the width of the "0" (zero) character of the element's font</td></tr>
+    </tbody>
+  </table>
+
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    With a parent font size of 16px, <span class="code">2.5em</span> computes to 40px. Unlike pixels, text sized with <span class="code">em</span> still responds if the reader changes their browser's default font size.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; body { font-size: 16px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h1 { font-size: 2.5em; } &sol;* 40px *&sol; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h2 { font-size: 1.875em; } &sol;* 30px *&sol; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p { font-size: 1em; } &sol;* 16px *&sol; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;This is heading 1&lt;&sol;h1&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;This is heading 2&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;This is a paragraph, sized in em units.&lt;&sol;p&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <h1 style="font-size: 2.5em; margin: 0;">This is heading 1</h1>
+        <h2 style="font-size: 1.875em; margin: 0;">This is heading 2</h2>
+        <p style="font-size: 1em;">This is a paragraph, sized in em units.</p>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    <span class="code">rem</span> works the same way as <span class="code">em</span>, but always measures against the root <span class="code">&lt;html&gt;</span> element's font size instead of the immediate parent — so nested elements don't compound unexpectedly, and changing one root value rescales the whole page at once.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; html { font-size: 16px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h1 { font-size: 2.5rem; } &sol;* 40px *&sol; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h2 { font-size: 1.875rem; } &sol;* 30px *&sol; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p { font-size: 1rem; } &sol;* 16px *&sol; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;This is heading 1&lt;&sol;h1&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;This is heading 2&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;This is a paragraph, sized in rem units.&lt;&sol;p&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <h1 style="font-size: 2.5rem; margin: 0;">This is heading 1</h1>
+        <h2 style="font-size: 1.875rem; margin: 0;">This is heading 2</h2>
+        <p style="font-size: 1rem;">This is a paragraph, sized in rem units.</p>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p><strong><i>Tip: </i></strong>The <span class="code">em</span> and <span class="code">rem</span> units are perfect for creating scalable and responsive websites.</p>
 </section>
 <!--Main Section End-->
 
