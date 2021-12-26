@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-  <title>CSS | Rough</title>
+  <title>CSS | Specificity</title>
 
   <!--Meta Section Start-->
   <meta charset="UTF-8">
@@ -704,34 +704,185 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS Specificity</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    <strong>Specificity</strong> is the algorithm the browser uses to decide which CSS rule actually applies when two or more conflicting rules target the same element. When several declarations could all set the same property on the same element, the one with the highest specificity wins out.
   </p>
 
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p {color: red;} <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Hello World!&lt;&sol;p&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p style="color: red;">Hello World!</p>
+      </td>
     </tr>
     </tbody>
   </table>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Adding a class selector for the same element: a class is more specific than a plain element (tag name) selector, so the class rule now wins even though the element rule is still there.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .test {color: green;} <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p {color: red;} <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="test"&gt;Hello World!&lt;&sol;p&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p style="color: green;">Hello World!</p>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Adding an ID selector on top of both: an ID outranks a class, so the <span class="code">#demo</span> rule now wins, even though the class rule and the element rule are both still present.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #demo {color: blue;} <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .test {color: green;} <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p {color: red;} <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p id="demo" class="test"&gt;Hello World!&lt;&sol;p&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p style="color: blue;">Hello World!</p>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Finally, adding an inline <span class="code">style</span> attribute: inline styles sit directly on the element itself and outrank every selector-based rule, including IDs, so pink wins over all three stylesheet rules.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #demo {color: blue;} <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .test {color: green;} <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p {color: red;} <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p id="demo" class="test" style="color: pink;"&gt;Hello World!&lt;&sol;p&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p style="color: pink;">Hello World!</p>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p><strong><i>Note: </i></strong>Specificity only decides a winner when rules genuinely conflict on the same property for the same element. A rule marked <span class="code">!important</span> overrides specificity entirely (covered in the next lesson).</p>
+</section>
+
+<section class="content">
+  <h3>Specificity Hierarchy</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Every selector earns a specificity "weight", expressed as three numbers (X-Y-Z), counted from most to least powerful:
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 35%;">Selector Type</th>
+      <th style="width: 40%;">Examples</th>
+      <th style="width: 25%;">Weight</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr><td>Inline styles</td><td><span class="code">style="..."</span></td><td>Overrides all selectors</td></tr>
+    <tr><td>ID selectors</td><td><span class="code">#navbar</span></td><td>1-0-0</td></tr>
+    <tr><td>Classes, attributes, pseudo-classes</td><td><span class="code">.test</span>, <span class="code">[type="text"]</span>, <span class="code">:hover</span></td><td>0-1-0</td></tr>
+    <tr><td>Elements, pseudo-elements</td><td><span class="code">h1</span>, <span class="code">::before</span></td><td>0-0-1</td></tr>
+    <tr><td>Universal selector, <span class="code">:where()</span></td><td><span class="code">*</span></td><td>0-0-0</td></tr>
+    </tbody>
+  </table>
+
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    To compare two selectors, count each one's X (ID count), Y (class/attribute/pseudo-class count), and Z (element/pseudo-element count), then compare left to right: the selector with the higher leftmost number wins outright, and only if that number ties do you move on to compare the next column. For example <span class="code">#intro</span> (1-0-0) beats <span class="code">p.lead</span> (0-1-1) regardless of how many classes or elements the second selector piles on, because an ID always outweighs any number of classes or elements. If two rules end up with identical weight, the one that comes later in the stylesheet (or later in the HTML document) wins.
+  </p>
+
+  <p><strong><i>Note: </i></strong>The universal selector <span class="code">*</span> adds nothing to specificity at all (0-0-0), so it loses to literally any other selector, including a plain element selector like <span class="code">h1</span>.</p>
 </section>
 <!--Main Section End-->
 
