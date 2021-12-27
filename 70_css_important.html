@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-  <title>CSS | Rough</title>
+  <title>CSS | !important</title>
 
   <!--Meta Section Start-->
   <meta charset="UTF-8">
@@ -704,34 +704,240 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>The CSS !important Rule</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">!important</span> rule gives a single property declaration the highest priority available in CSS. Adding it after a value &mdash; before the semicolon &mdash; makes that declaration override ALL previous styling rules for that specific property on that element, no matter how specific the competing selector is.
+  </p>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Syntax: <span class="code">selector { property: value !important; }</span>
   </p>
 
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p { background-color: yellow !important; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #myid { background-color: blue; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .myclass { background-color: gray; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;Using the !important Rule&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p style="background-color:orange;"&gt;This is a paragraph.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="myclass"&gt;This is a paragraph.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p id="myid"&gt;This is a paragraph.&lt;&sol;p&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <h2>Using the !important Rule</h2>
+        <p style="background-color: yellow !important;">This is a paragraph.</p>
+        <p style="background-color: yellow !important;">This is a paragraph.</p>
+        <p style="background-color: yellow !important;">This is a paragraph.</p>
+      </td>
     </tr>
     </tbody>
   </table>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+  <p><strong><i>Note: </i></strong>Without <span class="code">!important</span>, the first paragraph's inline style, the second's class, and the third's ID would each win their own specificity battle and show three different colors. Because the <span class="code">p</span> rule alone carries <span class="code">!important</span>, all three paragraphs turn yellow instead &mdash; <span class="code">!important</span> overrides even an inline style and an ID.</p>
+</section>
+
+<section class="content">
+  <h3>Important Rules Should Be Used With Caution</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    If multiple conflicting declarations for the same property on the same element all carry <span class="code">!important</span>, the declaration with the highest specificity among them wins. So <span class="code">!important</span> doesn't remove specificity from the equation entirely &mdash; it just raises the whole contest onto a higher tier.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: red !important; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #myid { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: blue !important; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .myclass { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: gray !important; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;Confusing !important Rules&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;This is a paragraph.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="myclass"&gt;This is a paragraph.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p id="myid"&gt;This is a paragraph.&lt;&sol;p&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <h2>Confusing !important Rules</h2>
+        <p style="background-color: red !important;">This is a paragraph.</p>
+        <p style="background-color: gray !important;">This is a paragraph.</p>
+        <p style="background-color: blue !important;">This is a paragraph.</p>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p><strong><i>Note: </i></strong>Here, every rule is marked <span class="code">!important</span>, so normal specificity rules apply <em>among</em> them: the ID (<span class="code">#myid</span>, highest specificity) wins blue, the class (<span class="code">.myclass</span>) wins gray, and the plain element rule (<span class="code">p</span>) is left with the one paragraph that has neither a class nor an ID, showing red. Stacking <span class="code">!important</span> everywhere just pushes the specificity war up a level &mdash; it doesn't make styling any easier to reason about, which is exactly why the rule should be used sparingly.</p>
+</section>
+
+<section class="content">
+  <h3>Overriding a More Specific Rule</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    A common real-world use is forcing a reusable utility class (like a button style) to hold its look even inside a container that has its own, more specific override. Without <span class="code">!important</span>, the more specific <span class="code">#myDiv a</span> rule below beats the <span class="code">a.button</span> rule on the second link, even though <span class="code">a.button</span> is declared first.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a.button { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: #8c8c8c; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: white; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 5px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 1px solid black; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; text-decoration: none; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #myDiv a { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: red; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: yellow; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Standard link button: &lt;a class="button" href="#"&gt;CSS Tutorial&lt;&sol;a&gt;&lt;&sol;p&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div id="myDiv"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;A link text inside #myDiv: &lt;a href="#"&gt;HTML Tutorial&lt;&sol;a&gt;&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;A link button inside #myDiv: &lt;a href="#" class="button"&gt;HTML Tutorial&lt;&sol;a&gt;&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <style>
+          .important-demo a.button { background-color: #8c8c8c; color: white; padding: 5px; border: 1px solid black; text-decoration: none; }
+          .important-demo #myDiv a { color: red; background-color: yellow; }
+        </style>
+        <div class="important-demo">
+          <p>Standard link button: <a class="button" href="#">CSS Tutorial</a></p>
+          <div id="myDiv">
+            <p>A link text inside #myDiv: <a href="#">HTML Tutorial</a></p>
+            <p>A link button inside #myDiv: <a href="#" class="button">HTML Tutorial</a></p>
+          </div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Notice the second button, nested inside <span class="code">#myDiv</span>, loses its gray/white button look: <span class="code">#myDiv a</span> (0-1-1 with the ID) outranks <span class="code">a.button</span> (0-1-1 with one element and one class &mdash; same weight, but <span class="code">#myDiv a</span> was declared later). Adding <span class="code">!important</span> to every property in <span class="code">a.button</span> forces it to win back control over both links, regardless of where they're nested:
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a.button { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: #8c8c8c !important; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: white !important; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 5px !important; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 1px solid black !important; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; text-decoration: none !important; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #myDiv a { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: red; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: yellow; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Standard link button: &lt;a class="button" href="#"&gt;CSS Tutorial&lt;&sol;a&gt;&lt;&sol;p&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div id="myDiv"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;A link text inside #myDiv: &lt;a href="#"&gt;HTML Tutorial&lt;&sol;a&gt;&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;A link button inside #myDiv: &lt;a href="#" class="button"&gt;HTML Tutorial&lt;&sol;a&gt;&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <style>
+          .important-demo2 a.button { background-color: #8c8c8c !important; color: white !important; padding: 5px !important; border: 1px solid black !important; text-decoration: none !important; }
+          .important-demo2 #myDiv a { color: red; background-color: yellow; }
+        </style>
+        <div class="important-demo2">
+          <p>Standard link button: <a class="button" href="#">CSS Tutorial</a></p>
+          <div id="myDiv">
+            <p>A link text inside #myDiv: <a href="#">HTML Tutorial</a></p>
+            <p>A link button inside #myDiv: <a href="#" class="button">HTML Tutorial</a></p>
+          </div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p><strong><i>Note: </i></strong>Both buttons now render identically, gray with white text, since <span class="code">!important</span> on <span class="code">a.button</span> beats the plain <span class="code">#myDiv a</span> rule regardless of its higher normal specificity. This is a legitimate, narrow use case &mdash; forcing a component's own style to hold up inside unpredictable surrounding markup &mdash; but reach for it only after normal specificity and source order can't solve the problem, since overusing <span class="code">!important</span> makes a stylesheet much harder to debug and maintain.</p>
 </section>
 <!--Main Section End-->
 
