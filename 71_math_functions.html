@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-  <title>CSS | Rough</title>
+  <title>CSS | Math Functions</title>
 
   <!--Meta Section Start-->
   <meta charset="UTF-8">
@@ -85,7 +85,7 @@
           <span class="navlink">CSS Selectors</span>
         </a>
       </li>
-      <li class="item active">
+      <li class="item">
         <a href="4_css_types.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Types</span>
@@ -493,7 +493,7 @@
           <span class="navlink">CSS !important</span>
         </a>
       </li>
-      <li class="item">
+      <li class="item active">
         <a href="71_math_functions.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Math Functions</span>
@@ -704,34 +704,228 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS Math Functions</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    CSS math functions let a property value be computed from an expression instead of a single fixed number. This lesson covers four of them: <span class="code">calc()</span>, <span class="code">max()</span>, <span class="code">min()</span>, and <span class="code">clamp()</span>.
+  </p>
+</section>
+
+<section class="content">
+  <h3>The calc() Function</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">calc()</span> function performs a calculation to produce a property value, using the operators <span class="code">+</span>, <span class="code">-</span>, <span class="code">*</span>, and <span class="code">/</span>. Its real strength is mixing unlike units in a single expression &mdash; something you simply cannot do by just writing a value directly, e.g. sizing something to "100% of the parent, minus a fixed 100px".
+  </p>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Syntax: <span class="code">calc(expression)</span>
   </p>
 
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #div1 { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin: auto; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; width: calc(100% - 100px); <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; height: calc(30vh + 50px); <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 1px solid black; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 10px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;The calc() Function&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Here, #div1 is 100px narrower than its full containing width, and 50px taller than 30% of the viewport height.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Resize the browser window to see the effect!&lt;&sol;p&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div id="div1"&gt;Some text...&lt;&sol;div&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <div style="margin: auto; width: calc(100% - 40px); height: calc(10vh + 50px); border: 1px solid black; padding: 10px; box-sizing: border-box;">Some text...</div>
+      </td>
     </tr>
     </tbody>
   </table>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+  <p><strong><i>Note: </i></strong>Always put a space on both sides of the <span class="code">+</span> and <span class="code">-</span> operators (<span class="code">calc(100% - 100px)</span>, not <span class="code">calc(100%-100px)</span>) &mdash; without it, the browser cannot tell where the first value ends, and the whole declaration is dropped as invalid.</p>
+</section>
+
+<section class="content">
+  <h3>The max() Function</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    <span class="code">max()</span> takes a comma-separated list of values and uses the largest one. It's useful when you want a size to never shrink below some minimum while still being able to grow with its container.
+  </p>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Syntax: <span class="code">max(value1, value2, ...)</span>
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #div1 { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; height: 100px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; width: max(50%, 300px); <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 1px solid black; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 10px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;The max() Function&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Use max() to set the width of #div1 to whichever is largest: 50% or 300px.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Resize the browser window to see the effect!&lt;&sol;p&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div id="div1"&gt;Some text...&lt;&sol;div&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <div style="height: 100px; width: max(50%, 220px); border: 1px solid black; padding: 10px; box-sizing: border-box;">Some text...</div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p><strong><i>Note: </i></strong>In the output column here, the panel is narrower than a full page, so 50% of it is less than 220px &mdash; which means <span class="code">max()</span> picks the fixed 220px floor instead. Widen the browser (or imagine this on a full page) and once 50% of the container exceeds that floor, the percentage takes over.</p>
+</section>
+
+<section class="content">
+  <h3>The min() Function</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    <span class="code">min()</span> is the mirror image of <span class="code">max()</span>: it takes a comma-separated list of values and uses the smallest one. It's useful for capping a size so it never grows past some fixed maximum, while still shrinking with its container on small screens.
+  </p>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Syntax: <span class="code">min(value1, value2, ...)</span>
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #div1 { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; height: 100px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; width: min(50%, 300px); <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 1px solid black; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 10px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;The min() Function&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Use min() to set the width of #div1 to whichever value is smallest: 50% or 300px.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Resize the browser window to see the effect.&lt;&sol;p&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div id="div1"&gt;Some text...&lt;&sol;div&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <div style="height: 100px; width: min(50%, 220px); border: 1px solid black; padding: 10px; box-sizing: border-box;">Some text...</div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p><strong><i>Note: </i></strong>Here it's the opposite case from the <span class="code">max()</span> example above: since 50% of this narrow panel is less than 220px, <span class="code">min()</span> picks the percentage. On a wide page where 50% would exceed 220px, the fixed 220px ceiling would be used instead.</p>
+</section>
+
+<section class="content">
+  <h3>The clamp() Function</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    <span class="code">clamp()</span> combines a minimum, a preferred, and a maximum value into one expression, so a size can scale fluidly with the viewport while never going outside a safe range: if the preferred value falls between the minimum and maximum, it's used as-is; if it would go below the minimum, the minimum is used instead; if it would go above the maximum, the maximum is used instead.
+  </p>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Syntax: <span class="code">clamp(minimum, preferred, maximum)</span> &mdash; all three arguments are required.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h2 { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-size: clamp(1.5rem, 5vw, 3rem); <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; div { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 1px solid green; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 10px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-size: clamp(1rem, 2.5vw, 2rem); <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; width: clamp(200px, 50%, 600px); <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;The clamp() Function&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Resize the window to see the effect!&lt;&sol;p&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac laoreet quam, id aliquet nisl. Etiam id eros ligula.&lt;&sol;div&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <h2 style="font-size: clamp(1.5rem, 5vw, 3rem); margin: 0;">The clamp() Function</h2>
+        <div style="border: 1px solid green; padding: 10px; font-size: clamp(1rem, 2.5vw, 2rem); width: clamp(200px, 50%, 600px); margin: 10px auto; box-sizing: border-box;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac laoreet quam, id aliquet nisl. Etiam id eros ligula.</div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p><strong><i>Note: </i></strong>Think of <span class="code">clamp()</span> as <span class="code">max(minimum, min(preferred, maximum))</span> rolled into one function &mdash; it's commonly used for fluid typography, sizing text so it grows with the viewport on larger screens without ever becoming unreadably small or absurdly large.</p>
 </section>
 <!--Main Section End-->
 
