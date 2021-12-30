@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-  <title>CSS | Rough</title>
+  <title>CSS | Border Images</title>
 
   <!--Meta Section Start-->
   <meta charset="UTF-8">
@@ -85,7 +85,7 @@
           <span class="navlink">CSS Selectors</span>
         </a>
       </li>
-      <li class="item active">
+      <li class="item">
         <a href="4_css_types.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Types</span>
@@ -511,7 +511,7 @@
           <span class="navlink">CSS Rounded Corners</span>
         </a>
       </li>
-      <li class="item">
+      <li class="item active">
         <a href="73_border_images.html" class="nav_link">
           <span class="navlink_icon"><i class="bx bxs-file-css"></i></span>
           <span class="navlink">CSS Border Images</span>
@@ -704,34 +704,200 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS Border Images</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">border-image</span> property lets an image be used as an element's border instead of a plain solid/dashed/dotted line. The source image is sliced into nine regions &mdash; like a tic-tac-toe grid &mdash; the four corner pieces are placed at the element's corners untouched, and the four edge pieces in between are stretched or repeated to fill the rest of the border on each side.
+  </p>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    <span class="code">border-image</span> is shorthand for five longhand properties:
   </p>
 
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 30%;">Property</th>
+      <th style="width: 70%;">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr><td><span class="code">border-image-source</span></td><td>The path to the image used as the border</td></tr>
+    <tr><td><span class="code">border-image-slice</span></td><td>How the source image is sliced into its nine regions</td></tr>
+    <tr><td><span class="code">border-image-width</span></td><td>The width of the border image</td></tr>
+    <tr><td><span class="code">border-image-outset</span></td><td>How far the border image extends beyond the border box</td></tr>
+    <tr><td><span class="code">border-image-repeat</span></td><td>Whether the edge regions are repeated, rounded, or stretched</td></tr>
+    </tbody>
+  </table>
+
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    This lesson's examples all slice and tile the same source image:
+  </p>
+  <p style="text-align: center; padding: 10px;">
+    <img src="images/border.png" alt="Border source image" style="border: 1px solid #ccc;">
+  </p>
+
+  <p><strong><i>Note: </i></strong>For <span class="code">border-image</span> to have any visible effect, the element must also have an ordinary <span class="code">border</span> property set (its width reserves the space the image will occupy) &mdash; typically <span class="code">border: Npx solid transparent;</span>, so the image shows through cleanly with no solid-color border underneath it.</p>
+</section>
+
+<section class="content">
+  <h3>Border Image - Round</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    With the <span class="code">round</span> keyword, the slice value <span class="code">30</span> cuts 30 pixels in from each edge of the source image for the corner and edge regions; the middle edge pieces are then tiled along each side, and the browser rescales the tile so a whole number of copies fit exactly, instead of cutting one off halfway.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #borderimg { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 10px solid transparent; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 15px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border-image: url(border.png) 30 round; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;The border-image Property&lt;&sol;h1&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Here, the border image is repeated (rounded) to fill the area:&lt;&sol;p&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p id="borderimg"&gt;border-image: url(border.png) 30 round;&lt;&sol;p&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p style="border: 10px solid transparent; padding: 15px; border-image: url(images/border.png) 30 round; margin: 0 auto; max-width: 320px;">border-image: url(border.png) 30 round;</p>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content">
+  <h3>Border Image - Stretch</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Swapping the repeat keyword to <span class="code">stretch</span> instead tiles nothing: each edge region of the sliced image is stretched to fill the whole length of its side, however long that side is.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #borderimg { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 10px solid transparent; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 15px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border-image: url(border.png) 30 stretch; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;The border-image Property&lt;&sol;h1&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Here, the border image is stretched to fill the area:&lt;&sol;p&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p id="borderimg"&gt;border-image: url(border.png) 30 stretch;&lt;&sol;p&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p style="border: 10px solid transparent; padding: 15px; border-image: url(images/border.png) 30 stretch; margin: 0 auto; max-width: 320px;">border-image: url(border.png) 30 stretch;</p>
+      </td>
     </tr>
     </tbody>
   </table>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+  <p><strong><i>Note: </i></strong>Compare this to the <span class="code">round</span> example above using the exact same source image and slice value &mdash; the repeat keyword alone completely changes the texture of the result, tiled diamonds versus a smooth stretched gradient of color.</p>
+</section>
+
+<section class="content">
+  <h3>Border Image - Slice Values</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Different <span class="code">border-image-slice</span> values dramatically change how the same source image looks once applied, because the slice value controls exactly how much of the image counts as "corner" versus "edge" before any rounding or stretching happens. Slice values can be given in pixels or as a percentage of the source image's own size.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #borderimg1 { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 10px solid transparent; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 15px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border-image: url(border.png) 50 round; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin-bottom: 15px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #borderimg2 { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 10px solid transparent; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 15px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border-image: url(border.png) 20% round; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin-bottom: 15px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #borderimg3 { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 10px solid transparent; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 15px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border-image: url(border.png) 30% round; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin-bottom: 15px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;The border-image Property&lt;&sol;h1&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Different slice values completely changes the look of the border image:&lt;&sol;p&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div id="borderimg1"&gt;border-image: url(border.png) 50 round;&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div id="borderimg2"&gt;border-image: url(border.png) 20% round;&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div id="borderimg3"&gt;border-image: url(border.png) 30% round;&lt;&sol;div&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <div style="border: 10px solid transparent; padding: 15px; border-image: url(images/border.png) 50 round; margin: 0 auto 15px; max-width: 320px;">border-image: url(border.png) 50 round;</div>
+        <div style="border: 10px solid transparent; padding: 15px; border-image: url(images/border.png) 20% round; margin: 0 auto 15px; max-width: 320px;">border-image: url(border.png) 20% round;</div>
+        <div style="border: 10px solid transparent; padding: 15px; border-image: url(images/border.png) 30% round; margin: 0 auto; max-width: 320px;">border-image: url(border.png) 30% round;</div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p><strong><i>Note: </i></strong>All three boxes above share the exact same source image, border width, and <span class="code">round</span> repeat &mdash; only the slice number changes. A larger slice value (like <span class="code">50</span>) grabs more of the image for each corner, pulling more of the design inward, while a percentage-based slice (like <span class="code">20%</span> or <span class="code">30%</span>) scales proportionally to the source image's own dimensions rather than a fixed pixel count.</p>
 </section>
 <!--Main Section End-->
 
