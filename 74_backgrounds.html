@@ -85,7 +85,7 @@
           <span class="navlink">CSS Selectors</span>
         </a>
       </li>
-      <li class="item active">
+      <li class="item">
         <a href="4_css_types.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Types</span>
@@ -517,7 +517,7 @@
           <span class="navlink">CSS Border Images</span>
         </a>
       </li>
-      <li class="item">
+      <li class="item active">
         <a href="74_backgrounds.html" class="nav_link">
           <span class="navlink_icon"><i class="bx bxs-file-css"></i></span>
           <span class="navlink">CSS Backgrounds</span>
@@ -704,34 +704,218 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS Backgrounds</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Earlier lessons in this series (Background Color, Background Image, Background Repeat, Background Attachment, Background Shorthand) already covered the one-image-at-a-time basics. This lesson covers the parts of CSS3 backgrounds that go beyond that: stacking <strong>multiple background images</strong> on a single element, controlling their exact size with <span class="code">background-size</span>, and controlling how the positioning/clipping area is measured with <span class="code">background-origin</span> and <span class="code">background-clip</span>.
+  </p>
+</section>
+
+<section class="content">
+  <h3>CSS Multiple Backgrounds</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    CSS allows more than one background image for an element, layered on top of each other. The first image listed in <span class="code">background-image</span> sits on top, and each subsequent one sits further back. <span class="code">background-position</span> and <span class="code">background-repeat</span> can also take a comma-separated list, matched up with each image in the same order.
   </p>
 
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #example1 { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-image: url(img_tree.png), url(pineapple.jpg); <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-position: right bottom, left top; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-repeat: no-repeat, repeat; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; height: 200px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;Multiple Background Images&lt;&sol;h1&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Here, we use two background images, one tree in the bottom-right corner, and a repeated pineapple pattern behind it:&lt;&sol;p&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div id="example1"&gt;&lt;&sol;div&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <div style="background-image: url(images/img_tree.png), url(images/pineapple.jpg); background-position: right bottom, left top; background-repeat: no-repeat, repeat; height: 200px; border: 1px solid #ccc;"></div>
+      </td>
     </tr>
     </tbody>
   </table>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+  <p><strong><i>Note: </i></strong>The shorthand <span class="code">background</span> property can also combine all of this in one declaration: <span class="code">background: url(img_tree.png) right bottom no-repeat, url(pineapple.jpg) left top repeat;</span> — each comma-separated group is one full "layer" (image, position, repeat), read in the same order as the images.</p>
+</section>
+
+<section class="content">
+  <h3>CSS Background-size</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">background-size</span> property lets a background image be resized to fit its element, instead of showing at its native pixel size. It accepts length values (e.g. <span class="code">100px 80px</span>), percentages of the element's own box, or the keywords <span class="code">contain</span> (scale the image up to the largest size that still fits entirely inside the box) and <span class="code">cover</span> (scale the image up to fully cover the box, cropping any overflow).
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #bgsize1 { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background: url(img_mountains.jpg); <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-size: 100px 80px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-repeat: no-repeat; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 1px solid black; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; height: 150px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #bgsize2 { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background: url(img_mountains.jpg); <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-size: cover; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-repeat: no-repeat; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 1px solid black; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; height: 150px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;background-size: 100px 80px&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div id="bgsize1"&gt;&lt;&sol;div&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;background-size: cover&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div id="bgsize2"&gt;&lt;&sol;div&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <h2 style="font-size: 16px;">background-size: 100px 80px</h2>
+        <div style="background: url(images/img_mountains.jpg); background-size: 100px 80px; background-repeat: no-repeat; border: 1px solid black; height: 150px; margin-bottom: 15px;"></div>
+
+        <h2 style="font-size: 16px;">background-size: cover</h2>
+        <div style="background: url(images/img_mountains.jpg); background-size: cover; background-repeat: no-repeat; border: 1px solid black; height: 150px;"></div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p><strong><i>Note: </i></strong><span class="code">background-size</span> can also be set globally for the whole page via the <span class="code">body</span> selector, which is a common way to build a full-page background photo that always fills the viewport with <span class="code">background-size: cover;</span> combined with <span class="code">background-attachment: fixed;</span>.</p>
+</section>
+
+<section class="content">
+  <h3>CSS Background-origin and Background-clip</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">background-origin</span> property sets the positioning area of the background image — the coordinate <span class="code">0 0</span> that <span class="code">background-position</span> measures from. It takes three values:
+  </p>
+  <ul style="padding-left: 30px;">
+    <li><span class="code">padding-box</span> — default; position is relative to the padding box</li>
+    <li><span class="code">border-box</span> — position is relative to the border box</li>
+    <li><span class="code">content-box</span> — position is relative to the content box</li>
+  </ul>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    <span class="code">background-clip</span> is the related property that controls how far the background (color or image) is allowed to extend, before being clipped off. It accepts the same <span class="code">border-box</span> / <span class="code">padding-box</span> / <span class="code">content-box</span> keywords, plus <span class="code">text</span> (clips the background to the shape of the foreground text).
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #origin1 { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 10px dashed black; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 25px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background: url(img_tree.png); <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-repeat: no-repeat; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-origin: content-box; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #clip1 { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 10px dashed black; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 25px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background: url(img_tree.png); <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-repeat: no-repeat; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-clip: content-box; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;background-origin: content-box&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div id="origin1"&gt;&lt;&sol;div&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;background-clip: content-box&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div id="clip1"&gt;&lt;&sol;div&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <h2 style="font-size: 16px;">background-origin: content-box</h2>
+        <div style="border: 10px dashed black; padding: 25px; background: url(images/img_tree.png); background-repeat: no-repeat; background-origin: content-box; margin-bottom: 15px;"></div>
+
+        <h2 style="font-size: 16px;">background-clip: content-box</h2>
+        <div style="border: 10px dashed black; padding: 25px; background: url(images/img_tree.png); background-repeat: no-repeat; background-clip: content-box;"></div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p><strong><i>Note: </i></strong>In the first box, the tree image starts further in from the dashed border because its origin is measured from the content box, not the padding edge. In the second box, the image itself is the same, but any part of it that would fall under the padding area is clipped away entirely rather than just repositioned — compare the two outputs closely against the "padding-box" default to see the difference.</p>
+</section>
+
+<section class="content">
+  <h3>CSS Background Properties</h3>
+  <hr>
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 30%;">Property</th>
+      <th style="width: 70%;">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr><td><span class="code">background</span></td><td>Shorthand for setting all background properties in one declaration</td></tr>
+    <tr><td><span class="code">background-color</span></td><td>Specifies the background color of an element</td></tr>
+    <tr><td><span class="code">background-image</span></td><td>Specifies one or more background images for an element</td></tr>
+    <tr><td><span class="code">background-position</span></td><td>Specifies the position of a background image</td></tr>
+    <tr><td><span class="code">background-repeat</span></td><td>Sets how a background image will be repeated</td></tr>
+    <tr><td><span class="code">background-attachment</span></td><td>Sets whether a background image scrolls with the page or is fixed</td></tr>
+    <tr><td><span class="code">background-size</span></td><td>Specifies the size of the background image(s)</td></tr>
+    <tr><td><span class="code">background-origin</span></td><td>Specifies the positioning area of the background image(s)</td></tr>
+    <tr><td><span class="code">background-clip</span></td><td>Specifies the painting area of the background image(s)</td></tr>
+    </tbody>
+  </table>
 </section>
 <!--Main Section End-->
 
