@@ -85,7 +85,7 @@
           <span class="navlink">CSS Selectors</span>
         </a>
       </li>
-      <li class="item active">
+      <li class="item">
         <a href="4_css_types.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Types</span>
@@ -523,7 +523,7 @@
           <span class="navlink">CSS Backgrounds</span>
         </a>
       </li>
-      <li class="item">
+      <li class="item active">
         <a href="75_css_colors.html" class="nav_link">
           <span class="navlink_icon"><i class="bx bxs-file-css"></i></span>
           <span class="navlink">CSS Colors</span>
@@ -704,34 +704,349 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS Colors</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Lesson #6 (CSS Colors) already covered the basics: predefined color names, and using colors for background/text/border. This lesson goes deeper into the numeric color notations CSS supports — <span class="code">RGB</span>/<span class="code">RGBA</span>, <span class="code">HEX</span>/<span class="code">HEXA</span>, and <span class="code">HSL</span>/<span class="code">HSLA</span> — which W3Schools splits across its own dedicated sub-pages (<span class="code">css_colors_rgb.asp</span>, <span class="code">css_colors_hex.asp</span>, <span class="code">css_colors_hsl.asp</span>).
+  </p>
+</section>
+
+<section class="content">
+  <h3>CSS RGB and RGBA Colors</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    An RGB color value represents <strong>RED</strong>, <strong>GREEN</strong>, and <strong>BLUE</strong> light sources, written as <span class="code">rgb(red, green, blue)</span>, where each parameter is an integer between 0 and 255. Equal values for all three channels always produce a shade of gray.
   </p>
 
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;body&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:rgb(255, 0, 0);"&gt;rgb(255, 0, 0)&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:rgb(0, 0, 255);"&gt;rgb(0, 0, 255)&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:rgb(60, 179, 113);"&gt;rgb(60, 179, 113)&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:rgb(238, 130, 238);"&gt;rgb(238, 130, 238)&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:rgb(255, 165, 0);"&gt;rgb(255, 165, 0)&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:rgb(106, 90, 205);"&gt;rgb(106, 90, 205)&lt;&sol;h3&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 60px; background-color:rgb(255, 0, 0); color: white;">rgb(255, 0, 0)</h3>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 60px; background-color:rgb(0, 0, 255); color: white;">rgb(0, 0, 255)</h3>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 60px; background-color:rgb(60, 179, 113); color: white;">rgb(60, 179, 113)</h3>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 60px; background-color:rgb(238, 130, 238);">rgb(238, 130, 238)</h3>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 60px; background-color:rgb(255, 165, 0);">rgb(255, 165, 0)</h3>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 60px; background-color:rgb(106, 90, 205); color: white;">rgb(106, 90, 205)</h3>
+      </td>
     </tr>
     </tbody>
   </table>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    RGBA color values are an extension of RGB with an added <strong>alpha channel</strong>, written <span class="code">rgba(red, green, blue, alpha)</span>, where alpha is a number between <span class="code">0.0</span> (fully transparent) and <span class="code">1.0</span> (fully opaque).
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;body style="background-color: #f1f1f1;"&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:rgba(255, 99, 71, 0);"&gt;rgba(255, 99, 71, 0)&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:rgba(255, 99, 71, 0.2);"&gt;rgba(255, 99, 71, 0.2)&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:rgba(255, 99, 71, 0.4);"&gt;rgba(255, 99, 71, 0.4)&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:rgba(255, 99, 71, 0.6);"&gt;rgba(255, 99, 71, 0.6)&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:rgba(255, 99, 71, 0.8);"&gt;rgba(255, 99, 71, 0.8)&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:rgba(255, 99, 71, 1);"&gt;rgba(255, 99, 71, 1)&lt;&sol;h3&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="background-color: #f1f1f1;">
+        <h3 style="text-align: center; padding: 10px; margin: 10px 20px; background-color:rgba(255, 99, 71, 0);">rgba(255, 99, 71, 0)</h3>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 20px; background-color:rgba(255, 99, 71, 0.2);">rgba(255, 99, 71, 0.2)</h3>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 20px; background-color:rgba(255, 99, 71, 0.4);">rgba(255, 99, 71, 0.4)</h3>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 20px; background-color:rgba(255, 99, 71, 0.6);">rgba(255, 99, 71, 0.6)</h3>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 20px; background-color:rgba(255, 99, 71, 0.8); color: white;">rgba(255, 99, 71, 0.8)</h3>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 20px; background-color:rgba(255, 99, 71, 1); color: white;">rgba(255, 99, 71, 1)</h3>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p><strong><i>Note: </i></strong>Alpha is not the same thing as the <span class="code">opacity</span> property: <span class="code">opacity</span> fades the entire element (including any text and children), while an alpha channel on the color value only fades that one color, leaving everything else on the element at full strength.</p>
+</section>
+
+<section class="content">
+  <h3>CSS HEX and HEXA Colors</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    A hexadecimal color value is written <span class="code">#RRGGBB</span>, where <span class="code">RR</span> (red), <span class="code">GG</span> (green), and <span class="code">BB</span> (blue) are hexadecimal integers from <span class="code">00</span> to <span class="code">ff</span> (the same 0–255 range as RGB, just in base 16).
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;body&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:#ff0000;"&gt;#ff0000&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:#0000ff;"&gt;#0000ff&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:#3cb371;"&gt;#3cb371&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:#ee82ee;"&gt;#ee82ee&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:#ffa500;"&gt;#ffa500&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:#6a5acd;"&gt;#6a5acd&lt;&sol;h3&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 60px; background-color:#ff0000; color: white;">#ff0000</h3>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 60px; background-color:#0000ff; color: white;">#0000ff</h3>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 60px; background-color:#3cb371; color: white;">#3cb371</h3>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 60px; background-color:#ee82ee;">#ee82ee</h3>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 60px; background-color:#ffa500;">#ffa500</h3>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 60px; background-color:#6a5acd; color: white;">#6a5acd</h3>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    A 3-digit hex code (<span class="code">#rgb</span>) is shorthand for a 6-digit code, but only works when each pair of digits is identical — each digit is simply doubled. <span class="code">#fc9</span> is shorthand for <span class="code">#ffcc99</span>, <span class="code">#f0f</span> for <span class="code">#ff00ff</span>, and <span class="code">#b58</span> for <span class="code">#bb5588</span>.
+  </p>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    HEXA adds a fourth pair of digits for the alpha channel: <span class="code">#RRGGBBAA</span>. The examples below reuse the same six colors as above with <span class="code">80</span> (about 50%) alpha appended.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;body style="background-color: #f1f1f1;"&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:#ff000080;"&gt;#ff000080&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:#0000ff80;"&gt;#0000ff80&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:#3cb37180;"&gt;#3cb37180&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:#ee82ee80;"&gt;#ee82ee80&lt;&sol;h3&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="background-color: #f1f1f1;">
+        <h3 style="text-align: center; padding: 10px; margin: 10px 20px; background-color:#ff000080;">#ff000080</h3>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 20px; background-color:#0000ff80;">#0000ff80</h3>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 20px; background-color:#3cb37180;">#3cb37180</h3>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 20px; background-color:#ee82ee80;">#ee82ee80</h3>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content">
+  <h3>CSS HSL and HSLA Colors</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    HSL stands for <strong>Hue</strong>, <strong>Saturation</strong>, and <strong>Lightness</strong>, written <span class="code">hsl(hue, saturation%, lightness%)</span>:
+  </p>
+  <ul style="padding-left: 30px;">
+    <li><strong>Hue</strong> is a degree on the color wheel from 0 to 360 (0 = red, 120 = green, 240 = blue)</li>
+    <li><strong>Saturation</strong> is a percentage, where 0% is a shade of gray and 100% is the full color</li>
+    <li><strong>Lightness</strong> is also a percentage, where 0% is black and 100% is white</li>
+  </ul>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;body&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:hsl(0, 100%, 50%);"&gt;hsl(0, 100%, 50%)&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:hsl(240, 100%, 50%);"&gt;hsl(240, 100%, 50%)&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:hsl(147, 50%, 47%);"&gt;hsl(147, 50%, 47%)&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:hsl(300, 76%, 72%);"&gt;hsl(300, 76%, 72%)&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:hsl(39, 100%, 50%);"&gt;hsl(39, 100%, 50%)&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:hsl(248, 53%, 58%);"&gt;hsl(248, 53%, 58%)&lt;&sol;h3&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 60px; background-color:hsl(0, 100%, 50%); color: white;">hsl(0, 100%, 50%)</h3>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 60px; background-color:hsl(240, 100%, 50%); color: white;">hsl(240, 100%, 50%)</h3>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 60px; background-color:hsl(147, 50%, 47%); color: white;">hsl(147, 50%, 47%)</h3>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 60px; background-color:hsl(300, 76%, 72%);">hsl(300, 76%, 72%)</h3>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 60px; background-color:hsl(39, 100%, 50%);">hsl(39, 100%, 50%)</h3>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 60px; background-color:hsl(248, 53%, 58%); color: white;">hsl(248, 53%, 58%)</h3>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Keeping hue fixed at <span class="code">0</span> and lightness fixed at <span class="code">50%</span> while lowering saturation in steps shows saturation fading a pure color toward gray:
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;body&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:hsl(0, 100%, 50%);"&gt;hsl(0, 100%, 50%)&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:hsl(0, 80%, 50%);"&gt;hsl(0, 80%, 50%)&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:hsl(0, 60%, 50%);"&gt;hsl(0, 60%, 50%)&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:hsl(0, 40%, 50%);"&gt;hsl(0, 40%, 50%)&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:hsl(0, 20%, 50%);"&gt;hsl(0, 20%, 50%)&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:hsl(0, 0%, 50%);"&gt;hsl(0, 0%, 50%)&lt;&sol;h3&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 60px; background-color:hsl(0, 100%, 50%); color: white;">hsl(0, 100%, 50%)</h3>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 60px; background-color:hsl(0, 80%, 50%); color: white;">hsl(0, 80%, 50%)</h3>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 60px; background-color:hsl(0, 60%, 50%); color: white;">hsl(0, 60%, 50%)</h3>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 60px; background-color:hsl(0, 40%, 50%);">hsl(0, 40%, 50%)</h3>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 60px; background-color:hsl(0, 20%, 50%);">hsl(0, 20%, 50%)</h3>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 60px; background-color:hsl(0, 0%, 50%);">hsl(0, 0%, 50%)</h3>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Keeping hue and saturation fixed (<span class="code">0, 100%</span>) while raising lightness in steps moves from black, through full red, to white:
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;body&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:hsl(0, 100%, 0%);"&gt;hsl(0, 100%, 0%)&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:hsl(0, 100%, 25%);"&gt;hsl(0, 100%, 25%)&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:hsl(0, 100%, 50%);"&gt;hsl(0, 100%, 50%)&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:hsl(0, 100%, 75%);"&gt;hsl(0, 100%, 75%)&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:hsl(0, 100%, 90%);"&gt;hsl(0, 100%, 90%)&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:hsl(0, 100%, 100%);"&gt;hsl(0, 100%, 100%)&lt;&sol;h3&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 60px; background-color:hsl(0, 100%, 0%); color: white;">hsl(0, 100%, 0%)</h3>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 60px; background-color:hsl(0, 100%, 25%); color: white;">hsl(0, 100%, 25%)</h3>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 60px; background-color:hsl(0, 100%, 50%); color: white;">hsl(0, 100%, 50%)</h3>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 60px; background-color:hsl(0, 100%, 75%);">hsl(0, 100%, 75%)</h3>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 60px; background-color:hsl(0, 100%, 90%);">hsl(0, 100%, 90%)</h3>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 60px; background-color:hsl(0, 100%, 100%);">hsl(0, 100%, 100%)</h3>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    HSLA works the same way as RGBA: it adds an <span class="code">alpha</span> parameter for transparency, written <span class="code">hsla(hue, saturation%, lightness%, alpha)</span>.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;body style="background-color: #f1f1f1;"&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:hsla(9, 100%, 64%, 0);"&gt;hsla(9, 100%, 64%, 0)&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:hsla(9, 100%, 64%, 0.2);"&gt;hsla(9, 100%, 64%, 0.2)&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:hsla(9, 100%, 64%, 0.4);"&gt;hsla(9, 100%, 64%, 0.4)&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:hsla(9, 100%, 64%, 0.6);"&gt;hsla(9, 100%, 64%, 0.6)&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:hsla(9, 100%, 64%, 0.8);"&gt;hsla(9, 100%, 64%, 0.8)&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:hsla(9, 100%, 64%, 1);"&gt;hsla(9, 100%, 64%, 1)&lt;&sol;h3&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="background-color: #f1f1f1;">
+        <h3 style="text-align: center; padding: 10px; margin: 10px 20px; background-color:hsla(9, 100%, 64%, 0);">hsla(9, 100%, 64%, 0)</h3>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 20px; background-color:hsla(9, 100%, 64%, 0.2);">hsla(9, 100%, 64%, 0.2)</h3>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 20px; background-color:hsla(9, 100%, 64%, 0.4);">hsla(9, 100%, 64%, 0.4)</h3>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 20px; background-color:hsla(9, 100%, 64%, 0.6);">hsla(9, 100%, 64%, 0.6)</h3>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 20px; background-color:hsla(9, 100%, 64%, 0.8); color: white;">hsla(9, 100%, 64%, 0.8)</h3>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 20px; background-color:hsla(9, 100%, 64%, 1); color: white;">hsla(9, 100%, 64%, 1)</h3>
+      </td>
+    </tr>
+    </tbody>
+  </table>
 </section>
 <!--Main Section End-->
 
