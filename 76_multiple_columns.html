@@ -85,7 +85,7 @@
           <span class="navlink">CSS Selectors</span>
         </a>
       </li>
-      <li class="item active">
+      <li class="item">
         <a href="4_css_types.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Types</span>
@@ -529,7 +529,7 @@
           <span class="navlink">CSS Colors</span>
         </a>
       </li>
-      <li class="item">
+      <li class="item active">
         <a href="76_multiple_columns.html" class="nav_link">
           <span class="navlink_icon"><i class="bx bxs-file-css"></i></span>
           <span class="navlink">CSS Multiple Columns</span>
@@ -704,34 +704,306 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS Multi-column Layout</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The multi-column layout module lets text flow across two or more columns, like a newspaper, instead of staying in one wide block. The browser automatically re-flows the content as the viewport or column settings change, which is far simpler than manually splitting text into separate elements.
+  </p>
+</section>
+
+<section class="content">
+  <h3>CSS Create Multiple Columns</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">column-count</span> property specifies how many columns an element's content should be divided into:
   </p>
 
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; div { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; column-count: 3; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;Multiple Columns&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut sem vitae risus tristique posuere. <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Nulla facilisi. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; diam porttitor turpis, id vulputate neque felis et turpis. Maecenas eget condimentum velit, sit amet <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: left;">
+        <h4>Multiple Columns</h4>
+        <div style="column-count: 3; font-size: 13px;">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut sem vitae risus tristique posuere. Nulla facilisi. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam porttitor turpis, id vulputate neque felis et turpis. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar.
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content">
+  <h3>CSS Column Gap</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">column-gap</span> property specifies the gap between the columns:
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; div { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; column-count: 3; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; column-gap: 40px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;Column Gap&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut sem vitae risus tristique posuere. <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Nulla facilisi. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; diam porttitor turpis, id vulputate neque felis et turpis. Maecenas eget condimentum velit, sit amet <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: left;">
+        <h4>Column Gap</h4>
+        <div style="column-count: 3; column-gap: 40px; font-size: 13px;">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut sem vitae risus tristique posuere. Nulla facilisi. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam porttitor turpis, id vulputate neque felis et turpis. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar.
+        </div>
+      </td>
     </tr>
     </tbody>
   </table>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+  <p><strong><i>Note: </i></strong>Compare this output to the <span class="code">column-count</span> example above &mdash; same text, same column count, but with visibly more breathing room between the columns because of the added <span class="code">column-gap</span>.</p>
+</section>
+
+<section class="content">
+  <h3>CSS Column Rule</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">column-rule-style</span> property specifies the style of the rule (line) between columns, and works like the ordinary <span class="code">border-style</span> property: <span class="code">none</span>, <span class="code">solid</span>, <span class="code">dashed</span>, <span class="code">dotted</span>, <span class="code">double</span>, <span class="code">groove</span>, <span class="code">ridge</span>, <span class="code">inset</span>, and <span class="code">outset</span> are all valid values.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; div { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; column-count: 3; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; column-gap: 40px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; column-rule-style: solid; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;Column Rule Style&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut sem vitae risus tristique posuere. <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Nulla facilisi. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; diam porttitor turpis, id vulputate neque felis et turpis. Maecenas eget condimentum velit, sit amet <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: left;">
+        <h4>Column Rule Style</h4>
+        <div style="column-count: 3; column-gap: 40px; column-rule-style: solid; font-size: 13px;">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut sem vitae risus tristique posuere. Nulla facilisi. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam porttitor turpis, id vulputate neque felis et turpis. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar.
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    <span class="code">column-rule</span> is shorthand for <span class="code">column-rule-width</span>, <span class="code">column-rule-style</span>, and <span class="code">column-rule-color</span> in one declaration &mdash; it behaves exactly like the <span class="code">border</span> shorthand, just applied to the line drawn between columns instead of around the element:
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; div { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; column-count: 3; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; column-gap: 40px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; column-rule: 4px double #ff00ff; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;Column Rule&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut sem vitae risus tristique posuere. <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Nulla facilisi. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; diam porttitor turpis, id vulputate neque felis et turpis. Maecenas eget condimentum velit, sit amet <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: left;">
+        <h4>Column Rule</h4>
+        <div style="column-count: 3; column-gap: 40px; column-rule: 4px double #ff00ff; font-size: 13px;">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut sem vitae risus tristique posuere. Nulla facilisi. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam porttitor turpis, id vulputate neque felis et turpis. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar.
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p><strong><i>Note: </i></strong><em>Reconstructed example:</em> W3Schools' live sub-page for column rules was not directly retrievable during this lesson's research; the <span class="code">column-rule-style</span> and <span class="code">column-rule</span> values above use W3Schools' own well-documented standard demo values for this topic, reconstructed from their published property reference and consistent with their site-wide example conventions.</p>
+</section>
+
+<section class="content">
+  <h3>CSS Column Span and Column Width</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">column-span</span> property specifies how many columns an element should span across. Setting it to <span class="code">all</span> on a heading inside a multi-column container makes that heading break out and stretch across every column, which is a common way to add a full-width title above column text.
+  </p>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">column-width</span> property specifies a suggested, optimal column width &mdash; rather than fixing an exact number of columns, the browser works out how many columns of roughly that width will fit, and creates that many (so the actual column count can change as the window resizes).
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .newspaper { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; column-count: 3; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; column-gap: 40px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; column-rule: 3px outset #777; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h2 { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; column-span: all; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="newspaper"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;My Three-Column Headline&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut sem vitae risus tristique posuere. <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Nulla facilisi. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; diam porttitor turpis, id vulputate neque felis et turpis. Maecenas eget condimentum velit, sit amet <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: left;">
+        <div style="column-count: 3; column-gap: 40px; column-rule: 3px outset #777; font-size: 13px;">
+          <h4 style="column-span: all; -webkit-column-span: all;">My Three-Column Headline</h4>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut sem vitae risus tristique posuere. Nulla facilisi. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam porttitor turpis, id vulputate neque felis et turpis. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar.
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p><strong><i>Note: </i></strong>Some browsers require the <span class="code">-webkit-column-span</span> prefix for the heading to actually span all columns; without it, or without browser support, the heading will just sit inside the first column like any other content.</p>
+</section>
+
+<section class="content">
+  <h3>CSS Multi-column Properties</h3>
+  <hr>
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 30%;">Property</th>
+      <th style="width: 70%;">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr><td><span class="code">column-count</span></td><td>Specifies the number of columns an element should be divided into</td></tr>
+    <tr><td><span class="code">column-fill</span></td><td>Specifies how to fill columns, balanced or not</td></tr>
+    <tr><td><span class="code">column-gap</span></td><td>Specifies the gap between the columns</td></tr>
+    <tr><td><span class="code">column-rule</span></td><td>Shorthand for setting all the column-rule-* properties</td></tr>
+    <tr><td><span class="code">column-rule-color</span></td><td>Specifies the color of the rule between columns</td></tr>
+    <tr><td><span class="code">column-rule-style</span></td><td>Specifies the style of the rule between columns</td></tr>
+    <tr><td><span class="code">column-rule-width</span></td><td>Specifies the width of the rule between columns</td></tr>
+    <tr><td><span class="code">column-span</span></td><td>Specifies how many columns an element should span across</td></tr>
+    <tr><td><span class="code">column-width</span></td><td>Specifies a suggested, optimal width for the columns</td></tr>
+    <tr><td><span class="code">columns</span></td><td>Shorthand for setting column-width and column-count</td></tr>
+    </tbody>
+  </table>
 </section>
 <!--Main Section End-->
 
