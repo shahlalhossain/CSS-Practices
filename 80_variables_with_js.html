@@ -35,7 +35,33 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
+    :root {
+      --primary-bg-color: #1e90ff;
+      --primary-color: #ffffff;
+    }
 
+    .var-js-demo {
+      color: var(--primary-bg-color);
+      background-color: var(--primary-color);
+      padding: 15px;
+      border: 1px solid #ddd;
+    }
+
+    .var-js-demo h4 {
+      border-bottom: 2px solid var(--primary-bg-color);
+    }
+
+    .var-js-demo .note {
+      border: 1px solid var(--primary-bg-color);
+      padding: 10px;
+    }
+
+    .var-js-demo button {
+      margin-top: 10px;
+      margin-right: 6px;
+      padding: 6px 14px;
+      cursor: pointer;
+    }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -85,7 +111,7 @@
           <span class="navlink">CSS Selectors</span>
         </a>
       </li>
-      <li class="item active">
+      <li class="item">
         <a href="4_css_types.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Types</span>
@@ -554,7 +580,7 @@
           <span class="navlink">Overriding Variables</span>
         </a>
       </li>
-      <li class="item">
+      <li class="item active">
         <a href="80_variables_with_js.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">Variables with JS</span>
@@ -704,34 +730,104 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS Variables and JavaScript</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    A CSS variable declared with <span class="code">:root</span> lives on the DOM, which means JavaScript can read it and change it at runtime — something a plain CSS value can never do. This opens the door to theme switchers, user preference toggles, and any other case where a page's styling needs to react to something that happens after the page has loaded.
+  </p>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Two DOM APIs make this possible: <span class="code">getComputedStyle(element).getPropertyValue('--name')</span> reads a variable's current value, and <span class="code">element.style.setProperty('--name', 'value')</span> writes a new one. Calling <span class="code">setProperty</span> on the root element immediately re-renders every rule in the page that references that variable via <span class="code">var()</span> — no reload, no re-selecting elements one by one.
   </p>
 
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :root { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --primary-bg-color: #1e90ff; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --primary-color: #ffffff; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; body { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: var(--primary-bg-color); <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .container { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: var(--primary-bg-color); <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: var(--primary-color); <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 15px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .container h2 { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border-bottom: 2px solid var(--primary-bg-color); <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;script&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Get the root element <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var r = document.querySelector(':root'); <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Function for getting a variable value <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; function myFunction_get() { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Get the styles (properties and values) for the root <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var rs = getComputedStyle(r); <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Alert the value of the --primary-bg-color variable <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; alert("The value of --primary-bg-color is: " + rs.getPropertyValue('--primary-bg-color')); <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Function for setting a variable value <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; function myFunction_set() { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Set the value of variable --primary-bg-color to another value (in this case "green") <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; r.style.setProperty('--primary-bg-color', 'green'); <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;script&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="container"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;Lorem Ipsum&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;button onclick="myFunction_get()"&gt;Get Variable with JavaScript&lt;&sol;button&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;button onclick="myFunction_set()"&gt;Change Variable with JavaScript&lt;&sol;button&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <div class="var-js-demo" id="varJsDemo1">
+          <h4>Lorem Ipsum</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <button type="button" onclick="varJsGet('varJsDemo1')">Get Variable with JavaScript</button>
+          <button type="button" onclick="varJsSet('varJsDemo1')">Change Variable with JavaScript</button>
+        </div>
+      </td>
     </tr>
     </tbody>
   </table>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+  <p><strong><i>Note: </i></strong>Clicking "Get Variable with JavaScript" reads the live, computed value of <span class="code">--primary-bg-color</span> from the root element and alerts it. Clicking "Change Variable with JavaScript" calls <span class="code">setProperty</span> to switch it to green — watch the heading's underline and text color in the box above change immediately, since both are wired to that variable through <span class="code">var(--primary-bg-color)</span>.</p>
+</section>
+
+<section class="content">
+  <h3>CSS var() Function</h3>
+  <hr>
+  <table>
+    <thead>
+    <tr>
+      <th>Function</th>
+      <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr><td><span class="code">var()</span></td><td>Inserts the value of a CSS variable</td></tr>
+    </tbody>
+  </table>
 </section>
 <!--Main Section End-->
 
@@ -745,7 +841,18 @@
 
 <!--Page Specific JavaScript Start-->
 <script type="text/javascript">
+  // Get a variable's live computed value and alert it
+  function varJsGet(demoId) {
+    var box = document.getElementById(demoId);
+    var rs = getComputedStyle(box);
+    alert("The value of --primary-bg-color is: " + rs.getPropertyValue('--primary-bg-color'));
+  }
 
+  // Set the variable to a new value on the demo box (scoped to that box, not the whole page root)
+  function varJsSet(demoId) {
+    var box = document.getElementById(demoId);
+    box.style.setProperty('--primary-bg-color', 'green');
+  }
 </script>
 <!--Page Specific JavaScript End-->
 </body>
