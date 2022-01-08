@@ -35,7 +35,42 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
+    .box-demo-1 {
+      width: 300px;
+      height: 100px;
+      border: 1px solid blue;
+    }
 
+    .box-demo-2 {
+      width: 300px;
+      height: 100px;
+      padding: 50px;
+      border: 1px solid red;
+    }
+
+    .box-demo-3 {
+      width: 300px;
+      height: 100px;
+      border: 1px solid blue;
+      box-sizing: border-box;
+    }
+
+    .box-demo-4 {
+      width: 300px;
+      height: 100px;
+      padding: 50px;
+      border: 1px solid red;
+      box-sizing: border-box;
+    }
+
+    .box-demo-form * {
+      box-sizing: border-box;
+    }
+
+    .box-demo-form input,
+    .box-demo-form textarea {
+      width: 100%;
+    }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -85,7 +120,7 @@
           <span class="navlink">CSS Selectors</span>
         </a>
       </li>
-      <li class="item active">
+      <li class="item">
         <a href="4_css_types.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Types</span>
@@ -566,7 +601,7 @@
           <span class="navlink">Variables in MQ</span>
         </a>
       </li>
-      <li class="item">
+      <li class="item active">
         <a href="82_box_sizing.html" class="nav_link">
           <span class="navlink_icon"><i class="bx bxs-file-css"></i></span>
           <span class="navlink">CSS Box Sizing</span>
@@ -704,34 +739,201 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS Box Sizing</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">box-sizing</span> property controls how a browser calculates an element's final rendered width and height. By default, the formula is <span class="code">width + padding + border = actual width</span> (and the same for height) — so padding and border are added on top of whatever width you set, making the element end up bigger than the number you wrote.
+  </p>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The two boxes below both have <span class="code">width: 300px; height: 100px;</span>, yet they render at different sizes — because the second one also has <span class="code">padding: 50px</span>, which gets added on top:
   </p>
 
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .div1 { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; width: 300px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; height: 100px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 1px solid blue; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .div2 { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; width: 300px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; height: 100px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 50px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 1px solid red; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3&gt;Without box-sizing&lt;&sol;h3&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="div1"&gt;This div is smaller (width is 300px and height is 100px).&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;br&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="div2"&gt;This div is bigger (width is also 300px and height is 100px).&lt;&sol;div&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <h4>Without box-sizing</h4>
+        <div class="box-demo-1">This div is smaller (width is 300px and height is 100px).</div>
+        <br>
+        <div class="box-demo-2">This div is bigger (width is also 300px and height is 100px).</div>
+      </td>
     </tr>
     </tbody>
   </table>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+  <p><strong><i>Note: </i></strong>Both <span class="code">&lt;div&gt;</span> elements were given the exact same <span class="code">width</span> and <span class="code">height</span>, yet the second one renders visibly larger purely because of its padding. This is the problem <span class="code">box-sizing</span> solves.</p>
+</section>
+
+<section class="content">
+  <h3>The box-sizing: border-box Solution</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Setting <span class="code">box-sizing: border-box;</span> on an element changes the formula: padding and border are now included inside the specified <span class="code">width</span>/<span class="code">height</span>, instead of being added on top. The element's content area shrinks to make room for them, but the final rendered box always matches the width/height you actually wrote.
+  </p>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Here are the exact same two boxes from above, with <span class="code">box-sizing: border-box;</span> added to both — this time they end up identically sized:
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .div1 { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; width: 300px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; height: 100px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 1px solid blue; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; box-sizing: border-box; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .div2 { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; width: 300px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; height: 100px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 50px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 1px solid red; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; box-sizing: border-box; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3&gt;With box-sizing&lt;&sol;h3&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="div1"&gt;Both divs are the same size now!&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;br&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="div2"&gt;Hooray!&lt;&sol;div&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <h4>With box-sizing</h4>
+        <div class="box-demo-3">Both divs are the same size now!</div>
+        <br>
+        <div class="box-demo-4">Hooray!</div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Because the <span class="code">border-box</span> model behaves more intuitively, many developers apply it globally with the universal selector. Browsers already default many form elements to <span class="code">border-box</span>, which is part of why inputs and textareas can look inconsistent at <span class="code">width: 100%;</span> without this reset:
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; box-sizing: border-box; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; input, textarea { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; width: 100%; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;form&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; First name:&lt;br&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;input type="text" name="firstname" value="Mickey"&gt;&lt;br&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Last name:&lt;br&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;input type="text" name="lastname" value="Mouse"&gt;&lt;br&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Comments:&lt;br&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;textarea name="message" rows="5" cols="30"&gt;&lt;&sol;textarea&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;br&gt;&lt;br&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;input type="submit" value="Submit"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;form&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <form class="box-demo-form" onsubmit="return false;">
+          First name:<br>
+          <input type="text" name="firstname" value="Mickey"><br>
+          Last name:<br>
+          <input type="text" name="lastname" value="Mouse"><br>
+          Comments:<br>
+          <textarea name="message" rows="5" cols="30"></textarea>
+          <br><br>
+          <input type="submit" value="Submit">
+        </form>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p><strong><i>Tip: </i></strong>Try removing <span class="code">box-sizing: border-box;</span> from the <span class="code">*</span> rule above (in your own test copy) and watch the inputs, textarea, and submit button overflow past the edge of their container — that's the same bug the universal reset prevents.</p>
+</section>
+
+<section class="content">
+  <h3>CSS Box Sizing Property</h3>
+  <hr>
+  <table>
+    <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr><td><span class="code">box-sizing</span></td><td>Defines how the width and height of an element are calculated: should they include padding and borders, or not</td></tr>
+    </tbody>
+  </table>
 </section>
 <!--Main Section End-->
 
