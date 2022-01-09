@@ -35,7 +35,27 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
+    .mq-demo-box-1 {
+      background-color: pink;
+      padding: 20px;
+      text-align: center;
+    }
+    @media screen and (min-width: 480px) {
+      .mq-demo-box-1 {
+        background-color: lightgreen;
+      }
+    }
 
+    .mq-demo-box-2 {
+      background-color: pink;
+      padding: 20px;
+      text-align: center;
+    }
+    @media screen and (min-width: 480px) and (max-width: 768px) {
+      .mq-demo-box-2 {
+        background-color: lightgreen;
+      }
+    }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -85,7 +105,7 @@
           <span class="navlink">CSS Selectors</span>
         </a>
       </li>
-      <li class="item active">
+      <li class="item">
         <a href="4_css_types.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Types</span>
@@ -572,7 +592,7 @@
           <span class="navlink">CSS Box Sizing</span>
         </a>
       </li>
-      <li class="item">
+      <li class="item active">
         <a href="83_media_queries.html" class="nav_link">
           <span class="navlink_icon"><i class="bx bxs-file-css"></i></span>
           <span class="navlink">CSS Media Queries</span>
@@ -704,34 +724,158 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS Media Queries</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    A <span class="code">@media</span> query lets you apply a block of CSS only when certain characteristics of the device or viewport hold true — most commonly its width, but also its orientation, resolution, or even the user's OS-level color scheme preference. This lesson covers the general media query syntax; the dedicated responsive-design walkthrough with full breakpoint examples lives later in this course under <span class="code">RWD Media Queries</span>, which builds on the same syntax introduced here.
+  </p>
+
+  <h4 style="padding-top: 10px;">Media Query Syntax</h4>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    A media query consists of an optional media type and one or more media features, each of which resolves to true or false:
+  </p>
+  <p style="padding: 10px 20px; font-family: monospace; background-color: #f1f1f1;">
+    @media [not] media-type and (media-feature: value) and (media-feature: value) { <br>
+    &nbsp;&nbsp;/* CSS rules to apply */ <br>
+    }
+  </p>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The media type is optional; if left out, it defaults to <span class="code">all</span>. The <span class="code">not</span> keyword inverts the entire query's result (and requires a media type to be stated), while <span class="code">and</span> chains a media type together with one or more features. A query is true, and its styles applied, only when the media type matches the device and every feature in the chain is also true.
+  </p>
+
+  <h4 style="padding-top: 10px;">CSS Media Types</h4>
+  <table>
+    <thead>
+    <tr>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr><td><span class="code">all</span></td><td>Used for all media type devices</td></tr>
+    <tr><td><span class="code">print</span></td><td>Used for print preview mode</td></tr>
+    <tr><td><span class="code">screen</span></td><td>Used for computer screens, tablets, and smart-phones</td></tr>
+    </tbody>
+  </table>
+
+  <h4 style="padding-top: 10px;">CSS Media Features</h4>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Some of the most commonly used media features:
+  </p>
+  <table>
+    <thead>
+    <tr>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr><td><span class="code">max-height</span></td><td>Maximum height of the viewport</td></tr>
+    <tr><td><span class="code">min-height</span></td><td>Minimum height of the viewport</td></tr>
+    <tr><td><span class="code">height</span></td><td>Height of the viewport (including scrollbar)</td></tr>
+    <tr><td><span class="code">max-width</span></td><td>Maximum width of the viewport</td></tr>
+    <tr><td><span class="code">min-width</span></td><td>Minimum width of the viewport</td></tr>
+    <tr><td><span class="code">width</span></td><td>Width of the viewport (including scrollbar)</td></tr>
+    <tr><td><span class="code">orientation</span></td><td>Orientation of the viewport (landscape or portrait)</td></tr>
+    <tr><td><span class="code">resolution</span></td><td>Screen resolution</td></tr>
+    <tr><td><span class="code">prefers-color-scheme</span></td><td>User's preferred color scheme (light or dark)</td></tr>
+    </tbody>
+  </table>
+
+  <h4 style="padding-top: 10px;">Media Queries Examples</h4>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Here, the media query changes the box's background color to lightgreen once the viewport is <span class="code">480px</span> wide or more:
   </p>
 
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; body { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: pink; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @media screen and (min-width: 480px) { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; body { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: lightgreen; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;Resize the browser window to see the effect!&lt;&sol;h1&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;The media query is applied if the media type is screen, and the viewport width is 480px or more.&lt;&sol;p&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <div class="mq-demo-box-1">
+          <h4>Resize the browser window to see the effect!</h4>
+          <p>This box is pink below 480px wide, and lightgreen at 480px or wider.</p>
+        </div>
+      </td>
     </tr>
     </tbody>
   </table>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Chaining a second <span class="code">and</span> clause narrows the query to a width range — here, lightgreen only between <span class="code">480px</span> and <span class="code">768px</span>:
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; body { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: pink; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @media screen and (min-width: 480px) and (max-width: 768px) { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; body { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: lightgreen; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;Resize the browser window to see the effect!&lt;&sol;h1&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;The media query is applied if the media type is screen, and the viewport width is between 480px and 768px.&lt;&sol;p&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <div class="mq-demo-box-2">
+          <h4>Resize the browser window to see the effect!</h4>
+          <p>This box is lightgreen only between 480px and 768px wide; pink otherwise.</p>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p><strong><i>Note: </i></strong>The outer page you're reading this lesson in is itself wider than 768px on a desktop screen, so to see either demo box flip to lightgreen you need to shrink just that <span class="code">&lt;td&gt;</span>'s effective width — these two examples embed a real, working <span class="code">@media</span> rule, but since the query reads the full browser viewport (not the table cell), a true test means resizing the whole browser window down toward or below those breakpoints.</p>
 </section>
 <!--Main Section End-->
 
