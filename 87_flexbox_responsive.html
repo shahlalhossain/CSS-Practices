@@ -35,7 +35,45 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
+    /* Example 1: flex-direction switch at 600px */
+    .fr-container-1 {
+      display: flex;
+      flex-direction: row;
+    }
+    .fr-item-1 {
+      background-color: dodgerblue;
+      color: #fff;
+      padding: 10px;
+      font-size: 24px;
+      text-align: center;
+      width: 100%;
+      margin: 5px;
+    }
+    @media (max-width: 600px) {
+      .fr-container-1 { flex-direction: column; }
+    }
+    /* simulated "narrow viewport" preview, forced via a fixed-width wrapper */
+    .fr-narrow-preview { max-width: 300px; margin: 0 auto; }
+    .fr-narrow-preview .fr-container-1 { flex-direction: column; }
 
+    /* Example 2: flex-basis switch at 600px (3-per-row to 1-per-row) */
+    .fr-container-2 {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .fr-item-2 {
+      background-color: #f1f1f1;
+      padding: 10px;
+      text-align: center;
+      font-size: 24px;
+      flex: 33.3%;
+      box-sizing: border-box;
+      border: 1px solid dodgerblue;
+    }
+    @media (max-width: 600px) {
+      .fr-item-2 { flex: 100%; }
+    }
+    .fr-narrow-preview .fr-item-2 { flex: 100%; }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -85,7 +123,7 @@
           <span class="navlink">CSS Selectors</span>
         </a>
       </li>
-      <li class="item active">
+      <li class="item">
         <a href="4_css_types.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Types</span>
@@ -596,7 +634,7 @@
           <span class="navlink">Flexbox Items</span>
         </a>
       </li>
-      <li class="item">
+      <li class="item active">
         <a href="87_flexbox_responsive.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">Flexbox Responsive</span>
@@ -704,34 +742,166 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>Responsive Flexbox</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Flexbox properties alone don't make a layout responsive — but combining them with <span class="code">@media</span> queries does. The usual approach is to pick a value that's fine on wide screens (a <span class="code">flex-direction</span>, or a <span class="code">flex-basis</span>/<span class="code">flex</span> percentage), then override just that value inside a media query once the viewport shrinks past a breakpoint.
+  </p>
+</section>
+
+<section class="content">
+  <h3>Switching flex-direction at a Breakpoint</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    A flex container laid out as a row on wide screens can be flipped to a column on narrow screens, so items stack instead of being squeezed side by side. Here, <span class="code">flex-direction: row</span> is the normal state, and a media query switches it to <span class="code">column</span> once the viewport is <span class="code">600px</span> wide or less.
   </p>
 
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .flex-container { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: flex; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flex-direction: row; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .flex-item { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: dodgerblue; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: white; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; width: 100%; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 10px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; text-align: center; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* On screens narrower than 600px, stack the items vertically instead of horizontally */ <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#64;media (max-width: 600px) { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .flex-container { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flex-direction: column; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="flex-container"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="flex-item"&gt;1&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="flex-item"&gt;2&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="flex-item"&gt;3&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p>Above 600px, items sit in a row:</p>
+        <div class="fr-container-1">
+          <div class="fr-item-1">1</div>
+          <div class="fr-item-1">2</div>
+          <div class="fr-item-1">3</div>
+        </div>
+        <p style="margin-top: 20px;">At 600px or narrower, the same markup stacks into a column (simulated here in a fixed-width box):</p>
+        <div class="fr-narrow-preview">
+          <div class="fr-container-1">
+            <div class="fr-item-1">1</div>
+            <div class="fr-item-1">2</div>
+            <div class="fr-item-1">3</div>
+          </div>
+        </div>
+      </td>
     </tr>
     </tbody>
   </table>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+  <p><strong><i>Note: </i></strong>The <span class="code">@media (max-width: 600px)</span> rule above is real, working CSS — it's not just shown for illustration. Because it reads the actual browser viewport (not a table cell), you'd need to shrink the whole browser window below 600px to see it fire on this page; the second box simulates that narrow state inside a fixed-width wrapper so both states are visible side by side without resizing anything.</p>
+</section>
+
+<section class="content">
+  <h3>Switching flex-basis at a Breakpoint</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The same idea works for sizing instead of direction. Here, three items each take up <span class="code">33.3%</span> of the container's width (three per row), and <span class="code">flex-wrap: wrap</span> lets them wrap if that stops fitting. The media query changes each item's share to <span class="code">100%</span> once the viewport narrows past 600px, so they collapse to one per row.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .flex-container { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: flex; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flex-wrap: wrap; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .flex-item { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: #f1f1f1; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 10px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; text-align: center; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flex: 33.3%; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* On screens narrower than 600px, one item per row instead of three */ <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#64;media (max-width: 600px) { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .flex-item { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flex: 100%; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="flex-container"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="flex-item"&gt;1&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="flex-item"&gt;2&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="flex-item"&gt;3&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p>Above 600px, each item takes roughly a third of the row:</p>
+        <div class="fr-container-2">
+          <div class="fr-item-2">1</div>
+          <div class="fr-item-2">2</div>
+          <div class="fr-item-2">3</div>
+        </div>
+        <p style="margin-top: 20px;">At 600px or narrower, each item takes the full row (simulated here in a fixed-width box):</p>
+        <div class="fr-narrow-preview">
+          <div class="fr-container-2">
+            <div class="fr-item-2">1</div>
+            <div class="fr-item-2">2</div>
+            <div class="fr-item-2">3</div>
+          </div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p><strong><i>Note: </i></strong>Both this example and the previous one use the same <span class="code">600px</span> breakpoint only by convention — there's nothing special about that number. Real sites typically pick breakpoints that match where their own content actually starts looking cramped, not a fixed value copied from a tutorial.</p>
+</section>
+
+<section class="content">
+  <h3>Other Responsive Flexbox Patterns</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The same row/column and flex-basis switching techniques above are also how two common UI patterns are typically built with flexbox:
+  </p>
+  <ul style="padding-left: 30px;">
+    <li><strong>Responsive image gallery</strong> — a flex container of images using a wrapping <span class="code">flex-basis</span> percentage that's reduced at narrower breakpoints, the same way the 33.3% → 100% example above works, just applied to <span class="code">&lt;img&gt;</span> elements instead of plain boxes.</li>
+    <li><strong>Responsive website layout</strong> — a page-level flex container (navigation bar + content area) that runs as a row on desktop and collapses to a stacked column on mobile, using the same <span class="code">flex-direction</span> switch as the first example on this page, just applied to the whole page shell instead of three small boxes.</li>
+  </ul>
 </section>
 <!--Main Section End-->
 
