@@ -35,7 +35,31 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
+    .gi-demo {
+      background-color: dodgerblue;
+      padding: 10px;
+    }
+    .gi-demo div {
+      background-color: #f1f1f1;
+      border: 1px solid black;
+      padding: 10px;
+      font-size: 24px;
+      text-align: center;
+    }
 
+    .gi-grid {
+      display: grid;
+      grid-template-columns: auto auto auto;
+    }
+
+    .gi-inline-wrap {
+      border: 2px dashed #999;
+      padding: 10px;
+    }
+    .gi-inline-grid {
+      display: inline-grid;
+      grid-template-columns: auto auto auto;
+    }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -85,7 +109,7 @@
           <span class="navlink">CSS Selectors</span>
         </a>
       </li>
-      <li class="item active">
+      <li class="item">
         <a href="4_css_types.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Types</span>
@@ -608,7 +632,7 @@
     <!-- Menu Section Start -->
     <span class="menu_title">CSS Grid</span>
     <ul class="menu_items">
-      <li class="item">
+      <li class="item active">
         <a href="88_css_grid_intro.html" class="nav_link">
           <span class="navlink_icon"><i class="bx bxs-file-css"></i></span>
           <span class="navlink">CSS Grid Intro</span>
@@ -704,34 +728,187 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS Grid Layout</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The CSS Grid Layout Module lays elements out in rows and columns at once, which makes it a natural fit for page-level and component-level layouts that would otherwise need a tangle of floats or absolute positioning. Browser support for Grid is excellent across all modern browsers.
+  </p>
+</section>
+
+<section class="content">
+  <h3>Grid vs. Flexbox</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Flexbox, covered in the previous lessons, is a <strong>one-dimensional</strong> layout model — it arranges items along a single row or a single column at a time. Grid is <strong>two-dimensional</strong> — it arranges items along rows and columns simultaneously, which makes it the better tool whenever a layout needs to line up both horizontally and vertically (think a photo grid, or a full page skeleton with a header, sidebar, content, and footer all aligning against each other).
+  </p>
+</section>
+
+<section class="content">
+  <h3>Grid Container and Grid Items</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    An HTML element becomes a <strong>grid container</strong> by setting its <span class="code">display</span> property to <span class="code">grid</span> or <span class="code">inline-grid</span>. Its direct children automatically become <strong>grid items</strong>, the same way setting <span class="code">display: flex</span> turns an element's children into flex items.
   </p>
 
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .grid-container { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: grid; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; grid-template-columns: auto auto auto; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: dodgerblue; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 10px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .grid-container &gt; div { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: #f1f1f1; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 1px solid black; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 10px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-size: 30px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; text-align: center; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;A Grid Container with Five Grid Items&lt;&sol;h1&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="grid-container"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;1&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;2&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;3&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;4&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;5&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p>A grid container (<span class="code">.grid-container</span>) with five grid items, laid out across three columns — the fifth item wraps onto a second row:</p>
+        <div class="gi-demo gi-grid">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+        </div>
+      </td>
     </tr>
     </tbody>
   </table>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+  <p><strong><i>Note: </i></strong>The grid container's direct children are grid items; any further-nested elements (a child's own children) are not. The <span class="code">grid-template-columns</span> property used here — three columns, each sized <span class="code">auto</span> — is explained in full in the next lesson, <span class="code">CSS Grid Container</span>.</p>
+</section>
+
+<section class="content">
+  <h3>display: grid vs. display: inline-grid</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    <span class="code">display: grid</span> makes the container a <strong>block-level</strong> box — it takes up the full width available, the same way a <span class="code">&lt;div&gt;</span> does. <span class="code">display: inline-grid</span> makes it an <strong>inline-level</strong> box instead, shrinking to fit just its content's width and allowing other inline content to sit beside it, the same relationship <span class="code">inline-block</span> has to <span class="code">block</span>.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .grid-container { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: inline-grid; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; grid-template-columns: auto auto auto; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: dodgerblue; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 10px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .grid-container &gt; div { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: #f1f1f1; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 1px solid black; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 10px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-size: 30px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; text-align: center; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;display: inline-grid&lt;&sol;h1&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Some text before the grid&amp;hellip; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="grid-container"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;1&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;2&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;3&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &amp;hellip;and some text right after it, on the same line. <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;p&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p>With <span class="code">inline-grid</span>, the grid shrinks to its content width and sits inline with the surrounding text:</p>
+        <div class="gi-inline-wrap">
+          Some text before the grid&hellip;
+          <div class="gi-demo gi-inline-grid">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+          </div>
+          &hellip;and some text right after it, on the same line.
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content">
+  <h3>CSS Grid Properties</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The table below lists every property introduced across the CSS Grid chapters. The <span class="code">grid-template-columns</span>/<span class="code">rows</span>, gap, alignment, and named-area properties are demonstrated in full in the next lesson (<span class="code">CSS Grid Container</span>); the item-placement properties follow in the lesson after that (<span class="code">CSS Grid Item</span>).
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr><td><span class="code">display</span></td><td>Specifies the type of box used for a grid container (grid or inline-grid)</td></tr>
+    <tr><td><span class="code">grid-template-columns</span></td><td>Specifies the number and widths of columns in a grid layout</td></tr>
+    <tr><td><span class="code">grid-template-rows</span></td><td>Specifies the number and heights of rows in a grid layout</td></tr>
+    <tr><td><span class="code">grid-template-areas</span></td><td>Specifies areas within a grid layout, by name</td></tr>
+    <tr><td><span class="code">row-gap</span></td><td>Specifies the gap between the grid rows</td></tr>
+    <tr><td><span class="code">column-gap</span></td><td>Specifies the gap between the grid columns</td></tr>
+    <tr><td><span class="code">gap</span></td><td>Shorthand for the row-gap and column-gap properties</td></tr>
+    <tr><td><span class="code">justify-content</span></td><td>Aligns the whole grid within the grid container</td></tr>
+    <tr><td><span class="code">justify-items</span></td><td>Aligns grid items along the row axis</td></tr>
+    <tr><td><span class="code">align-content</span></td><td>Aligns the whole grid within the grid container</td></tr>
+    <tr><td><span class="code">align-items</span></td><td>Aligns grid items along the column axis</td></tr>
+    <tr><td><span class="code">grid-column-start</span></td><td>Specifies where to start a grid item on the row axis</td></tr>
+    <tr><td><span class="code">grid-column-end</span></td><td>Specifies where to stop a grid item on the row axis</td></tr>
+    <tr><td><span class="code">grid-row-start</span></td><td>Specifies where to start a grid item on the column axis</td></tr>
+    <tr><td><span class="code">grid-row-end</span></td><td>Specifies where to stop a grid item on the column axis</td></tr>
+    <tr><td><span class="code">grid-area</span></td><td>Shorthand for grid-row-start / grid-column-start / grid-row-end / grid-column-end, or assigns a name for use with grid-template-areas</td></tr>
+    <tr><td><span class="code">justify-self</span></td><td>Aligns a single grid item along the row axis</td></tr>
+    <tr><td><span class="code">align-self</span></td><td>Aligns a single grid item along the column axis</td></tr>
+    </tbody>
+  </table>
 </section>
 <!--Main Section End-->
 
