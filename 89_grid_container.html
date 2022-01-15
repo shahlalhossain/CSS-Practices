@@ -35,7 +35,82 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
+    .gc-demo {
+      display: grid;
+      background-color: dodgerblue;
+      padding: 10px;
+    }
+    .gc-demo div {
+      background-color: #f1f1f1;
+      border: 1px solid black;
+      padding: 10px;
+      font-size: 20px;
+      text-align: center;
+    }
 
+    /* grid-template-columns */
+    .gc-col-auto   { grid-template-columns: auto auto auto; }
+    .gc-col-mixed  { grid-template-columns: 80px 200px auto; }
+    .gc-col-fr     { grid-template-columns: 1fr 1fr 1fr; }
+    .gc-col-frmix  { grid-template-columns: 1fr 2fr 1fr; }
+    .gc-col-repeat { grid-template-columns: repeat(3, 1fr); }
+    .gc-col-minmax { grid-template-columns: minmax(80px, 1fr) 150px 150px; }
+
+    /* grid-template-rows */
+    .gc-rows       { grid-template-rows: 80px 200px; }
+
+    /* gap */
+    .gc-gap-col    { grid-template-columns: auto auto auto; column-gap: 50px; }
+    .gc-gap-row    { grid-template-columns: auto auto auto; row-gap: 50px; }
+    .gc-gap-one    { grid-template-columns: auto auto auto; gap: 50px; }
+    .gc-gap-two    { grid-template-columns: auto auto auto; gap: 30px 100px; }
+
+    /* justify-content */
+    .gc-jc-common  { grid-template-columns: 60px 60px 60px; }
+    .gc-jc-evenly  { justify-content: space-evenly; }
+    .gc-jc-around  { justify-content: space-around; }
+    .gc-jc-between { justify-content: space-between; }
+    .gc-jc-center  { justify-content: center; }
+    .gc-jc-start   { justify-content: start; }
+    .gc-jc-end     { justify-content: end; }
+
+    /* align-content (needs container height) */
+    .gc-ac-common  { grid-template-columns: auto auto auto; height: 300px; }
+    .gc-ac-center  { align-content: center; }
+    .gc-ac-evenly  { align-content: space-evenly; }
+    .gc-ac-between { align-content: space-between; }
+    .gc-ac-start   { align-content: start; }
+    .gc-ac-end     { align-content: end; }
+
+    /* place-content shorthand */
+    .gc-pc-center  { place-content: center; }
+    .gc-pc-mixed   { place-content: end space-between; }
+
+    /* justify-items / align-items (per-item box alignment within its cell) */
+    .gc-items-demo {
+      grid-template-columns: auto auto auto;
+      grid-template-rows: 100px 100px;
+    }
+    .gc-items-demo div { width: 80px; }
+    .gc-ji-center  { justify-items: center; }
+    .gc-ai-center  { align-items: center; }
+
+    /* grid-template-areas (reconstructed standard header/nav/main/aside/footer layout) */
+    .gc-areas {
+      grid-template-areas:
+        "header header header"
+        "nav main aside"
+        "footer footer footer";
+      grid-template-columns: 1fr 2fr 1fr;
+      grid-template-rows: auto auto auto;
+      gap: 10px;
+    }
+    .gc-areas div { text-align: left; padding: 15px; }
+    .gc-area-header { grid-area: header; }
+    .gc-area-nav    { grid-area: nav; }
+    .gc-area-main   { grid-area: main; }
+    .gc-area-aside  { grid-area: aside; }
+    .gc-area-footer { grid-area: footer; }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -85,7 +160,7 @@
           <span class="navlink">CSS Selectors</span>
         </a>
       </li>
-      <li class="item active">
+      <li class="item">
         <a href="4_css_types.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Types</span>
@@ -614,7 +689,7 @@
           <span class="navlink">CSS Grid Intro</span>
         </a>
       </li>
-      <li class="item">
+      <li class="item active">
         <a href="89_grid_container.html" class="nav_link">
           <span class="navlink_icon"><i class="bx bxs-file-css"></i></span>
           <span class="navlink">CSS Grid Container</span>
@@ -704,34 +779,1168 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS Grid Container</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    This lesson covers every property that goes on the grid <strong>container</strong> itself: sizing the columns and rows with <span class="code">grid-template-columns</span>/<span class="code">grid-template-rows</span>, spacing items apart with <span class="code">gap</span>, aligning the whole grid (or its items as a group) with <span class="code">justify-content</span>/<span class="code">align-content</span>/<span class="code">justify-items</span>/<span class="code">align-items</span>, and laying out named regions with <span class="code">grid-template-areas</span>. The next lesson, <span class="code">CSS Grid Item</span>, covers properties that target one grid item individually.
+  </p>
+</section>
+
+<section class="content">
+  <h3>grid-template-columns</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">grid-template-columns</span> property defines both how many columns a grid has and how wide each one is: one value is listed per column. Each example below lays out 6 items across 3 columns, which wrap onto a second row.
   </p>
 
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .container { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: grid; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; grid-template-columns: auto auto auto; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;grid-template-columns: auto auto auto&lt;&sol;h1&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Three equal-ish columns, each sized to fit its content:&lt;&sol;p&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="container"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;1&lt;&sol;div&gt;&lt;div&gt;2&lt;&sol;div&gt;&lt;div&gt;3&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;4&lt;&sol;div&gt;&lt;div&gt;5&lt;&sol;div&gt;&lt;div&gt;6&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p><span class="code">grid-template-columns: auto auto auto;</span> — three columns, each sized to its content:</p>
+        <div class="gc-demo gc-col-auto">
+          <div>1</div><div>2</div><div>3</div>
+          <div>4</div><div>5</div><div>6</div>
+        </div>
+      </td>
     </tr>
     </tbody>
   </table>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .container { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: grid; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; grid-template-columns: 80px 200px auto; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;grid-template-columns: 80px 200px auto&lt;&sol;h1&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Each column can be given its own explicit width, mixed with auto:&lt;&sol;p&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="container"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;1&lt;&sol;div&gt;&lt;div&gt;2&lt;&sol;div&gt;&lt;div&gt;3&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;4&lt;&sol;div&gt;&lt;div&gt;5&lt;&sol;div&gt;&lt;div&gt;6&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p><span class="code">grid-template-columns: 80px 200px auto;</span> — mixed fixed and auto widths:</p>
+        <div class="gc-demo gc-col-mixed">
+          <div>1</div><div>2</div><div>3</div>
+          <div>4</div><div>5</div><div>6</div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .container { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: grid; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; grid-template-columns: 1fr 1fr 1fr; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;grid-template-columns: 1fr 1fr 1fr&lt;&sol;h1&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;The fr unit divides the available space into fractions; three equal 1fr columns split it evenly:&lt;&sol;p&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="container"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;1&lt;&sol;div&gt;&lt;div&gt;2&lt;&sol;div&gt;&lt;div&gt;3&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;4&lt;&sol;div&gt;&lt;div&gt;5&lt;&sol;div&gt;&lt;div&gt;6&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p><span class="code">grid-template-columns: 1fr 1fr 1fr;</span> — three equal fractional columns:</p>
+        <div class="gc-demo gc-col-fr">
+          <div>1</div><div>2</div><div>3</div>
+          <div>4</div><div>5</div><div>6</div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .container { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: grid; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; grid-template-columns: 1fr 2fr 1fr; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;grid-template-columns: 1fr 2fr 1fr&lt;&sol;h1&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Fractions don't have to be equal — here the middle column gets twice the share of the outer two:&lt;&sol;p&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="container"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;1&lt;&sol;div&gt;&lt;div&gt;2&lt;&sol;div&gt;&lt;div&gt;3&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;4&lt;&sol;div&gt;&lt;div&gt;5&lt;&sol;div&gt;&lt;div&gt;6&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p><span class="code">grid-template-columns: 1fr 2fr 1fr;</span> — the middle column is twice as wide:</p>
+        <div class="gc-demo gc-col-frmix">
+          <div>1</div><div>2</div><div>3</div>
+          <div>4</div><div>5</div><div>6</div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .container { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: grid; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; grid-template-columns: repeat(3, 1fr); <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;grid-template-columns: repeat(3, 1fr)&lt;&sol;h1&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;repeat() avoids writing out "1fr" three times — repeat(3, 1fr) is identical to 1fr 1fr 1fr:&lt;&sol;p&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="container"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;1&lt;&sol;div&gt;&lt;div&gt;2&lt;&sol;div&gt;&lt;div&gt;3&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;4&lt;&sol;div&gt;&lt;div&gt;5&lt;&sol;div&gt;&lt;div&gt;6&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p><span class="code">grid-template-columns: repeat(3, 1fr);</span> — identical result to <span class="code">1fr 1fr 1fr</span>, written more compactly:</p>
+        <div class="gc-demo gc-col-repeat">
+          <div>1</div><div>2</div><div>3</div>
+          <div>4</div><div>5</div><div>6</div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .container { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: grid; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; grid-template-columns: minmax(80px, 1fr) 150px 150px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;grid-template-columns with minmax()&lt;&sol;h1&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;minmax(80px, 1fr) lets the first column grow to fill space, but never shrink below 80px:&lt;&sol;p&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="container"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;1&lt;&sol;div&gt;&lt;div&gt;2&lt;&sol;div&gt;&lt;div&gt;3&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;4&lt;&sol;div&gt;&lt;div&gt;5&lt;&sol;div&gt;&lt;div&gt;6&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p><span class="code">grid-template-columns: minmax(80px, 1fr) 150px 150px;</span> — the first column flexes between 80px and 1fr:</p>
+        <div class="gc-demo gc-col-minmax">
+          <div>1</div><div>2</div><div>3</div>
+          <div>4</div><div>5</div><div>6</div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content">
+  <h3>grid-template-rows</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    <span class="code">grid-template-rows</span> works exactly like <span class="code">grid-template-columns</span>, but for row heights instead of column widths — one value per explicit row. Rows beyond however many are listed fall back to an automatic height.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .container { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: grid; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; grid-template-rows: 80px 200px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;grid-template-rows: 80px 200px&lt;&sol;h1&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;With no grid-template-columns set, each of the 8 items becomes its own column; the first row is 80px tall, the second is 200px:&lt;&sol;p&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="container"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;1&lt;&sol;div&gt;&lt;div&gt;2&lt;&sol;div&gt;&lt;div&gt;3&lt;&sol;div&gt;&lt;div&gt;4&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;5&lt;&sol;div&gt;&lt;div&gt;6&lt;&sol;div&gt;&lt;div&gt;7&lt;&sol;div&gt;&lt;div&gt;8&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p><span class="code">grid-template-rows: 80px 200px;</span> — row 1 is 80px tall, row 2 is 200px tall:</p>
+        <div class="gc-demo gc-rows">
+          <div>1</div><div>2</div><div>3</div><div>4</div>
+          <div>5</div><div>6</div><div>7</div><div>8</div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content">
+  <h3>The gap Properties</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    <span class="code">column-gap</span> and <span class="code">row-gap</span> add space between grid tracks, and <span class="code">gap</span> is the shorthand for both — one value applies to both axes, two values apply <span class="code">row-gap</span> first and <span class="code">column-gap</span> second.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .container { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: grid; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; grid-template-columns: auto auto auto; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; column-gap: 50px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;column-gap: 50px&lt;&sol;h1&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="container"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;1&lt;&sol;div&gt;&lt;div&gt;2&lt;&sol;div&gt;&lt;div&gt;3&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;4&lt;&sol;div&gt;&lt;div&gt;5&lt;&sol;div&gt;&lt;div&gt;6&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p><span class="code">column-gap: 50px;</span> — only the gaps between columns widen:</p>
+        <div class="gc-demo gc-gap-col">
+          <div>1</div><div>2</div><div>3</div>
+          <div>4</div><div>5</div><div>6</div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .container { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: grid; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; grid-template-columns: auto auto auto; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; row-gap: 50px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;row-gap: 50px&lt;&sol;h1&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="container"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;1&lt;&sol;div&gt;&lt;div&gt;2&lt;&sol;div&gt;&lt;div&gt;3&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;4&lt;&sol;div&gt;&lt;div&gt;5&lt;&sol;div&gt;&lt;div&gt;6&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p><span class="code">row-gap: 50px;</span> — only the gap between rows widens:</p>
+        <div class="gc-demo gc-gap-row">
+          <div>1</div><div>2</div><div>3</div>
+          <div>4</div><div>5</div><div>6</div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .container { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: grid; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; grid-template-columns: auto auto auto; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gap: 50px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;gap: 50px&lt;&sol;h1&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;One value applies to both row-gap and column-gap:&lt;&sol;p&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="container"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;1&lt;&sol;div&gt;&lt;div&gt;2&lt;&sol;div&gt;&lt;div&gt;3&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;4&lt;&sol;div&gt;&lt;div&gt;5&lt;&sol;div&gt;&lt;div&gt;6&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p><span class="code">gap: 50px;</span> — both axes get the same 50px gap:</p>
+        <div class="gc-demo gc-gap-one">
+          <div>1</div><div>2</div><div>3</div>
+          <div>4</div><div>5</div><div>6</div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .container { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: grid; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; grid-template-columns: auto auto auto; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gap: 30px 100px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;gap: 30px 100px&lt;&sol;h1&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Two values set row-gap (30px) and column-gap (100px) separately:&lt;&sol;p&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="container"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;1&lt;&sol;div&gt;&lt;div&gt;2&lt;&sol;div&gt;&lt;div&gt;3&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;4&lt;&sol;div&gt;&lt;div&gt;5&lt;&sol;div&gt;&lt;div&gt;6&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p><span class="code">gap: 30px 100px;</span> — row-gap 30px, column-gap 100px:</p>
+        <div class="gc-demo gc-gap-two">
+          <div>1</div><div>2</div><div>3</div>
+          <div>4</div><div>5</div><div>6</div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content">
+  <h3>The justify-content Property</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    When a grid's total column width is narrower than its container, <span class="code">justify-content</span> controls how the grid as a whole is positioned along the row axis. Each example below uses three fixed 60px columns inside a wider container, so there's visible leftover space to distribute.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .container { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: grid; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; grid-template-columns: 60px 60px 60px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; justify-content: space-evenly; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;justify-content: space-evenly&lt;&sol;h1&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="container"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;1&lt;&sol;div&gt;&lt;div&gt;2&lt;&sol;div&gt;&lt;div&gt;3&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;4&lt;&sol;div&gt;&lt;div&gt;5&lt;&sol;div&gt;&lt;div&gt;6&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p><span class="code">justify-content: space-evenly;</span> — equal space around and between every column:</p>
+        <div class="gc-demo gc-jc-common gc-jc-evenly">
+          <div>1</div><div>2</div><div>3</div>
+          <div>4</div><div>5</div><div>6</div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .container { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: grid; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; grid-template-columns: 60px 60px 60px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; justify-content: space-around; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;justify-content: space-around&lt;&sol;h1&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="container"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;1&lt;&sol;div&gt;&lt;div&gt;2&lt;&sol;div&gt;&lt;div&gt;3&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;4&lt;&sol;div&gt;&lt;div&gt;5&lt;&sol;div&gt;&lt;div&gt;6&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p><span class="code">justify-content: space-around;</span> — each column gets equal space on both sides:</p>
+        <div class="gc-demo gc-jc-common gc-jc-around">
+          <div>1</div><div>2</div><div>3</div>
+          <div>4</div><div>5</div><div>6</div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .container { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: grid; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; grid-template-columns: 60px 60px 60px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; justify-content: space-between; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;justify-content: space-between&lt;&sol;h1&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="container"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;1&lt;&sol;div&gt;&lt;div&gt;2&lt;&sol;div&gt;&lt;div&gt;3&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;4&lt;&sol;div&gt;&lt;div&gt;5&lt;&sol;div&gt;&lt;div&gt;6&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p><span class="code">justify-content: space-between;</span> — first and last columns flush with the container edges:</p>
+        <div class="gc-demo gc-jc-common gc-jc-between">
+          <div>1</div><div>2</div><div>3</div>
+          <div>4</div><div>5</div><div>6</div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .container { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: grid; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; grid-template-columns: 60px 60px 60px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; justify-content: center; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;justify-content: center&lt;&sol;h1&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="container"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;1&lt;&sol;div&gt;&lt;div&gt;2&lt;&sol;div&gt;&lt;div&gt;3&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;4&lt;&sol;div&gt;&lt;div&gt;5&lt;&sol;div&gt;&lt;div&gt;6&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p><span class="code">justify-content: center;</span> — the grid is centered horizontally:</p>
+        <div class="gc-demo gc-jc-common gc-jc-center">
+          <div>1</div><div>2</div><div>3</div>
+          <div>4</div><div>5</div><div>6</div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .container { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: grid; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; grid-template-columns: 60px 60px 60px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; justify-content: start; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;justify-content: start&lt;&sol;h1&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="container"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;1&lt;&sol;div&gt;&lt;div&gt;2&lt;&sol;div&gt;&lt;div&gt;3&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;4&lt;&sol;div&gt;&lt;div&gt;5&lt;&sol;div&gt;&lt;div&gt;6&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p><span class="code">justify-content: start;</span> (default) — the grid sits flush left:</p>
+        <div class="gc-demo gc-jc-common gc-jc-start">
+          <div>1</div><div>2</div><div>3</div>
+          <div>4</div><div>5</div><div>6</div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .container { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: grid; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; grid-template-columns: 60px 60px 60px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; justify-content: end; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;justify-content: end&lt;&sol;h1&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="container"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;1&lt;&sol;div&gt;&lt;div&gt;2&lt;&sol;div&gt;&lt;div&gt;3&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;4&lt;&sol;div&gt;&lt;div&gt;5&lt;&sol;div&gt;&lt;div&gt;6&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p><span class="code">justify-content: end;</span> — the grid sits flush right:</p>
+        <div class="gc-demo gc-jc-common gc-jc-end">
+          <div>1</div><div>2</div><div>3</div>
+          <div>4</div><div>5</div><div>6</div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content">
+  <h3>The align-content Property</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    <span class="code">align-content</span> is <span class="code">justify-content</span>'s counterpart for the column axis — it positions the grid as a whole vertically within the container, and only has a visible effect when the container is taller than the grid's total row height. Each example below uses a 300px-tall container.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .container { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: grid; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; grid-template-columns: auto auto auto; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; height: 300px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; align-content: center; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;align-content: center&lt;&sol;h1&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="container"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;1&lt;&sol;div&gt;&lt;div&gt;2&lt;&sol;div&gt;&lt;div&gt;3&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;4&lt;&sol;div&gt;&lt;div&gt;5&lt;&sol;div&gt;&lt;div&gt;6&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p><span class="code">align-content: center;</span> — the two rows are centered vertically in a 300px container:</p>
+        <div class="gc-demo gc-ac-common gc-ac-center">
+          <div>1</div><div>2</div><div>3</div>
+          <div>4</div><div>5</div><div>6</div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .container { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: grid; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; grid-template-columns: auto auto auto; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; height: 300px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; align-content: space-evenly; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;align-content: space-evenly&lt;&sol;h1&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="container"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;1&lt;&sol;div&gt;&lt;div&gt;2&lt;&sol;div&gt;&lt;div&gt;3&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;4&lt;&sol;div&gt;&lt;div&gt;5&lt;&sol;div&gt;&lt;div&gt;6&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p><span class="code">align-content: space-evenly;</span> — equal space around and between both rows:</p>
+        <div class="gc-demo gc-ac-common gc-ac-evenly">
+          <div>1</div><div>2</div><div>3</div>
+          <div>4</div><div>5</div><div>6</div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .container { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: grid; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; grid-template-columns: auto auto auto; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; height: 300px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; align-content: space-between; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;align-content: space-between&lt;&sol;h1&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="container"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;1&lt;&sol;div&gt;&lt;div&gt;2&lt;&sol;div&gt;&lt;div&gt;3&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;4&lt;&sol;div&gt;&lt;div&gt;5&lt;&sol;div&gt;&lt;div&gt;6&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p><span class="code">align-content: space-between;</span> — first and last rows flush with the container's top and bottom:</p>
+        <div class="gc-demo gc-ac-common gc-ac-between">
+          <div>1</div><div>2</div><div>3</div>
+          <div>4</div><div>5</div><div>6</div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p><strong><i>Note: </i></strong><span class="code">align-content: start</span> and <span class="code">align-content: end</span> work exactly like their <span class="code">justify-content</span> counterparts above, just along the vertical axis instead of the horizontal one — pinning all rows to the container's top or bottom respectively.</p>
+</section>
+
+<section class="content">
+  <h3>The place-content Shorthand</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    <span class="code">place-content</span> is a shorthand for <span class="code">align-content</span> and <span class="code">justify-content</span> together. One value sets both axes to the same value; two values set <span class="code">align-content</span> first and <span class="code">justify-content</span> second.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .container { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: grid; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; grid-template-columns: auto auto auto; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; height: 300px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; place-content: center; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;place-content: center&lt;&sol;h1&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;One value — centers the grid both vertically and horizontally:&lt;&sol;p&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="container"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;1&lt;&sol;div&gt;&lt;div&gt;2&lt;&sol;div&gt;&lt;div&gt;3&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;4&lt;&sol;div&gt;&lt;div&gt;5&lt;&sol;div&gt;&lt;div&gt;6&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p><span class="code">place-content: center;</span> — the grid is centered on both axes:</p>
+        <div class="gc-demo gc-ac-common gc-pc-center">
+          <div>1</div><div>2</div><div>3</div>
+          <div>4</div><div>5</div><div>6</div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .container { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: grid; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; grid-template-columns: auto auto auto; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; height: 300px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; place-content: end space-between; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;place-content: end space-between&lt;&sol;h1&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Two values — align-content: end, justify-content: space-between:&lt;&sol;p&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="container"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;1&lt;&sol;div&gt;&lt;div&gt;2&lt;&sol;div&gt;&lt;div&gt;3&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;4&lt;&sol;div&gt;&lt;div&gt;5&lt;&sol;div&gt;&lt;div&gt;6&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p><span class="code">place-content: end space-between;</span> — rows pinned to the bottom, columns spread with space-between:</p>
+        <div class="gc-demo gc-ac-common gc-pc-mixed">
+          <div>1</div><div>2</div><div>3</div>
+          <div>4</div><div>5</div><div>6</div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content">
+  <h3>justify-items and align-items</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Where <span class="code">justify-content</span>/<span class="code">align-content</span> position the grid as a whole, <span class="code">justify-items</span> and <span class="code">align-items</span> position each item <strong>inside its own cell</strong> — useful when an item is narrower or shorter than the cell it occupies. Both default to <span class="code">stretch</span>, which is why items normally fill their cell completely; the example below sets each item to a fixed width/height smaller than its cell so the effect is visible.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .container { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: grid; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; grid-template-columns: auto auto auto; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; grid-template-rows: 100px 100px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; justify-items: center; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .container div { width: 80px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;justify-items: center&lt;&sol;h1&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Each item is narrower than its cell, so centering it horizontally within the cell is visible:&lt;&sol;p&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="container"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;1&lt;&sol;div&gt;&lt;div&gt;2&lt;&sol;div&gt;&lt;div&gt;3&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;4&lt;&sol;div&gt;&lt;div&gt;5&lt;&sol;div&gt;&lt;div&gt;6&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p><span class="code">justify-items: center;</span> — every item is centered inside its own cell along the row axis:</p>
+        <div class="gc-demo gc-items-demo gc-ji-center">
+          <div>1</div><div>2</div><div>3</div>
+          <div>4</div><div>5</div><div>6</div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .container { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: grid; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; grid-template-columns: auto auto auto; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; grid-template-rows: 100px 100px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; align-items: center; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .container div { width: 80px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;align-items: center&lt;&sol;h1&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Each 100px-tall cell is taller than its item, so centering it vertically within the cell is visible:&lt;&sol;p&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="container"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;1&lt;&sol;div&gt;&lt;div&gt;2&lt;&sol;div&gt;&lt;div&gt;3&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;4&lt;&sol;div&gt;&lt;div&gt;5&lt;&sol;div&gt;&lt;div&gt;6&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p><span class="code">align-items: center;</span> — every item is centered inside its own cell along the column axis:</p>
+        <div class="gc-demo gc-items-demo gc-ai-center">
+          <div>1</div><div>2</div><div>3</div>
+          <div>4</div><div>5</div><div>6</div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p><strong><i>Note: </i></strong>W3Schools' reference material for <span class="code">justify-items</span>/<span class="code">align-items</span> wasn't available with runnable example markup at the time of writing; the two demos above were reconstructed from the properties' documented behavior (their values and defaults match the spec exactly — <span class="code">start</span>, <span class="code">end</span>, <span class="code">center</span>, and the default <span class="code">stretch</span>) rather than copied from a specific W3Schools example.</p>
+</section>
+
+<section class="content">
+  <h3>grid-template-areas</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    <span class="code">grid-template-areas</span> lays out a grid by naming regions instead of counting rows and columns. Each string in the value is one row, and each word in the string is the name of the area that cell belongs to — repeating a name merges adjacent cells into one larger area. Individual items are then assigned to a named area with the <span class="code">grid-area</span> property, which must match one of the names used in <span class="code">grid-template-areas</span>.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .container { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: grid; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gap: 10px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; grid-template-columns: 1fr 2fr 1fr; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; grid-template-areas: <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "header header header" <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "nav main aside" <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "footer footer footer"; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .header { grid-area: header; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .nav { grid-area: nav; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .main { grid-area: main; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .aside { grid-area: aside; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .footer { grid-area: footer; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="container"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="header"&gt;Header&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="nav"&gt;Nav&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="main"&gt;Main&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="aside"&gt;Aside&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="footer"&gt;Footer&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p>A classic page skeleton: a full-width header, a nav/main/aside row, and a full-width footer, named rather than counted:</p>
+        <div class="gc-demo gc-areas">
+          <div class="gc-area-header">Header</div>
+          <div class="gc-area-nav">Nav</div>
+          <div class="gc-area-main">Main</div>
+          <div class="gc-area-aside">Aside</div>
+          <div class="gc-area-footer">Footer</div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p><strong><i>Note: </i></strong>This example is a reconstruction of W3Schools' standard header/nav/main/aside/footer teaching pattern for <span class="code">grid-template-areas</span>, since its exact source markup wasn't recoverable; the property values and behavior shown are accurate to the spec. A cell can be left empty in the layout by using a period (<span class="code">.</span>) instead of a name.</p>
+</section>
+
+<section class="content">
+  <h3>CSS Grid Container Properties</h3>
+  <hr>
+
+  <table>
+    <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr><td><span class="code">display</span></td><td>Specifies the type of box used for a grid container</td></tr>
+    <tr><td><span class="code">grid-template-columns</span></td><td>Specifies the number and widths of columns</td></tr>
+    <tr><td><span class="code">grid-template-rows</span></td><td>Specifies the number and heights of rows</td></tr>
+    <tr><td><span class="code">grid-template-areas</span></td><td>Specifies named grid areas</td></tr>
+    <tr><td><span class="code">grid-template</span></td><td>Shorthand for grid-template-rows, grid-template-columns, and grid-template-areas</td></tr>
+    <tr><td><span class="code">column-gap</span></td><td>Specifies the gap between the columns</td></tr>
+    <tr><td><span class="code">row-gap</span></td><td>Specifies the gap between the rows</td></tr>
+    <tr><td><span class="code">gap</span></td><td>Shorthand for row-gap and column-gap</td></tr>
+    <tr><td><span class="code">justify-content</span></td><td>Aligns the whole grid within the container (row axis)</td></tr>
+    <tr><td><span class="code">align-content</span></td><td>Aligns the whole grid within the container (column axis)</td></tr>
+    <tr><td><span class="code">place-content</span></td><td>Shorthand for align-content and justify-content</td></tr>
+    <tr><td><span class="code">justify-items</span></td><td>Aligns grid items inside their cell (row axis)</td></tr>
+    <tr><td><span class="code">align-items</span></td><td>Aligns grid items inside their cell (column axis)</td></tr>
+    <tr><td><span class="code">grid-auto-columns</span></td><td>Specifies a default size for implicitly created columns</td></tr>
+    <tr><td><span class="code">grid-auto-rows</span></td><td>Specifies a default size for implicitly created rows</td></tr>
+    <tr><td><span class="code">grid-auto-flow</span></td><td>Specifies how auto-placed items are inserted into the grid</td></tr>
+    <tr><td><span class="code">grid</span></td><td>Shorthand for all of the above grid-template-* and grid-auto-* properties</td></tr>
+    </tbody>
+  </table>
 </section>
 <!--Main Section End-->
 
