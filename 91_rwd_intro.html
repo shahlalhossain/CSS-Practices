@@ -35,7 +35,37 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
+    .rwd-devices {
+      display: flex;
+      gap: 20px;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 20px;
+    }
+    .rwd-devices div {
+      background-color: dodgerblue;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 10px;
+    }
+    .rwd-desktop { width: 220px; height: 130px; }
+    .rwd-tablet  { width: 100px; height: 140px; }
+    .rwd-phone   { width: 60px;  height: 110px; }
 
+    .rwd-box-demo {
+      background-color: dodgerblue;
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 24px;
+      width: 100%;
+    }
+    @media screen and (max-width: 600px) {
+      .rwd-box-demo { background-color: tomato; font-size: 16px; }
+    }
+    .rwd-narrow-preview { max-width: 300px; margin: 0 auto; }
+    .rwd-narrow-preview .rwd-box-demo { background-color: tomato; font-size: 16px; }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -85,7 +115,7 @@
           <span class="navlink">CSS Selectors</span>
         </a>
       </li>
-      <li class="item active">
+      <li class="item">
         <a href="4_css_types.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Types</span>
@@ -632,7 +662,7 @@
     <!-- Menu Section Start -->
     <span class="menu_title">CSS Responsive</span>
     <ul class="menu_items">
-      <li class="item">
+      <li class="item active">
         <a href="91_rwd_intro.html" class="nav_link">
           <span class="navlink_icon"><i class="bx bxs-file-css"></i></span>
           <span class="navlink">RWD Intro</span>
@@ -704,34 +734,98 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>Responsive Web Design</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Responsive Web Design (RWD) means building a page so it looks good and stays easy to use on <strong>any</strong> device — desktop, tablet, or phone — rather than building a separate fixed-width page for each. Instead of the browser scaling a fixed layout up or down (which just makes everything tiny or forces horizontal scrolling), a responsive page's HTML and CSS actively resize, hide, shrink, stack, or enlarge its own content to fit whatever viewport it's loaded into.
+  </p>
+  <div class="rwd-devices">
+    <div class="rwd-desktop">Desktop</div>
+    <div class="rwd-tablet">Tablet</div>
+    <div class="rwd-phone">Phone</div>
+  </div>
+</section>
+
+<section class="content">
+  <h3>Why RWD Matters</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Before smartphones and tablets were common, most websites were designed for one screen size. Browsing a desktop-only site on a phone meant either a tiny unreadable layout or constant pinch-zooming and sideways scrolling. As mobile browsing overtook desktop, designing pages that adapt to the viewport stopped being optional — it's now the baseline expectation for any public-facing page.
+  </p>
+</section>
+
+<section class="content">
+  <h3>The Three Core Techniques</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    RWD isn't one single CSS property — it's a combination of three techniques working together, each covered in its own lesson later in this <span class="code">CSS Responsive</span> section:
+  </p>
+  <ul style="padding-left: 30px;">
+    <li><strong>The viewport <span class="code">&lt;meta&gt;</span> tag</strong> — without it, mobile browsers render the page at a fixed desktop-like width and then zoom it out to fit, which defeats every other responsive technique before it even runs. Covered in <span class="code">RWD Viewport</span>.</li>
+    <li><strong>A flexible layout</strong> — sizing containers with relative units (percentages, <span class="code">fr</span>, <span class="code">%</span>-based grids) via <span class="code">grid</span> or <span class="code">flex</span> instead of fixed pixel widths, so the layout itself can grow and shrink. Covered in <span class="code">RWD Grid View</span>.</li>
+    <li><strong>Media queries</strong> — CSS rules that only apply once the viewport matches a given condition (most often a width breakpoint), letting a layout restructure itself rather than just resize proportionally. Introduced generally back in <span class="code">CSS Media Queries</span>, and covered here with full responsive breakpoint examples in <span class="code">RWD Media Queries</span>.</li>
+  </ul>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    A fourth concern, <strong>flexible images</strong> (keeping images from overflowing their container as it shrinks), is covered separately in <span class="code">RWD Images</span>.
+  </p>
+</section>
+
+<section class="content">
+  <h3>A Minimal Responsive Example</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    To make the idea concrete before the dedicated lessons, here's a single box that restyles itself once the viewport narrows past <span class="code">600px</span> — the same media-query mechanism that powers every responsive technique in this section, just applied to one element instead of a whole layout.
   </p>
 
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .box { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: dodgerblue; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: white; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; text-align: center; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 40px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-size: 24px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* On narrow viewports, swap colors and shrink the text */ <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#64;media screen and (max-width: 600px) { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .box { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: tomato; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-size: 16px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="box"&gt;Resize the browser window&lt;&sol;div&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p>Above 600px, the box is blue with larger text:</p>
+        <div class="rwd-box-demo">Resize the browser window</div>
+        <p style="margin-top: 20px;">At 600px or narrower, it turns red with smaller text (simulated here in a fixed-width box):</p>
+        <div class="rwd-narrow-preview">
+          <div class="rwd-box-demo">Resize the browser window</div>
+        </div>
+      </td>
     </tr>
     </tbody>
   </table>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+  <p><strong><i>Note: </i></strong>The <span class="code">@media screen and (max-width: 600px)</span> rule above is real, working CSS, and the <span class="code">viewport</span> meta tag shown is the same one every page in this site already includes in its own <span class="code">&lt;head&gt;</span>. Because the query reads the actual browser viewport rather than a table cell, you'd need to shrink the whole browser window below 600px to see it fire here; the second box simulates that narrow state inside a fixed-width wrapper, the same approach used in the <span class="code">Flexbox Responsive</span> lesson.</p>
 </section>
 <!--Main Section End-->
 
