@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-  <title>CSS | Rough</title>
+  <title>CSS | RWD Viewport</title>
 
   <!--Meta Section Start-->
   <meta charset="UTF-8">
@@ -35,7 +35,70 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
+    .viewport-compare {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 10px;
+    }
+    .viewport-compare .device {
+      background-color: #222;
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center;
+    }
+    .viewport-compare .screen {
+      background-color: dodgerblue;
+      color: #fff;
+      overflow: hidden;
+    }
+    .vp-no-meta .screen {
+      width: 320px;
+      height: 110px;
+      font-size: 11px;
+      transform: scale(0.55);
+      transform-origin: top left;
+      width: 580px;
+    }
+    .vp-no-meta {
+      width: 180px;
+      height: 70px;
+      overflow: hidden;
+    }
+    .vp-with-meta .screen {
+      width: 180px;
+      height: 70px;
+      font-size: 13px;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+    .viewport-compare p.caption { color: #fff; margin-top: 8px; font-size: 13px; }
 
+    .vp-demo-box {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: dodgerblue;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      box-sizing: border-box;
+    }
+    .vp-demo-fixed {
+      width: 800px;
+      background-color: tomato;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      box-sizing: border-box;
+    }
+    .vp-fixed-wrapper {
+      max-width: 320px;
+      margin: 0 auto;
+      overflow-x: auto;
+      border: 2px dashed #999;
+    }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -85,7 +148,7 @@
           <span class="navlink">CSS Selectors</span>
         </a>
       </li>
-      <li class="item active">
+      <li class="item">
         <a href="4_css_types.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Types</span>
@@ -638,7 +701,7 @@
           <span class="navlink">RWD Intro</span>
         </a>
       </li>
-      <li class="item">
+      <li class="item active">
         <a href="92_rwd_viewport.html" class="nav_link">
           <span class="navlink_icon"><i class="bx bxs-file-css"></i></span>
           <span class="navlink">RWD Viewport</span>
@@ -704,34 +767,141 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>RWD Viewport</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">viewport</span> is the visible area of a web page on the user's device — much smaller on a phone than on a desktop monitor. Before mobile browsers understood responsive pages, they simply rendered a page at a fixed desktop-like width (around 980px) and then zoomed the whole thing out to fit the screen, forcing visitors to pinch-zoom and scroll sideways to read anything. Every technique in this <span class="code">CSS Responsive</span> section depends on first telling the mobile browser to stop doing that.
+  </p>
+
+  <div class="viewport-compare">
+    <div class="device vp-no-meta">
+      <div class="screen">This is some text on a web page. Without the viewport meta tag, mobile browsers render at a wide fixed layout and zoom it out, so it all looks tiny.</div>
+    </div>
+    <div class="device vp-with-meta">
+      <div class="screen">This is some text on a web page. It looks like this on a phone, using the viewport meta tag.</div>
+    </div>
+  </div>
+  <p style="text-align: center; font-size: 13px; color: #666;">Left: no viewport meta tag (rendered wide, then shrunk). Right: with the viewport meta tag (rendered at the device's own width).</p>
+</section>
+
+<section class="content">
+  <h3>Setting the Viewport</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    HTML5 introduced a way to let web authors take control of the viewport through a <span class="code">&lt;meta&gt;</span> tag placed inside <span class="code">&lt;head&gt;</span>:
   </p>
 
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;Hello World!&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;This text and viewport will resize with the device width.&lt;&sol;p&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <h2>Hello World!</h2>
+        <p>This text and viewport will resize with the device width.</p>
+      </td>
     </tr>
     </tbody>
   </table>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Breaking the attribute down:
+  </p>
+  <ul style="padding-left: 30px;">
+    <li><span class="code">width=device-width</span> — sets the page's width to follow the device's own screen width, rather than a fixed desktop value.</li>
+    <li><span class="code">initial-scale=1.0</span> — sets the initial zoom level when the page first loads, so the browser doesn't zoom out to fit a wider assumed layout.</li>
+  </ul>
+
+  <p><strong><i>Note: </i></strong>This exact meta tag is already sitting in the <span class="code">&lt;head&gt;</span> of every page in this site, including this one — it's part of the shared page template, in the <span class="code">Meta Section</span> block. Every lesson you've worked through so far has had it active the whole time; it's just being explained here now that the <span class="code">CSS Responsive</span> section is the place for it.</p>
+</section>
+
+<section class="content">
+  <h3>Size Content to the Viewport</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Users are used to scrolling web pages vertically, not horizontally. If a visitor must scroll sideways, or zoom out, to see the whole page or read a line of text, that's a sign of a poor user experience. A few rules help avoid it:
+  </p>
+  <ul style="padding-left: 30px;">
+    <li>Do not use large fixed-width elements — an image set to a fixed pixel width wider than a narrow phone screen will force horizontal scrolling.</li>
+    <li>Do not let content rely on a particular viewport width to render correctly — a page should work whether the viewport is 300px or 1920px wide.</li>
+    <li>Use CSS media queries to apply different styles for small and large screens, and prefer relative sizing (like <span class="code">width: 100%</span>) over fixed pixel widths wherever an element's container might shrink.</li>
+  </ul>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .responsive-box { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; width: 100%; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; max-width: 600px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: dodgerblue; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: white; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 20px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; box-sizing: border-box; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .fixed-box { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; width: 800px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: tomato; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: white; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 20px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3&gt;width: 100% with max-width&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="responsive-box"&gt;This box shrinks and grows with its container, but never exceeds 600px.&lt;&sol;div&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3&gt;A fixed pixel width&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="fixed-box"&gt;This box stays 800px wide no matter what, forcing horizontal scroll on narrow screens.&lt;&sol;div&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <h3>width: 100% with max-width</h3>
+        <div class="vp-demo-box">This box shrinks and grows with its container, but never exceeds 600px.</div>
+        <br>
+        <h3>A fixed pixel width</h3>
+        <p style="font-size: 13px; color: #666;">Simulated on a narrow 320px wrapper below — scroll sideways inside the dashed box to see the overflow it causes:</p>
+        <div class="vp-fixed-wrapper">
+          <div class="vp-demo-fixed">This box stays 800px wide no matter what, forcing horizontal scroll on narrow screens.</div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p><strong><i>Note: </i></strong>The relative-width box uses real, working <span class="code">width: 100%; max-width: 600px;</span> and will visibly resize if you narrow your actual browser window. The fixed-width box is wrapped in a scrollable 320px preview box so its overflow is visible without needing to shrink the whole browser — on a real narrow screen with no such wrapper, that overflow becomes unwanted horizontal page scrolling instead.</p>
 </section>
 <!--Main Section End-->
 
