@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-  <title>CSS | Rough</title>
+  <title>CSS | RWD Grid View</title>
 
   <!--Meta Section Start-->
   <meta charset="UTF-8">
@@ -35,7 +35,42 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
+    * { box-sizing: border-box; }
 
+    .rwd-row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+    [class*="rwd-col-"] {
+      float: left;
+      padding: 10px;
+    }
+    .rwd-col-1 { width: 8.33%; }
+    .rwd-col-2 { width: 16.66%; }
+    .rwd-col-3 { width: 25%; }
+    .rwd-col-4 { width: 33.33%; }
+    .rwd-col-6 { width: 50%; }
+    .rwd-col-8 { width: 66.66%; }
+    .rwd-col-9 { width: 75%; }
+    .rwd-col-12 { width: 100%; }
+    [class*="rwd-col-"] div {
+      background-color: dodgerblue;
+      color: #fff;
+      text-align: center;
+      padding: 8px 0;
+      border-radius: 4px;
+    }
+
+    .rwd-narrow-wrap {
+      max-width: 320px;
+      margin: 0 auto;
+      border: 2px dashed #999;
+      padding: 5px;
+    }
+    .rwd-narrow-wrap [class*="rwd-col-"] {
+      width: 100% !important;
+    }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -85,7 +120,7 @@
           <span class="navlink">CSS Selectors</span>
         </a>
       </li>
-      <li class="item active">
+      <li class="item">
         <a href="4_css_types.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Types</span>
@@ -644,7 +679,7 @@
           <span class="navlink">RWD Viewport</span>
         </a>
       </li>
-      <li class="item">
+      <li class="item active">
         <a href="93_rwd_grid_view.html" class="nav_link">
           <span class="navlink_icon"><i class="bx bxs-file-css"></i></span>
           <span class="navlink">RWD Grid View</span>
@@ -704,34 +739,156 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>RWD Grid View</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    "Grid view" here means a classic responsive layout technique built with floated columns and percentage widths, based on dividing the row into 12 (sometimes 6) equal units. A column spanning, say, 4 of those 12 units gets a width of <span class="code">33.33%</span> instead of a fixed pixel value, so the whole row scales proportionally as the viewport resizes.
+  </p>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    <strong><i>Note — not the same "Grid" as before: </i></strong>This site already has a <span class="code">CSS Grid</span> section (<span class="code">CSS Grid Intro</span>, <span class="code">CSS Grid Container</span>, <span class="code">CSS Grid Item</span>) covering the modern <span class="code">display: grid</span> layout module. This lesson is a <em>different, older</em> concept that predates <span class="code">display: grid</span> by years: a percentage-width, <span class="code">float</span>-based 12-column system — the same idea frameworks like Bootstrap's grid were originally built on. No <span class="code">display: grid</span> or <span class="code">grid-template-columns</span> appears anywhere on this page.
+  </p>
+</section>
+
+<section class="content">
+  <h3>Building a 12-Column Grid</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    First, all HTML elements are set to <span class="code">box-sizing: border-box</span>, so that any padding and border are included inside an element's stated width rather than added on top of it — without this, percentage-width floated columns with padding would overflow their row and wrap incorrectly.
+  </p>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Then, a container class defines twelve column classes, <span class="code">.col-1</span> through <span class="code">.col-12</span>, each a float with a width expressed as a percentage of 12 (so <span class="code">.col-4</span> is <span class="code">width: 33.33%</span>, i.e. 4/12). Columns in the same row are placed inside a wrapping <span class="code">&lt;div&gt;</span>, and that row needs a clearfix (<span class="code">::after { clear: both; }</span>) so it doesn't collapse to zero height once its children are floated out of normal flow.
   </p>
 
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * { box-sizing: border-box; } <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .row::after { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; content: ""; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; clear: both; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: table; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [class*="col-"] { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; float: left; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 10px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .col-1 { width: 8.33%; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .col-2 { width: 16.66%; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .col-3 { width: 25%; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .col-4 { width: 33.33%; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .col-6 { width: 50%; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .col-8 { width: 66.66%; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .col-9 { width: 75%; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .col-12 { width: 100%; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;Three equal columns (4 + 4 + 4 = 12)&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="row"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="col-4"&gt;&lt;div&gt;col-4&lt;&sol;div&gt;&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="col-4"&gt;&lt;div&gt;col-4&lt;&sol;div&gt;&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="col-4"&gt;&lt;div&gt;col-4&lt;&sol;div&gt;&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;Uneven columns (3 + 6 + 3 = 12)&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="row"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="col-3"&gt;&lt;div&gt;col-3&lt;&sol;div&gt;&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="col-6"&gt;&lt;div&gt;col-6&lt;&sol;div&gt;&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="col-3"&gt;&lt;div&gt;col-3&lt;&sol;div&gt;&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <h4>Three equal columns (4 + 4 + 4 = 12)</h4>
+        <div class="rwd-row">
+          <div class="rwd-col-4"><div>col-4</div></div>
+          <div class="rwd-col-4"><div>col-4</div></div>
+          <div class="rwd-col-4"><div>col-4</div></div>
+        </div>
+        <br>
+        <h4>Uneven columns (3 + 6 + 3 = 12)</h4>
+        <div class="rwd-row">
+          <div class="rwd-col-3"><div>col-3</div></div>
+          <div class="rwd-col-6"><div>col-6</div></div>
+          <div class="rwd-col-3"><div>col-3</div></div>
+        </div>
+      </td>
     </tr>
     </tbody>
   </table>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+  <p><strong><i>Note: </i></strong>Every column width above is a real, working percentage — the columns will visibly reflow if you shrink your actual browser window, they just won't <em>stack</em> on their own without an added media query (covered next, in <span class="code">RWD Media Queries</span>), since percentage widths alone only resize columns proportionally rather than collapsing them to full width on small screens.</p>
+</section>
+
+<section class="content">
+  <h3>Making the Grid Collapse on Small Screens</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    A percentage-based grid alone keeps columns side-by-side, shrinking proportionally forever — which eventually makes a phone-width column too narrow to hold its content. The standard fix is a media query at a chosen breakpoint that overrides every <span class="code">[class*="col-"]</span> selector back to <span class="code">width: 100%</span>, so columns stack vertically instead of squeezing horizontally:
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* ...same .row / [class*="col-"] rules as above... */ <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @media only screen and (max-width: 600px) { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [class*="col-"] { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; width: 100%; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="row"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="col-3"&gt;&lt;div&gt;col-3&lt;&sol;div&gt;&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="col-6"&gt;&lt;div&gt;col-6&lt;&sol;div&gt;&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="col-3"&gt;&lt;div&gt;col-3&lt;&sol;div&gt;&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p style="font-size: 13px; color: #666;">Simulated at a 320px viewport (below the 600px breakpoint) — columns stack to full width:</p>
+        <div class="rwd-narrow-wrap">
+          <div class="rwd-row">
+            <div class="rwd-col-3"><div>col-3</div></div>
+            <div class="rwd-col-6"><div>col-6</div></div>
+            <div class="rwd-col-3"><div>col-3</div></div>
+          </div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p><strong><i>Note: </i></strong>This stacking behavior is simulated here inside a fixed 320px dashed wrapper, since the <span class="code">@media</span> condition reads the real browser viewport, not a table cell — shrinking the whole browser window below the <span class="code">600px</span> breakpoint would do the same thing to an unwrapped grid. This same combination (percentage columns + a stacking media query) is the foundation that pre-flexbox, pre-grid frameworks like early Bootstrap built their entire column systems on; it's covered in general terms next in <span class="code">RWD Frameworks</span>.</p>
 </section>
 <!--Main Section End-->
 
