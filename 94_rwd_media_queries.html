@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-  <title>CSS | Rough</title>
+  <title>CSS | RWD Media Queries</title>
 
   <!--Meta Section Start-->
   <meta charset="UTF-8">
@@ -35,7 +35,55 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
+    .rwd-narrow { max-width: 320px; margin: 0 auto; border: 2px dashed #999; padding: 10px; }
+    .rwd-wide   { max-width: 900px; margin: 0 auto; border: 2px dashed #999; padding: 10px; }
 
+    /* Example 1: breakpoint rearranges a simple grid-area layout */
+    .mq1-grid {
+      display: grid;
+      grid-template-areas: "header" "menu" "main" "footer";
+      gap: 8px;
+    }
+    .mq1-wide .mq1-grid {
+      grid-template-areas: "header header" "menu main" "footer footer";
+      grid-template-columns: 1fr 3fr;
+    }
+    .mq1-grid div { background-color: dodgerblue; color: #fff; padding: 14px; text-align: center; border-radius: 4px; }
+    .mq1-header { grid-area: header; }
+    .mq1-menu   { grid-area: menu; }
+    .mq1-main   { grid-area: main; }
+    .mq1-footer { grid-area: footer; }
+
+    /* Example 4: orientation */
+    .mq4-box { padding: 30px; text-align: center; color: #fff; border-radius: 4px; }
+    .mq4-portrait .mq4-box { background-color: tomato; }
+    .mq4-landscape .mq4-box { background-color: dodgerblue; }
+
+    /* Example 5: hide on small screens */
+    .mq5-box { background-color: #f1f1f1; padding: 10px; border: 1px solid #ccc; }
+    .mq5-hideable { background-color: orange; padding: 10px; margin-top: 8px; text-align: center; }
+    .mq5-narrow .mq5-hideable { display: none; }
+
+    /* Example 6: font-size by width */
+    .mq6-text { text-align: center; }
+    .mq6-narrow .mq6-text { font-size: 18px; }
+    .mq6-wide .mq6-text { font-size: 42px; }
+
+    /* Example 7: prefers-reduced-motion */
+    .mq7-ball {
+      width: 40px; height: 40px; border-radius: 50%;
+      background-color: dodgerblue;
+      margin: 10px auto;
+      animation: mq7-bounce 1s infinite alternate;
+    }
+    @keyframes mq7-bounce {
+      from { transform: translateX(0); }
+      to   { transform: translateX(200px); }
+    }
+    .mq7-reduced .mq7-ball { animation: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .mq7-ball { animation: none; }
+    }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -85,7 +133,7 @@
           <span class="navlink">CSS Selectors</span>
         </a>
       </li>
-      <li class="item active">
+      <li class="item">
         <a href="4_css_types.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Types</span>
@@ -650,7 +698,7 @@
           <span class="navlink">RWD Grid View</span>
         </a>
       </li>
-      <li class="item">
+      <li class="item active">
         <a href="94_rwd_media_queries.html" class="nav_link">
           <span class="navlink_icon"><i class="bx bxs-file-css"></i></span>
           <span class="navlink">RWD Media Queries</span>
@@ -704,34 +752,368 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>RWD Media Queries</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The general <span class="code">@media</span> syntax was already introduced back in <span class="code">CSS Media Queries</span>. This lesson is the RWD-specific follow-up: applying that same <span class="code">@media</span> rule specifically to solve responsive layout problems — rearranging page regions at a breakpoint, targeting standard device-width tiers, reacting to screen orientation, hiding elements on small screens, scaling text, and respecting a user's reduced-motion preference. All 7 examples below use a real, working <span class="code">@media</span> rule; since each one reads the actual browser viewport rather than a table cell, every demo is shown simulated inside a fixed-width wrapper so both states are visible at once without resizing the browser (the same approach used in <span class="code">CSS Media Queries</span>, <span class="code">Flexbox Responsive</span>, and <span class="code">RWD Intro</span>).
+  </p>
+</section>
+
+<section class="content">
+  <h3>1. Use a Media Query to Add a Breakpoint</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    A single breakpoint at <span class="code">768px</span> rearranges a header/menu/main/footer layout from a stacked single column into a two-column layout with a side menu, using <span class="code">grid-template-areas</span>:
   </p>
 
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .grid-container { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: grid; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; grid-template-areas: <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "header" <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "menu" <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "main" <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "footer"; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#64;media only screen and (min-width: 768px) { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .grid-container { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; grid-template-columns: 1fr 3fr; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; grid-template-areas: <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "header header" <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "menu main" <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "footer footer"; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="grid-container"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div style="grid-area: header;"&gt;Header&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div style="grid-area: menu;"&gt;Menu&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div style="grid-area: main;"&gt;Main&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div style="grid-area: footer;"&gt;Footer&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p style="font-size: 13px; color: #666;">Below 768px — stacked single column:</p>
+        <div class="rwd-narrow mq1-narrow">
+          <div class="mq1-grid">
+            <div class="mq1-header">Header</div>
+            <div class="mq1-menu">Menu</div>
+            <div class="mq1-main">Main</div>
+            <div class="mq1-footer">Footer</div>
+          </div>
+        </div>
+        <p style="font-size: 13px; color: #666; margin-top: 15px;">At 768px or wider — menu beside main:</p>
+        <div class="rwd-wide mq1-wide">
+          <div class="mq1-grid">
+            <div class="mq1-header">Header</div>
+            <div class="mq1-menu">Menu</div>
+            <div class="mq1-main">Main</div>
+            <div class="mq1-footer">Footer</div>
+          </div>
+        </div>
+      </td>
     </tr>
     </tbody>
   </table>
+</section>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+<section class="content">
+  <h3>2. Another Breakpoint</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Real pages usually need more than one breakpoint. Adding a second <span class="code">@media</span> rule at a wider point lets a layout pass through a third, even-more-spacious arrangement once there's enough room for it — for example, growing the menu column again once the viewport passes <span class="code">992px</span>, on top of the <span class="code">768px</span> breakpoint from Example 1.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .menu, .main { padding: 14px; color: #fff; text-align: center; border-radius: 4px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .menu { background: dodgerblue; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .main { background: #555; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .wrapper { display: grid; grid-template-columns: 1fr; gap: 8px; } <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#64;media only screen and (min-width: 600px) { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .wrapper { grid-template-columns: 1fr 2fr; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#64;media only screen and (min-width: 768px) { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .wrapper { grid-template-columns: 1fr 3fr; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#64;media only screen and (min-width: 992px) { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .wrapper { grid-template-columns: 1fr 4fr; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="wrapper"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="menu"&gt;Menu&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="main"&gt;Main Content&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p style="font-size: 13px; color: #666;">Narrow (&lt; 600px) — stacked:</p>
+        <div class="rwd-narrow" style="max-width: 280px;">
+          <div style="display: grid; grid-template-columns: 1fr; gap: 8px;">
+            <div style="background: dodgerblue; color: #fff; text-align: center; padding: 14px; border-radius: 4px;">Menu</div>
+            <div style="background: #555; color: #fff; text-align: center; padding: 14px; border-radius: 4px;">Main Content</div>
+          </div>
+        </div>
+        <p style="font-size: 13px; color: #666; margin-top: 15px;">Desktop (&gt;= 992px) — menu column 1/5 of the width:</p>
+        <div class="rwd-wide">
+          <div style="display: grid; grid-template-columns: 1fr 4fr; gap: 8px;">
+            <div style="background: dodgerblue; color: #fff; text-align: center; padding: 14px; border-radius: 4px;">Menu</div>
+            <div style="background: #555; color: #fff; text-align: center; padding: 14px; border-radius: 4px;">Main Content</div>
+          </div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content">
+  <h3>3. Typical Device Breakpoints</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    There's no single "correct" set of breakpoints — they should fit the content, not a specific device. That said, a commonly used starting set of five breakpoints covers most phones, tablets, and desktops:
+  </p>
+  <table>
+    <thead>
+    <tr>
+      <th>Breakpoint</th>
+      <th>Typical Device</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr><td><span class="code">max-width: 575.98px</span></td><td>Extra small devices (portrait phones)</td></tr>
+    <tr><td><span class="code">min-width: 576px</span></td><td>Small devices (landscape phones)</td></tr>
+    <tr><td><span class="code">min-width: 768px</span></td><td>Medium devices (tablets)</td></tr>
+    <tr><td><span class="code">min-width: 992px</span></td><td>Large devices (desktops)</td></tr>
+    <tr><td><span class="code">min-width: 1200px</span></td><td>Extra large devices (large desktops)</td></tr>
+    </tbody>
+  </table>
+  <p><strong><i>Note: </i></strong>This matches the breakpoint scheme used by several real frameworks (Bootstrap among them, in spirit) — but treat these as a reasonable default, not a hard rule. A page with very wide content might need its own breakpoint somewhere in between.</p>
+</section>
+
+<section class="content">
+  <h3>4. Media Queries for Screen Orientation</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">orientation</span> media feature targets whether the viewport is currently taller than it is wide (<span class="code">portrait</span>) or wider than it is tall (<span class="code">landscape</span>) — useful for phones and tablets, which can be rotated at any time.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; body { background-color: tomato; } <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#64;media only screen and (orientation: landscape) { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; body { background-color: dodgerblue; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;Resize the browser window.&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;If the height is greater than the width, the background color is tomato. If the width is greater than the height (landscape), the background color is dodgerblue.&lt;&sol;p&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p style="font-size: 13px; color: #666;">Portrait (height &gt; width):</p>
+        <div class="mq4-portrait"><div class="mq4-box">tomato background</div></div>
+        <p style="font-size: 13px; color: #666; margin-top: 10px;">Landscape (width &gt; height):</p>
+        <div class="mq4-landscape"><div class="mq4-box">dodgerblue background</div></div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <p><strong><i>Note: </i></strong>On a desktop browser, rotate the device isn't possible, so this is normally tested on an actual phone/tablet, or by making the browser window taller than it is wide versus wider than it is tall.</p>
+</section>
+
+<section class="content">
+  <h3>5. Hide Elements With Media Queries</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Another common responsive technique is simply removing an element from small screens entirely with <span class="code">display: none</span> inside a media query — often used for secondary content, decorative images, or a sidebar that doesn't fit on a phone:
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#64;media only screen and (max-width: 600px) { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; div.hideable { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: none; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;Resize the browser window&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;This paragraph is always visible.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="hideable"&gt;This div disappears at 600px or narrower.&lt;&sol;div&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p style="font-size: 13px; color: #666;">Wide (&gt; 600px) — both visible:</p>
+        <div class="mq5-box rwd-wide">
+          <p style="margin: 0;">This paragraph is always visible.</p>
+          <div class="mq5-hideable">This div disappears at 600px or narrower.</div>
+        </div>
+        <p style="font-size: 13px; color: #666; margin-top: 10px;">Narrow (&le; 600px) — the orange div is gone:</p>
+        <div class="mq5-box mq5-narrow rwd-narrow">
+          <p style="margin: 0;">This paragraph is always visible.</p>
+          <div class="mq5-hideable">This div disappears at 600px or narrower.</div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content">
+  <h3>6. Change Font Size With Media Queries</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Media queries can also scale typography, growing headline text on larger screens where there's room for it, instead of leaving a tiny phone-sized heading stretched across a wide desktop viewport:
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h1.title { font-size: 20px; } <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#64;media screen and (min-width: 600px) { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h1.title { font-size: 50px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h1 class="title"&gt;Hello World&lt;&sol;h1&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Resize the browser window to see the effect.&lt;&sol;p&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p style="font-size: 13px; color: #666;">Below 600px:</p>
+        <div class="rwd-narrow mq6-narrow"><h1 class="mq6-text" style="margin: 10px 0;">Hello World</h1></div>
+        <p style="font-size: 13px; color: #666; margin-top: 15px;">600px and wider:</p>
+        <div class="rwd-wide mq6-wide"><h1 class="mq6-text" style="margin: 10px 0;">Hello World</h1></div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content">
+  <h3>7. Media Queries for User Preferences</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Not every media query is about screen size. The <span class="code">prefers-reduced-motion</span> feature detects a system-level accessibility setting some users turn on to avoid animation-triggered discomfort (motion sickness, vestibular disorders); respecting it means disabling non-essential animations and transitions when it's set to <span class="code">reduce</span>:
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .ball { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; width: 40px; height: 40px; border-radius: 50%; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background: dodgerblue; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; animation: bounce 1s infinite alternate; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#64;keyframes bounce { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; from { transform: translateX(0); } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; to { transform: translateX(200px); } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#64;media (prefers-reduced-motion: reduce) { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .ball { animation: none; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="ball"&gt;&lt;&sol;div&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p style="font-size: 13px; color: #666;">Default (motion allowed) — the ball actually animates back and forth:</p>
+        <div class="mq7-ball"></div>
+        <p style="font-size: 13px; color: #666; margin-top: 15px;">Simulated with <span class="code">prefers-reduced-motion: reduce</span> set — animation is removed, ball sits still:</p>
+        <div class="mq7-reduced"><div class="mq7-ball"></div></div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <p><strong><i>Note: </i></strong>The <span class="code">@media (prefers-reduced-motion: reduce)</span> rule above is real and will actually disable the first ball's animation too if your own OS/browser has that accessibility setting turned on — the second ball is a simulated "reduced" state added here so the contrast is visible regardless of your system setting.</p>
 </section>
 <!--Main Section End-->
 
