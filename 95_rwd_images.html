@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-  <title>CSS | Rough</title>
+  <title>CSS | RWD Images</title>
 
   <!--Meta Section Start-->
   <meta charset="UTF-8">
@@ -35,7 +35,50 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
+    .rwd-img-100  { width: 100%; height: auto; display: block; }
+    .rwd-img-max  { max-width: 100%; height: auto; display: block; }
+    .rwd-img-wrap { max-width: 250px; border: 2px dashed #999; padding: 5px; margin: 0 auto; }
+    .rwd-img-wrap-wide { max-width: 500px; border: 2px dashed #999; padding: 5px; margin: 0 auto; }
 
+    .rwd-bg-demo {
+      width: 100%;
+      height: 220px;
+      border: 1px solid #ccc;
+      background-image: url("images/background.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .rwd-bg-contain { background-size: contain; }
+    .rwd-bg-stretch { background-size: 100% 100%; }
+    .rwd-bg-cover   { background-size: cover; }
+
+    .rwd-device-bg {
+      width: 100%;
+      height: 160px;
+      background-image: url("images/pineapple.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+    .rwd-device-narrow { max-width: 280px; margin: 0 auto; }
+    @media only screen and (min-width: 400px) {
+      .rwd-device-bg.rwd-device-wide-trigger { background-image: url("images/img_mountains.jpg"); }
+    }
+
+    .rwd-picture img { width: 100%; height: auto; display: block; }
+
+    .rwd-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .rwd-gallery figure {
+      margin: 0;
+      flex: 1 1 30%;
+    }
+    .rwd-gallery.rwd-gallery-narrow figure {
+      flex: 1 1 100%;
+    }
+    .rwd-gallery img { width: 100%; height: auto; display: block; border-radius: 4px; }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -85,7 +128,7 @@
           <span class="navlink">CSS Selectors</span>
         </a>
       </li>
-      <li class="item active">
+      <li class="item">
         <a href="4_css_types.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Types</span>
@@ -656,7 +699,7 @@
           <span class="navlink">RWD Media Queries</span>
         </a>
       </li>
-      <li class="item">
+      <li class="item active">
         <a href="95_rwd_images.html" class="nav_link">
           <span class="navlink_icon"><i class="bx bxs-file-css"></i></span>
           <span class="navlink">RWD Images</span>
@@ -704,34 +747,311 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>RWD Images</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Responsive images means an image never overflows its container as the viewport shrinks, and ideally scales to make good use of the space it's given. Fixed-pixel-width images are one of the most common causes of unwanted horizontal scrolling on phones, so this is one of the core techniques underpinning all of <span class="code">RWD</span>.
+  </p>
+</section>
+
+<section class="content">
+  <h3>Using the width Property</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Setting <span class="code">width: 100%</span> (with <span class="code">height: auto</span> to preserve the aspect ratio) makes an image's width always match its container — including scaling it <em>up</em> past its own native resolution if the container is larger, which can blur the image.
   </p>
 
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; img { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; width: 100%; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; height: auto; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;img src="img_forest.jpg" alt="Forest"&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p style="font-size: 13px; color: #666;">Native image is 600&times;400 — here it's forced into a 250px-wide container, so it scales <strong>down</strong>:</p>
+        <div class="rwd-img-wrap"><img class="rwd-img-100" src="images/img_forest.jpg" alt="Forest"></div>
+        <p style="font-size: 13px; color: #666; margin-top: 10px;">Same image, forced into a wider 500px container — <span class="code">width: 100%</span> scales it <strong>up</strong> past its native 600px width, and it starts to look soft:</p>
+        <div class="rwd-img-wrap-wide"><img class="rwd-img-100" src="images/img_forest.jpg" alt="Forest" style="max-width: none;"></div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content">
+  <h3>Using the max-width Property</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    If scaling up past the native resolution isn't wanted, <span class="code">max-width: 100%</span> is the safer default: the image still shrinks down to fit a narrower container, but is never stretched larger than its own original size.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; img { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; max-width: 100%; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; height: auto; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;img src="img_forest.jpg" alt="Forest"&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p style="font-size: 13px; color: #666;">250px container — still shrinks down, same as <span class="code">width: 100%</span>:</p>
+        <div class="rwd-img-wrap"><img class="rwd-img-max" src="images/img_forest.jpg" alt="Forest"></div>
+        <p style="font-size: 13px; color: #666; margin-top: 10px;">500px container — unlike the previous example, <span class="code">max-width: 100%</span> stops growing once the image hits its native 600px width, instead of stretching past it:</p>
+        <div class="rwd-img-wrap-wide"><img class="rwd-img-max" src="images/img_forest.jpg" alt="Forest"></div>
+      </td>
     </tr>
     </tbody>
   </table>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+  <p><strong><i>Note: </i></strong><span class="code">max-width: 100%</span> is generally the better default of the two: it gets the same shrink-to-fit behavior on small screens without the blurring risk of scaling an image beyond its native resolution on a large one.</p>
+</section>
+
+<section class="content">
+  <h3>Background Images and background-size</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    For CSS background images (rather than <span class="code">&lt;img&gt;</span> elements), the <span class="code">background-size</span> property controls how the image fills its box. Three common values behave very differently when the box's aspect ratio doesn't match the image's:
+  </p>
+  <ul style="padding-left: 30px;">
+    <li><span class="code">contain</span> — scales the image as large as possible while keeping its aspect ratio and staying fully inside the box; this can leave empty space on two sides.</li>
+    <li><span class="code">100% 100%</span> — stretches the image to exactly fill the box on both axes, ignoring its original aspect ratio, which can visibly distort it.</li>
+    <li><span class="code">cover</span> — scales the image to completely fill the box while keeping its aspect ratio, cropping whatever overflows.</li>
+  </ul>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .bg-contain { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-image: url("background.jpg"); <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-repeat: no-repeat; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-size: contain; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .bg-stretch { background-size: 100% 100%; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .bg-cover { background-size: cover; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="bg-contain"&gt;&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="bg-stretch"&gt;&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="bg-cover"&gt;&lt;&sol;div&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p style="font-size: 13px; color: #666;"><span class="code">background-size: contain</span> — whole image visible, bars on the sides:</p>
+        <div class="rwd-bg-demo rwd-bg-contain"></div>
+        <p style="font-size: 13px; color: #666; margin-top: 10px;"><span class="code">background-size: 100% 100%</span> — stretched, aspect ratio distorted:</p>
+        <div class="rwd-bg-demo rwd-bg-stretch"></div>
+        <p style="font-size: 13px; color: #666; margin-top: 10px;"><span class="code">background-size: cover</span> — fills the box, edges cropped:</p>
+        <div class="rwd-bg-demo rwd-bg-cover"></div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content">
+  <h3>Different Images for Different Devices</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    A large, detailed background image makes sense on a desktop screen, but is often wasted bandwidth and detail on a small phone screen. A media query can swap the <span class="code">background-image</span> entirely, rather than just resizing the same file, serving a smaller or differently-cropped image below a chosen breakpoint:
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; body { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-image: url("pineapple.jpg"); <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-size: cover; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#64;media only screen and (min-width: 400px) { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; body { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-image: url("img_mountains.jpg"); <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt;&lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p style="font-size: 13px; color: #666;">Below 400px — a smaller, square-cropped image loads:</p>
+        <div class="rwd-device-narrow"><div class="rwd-device-bg"></div></div>
+        <p style="font-size: 13px; color: #666; margin-top: 10px;">400px and wider — a different, wide landscape image loads instead:</p>
+        <div class="rwd-device-bg rwd-device-wide-trigger"></div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <p><strong><i>Note: </i></strong>This example uses real images already in this site's <span class="code">images/</span> folder (<span class="code">pineapple.jpg</span>, <span class="code">img_mountains.jpg</span>) in place of W3Schools' own device-specific sample files, since those aren't bundled with this project; the mechanism — swapping <span class="code">background-image</span> at a breakpoint — is identical.</p>
+</section>
+
+<section class="content">
+  <h3>The HTML picture Element</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">&lt;picture&gt;</span> element lets the <em>browser</em> pick which image source to actually download, based on each <span class="code">&lt;source&gt;</span>'s <span class="code">media</span> condition — unlike a CSS background-image swap, this can save bandwidth on phones by never even requesting the desktop-sized file. A fallback <span class="code">&lt;img&gt;</span> is required for browsers that don't support <span class="code">&lt;picture&gt;</span>.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;picture&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;source srcset="img_mountains.jpg" media="(min-width: 650px)"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;source srcset="img_forest.jpg" media="(min-width: 465px)"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;img src="pineapple.jpg" alt="Fallback image" style="width: auto;"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;picture&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p style="font-size: 13px; color: #666;">This container is 650px or wider here, so the browser picked the first matching source, <span class="code">img_mountains.jpg</span>:</p>
+        <div class="rwd-img-wrap-wide">
+          <picture class="rwd-picture">
+            <source srcset="images/img_mountains.jpg" media="(min-width: 650px)">
+            <source srcset="images/img_forest.jpg" media="(min-width: 465px)">
+            <img src="images/pineapple.jpg" alt="Fallback image">
+          </picture>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <p><strong><i>Note: </i></strong><span class="code">&lt;source&gt;</span> conditions are checked in order, and the browser uses the first one that matches its viewport; if none match, it falls back to the <span class="code">&lt;img&gt;</span>. This differs from the <span class="code">srcset</span> attribute on a plain <span class="code">&lt;img&gt;</span> (not shown here), which lets the browser choose based on pixel density too, not just viewport width.</p>
+</section>
+
+<section class="content">
+  <h3>Responsive Image Gallery</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Combining flexible images with a flex container builds a gallery that reflows its column count as the viewport narrows — here, three images per row on wide screens collapse to one per row on narrow ones:
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .gallery { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: flex; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flex-wrap: wrap; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gap: 10px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .gallery figure { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin: 0; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flex: 1 1 30%; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .gallery img { width: 100%; height: auto; } <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#64;media only screen and (max-width: 500px) { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .gallery figure { flex: 1 1 100%; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="gallery"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;figure&gt;&lt;img src="img_5terre.jpg" alt="Cinque Terre"&gt;&lt;&sol;figure&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;figure&gt;&lt;img src="img_forest.jpg" alt="Forest"&gt;&lt;&sol;figure&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;figure&gt;&lt;img src="img_mountains.jpg" alt="Mountains"&gt;&lt;&sol;figure&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p style="font-size: 13px; color: #666;">Wide — three per row:</p>
+        <div class="rwd-gallery">
+          <figure><img src="images/img_5terre.jpg" alt="Cinque Terre"></figure>
+          <figure><img src="images/img_forest.jpg" alt="Forest"></figure>
+          <figure><img src="images/img_mountains.jpg" alt="Mountains"></figure>
+        </div>
+        <p style="font-size: 13px; color: #666; margin-top: 15px;">Below 500px — stacked one per row:</p>
+        <div class="rwd-gallery rwd-gallery-narrow" style="max-width: 220px; margin: 0 auto;">
+          <figure><img src="images/img_5terre.jpg" alt="Cinque Terre"></figure>
+          <figure><img src="images/img_forest.jpg" alt="Forest"></figure>
+          <figure><img src="images/img_mountains.jpg" alt="Mountains"></figure>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
 </section>
 <!--Main Section End-->
 
