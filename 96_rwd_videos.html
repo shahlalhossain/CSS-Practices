@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-  <title>CSS | Rough</title>
+  <title>CSS | RWD Videos</title>
 
   <!--Meta Section Start-->
   <meta charset="UTF-8">
@@ -35,7 +35,38 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
+    .rwd-video-wrap-narrow { max-width: 280px; margin: 0 auto; border: 2px dashed #999; padding: 5px; }
+    .rwd-video-wrap-wide   { max-width: 560px; margin: 0 auto; border: 2px dashed #999; padding: 5px; }
 
+    .rwd-video-100  { width: 100%; height: auto; display: block; }
+    .rwd-video-max  { max-width: 100%; height: auto; display: block; }
+
+    .rwd-video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      background-color: #000;
+    }
+    .rwd-video-container iframe,
+    .rwd-video-container .rwd-video-placeholder {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .rwd-video-placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      background: repeating-linear-gradient(45deg, #333, #333 10px, #222 10px, #222 20px);
+      font-size: 16px;
+      text-align: center;
+    }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -85,7 +116,7 @@
           <span class="navlink">CSS Selectors</span>
         </a>
       </li>
-      <li class="item active">
+      <li class="item">
         <a href="4_css_types.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Types</span>
@@ -662,7 +693,7 @@
           <span class="navlink">RWD Images</span>
         </a>
       </li>
-      <li class="item">
+      <li class="item active">
         <a href="96_rwd_videos.html" class="nav_link">
           <span class="navlink_icon"><i class="bx bxs-file-css"></i></span>
           <span class="navlink">RWD Videos</span>
@@ -704,34 +735,160 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>RWD Videos</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Responsive video follows the same basic idea as responsive images: a fixed-pixel-width <span class="code">&lt;video&gt;</span> or embedded <span class="code">&lt;iframe&gt;</span> player will either overflow a narrow container or leave wasted space in a wide one. Unlike an <span class="code">&lt;img&gt;</span>, though, a video player's embed box also needs to keep a correct aspect ratio as it resizes, or the picture gets stretched or squashed.
+  </p>
+</section>
+
+<section class="content">
+  <h3>Using the width Property</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Setting <span class="code">width: 100%</span> on a <span class="code">&lt;video&gt;</span> element makes the player always match its container's width — and, just like with images, this can scale the player up larger than its native resolution if the container is big enough.
   </p>
 
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; video { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; width: 100%; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; height: auto; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;video controls&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;source src="movie.mp4" type="video&sol;mp4"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;video&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p style="font-size: 13px; color: #666;">Narrow 280px container — the player shrinks to fit:</p>
+        <div class="rwd-video-wrap-narrow">
+          <div class="rwd-video-placeholder" style="aspect-ratio: 16/9; position: static;">16:9 video player<br>(width: 100%)</div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <p><strong><i>Note: </i></strong>No actual video file ships with this project, so the player itself is represented here by a placeholder box kept at the same 16:9 aspect ratio a real <span class="code">&lt;video&gt;</span> element would have — the <span class="code">width: 100%</span> resizing behavior shown is identical either way.</p>
+</section>
+
+<section class="content">
+  <h3>Using the max-width Property</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    As with images, <span class="code">max-width: 100%</span> is usually the safer choice: the player still shrinks to fit a narrow container, but is never scaled up past its own native size, which would otherwise blur the picture or waste bandwidth upscaling something already loaded at a lower resolution.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; video { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; max-width: 100%; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; height: auto; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;video controls&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;source src="movie.mp4" type="video&sol;mp4"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;video&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p style="font-size: 13px; color: #666;">Wide 560px container — same shrink-to-fit behavior, but would stop at the player's native width instead of upscaling past it:</p>
+        <div class="rwd-video-wrap-wide">
+          <div class="rwd-video-placeholder" style="aspect-ratio: 16/9; position: static;">16:9 video player<br>(max-width: 100%)</div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content">
+  <h3>Embedded Video and the Aspect-Ratio Trick</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    A native <span class="code">&lt;video&gt;</span> element reports its own intrinsic size, so <span class="code">height: auto</span> is enough to preserve its aspect ratio. An embedded <span class="code">&lt;iframe&gt;</span> (YouTube, Vimeo, etc.) has no intrinsic size of its own, though — it's just a rectangle the embedding page defines — so <span class="code">height: auto</span> does nothing useful on it. The standard workaround wraps the iframe in a container sized using the old "padding-bottom percentage" trick: a percentage <span class="code">padding-bottom</span> is always calculated relative to the <em>width</em> of its own containing block, so setting it to <span class="code">56.25%</span> (9&divide;16) locks in a 16:9 ratio at any width, and the iframe is absolutely positioned to fill that box.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .video-container { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; position: relative; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; width: 100%; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding-bottom: 56.25%; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; height: 0; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .video-container iframe { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; position: absolute; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; top: 0; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; left: 0; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; width: 100%; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; height: 100%; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 0; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="video-container"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; allowfullscreen&gt;&lt;&sol;iframe&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <p style="font-size: 13px; color: #666;">An embedded iframe player would sit here, kept at 16:9 by the trick above regardless of container width — shown below as a placeholder box at the same ratio, since an embedded YouTube iframe won't reliably play from a local <span class="code">file://</span> page:</p>
+        <div class="rwd-video-container">
+          <div class="rwd-video-placeholder">16:9 embedded iframe<br>(e.g. YouTube/Vimeo)<br>positioned absolute, 100% &times; 100%</div>
+        </div>
+      </td>
     </tr>
     </tbody>
   </table>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+  <p><strong><i>Note: </i></strong>The code sample shows a real, standard YouTube embed URL pattern (<span class="code">https://www.youtube.com/embed/VIDEO_ID</span>) wrapped in the aspect-ratio container. The rendered output here uses a placeholder box at the same 16:9 ratio instead of a live embed, since YouTube's player generally refuses to load inside an iframe opened from a local <span class="code">file://</span> path (no valid referrer/origin) — on a real site served over <span class="code">http(s)</span>, the same markup renders the actual video. The <span class="code">padding-bottom: 56.25%</span> value is specific to 16:9 video — a 4:3 video would use <span class="code">75%</span> instead (3&divide;4). This same technique also explains why some older sites wrap embeds in a <span class="code">.embed-responsive</span> or <span class="code">.ratio</span> helper class — frameworks packaged exactly this pattern so authors wouldn't have to remember the percentage math themselves.</p>
 </section>
 <!--Main Section End-->
 
