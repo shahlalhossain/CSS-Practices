@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-  <title>CSS | Rough</title>
+  <title>CSS | RWD Frameworks</title>
 
   <!--Meta Section Start-->
   <meta charset="UTF-8">
@@ -35,7 +35,17 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
-
+    .fw-demo-frame {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      overflow: hidden;
+      background: #fff;
+    }
+    .fw-demo-frame iframe {
+      width: 100%;
+      border: 0;
+      display: block;
+    }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -85,7 +95,7 @@
           <span class="navlink">CSS Selectors</span>
         </a>
       </li>
-      <li class="item active">
+      <li class="item">
         <a href="4_css_types.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Types</span>
@@ -668,7 +678,7 @@
           <span class="navlink">RWD Videos</span>
         </a>
       </li>
-      <li class="item">
+      <li class="item active">
         <a href="97_rwd_frameworks.html" class="nav_link">
           <span class="navlink_icon"><i class="bx bxs-file-css"></i></span>
           <span class="navlink">RWD Frameworks</span>
@@ -704,34 +714,117 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>RWD Frameworks</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Every technique covered earlier in this <span class="code">CSS Responsive</span> section — the viewport meta tag, percentage grids, media queries, flexible images and video — can be hand-written from scratch, as this whole section has done. In practice, most real projects instead reach for a pre-built CSS framework that packages these same techniques (and a lot more: typography, components, utility classes) behind a stable set of class names, so a responsive layout can be built by applying classes rather than writing the underlying CSS each time.
+  </p>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    This is a short, conceptual lesson rather than a deep dive — frameworks are large enough to deserve their own full course each. The goal here is just to see what the same three-column responsive layout looks like once it's expressed through a framework's own grid classes, using two of the most common examples.
+  </p>
+</section>
+
+<section class="content">
+  <h3>W3.CSS</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    W3.CSS is a small, dependency-free framework (no JavaScript required) that ships its own responsive grid, built on classes like <span class="code">w3-row-padding</span> for a row and <span class="code">w3-third</span>/<span class="code">w3-half</span>/<span class="code">w3-quarter</span> for columns. Below, the exact same three-city layout used elsewhere in this project's early lessons is rebuilt with three lines of markup instead of custom CSS:
   </p>
 
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="w3-container w3-row-padding"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="w3-third"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;h3&gt;London&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;London is the capital city of England.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="w3-third"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;h3&gt;Paris&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Paris is the capital of France.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="w3-third"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;h3&gt;Tokyo&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Tokyo is the capital of Japan.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <div class="fw-demo-frame">
+          <iframe title="W3.CSS demo" height="300" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;https://www.w3schools.com/w3css/4/w3.css&quot;&gt;&lt;style&gt;body{margin:0;}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;div class=&quot;w3-container w3-row-padding&quot; style=&quot;padding:12px;&quot;&gt;&lt;div class=&quot;w3-third&quot;&gt;&lt;h3&gt;London&lt;/h3&gt;&lt;p&gt;London is the capital city of England.&lt;/p&gt;&lt;/div&gt;&lt;div class=&quot;w3-third&quot;&gt;&lt;h3&gt;Paris&lt;/h3&gt;&lt;p&gt;Paris is the capital of France.&lt;/p&gt;&lt;/div&gt;&lt;div class=&quot;w3-third&quot;&gt;&lt;h3&gt;Tokyo&lt;/h3&gt;&lt;p&gt;Tokyo is the capital of Japan.&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+        </div>
+        <p style="font-size: 13px; color: #666; margin-top: 8px;">Live, real W3.CSS loaded from its CDN inside this sandboxed frame — shrink your actual browser window to see the three columns stack automatically.</p>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content">
+  <h3>Bootstrap</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Bootstrap is the most widely used CSS framework, built around its own 12-column responsive grid — conceptually similar to the hand-written float grid from <span class="code">RWD Grid View</span>, but implemented with flexbox and shipped as ready-made classes: <span class="code">container-fluid</span>, <span class="code">row</span>, and <span class="code">col-sm-4</span> for a column that only becomes one-third-width once the viewport reaches the <span class="code">sm</span> breakpoint, stacking full-width below it.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="container-fluid"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="row"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="col-sm-4"&gt;London&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="col-sm-4"&gt;Paris&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="col-sm-4"&gt;Tokyo&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <div class="fw-demo-frame">
+          <iframe title="Bootstrap demo" height="180" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css&quot;&gt;&lt;style&gt;body{margin:0;padding:12px;}.row &gt; div{background:#0d6efd;color:#fff;text-align:center;padding:10px;border-radius:4px;margin-bottom:4px;}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;div class=&quot;container-fluid&quot;&gt;&lt;div class=&quot;row&quot;&gt;&lt;div class=&quot;col-sm-4&quot;&gt;London&lt;/div&gt;&lt;div class=&quot;col-sm-4&quot;&gt;Paris&lt;/div&gt;&lt;div class=&quot;col-sm-4&quot;&gt;Tokyo&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+        </div>
+        <p style="font-size: 13px; color: #666; margin-top: 8px;">Live, real Bootstrap 5 loaded from jsDelivr inside this sandboxed frame — narrower than the <span class="code">sm</span> breakpoint, the three columns stack; at <span class="code">sm</span> or wider, they sit side by side.</p>
+      </td>
     </tr>
     </tbody>
   </table>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+  <p><strong><i>Note: </i></strong>Both demos above load their framework's real CSS live from a public CDN inside a sandboxed <span class="code">&lt;iframe&gt;</span>, rather than a static screenshot — so the responsive stacking behavior is genuinely working, scoped so it can't leak into or conflict with this site's own stylesheet. There's no single "correct" framework to learn; W3.CSS and Bootstrap are simply two of the most common starting points, alongside others like Foundation or Tailwind CSS.</p>
 </section>
 <!--Main Section End-->
 
