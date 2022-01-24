@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-  <title>CSS | Rough</title>
+  <title>CSS | RWD Templates</title>
 
   <!--Meta Section Start-->
   <meta charset="UTF-8">
@@ -35,7 +35,20 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
-
+    .tpl-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+      margin-top: 10px;
+    }
+    .tpl-card {
+      background: dodgerblue;
+      color: #fff;
+      border-radius: 6px;
+      padding: 16px 10px;
+      text-align: center;
+      font-size: 14px;
+    }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -85,7 +98,7 @@
           <span class="navlink">CSS Selectors</span>
         </a>
       </li>
-      <li class="item active">
+      <li class="item">
         <a href="4_css_types.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Types</span>
@@ -674,7 +687,7 @@
           <span class="navlink">RWD Frameworks</span>
         </a>
       </li>
-      <li class="item">
+      <li class="item active">
         <a href="98_rwd_templates.html" class="nav_link">
           <span class="navlink_icon"><i class="bx bxs-file-css"></i></span>
           <span class="navlink">RWD Templates</span>
@@ -704,34 +717,50 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>RWD Templates</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    This final lesson is conceptual rather than code-driven — there's no new CSS property to learn here. W3Schools' own "Responsive Web Design - Templates" page is, in the real source, essentially a gallery index: a grid of pre-built, free W3.CSS page templates (landing pages, blogs, photo portfolios, restaurant and hotel sites, CVs, and similar), each offered as a ready starting point rather than a technique to study line by line. Because the actual page has no inline runnable code examples of its own — only thumbnails linking out to each template's live demo and source — this lesson accurately has none either, rather than inventing a fabricated demo to fill the usual code/output table.
   </p>
+</section>
 
-  <table>
-    <thead>
-    <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
-    </tr>
-    </tbody>
-  </table>
+<section class="content">
+  <h3>Why Pre-Built Templates Exist</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Every technique in this <span class="code">CSS Responsive</span> section — the viewport meta tag, percentage or framework grids, media-query breakpoints, flexible images and video — still has to be assembled into an actual page layout before it's useful. A responsive template packages that assembly work already done: a finished, working page (header, navigation, content sections, footer) built on one of the frameworks from <span class="code">RWD Frameworks</span>, free to download, restyle, and reuse as a starting point instead of laying out a new page from a blank file every time.
+  </p>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    W3Schools' own template gallery is built entirely on <span class="code">W3.CSS</span>, and groups templates loosely by purpose — a representative sample of the categories on the real page:
+  </p>
+  <div class="tpl-grid">
+    <div class="tpl-card">Landing Page</div>
+    <div class="tpl-card">Startup</div>
+    <div class="tpl-card">Blog</div>
+    <div class="tpl-card">Photo Portfolio</div>
+    <div class="tpl-card">CV / Resume</div>
+    <div class="tpl-card">Restaurant</div>
+    <div class="tpl-card">Hotel / Travel</div>
+    <div class="tpl-card">Clothing Store</div>
+  </div>
+  <p style="font-size: 13px; color: #666; text-align: center; margin-top: 8px;">A representative sample of template categories (not every template on the real page) — reconstructed as simple labeled cards here, since the lesson's point is the concept of a template gallery rather than any one template's specific layout.</p>
+</section>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+<section class="content">
+  <h3>Using a Template</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    On the real W3Schools page, each template entry gives two links: a <strong>Demo</strong>, which opens the finished page running on its own, and a <strong>Try it Yourself</strong> link, which opens the exact same page in W3Schools' live code editor — so the whole template's HTML and CSS can be copied out, edited in place, and reused directly in a new project. That's the same editor every "Try it Yourself" link throughout this entire course has pointed to.
+  </p>
+  <p><strong><i>Note: </i></strong>W3Schools also offers free hosting for pages built this way through "W3Schools Spaces," mentioned on the real page as a way to publish a customized template without needing separate hosting — a detail noted here for completeness, though setting that up is outside the scope of this CSS course.</p>
+</section>
+
+<section class="content">
+  <h3>End of the CSS Responsive Section</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    This completes the <span class="code">CSS Responsive</span> section, and with it, the full course: from <span class="code">CSS Home</span> through <span class="code">CSS Basic</span>, <span class="code">CSS Advanced</span>, <span class="code">CSS Grid</span>, and now <span class="code">CSS Responsive</span>. The techniques across these last nine lessons — viewport control, flexible grids (both the classic float-based kind and modern frameworks), media queries, flexible images and video, and ready-made frameworks and templates — are what turn a page that merely displays correctly into one that actually adapts to whatever device opens it.
+  </p>
 </section>
 <!--Main Section End-->
 
