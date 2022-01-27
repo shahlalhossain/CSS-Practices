@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-  <title>CSS | Margins</title>
+  <title>CSS | CSS Functions</title>
 
   <!--Meta Section Start-->
   <meta charset="UTF-8">
@@ -35,43 +35,25 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
-    #individual-margin {
-      border: 1px solid black;
-      margin-top: 100px;
-      margin-bottom: 100px;
-      margin-right: 150px;
-      margin-left: 80px;
-      background-color: lightblue;
+    .ref_table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 25px;
     }
-
-    #margin-shorthand-four {
-      border: 1px solid black;
-      margin: 25px 50px 75px 100px;
-      background-color: lightblue;
+    .ref_table th, .ref_table td {
+      border: 1px solid #ddd;
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: top;
     }
-
-    #margin-shorthand-three {
-      border: 1px solid black;
-      margin: 25px 50px 75px;
-      background-color: lightblue;
+    .ref_table th {
+      background-color: #04AA6D;
+      color: white;
     }
-
-    #margin-shorthand-two {
-      border: 1px solid black;
-      margin: 25px 50px;
-      background-color: lightblue;
-    }
-
-    #margin-shorthand-one {
-      border: 1px solid black;
-      margin: 25px;
-      background-color: lightblue;
-    }
-
-    #margin-auto {
-      width: 430px;
-      margin: auto;
-      border: 1px solid green;
+    .ref_table td:first-child {
+      width: 25%;
+      white-space: nowrap;
+      font-family: monospace;
     }
   </style>
   <!--Page Specific Custom CSS End-->
@@ -200,7 +182,7 @@
           <span class="navlink">Rounded Borders</span>
         </a>
       </li>
-      <li class="item active">
+      <li class="item">
         <a href="17_css_margins.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Margins</span>
@@ -714,6 +696,7 @@
 </ul>
     <!-- Menu Section End -->
 
+
     <!-- Menu Section Start -->
     <span class="menu_title">CSS References</span>
     <ul class="menu_items">
@@ -723,13 +706,13 @@
           <span class="navlink">CSS References</span>
         </a>
       </li>
-      <li class="item">
+      <li class="item active">
         <a href="99_css_functions.html" class="nav_link">
           <span class="navlink_icon"><i class="bx bxs-file-css"></i></span>
           <span class="navlink">CSS Functions</span>
         </a>
       </li>
-</ul>
+    </ul>
     <!-- Menu Section End -->
 
     <!-- Sidebar Collapse and Expand Start -->
@@ -752,377 +735,133 @@
 <!--Page Header End-->
 
 <!--Main Section Start-->
-<section class="content" style="margin-right: 10px;">
-  <h3>CSS Margins</h3>
-  <hr>
-  <p>
-    The CSS <span class="code">margin</span> properties are used to create space around elements, outside of any defined borders. <br>
-    With CSS, you have full control over the margins. There are properties for setting the margin for each side of an element (top, right, bottom, and left). <br>
-    CSS has properties for specifying the margin for each side of an element:
-  </p>
-  <ul style="padding-left: 30px;">
-    <li><span class="code">margin-top</span></li>
-    <li><span class="code">margin-right</span></li>
-    <li><span class="code">margin-bottom</span></li>
-    <li><span class="code">margin-left</span></li>
-  </ul>
-  <br>
-  <p>
-    All the margin properties can have the following values: <br>
-  </p>
-  <ul style="padding-left: 30px;">
-    <li>auto - the browser calculates the margin</li>
-    <li>length - specifies a margin in px, pt, cm, etc.</li>
-    <li>% - specifies a margin in % of the width of the containing element</li>
-    <li>inherit - specifies that the margin should be inherited from the parent element</li>
-  </ul>
-
-  <table>
-    <thead>
-    <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>
-        &lt;!DOCTYPE html&gt; <br>
-        &lt;html&gt; <br>
-        &lt;head&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; div { <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 1px solid black; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin-top: 100px; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin-bottom: 100px; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin-right: 150px; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin-left: 80px; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: lightblue; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
-        &lt;&sol;head&gt; <br>
-        &lt;body&gt; <br> <br>
-
-        &lt;div&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; Here we are using individual margin properties <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; Set different margins for all four sides of a &lt;p&gt; element: <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; This div element has a top margin of 100px, a right margin of 150px, a bottom margin of 100px, and a left margin of 80px. <br>
-        &lt;&sol;div&gt; <br> <br>
-
-        &lt;&sol;body&gt; <br>
-        &lt;&sol;html&gt; <br>
-      </td>
-      <td>
-        <div id="individual-margin">
-          Here we are using individual margin properties <br>
-          Set different margins for all four sides of a <span class="code">&lt;p&gt;</span> element: <br>
-          This div element has a top margin of 100px, a right margin of 150px, a bottom margin of 100px, and a left margin of 80px.
-        </div>
-      </td>
-    </tr>
-    </tbody>
-  </table>
-
-  <p><strong>Note:</strong>Negative values are allowed.</p>
-</section>
-
-<section class="content" style="margin-right: 10px;">
-  <h3>CSS Margin - Shorthand Property</h3>
+<section class="content">
+  <h3>CSS Functions</h3>
   <hr>
   <p style="padding-top: 10px; padding-bottom: 10px;">
-    To shorten the code, it is possible to specify all the margin properties in one property. <br>
-    The margin property is a shorthand property for the following individual margin properties:
+    CSS functions are built-in operations used as values inside a declaration — they compute, transform, or reference something rather than being a static keyword. This page is an A-Z index of CSS functions, each with a short description — a quick lookup rather than a tutorial. For functions already covered with full examples elsewhere in this course (like <span class="code">calc()</span>, <span class="code">var()</span>, <span class="code">min()</span>/<span class="code">max()</span>/<span class="code">clamp()</span>, and the gradient functions), see that earlier lesson for worked demos.
   </p>
-  <ul style="padding-left: 30px;">
-    <li><span class="code">margin-top</span></li>
-    <li><span class="code">margin-right</span></li>
-    <li><span class="code">margin-bottom</span></li>
-    <li><span class="code">margin-left</span></li>
-  </ul>
-  <br>
-  <hr>
-  <br>
-  <p>
-    If the <span class="code">margin</span> property has four values:
-  </p>
-  <ul style="padding-left: 30px;">
-    <li><strong>margin: 25px 50px 75px 100px; </strong></li>
-  </ul>
-  <ul style="padding-left: 60px;">
-    <li>top margin is 25px</li>
-    <li>right margin is 50px</li>
-    <li>bottom margin is 75px</li>
-    <li>left margin is 100px</li>
-  </ul>
-  <br>
-  <table>
-    <thead>
-    <tr>
-      <th style="width: 55%;">Example Code</th>
-      <th style="width: 45%;">Sample Output</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>
-        &lt;!DOCTYPE html&gt; <br>
-        &lt;html&gt; <br>
-        &lt;head&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #margin-shorthand-four { <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 1px solid black; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin: 25px 50px 75px 100px; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: lightblue; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
-        &lt;&sol;head&gt; <br>
-        &lt;body&gt; <br>
-        &lt;div id="margin-shorthand-four" &gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; The margin shorthand property with 4 values <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; This div element has a top margin of 25px, a right margin of 50px, a bottom margin of 75px, and a left margin of 100px. <br>
-        &lt;&sol;div&gt; <br>
-        &lt;&sol;body&gt; <br>
-        &lt;&sol;html&gt; <br>
-      </td>
-      <td>
-        <div id="margin-shorthand-four">
-          The margin shorthand property with 4 values <br>
-          This div element has a top margin of 25px, a right margin of 50px, a bottom margin of 75px, and a left margin of 100px.
-        </div>
-      </td>
-    </tr>
-    </tbody>
-  </table>
-  <br><br>
-
-  <p>
-    If the <span class="code">margin</span> property has three values:
-  </p>
-  <ul style="padding-left: 30px;">
-    <li><strong>margin: 25px 50px 75px; </strong></li>
-  </ul>
-  <ul style="padding-left: 60px;">
-    <li>top margin is 25px</li>
-    <li>right and left margins are 50px</li>
-    <li>bottom margin is 75px</li>
-  </ul>
-  <br>
-  <table>
-    <thead>
-    <tr>
-      <th style="width: 55%;">Example Code</th>
-      <th style="width: 45%;">Sample Output</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>
-        &lt;!DOCTYPE html&gt; <br>
-        &lt;html&gt; <br>
-        &lt;head&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #margin-shorthand-three { <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 1px solid black; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin: 25px 50px 75px; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: lightblue; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
-        &lt;&sol;head&gt; <br>
-        &lt;body&gt; <br>
-        &lt;div id="margin-shorthand-three" &gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; The margin shorthand property with 3 values <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; This div element has a top margin of 25px, a right and left margin of 50px, and a bottom margin of 75px. <br>
-        &lt;&sol;div&gt; <br>
-        &lt;&sol;body&gt; <br>
-        &lt;&sol;html&gt; <br>
-      </td>
-      <td>
-        <div id="margin-shorthand-three">
-          The margin shorthand property with 3 values <br>
-          This div element has a top margin of 25px, a right and left margin of 50px, and a bottom margin of 75px.
-        </div>
-      </td>
-    </tr>
-    </tbody>
-  </table>
-  <br><br>
-
-  <p>
-    If the <span class="code">margin</span> property has two values:
-  </p>
-  <ul style="padding-left: 30px;">
-    <li><strong>margin: 25px 50px; </strong></li>
-  </ul>
-  <ul style="padding-left: 60px;">
-    <li>top and bottom margins are 25px</li>
-    <li>right and left margins are 50px</li>
-  </ul>
-  <br>
-  <table>
-    <thead>
-    <tr>
-      <th style="width: 55%;">Example Code</th>
-      <th style="width: 45%;">Sample Output</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>
-        &lt;!DOCTYPE html&gt; <br>
-        &lt;html&gt; <br>
-        &lt;head&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #margin-shorthand-three { <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 1px solid black; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin: 25px 50px; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: lightblue; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
-        &lt;&sol;head&gt; <br>
-        &lt;body&gt; <br>
-        &lt;div id="margin-shorthand-two" &gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; The margin shorthand property with 2 values <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; This div element has a top and bottom margin of 25px, and a right and left margin of 50px. <br>
-        &lt;&sol;div&gt; <br>
-        &lt;&sol;body&gt; <br>
-        &lt;&sol;html&gt; <br>
-      </td>
-      <td>
-        <div id="margin-shorthand-two">
-          The margin shorthand property with 2 values <br>
-          This div element has a top and bottom margin of 25px, and a right and left margin of 50px.
-        </div>
-      </td>
-    </tr>
-    </tbody>
-  </table>
-  <br><br>
-
-  <p>
-    If the <span class="code">margin</span> property has one values:
-  </p>
-  <ul style="padding-left: 30px;">
-    <li><strong>margin: 25px; </strong></li>
-  </ul>
-  <ul style="padding-left: 60px;">
-    <li>all four margins are 25px</li>
-  </ul>
-  <br>
-  <table>
-    <thead>
-    <tr>
-      <th style="width: 55%;">Example Code</th>
-      <th style="width: 45%;">Sample Output</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>
-        &lt;!DOCTYPE html&gt; <br>
-        &lt;html&gt; <br>
-        &lt;head&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #margin-shorthand-one { <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 1px solid black; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin: 25px; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: lightblue; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
-        &lt;&sol;head&gt; <br>
-        &lt;body&gt; <br>
-        &lt;div id="margin-shorthand-one" &gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; The margin shorthand property with 1 values <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; This div element has a top, bottom, left, and right margin of 25px. <br>
-        &lt;&sol;div&gt; <br>
-        &lt;&sol;body&gt; <br>
-        &lt;&sol;html&gt; <br>
-      </td>
-      <td>
-        <div id="margin-shorthand-one">
-          The margin shorthand property with 1 values <br>
-          TThis div element has a top, bottom, left, and right margin of 25px.
-        </div>
-      </td>
-    </tr>
-    </tbody>
-  </table>
 </section>
 
-<section class="content" style="margin-right: 10px;">
-  <h3>CSS Margin - The auto Value</h3>
+<section class="content">
+  <h3>CSS Functions (A-Z)</h3>
   <hr>
   <p style="padding-top: 10px; padding-bottom: 10px;">
-    One can set the margin property to <span class="code">auto</span> to horizontally center the element within its container. <br>
-    The element will then take up the specified width, and the remaining space will be split equally between the left and right margins.
+    Sorted alphabetically by function name.
   </p>
 
-  <table>
-    <thead>
-    <tr>
-      <th style="width: 55%;">Example Code</th>
-      <th style="width: 45%;">Sample Output</th>
-    </tr>
-    </thead>
+  <table class="ref_table">
+    <thead><tr><th>Function</th><th>Description</th></tr></thead>
     <tbody>
-    <tr>
-      <td>
-        &lt;!DOCTYPE html&gt; <br>
-        &lt;html&gt; <br>
-        &lt;head&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; div { width: 430px; margin: auto; border: 1px solid green; } <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
-        &lt;&sol;head&gt; <br>
-        &lt;body&gt; <br> <br>
-
-        &lt;p&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; One can set the margin property to auto to horizontally center the element within its container. <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; The element will then take up the specified width, and the remaining space will be split equally between the left and right margins. <br>
-        &lt;&sol;p&gt; <br> <br>
-
-        &lt;div id="margin-auto"&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; This div will be horizontally centered because it has margin: auto; <br>
-        &lt;&sol;div&gt; <br> <br>
-
-        &lt;&sol;body&gt; <br>
-        &lt;&sol;html&gt; <br>
-      </td>
-      <td>
-        <p>
-        One can set the margin property to auto to horizontally center the element within its container.
-        The element will then take up the specified width, and the remaining space will be split equally between the left and right margins.
-        </p>
-
-        <div id="margin-auto">
-        This div will be horizontally centered because it has margin: auto;
-        </div>
-      </td>
-    </tr>
+    <tr><td>acos()</td><td>Returns the inverse cosine (arccosine) of a number</td></tr>
+    <tr><td>asin()</td><td>Returns the inverse sine (arcsine) of a number</td></tr>
+    <tr><td>atan()</td><td>Returns the inverse tangent (arctangent) of a number</td></tr>
+    <tr><td>atan2()</td><td>Returns the angle whose tangent is the ratio of two given numbers</td></tr>
+    <tr><td>attr()</td><td>Reads an HTML attribute&#x27;s value and uses it as a CSS value</td></tr>
+    <tr><td>blur()</td><td>Applies a Gaussian blur to an element</td></tr>
+    <tr><td>brightness()</td><td>Makes an element appear brighter or darker</td></tr>
+    <tr><td>calc()</td><td>Performs addition, subtraction, multiplication, or division to compute a value</td></tr>
+    <tr><td>circle()</td><td>Defines a circular clipping or shape region</td></tr>
+    <tr><td>clamp()</td><td>Picks a value that scales between a minimum and maximum based on a preferred size</td></tr>
+    <tr><td>color()</td><td>Specifies a color using a named color space</td></tr>
+    <tr><td>color-mix()</td><td>Mixes two colors together by a given percentage</td></tr>
+    <tr><td>conic-gradient()</td><td>Creates a gradient that sweeps around a center point</td></tr>
+    <tr><td>contrast()</td><td>Increases or decreases the contrast of an element</td></tr>
+    <tr><td>cos()</td><td>Returns the cosine of an angle</td></tr>
+    <tr><td>counter()</td><td>Returns the current value of a named CSS counter</td></tr>
+    <tr><td>counters()</td><td>Returns the current values of nested named CSS counters, joined together</td></tr>
+    <tr><td>cubic-bezier()</td><td>Defines a custom timing curve for transitions and animations</td></tr>
+    <tr><td>drop-shadow()</td><td>Adds a shadow that follows the shape of an image&#x27;s alpha channel</td></tr>
+    <tr><td>ellipse()</td><td>Defines an elliptical clipping or shape region</td></tr>
+    <tr><td>exp()</td><td>Raises the mathematical constant e to a given power</td></tr>
+    <tr><td>fit-content()</td><td>Sizes a grid or flex track to fit its content, up to an optional limit</td></tr>
+    <tr><td>grayscale()</td><td>Converts an element to shades of gray</td></tr>
+    <tr><td>hsl() / hsla()</td><td>Defines a color by hue, saturation, and lightness, with an optional alpha channel</td></tr>
+    <tr><td>hue-rotate()</td><td>Shifts all colors in an element around the color wheel</td></tr>
+    <tr><td>hwb()</td><td>Defines a color by hue, whiteness, and blackness, with an optional alpha channel</td></tr>
+    <tr><td>hypot()</td><td>Returns the square root of the sum of the squares of its arguments</td></tr>
+    <tr><td>inset()</td><td>Defines a rectangular clipping or shape region inset from each edge</td></tr>
+    <tr><td>invert()</td><td>Inverts the colors of an element</td></tr>
+    <tr><td>lab()</td><td>Specifies a color using the CIE L*a*b* color space</td></tr>
+    <tr><td>lch()</td><td>Specifies a color using lightness, chroma, and hue</td></tr>
+    <tr><td>light-dark()</td><td>Picks one of two values depending on whether light or dark color-scheme is active</td></tr>
+    <tr><td>linear-gradient()</td><td>Creates a gradient that transitions along a straight line</td></tr>
+    <tr><td>log()</td><td>Returns the logarithm of a number, natural by default or to a specified base</td></tr>
+    <tr><td>matrix()</td><td>Applies a 2D transformation using six values in a single matrix</td></tr>
+    <tr><td>matrix3d()</td><td>Applies a 3D transformation using a 4x4 matrix of sixteen values</td></tr>
+    <tr><td>max()</td><td>Resolves to the largest of a comma-separated list of values</td></tr>
+    <tr><td>min()</td><td>Resolves to the smallest of a comma-separated list of values</td></tr>
+    <tr><td>minmax()</td><td>Sets a size range (minimum to maximum) for a grid track</td></tr>
+    <tr><td>mod()</td><td>Returns the remainder of dividing one number by another, keeping the divisor&#x27;s sign</td></tr>
+    <tr><td>oklab()</td><td>Specifies a color using the OKLab perceptual color space</td></tr>
+    <tr><td>oklch()</td><td>Specifies a color using the OKLCH perceptual color space</td></tr>
+    <tr><td>opacity()</td><td>Applies a transparency filter to an element</td></tr>
+    <tr><td>perspective()</td><td>Sets how far the viewer is from a 3D-transformed element</td></tr>
+    <tr><td>polygon()</td><td>Defines a multi-point polygonal clipping or shape region</td></tr>
+    <tr><td>pow()</td><td>Raises a number to a given power</td></tr>
+    <tr><td>radial-gradient()</td><td>Creates a gradient that radiates outward from a center point</td></tr>
+    <tr><td>ray()</td><td>Defines a path segment used to animate an element along an angle and distance</td></tr>
+    <tr><td>rem()</td><td>Returns the remainder of dividing one number by another</td></tr>
+    <tr><td>repeat()</td><td>Repeats a pattern of grid columns or rows a set number of times</td></tr>
+    <tr><td>repeating-conic-gradient()</td><td>Repeats a conic gradient pattern outward</td></tr>
+    <tr><td>repeating-linear-gradient()</td><td>Repeats a linear gradient pattern along its line</td></tr>
+    <tr><td>repeating-radial-gradient()</td><td>Repeats a radial gradient pattern outward</td></tr>
+    <tr><td>rgb() / rgba()</td><td>Defines a color by red, green, and blue values, with an optional alpha channel</td></tr>
+    <tr><td>rotate()</td><td>Rotates an element in two dimensions</td></tr>
+    <tr><td>rotate3d()</td><td>Rotates an element around a custom axis in 3D space</td></tr>
+    <tr><td>rotateX()</td><td>Rotates an element around the horizontal (x) axis</td></tr>
+    <tr><td>rotateY()</td><td>Rotates an element around the vertical (y) axis</td></tr>
+    <tr><td>rotateZ()</td><td>Rotates an element around the depth (z) axis</td></tr>
+    <tr><td>round()</td><td>Rounds a number to the nearest multiple of a step, using a chosen rounding strategy</td></tr>
+    <tr><td>saturate()</td><td>Increases or decreases the color saturation of an element</td></tr>
+    <tr><td>scale()</td><td>Resizes an element in two dimensions</td></tr>
+    <tr><td>scale3d()</td><td>Resizes an element in three dimensions</td></tr>
+    <tr><td>scaleX()</td><td>Resizes an element along the horizontal axis only</td></tr>
+    <tr><td>scaleY()</td><td>Resizes an element along the vertical axis only</td></tr>
+    <tr><td>sepia()</td><td>Applies a sepia (warm brownish) tone to an element</td></tr>
+    <tr><td>sin()</td><td>Returns the sine of an angle</td></tr>
+    <tr><td>skew()</td><td>Slants an element along both the x and y axes</td></tr>
+    <tr><td>skewX()</td><td>Slants an element along the horizontal axis only</td></tr>
+    <tr><td>skewY()</td><td>Slants an element along the vertical axis only</td></tr>
+    <tr><td>sqrt()</td><td>Returns the square root of a number</td></tr>
+    <tr><td>steps()</td><td>Creates a timing function that jumps through a fixed number of steps</td></tr>
+    <tr><td>tan()</td><td>Returns the tangent of an angle</td></tr>
+    <tr><td>translate()</td><td>Moves an element along the x and y axes</td></tr>
+    <tr><td>translateX()</td><td>Moves an element along the horizontal axis only</td></tr>
+    <tr><td>translateY()</td><td>Moves an element along the vertical axis only</td></tr>
+    <tr><td>translateZ()</td><td>Moves an element along the depth axis in 3D space</td></tr>
+    <tr><td>url()</td><td>References an external file, such as an image or font, from within CSS</td></tr>
+    <tr><td>var()</td><td>Inserts the current value of a custom CSS property</td></tr>
+    <tr><td>xywh()</td><td>Defines a rectangle using x/y coordinates plus a width and height</td></tr>
     </tbody>
   </table>
 </section>
 
-<section class="content" style="margin-right: 10px;">
-  <h3>All CSS Margin Properties</h3>
+<section class="content">
+  <h3>Function Categories at a Glance</h3>
   <hr>
-  <br>
-  <table>
-    <thead>
-    <tr>
-      <th style="width: 20%;">Property</th>
-      <th style="width: 80%;">Property</th>
-    </tr>
-    </thead>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The 80 functions above fall into a handful of natural groups:
+  </p>
+
+  <table class="ref_table">
+    <thead><tr><th style="width: 25%;">Category</th><th>Examples</th></tr></thead>
     <tbody>
-    <tr><td>margin</td><td>A shorthand property for setting all the margin properties in one declaration</td></tr>
-    <tr><td>margin-bottom</td><td>Sets the bottom margin of an element</td></tr>
-    <tr><td>margin-left</td><td>Sets the left margin of an element</td></tr>
-    <tr><td>margin-right</td><td>Sets the right margin of an element</td></tr>
-    <tr><td>margin-top</td><td>Sets the top margin of an element</td></tr>
+    <tr><td>Math</td><td><span class="code">calc()</span>, <span class="code">min()</span>, <span class="code">max()</span>, <span class="code">clamp()</span>, <span class="code">sqrt()</span>, <span class="code">pow()</span>, <span class="code">round()</span>, <span class="code">mod()</span>, <span class="code">rem()</span></td></tr>
+    <tr><td>Trigonometry</td><td><span class="code">sin()</span>, <span class="code">cos()</span>, <span class="code">tan()</span>, <span class="code">asin()</span>, <span class="code">acos()</span>, <span class="code">atan()</span>, <span class="code">atan2()</span>, <span class="code">hypot()</span></td></tr>
+    <tr><td>Color</td><td><span class="code">rgb()</span>, <span class="code">hsl()</span>, <span class="code">hwb()</span>, <span class="code">lab()</span>, <span class="code">lch()</span>, <span class="code">oklab()</span>, <span class="code">oklch()</span>, <span class="code">color-mix()</span></td></tr>
+    <tr><td>Gradients</td><td><span class="code">linear-gradient()</span>, <span class="code">radial-gradient()</span>, <span class="code">conic-gradient()</span>, and their <span class="code">repeating-*</span> variants</td></tr>
+    <tr><td>Filters</td><td><span class="code">blur()</span>, <span class="code">brightness()</span>, <span class="code">contrast()</span>, <span class="code">grayscale()</span>, <span class="code">invert()</span>, <span class="code">sepia()</span>, <span class="code">saturate()</span>, <span class="code">hue-rotate()</span>, <span class="code">drop-shadow()</span>, <span class="code">opacity()</span></td></tr>
+    <tr><td>2D/3D Transforms</td><td><span class="code">translate()</span>, <span class="code">rotate()</span>, <span class="code">scale()</span>, <span class="code">skew()</span>, their axis-specific variants, <span class="code">matrix()</span>, <span class="code">perspective()</span></td></tr>
+    <tr><td>Shapes</td><td><span class="code">circle()</span>, <span class="code">ellipse()</span>, <span class="code">polygon()</span>, <span class="code">inset()</span>, <span class="code">xywh()</span></td></tr>
+    <tr><td>Grid sizing</td><td><span class="code">repeat()</span>, <span class="code">minmax()</span>, <span class="code">fit-content()</span></td></tr>
+    <tr><td>Counters &amp; content</td><td><span class="code">counter()</span>, <span class="code">counters()</span>, <span class="code">attr()</span>, <span class="code">url()</span>, <span class="code">var()</span></td></tr>
+    <tr><td>Animation timing</td><td><span class="code">cubic-bezier()</span>, <span class="code">steps()</span></td></tr>
     </tbody>
   </table>
+
+  <p><strong><i>Note: </i></strong>A function always ends in parentheses, which is what tells them apart from plain keyword values — <span class="code">center</span> is a keyword, but <span class="code">translateX(10px)</span> is a function call that computes a value.</p>
 </section>
-<br>
 <!--Main Section End-->
 
 <!--External JavaScript Library Inclusion Start-->
