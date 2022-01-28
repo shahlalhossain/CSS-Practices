@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-  <title>CSS | Icons</title>
+  <title>CSS | CSS Animatable</title>
 
   <!--Meta Section Start-->
   <meta charset="UTF-8">
@@ -26,13 +26,7 @@
   <!--Internal CSS Library Inclusion End-->
 
   <!--External JavaScript Library Inclusion Start-->
-  <!--<script type="text/javascript" rel="script" src="#" crossorigin="anonymous"></script>-->
-  <!-- Fontawesome Icon CSS -->
-  <script src="https://kit.fontawesome.com/772ca826a4.js" crossorigin="anonymous"></script>
-  <!-- Bootstrap Icon CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-  <!-- Google Icon CSS -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <!--<script type="text/javascript" rel="script" src="#"></script>-->
   <!--External JavaScript Library Inclusion End-->
 
   <!--Internal JavaScript Library Inclusion Start-->
@@ -40,8 +34,27 @@
   <!--Internal JavaScript Library Inclusion End-->
 
   <!--Page Specific Custom CSS Start-->
-  <style>
-
+  <style type="text/css">
+    .ref_table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 25px;
+    }
+    .ref_table th, .ref_table td {
+      border: 1px solid #ddd;
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .ref_table th {
+      background-color: #04AA6D;
+      color: white;
+    }
+    .ref_table td:first-child {
+      width: 25%;
+      white-space: nowrap;
+      font-family: monospace;
+    }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -307,7 +320,7 @@
           <span class="navlink">Font Shorthand</span>
         </a>
       </li>
-      <li class="item active">
+      <li class="item">
         <a href="39_css_icons.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Icons</span>
@@ -683,6 +696,7 @@
 </ul>
     <!-- Menu Section End -->
 
+
     <!-- Menu Section Start -->
     <span class="menu_title">CSS References</span>
     <ul class="menu_items">
@@ -698,13 +712,13 @@
           <span class="navlink">CSS Functions</span>
         </a>
       </li>
-      <li class="item">
+      <li class="item active">
         <a href="100_css_animatable.html" class="nav_link">
           <span class="navlink_icon"><i class="bx bxs-file-css"></i></span>
           <span class="navlink">CSS Animatable</span>
         </a>
       </li>
-</ul>
+    </ul>
     <!-- Menu Section End -->
 
     <!-- Sidebar Collapse and Expand Start -->
@@ -728,294 +742,235 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>CSS Icons</h3>
+  <h3>CSS Animatable</h3>
   <hr>
   <p style="padding-top: 10px; padding-bottom: 10px;">
-    Icons can easily be added to your HTML page, by using an icon library.
+    Animatable properties are ones whose value can change gradually from a start value to an end value, instead of jumping straight from one to the other. This is what makes <span class="code">transition</span> and <span class="code">@keyframes</span> animation look smooth &mdash; the browser computes in-between frames along the way. A property that is NOT animatable still responds to <span class="code">transition</span>/<span class="code">animation</span> rules, but it simply flips between its states with no smooth in-between.
   </p>
-
-  <h4>How To Add Icons</h4>
-  <hr>
   <p style="padding-top: 10px; padding-bottom: 10px;">
-    The simplest way to add an icon to your HTML page, is with an icon library, such as Font Awesome. <br>
-    Add the name of the specified icon class to any inline HTML element (like <span class="code">&lt;i&gt;</span> or <span class="code">&lt;span&gt;</span>). <br>
-    All the icons in the icon libraries below, are scalable vectors that can be customized with CSS (size, color, shadow, etc.)
+    Not every value type can be interpolated the same way: numbers, lengths, percentages, and colors all have a well-defined "halfway point," so they animate smoothly. Keywords like <span class="code">none</span> or <span class="code">block</span> don't &mdash; there's no meaningful midpoint between them, so a property built only from keywords (like <span class="code">display</span>) cannot animate at all.
   </p>
 </section>
 
 <section class="content">
-  <h3>Font Awesome Icons</h3>
+  <h3>Animatable Properties (A-Z)</h3>
   <hr>
   <p style="padding-top: 10px; padding-bottom: 10px;">
-    To use the Font Awesome icons, go to fontawesome.com, sign in, and get a code to add in the <span class="code">&lt;head&gt;</span> section of your HTML page:
+    The "Animates As" column shows what kind of value is actually being interpolated &mdash; most animatable properties boil down to a number, a length/percentage, or a color underneath, even when the property itself has a different name.
   </p>
+
+  <table class="ref_table">
+    <thead><tr><th>Property</th><th>Animates As</th></tr></thead>
+    <tbody>
+    <tr><td>aspect-ratio</td><td>Number/ratio</td></tr>
+    <tr><td>background</td><td>Shorthand (color/position/size)</td></tr>
+    <tr><td>background-color</td><td>Color</td></tr>
+    <tr><td>background-position</td><td>Length/percentage</td></tr>
+    <tr><td>background-position-x</td><td>Length/percentage</td></tr>
+    <tr><td>background-position-y</td><td>Length/percentage</td></tr>
+    <tr><td>background-size</td><td>Length/percentage</td></tr>
+    <tr><td>block-size</td><td>Length/percentage</td></tr>
+    <tr><td>border</td><td>Shorthand (width/color)</td></tr>
+    <tr><td>border-bottom</td><td>Shorthand (width/color)</td></tr>
+    <tr><td>border-bottom-color</td><td>Color</td></tr>
+    <tr><td>border-bottom-left-radius</td><td>Length/percentage</td></tr>
+    <tr><td>border-bottom-right-radius</td><td>Length/percentage</td></tr>
+    <tr><td>border-bottom-width</td><td>Length</td></tr>
+    <tr><td>border-block</td><td>Shorthand (width/color)</td></tr>
+    <tr><td>border-block-color</td><td>Color</td></tr>
+    <tr><td>border-block-end-color</td><td>Color</td></tr>
+    <tr><td>border-block-end-width</td><td>Length</td></tr>
+    <tr><td>border-block-start-color</td><td>Color</td></tr>
+    <tr><td>border-block-start-width</td><td>Length</td></tr>
+    <tr><td>border-block-width</td><td>Length</td></tr>
+    <tr><td>border-color</td><td>Color</td></tr>
+    <tr><td>border-end-end-radius</td><td>Length/percentage</td></tr>
+    <tr><td>border-end-start-radius</td><td>Length/percentage</td></tr>
+    <tr><td>border-inline</td><td>Shorthand (width/color)</td></tr>
+    <tr><td>border-inline-color</td><td>Color</td></tr>
+    <tr><td>border-inline-end-color</td><td>Color</td></tr>
+    <tr><td>border-inline-end-width</td><td>Length</td></tr>
+    <tr><td>border-inline-start-color</td><td>Color</td></tr>
+    <tr><td>border-inline-start-width</td><td>Length</td></tr>
+    <tr><td>border-inline-width</td><td>Length</td></tr>
+    <tr><td>border-left</td><td>Shorthand (width/color)</td></tr>
+    <tr><td>border-left-color</td><td>Color</td></tr>
+    <tr><td>border-left-width</td><td>Length</td></tr>
+    <tr><td>border-right</td><td>Shorthand (width/color)</td></tr>
+    <tr><td>border-right-color</td><td>Color</td></tr>
+    <tr><td>border-right-width</td><td>Length</td></tr>
+    <tr><td>border-spacing</td><td>Length</td></tr>
+    <tr><td>border-start-end-radius</td><td>Length/percentage</td></tr>
+    <tr><td>border-start-start-radius</td><td>Length/percentage</td></tr>
+    <tr><td>border-top</td><td>Shorthand (width/color)</td></tr>
+    <tr><td>border-top-color</td><td>Color</td></tr>
+    <tr><td>border-top-left-radius</td><td>Length/percentage</td></tr>
+    <tr><td>border-top-right-radius</td><td>Length/percentage</td></tr>
+    <tr><td>border-top-width</td><td>Length</td></tr>
+    <tr><td>bottom</td><td>Length/percentage</td></tr>
+    <tr><td>box-shadow</td><td>Shadow list (color/length)</td></tr>
+    <tr><td>clip</td><td>Rectangle (shape)</td></tr>
+    <tr><td>color</td><td>Color</td></tr>
+    <tr><td>column-count</td><td>Number</td></tr>
+    <tr><td>column-gap</td><td>Length/percentage</td></tr>
+    <tr><td>column-rule</td><td>Shorthand (width/color)</td></tr>
+    <tr><td>column-rule-color</td><td>Color</td></tr>
+    <tr><td>column-rule-width</td><td>Length</td></tr>
+    <tr><td>column-width</td><td>Length</td></tr>
+    <tr><td>columns</td><td>Shorthand (width/count)</td></tr>
+    <tr><td>filter</td><td>Filter function list</td></tr>
+    <tr><td>flex</td><td>Shorthand (grow/shrink/basis)</td></tr>
+    <tr><td>flex-basis</td><td>Length/percentage</td></tr>
+    <tr><td>flex-grow</td><td>Number</td></tr>
+    <tr><td>flex-shrink</td><td>Number</td></tr>
+    <tr><td>font</td><td>Shorthand (size/weight/family)</td></tr>
+    <tr><td>font-size</td><td>Length/percentage</td></tr>
+    <tr><td>font-size-adjust</td><td>Number</td></tr>
+    <tr><td>font-stretch</td><td>Percentage</td></tr>
+    <tr><td>font-weight</td><td>Number</td></tr>
+    <tr><td>grid</td><td>Shorthand (template rows/columns)</td></tr>
+    <tr><td>grid-area</td><td>Grid line names/numbers</td></tr>
+    <tr><td>grid-auto-columns</td><td>Length/percentage</td></tr>
+    <tr><td>grid-auto-flow</td><td>Keyword</td></tr>
+    <tr><td>grid-auto-rows</td><td>Length/percentage</td></tr>
+    <tr><td>grid-column</td><td>Grid line names/numbers</td></tr>
+    <tr><td>grid-column-end</td><td>Grid line name/number</td></tr>
+    <tr><td>grid-column-gap</td><td>Length/percentage</td></tr>
+    <tr><td>grid-column-start</td><td>Grid line name/number</td></tr>
+    <tr><td>grid-gap</td><td>Shorthand (row/column gap)</td></tr>
+    <tr><td>grid-row</td><td>Grid line names/numbers</td></tr>
+    <tr><td>grid-row-end</td><td>Grid line name/number</td></tr>
+    <tr><td>grid-row-gap</td><td>Length/percentage</td></tr>
+    <tr><td>grid-row-start</td><td>Grid line name/number</td></tr>
+    <tr><td>grid-template</td><td>Shorthand (rows/columns/areas)</td></tr>
+    <tr><td>grid-template-areas</td><td>Named grid areas</td></tr>
+    <tr><td>grid-template-columns</td><td>Track size list</td></tr>
+    <tr><td>grid-template-rows</td><td>Track size list</td></tr>
+    <tr><td>height</td><td>Length/percentage</td></tr>
+    <tr><td>inline-size</td><td>Length/percentage</td></tr>
+    <tr><td>inset</td><td>Shorthand (top/right/bottom/left)</td></tr>
+    <tr><td>inset-block</td><td>Length/percentage</td></tr>
+    <tr><td>inset-block-end</td><td>Length/percentage</td></tr>
+    <tr><td>inset-block-start</td><td>Length/percentage</td></tr>
+    <tr><td>inset-inline</td><td>Length/percentage</td></tr>
+    <tr><td>inset-inline-end</td><td>Length/percentage</td></tr>
+    <tr><td>inset-inline-start</td><td>Length/percentage</td></tr>
+    <tr><td>left</td><td>Length/percentage</td></tr>
+    <tr><td>letter-spacing</td><td>Length</td></tr>
+    <tr><td>line-height</td><td>Number/length/percentage</td></tr>
+    <tr><td>margin</td><td>Shorthand (length)</td></tr>
+    <tr><td>margin-block</td><td>Length/percentage</td></tr>
+    <tr><td>margin-block-end</td><td>Length/percentage</td></tr>
+    <tr><td>margin-block-start</td><td>Length/percentage</td></tr>
+    <tr><td>margin-bottom</td><td>Length/percentage</td></tr>
+    <tr><td>margin-inline</td><td>Length/percentage</td></tr>
+    <tr><td>margin-inline-end</td><td>Length/percentage</td></tr>
+    <tr><td>margin-inline-start</td><td>Length/percentage</td></tr>
+    <tr><td>margin-left</td><td>Length/percentage</td></tr>
+    <tr><td>margin-right</td><td>Length/percentage</td></tr>
+    <tr><td>margin-top</td><td>Length/percentage</td></tr>
+    <tr><td>max-block-size</td><td>Length/percentage</td></tr>
+    <tr><td>max-height</td><td>Length/percentage</td></tr>
+    <tr><td>max-inline-size</td><td>Length/percentage</td></tr>
+    <tr><td>max-width</td><td>Length/percentage</td></tr>
+    <tr><td>min-block-size</td><td>Length/percentage</td></tr>
+    <tr><td>min-height</td><td>Length/percentage</td></tr>
+    <tr><td>min-inline-size</td><td>Length/percentage</td></tr>
+    <tr><td>min-width</td><td>Length/percentage</td></tr>
+    <tr><td>object-position</td><td>Length/percentage</td></tr>
+    <tr><td>offset-anchor</td><td>Length/percentage</td></tr>
+    <tr><td>offset-distance</td><td>Length/percentage</td></tr>
+    <tr><td>offset-path</td><td>Path shape</td></tr>
+    <tr><td>offset-rotate</td><td>Angle</td></tr>
+    <tr><td>opacity</td><td>Number</td></tr>
+    <tr><td>order</td><td>Integer</td></tr>
+    <tr><td>outline</td><td>Shorthand (width/color)</td></tr>
+    <tr><td>outline-color</td><td>Color</td></tr>
+    <tr><td>outline-offset</td><td>Length</td></tr>
+    <tr><td>outline-width</td><td>Length</td></tr>
+    <tr><td>padding</td><td>Shorthand (length)</td></tr>
+    <tr><td>padding-block</td><td>Length/percentage</td></tr>
+    <tr><td>padding-block-end</td><td>Length/percentage</td></tr>
+    <tr><td>padding-block-start</td><td>Length/percentage</td></tr>
+    <tr><td>padding-bottom</td><td>Length/percentage</td></tr>
+    <tr><td>padding-inline</td><td>Length/percentage</td></tr>
+    <tr><td>padding-inline-end</td><td>Length/percentage</td></tr>
+    <tr><td>padding-inline-start</td><td>Length/percentage</td></tr>
+    <tr><td>padding-left</td><td>Length/percentage</td></tr>
+    <tr><td>padding-right</td><td>Length/percentage</td></tr>
+    <tr><td>padding-top</td><td>Length/percentage</td></tr>
+    <tr><td>perspective</td><td>Length</td></tr>
+    <tr><td>perspective-origin</td><td>Length/percentage</td></tr>
+    <tr><td>right</td><td>Length/percentage</td></tr>
+    <tr><td>rotate</td><td>Angle</td></tr>
+    <tr><td>scale</td><td>Number</td></tr>
+    <tr><td>text-decoration-color</td><td>Color</td></tr>
+    <tr><td>text-indent</td><td>Length/percentage</td></tr>
+    <tr><td>text-shadow</td><td>Shadow list (color/length)</td></tr>
+    <tr><td>top</td><td>Length/percentage</td></tr>
+    <tr><td>transform</td><td>Transform function list</td></tr>
+    <tr><td>transform-origin</td><td>Length/percentage</td></tr>
+    <tr><td>translate</td><td>Length/percentage</td></tr>
+    <tr><td>vertical-align</td><td>Length/percentage/keyword</td></tr>
+    <tr><td>visibility</td><td>Keyword (visible/hidden)</td></tr>
+    <tr><td>width</td><td>Length/percentage</td></tr>
+    <tr><td>word-spacing</td><td>Length/percentage</td></tr>
+    <tr><td>z-index</td><td>Integer</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content">
+  <h3>Trying It Yourself</h3>
+  <hr>
   <p style="padding-top: 10px; padding-bottom: 10px;">
-    <span class="code">&lt;script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"&gt;&lt;&sol;script&gt;</span>
-  </p>
-  <p style="padding-top: 10px; padding-bottom: 10px;">
-    <strong><i>Note: </i></strong>No downloading or installation is required.
+    A quick way to see animatability in action: set a <span class="code">transition</span> on a property from the list above, then change that property's value (e.g. on <span class="code">:hover</span>). If the property is animatable, the change eases smoothly over the transition's duration; if it isn't, the change happens instantly regardless of the duration you set.
   </p>
 
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
       <td>
-
         &lt;!DOCTYPE html&gt; <br>
         &lt;html&gt; <br>
         &lt;head&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;title&gt;Font Awesome Icons&lt;&sol;title&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"&gt;&lt;&sol;script&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .box { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; width: 100px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; height: 100px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: #04AA6D; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; transition: background-color 1s, border-radius 1s; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .box:hover { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: #4070f4; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border-radius: 50%; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
         &lt;&sol;head&gt; <br>
-        &lt;body&gt; <br> <br>
-
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Some Font Awesome icons:&lt;&sol;p&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="fas fa-cloud"&gt;&lt;&sol;i&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="fas fa-heart"&gt;&lt;&sol;i&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="fas fa-car"&gt;&lt;&sol;i&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="fas fa-file"&gt;&lt;&sol;i&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="fas fa-bars"&gt;&lt;&sol;i&gt; <br> <br>
-
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Styled Font Awesome icons (size and color):&lt;&sol;p&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="fas fa-heart" style="font-size:24px;"&gt;&lt;&sol;i&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="fas fa-heart" style="font-size:36px;"&gt;&lt;&sol;i&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="fas fa-heart" style="font-size:48px;color:red;"&gt;&lt;&sol;i&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="fas fa-heart" style="font-size:60px;color:lightblue;"&gt;&lt;&sol;i&gt; <br> <br>
-
+        &lt;body&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="box"&gt;&lt;&sol;div&gt; <br>
         &lt;&sol;body&gt; <br>
         &lt;&sol;html&gt;
-
       </td>
-      <td>
-
-        <h4>Font Awesome Icon Library</h4>
-        <br><br>
-
-        <p>Some Font Awesome Icons:</p>
-        <i class="fas fa-home" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
-        <i class="fas fa-cloud" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
-        <i class="fas fa-heart" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
-        <i class="fas fa-car" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
-        <i class="fas fa-file" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
-        <i class="fas fa-bars" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
-        <i class="fas fa-star" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
-        <i class="fas fa-hand" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
-        <i class="fas fa-globe" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
-        <i class="fas fa-database" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
-        <i class="fas fa-link" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
-        <i class="fas fa-address-card" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
-        <i class="fas fa-signal" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
-        <br><br><br>
-
-        <p>Styled Font Awesome Icons (with Size and Color):</p>
-        <i class="fas fa-heart" style="font-size:24px;color:black; border: 1px solid grey; padding: 5px; border-radius: 5px;"></i>
-        <i class="fas fa-heart" style="font-size:36px;color:green; border: 1px solid grey; padding: 5px; border-radius: 5px;"></i>
-        <i class="fas fa-heart" style="font-size:48px;color:red; border: 1px solid grey; padding: 5px; border-radius: 5px;"></i>
-        <i class="fas fa-heart" style="font-size:60px;color:lightblue; border: 1px solid grey; padding: 5px; border-radius: 5px;"></i>
-        <i class="fas fa-heart" style="font-size:72px;color:blue; border: 1px solid grey; padding: 5px; border-radius: 5px;"></i>
-
+      <td style="text-align: center;">
+        <div style="width:100px; height:100px; background-color:#04AA6D; transition: background-color 1s, border-radius 1s; margin: 0 auto;"
+             onmouseover="this.style.backgroundColor='#4070f4'; this.style.borderRadius='50%';"
+             onmouseout="this.style.backgroundColor='#04AA6D'; this.style.borderRadius='0';">
+        </div>
+        <p style="font-size: 13px; color: #666; margin-top: 8px;">Hover the box &mdash; color and corner radius ease smoothly, because both <span class="code">background-color</span> and <span class="code">border-radius</span> are animatable.</p>
       </td>
     </tr>
     </tbody>
   </table>
 
-  <p><strong><i>Note: </i></strong>For the Complete Reference of all Font Awesome Icons, visit our <a href="fontawesome.html">Font Awesome Icon Reference</a>.</p>
-
+  <p><strong><i>Note: </i></strong>Compare this to a property like <span class="code">display</span>: adding it to a <span class="code">transition</span> list has no visible easing effect, since <span class="code">block</span> and <span class="code">none</span> have no in-between state for the browser to interpolate.</p>
 </section>
-
-<section class="content">
-  <h3>Bootstrap Icons</h3>
-  <hr>
-  <p style="padding-top: 10px; padding-bottom: 10px;">
-    To use the Bootstrap glyphicons, go to fontawesome.com, sign in, and get a code to add in the <span class="code">&lt;head&gt;</span> section of your HTML page:
-  </p>
-  <p style="padding-top: 10px; padding-bottom: 10px;">
-    <span class="code">&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"&gt;</span>
-  </p>
-  <p style="padding-top: 10px; padding-bottom: 10px;">
-    <strong><i>Note: </i></strong>No downloading or installation is required.
-  </p>
-
-  <table>
-    <thead>
-    <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>
-
-        &lt;!DOCTYPE html&gt; <br>
-        &lt;html&gt; <br>
-        &lt;head&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;title&gt;Bootstrap Icons&lt;/title&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"&gt; <br>
-        &lt;/head&gt; <br>
-        &lt;body class="container"&gt; <br><br>
-
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h4&gt;Bootstrap Icon Library&lt;/h4&gt; <br><br>
-
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Some Bootstrap Icons:&lt;/p&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="bi bi-house"&gt;&lt;/i&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="bi bi-person-lines-fill"&gt;&lt;/i&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="bi bi-speedometer"&gt;&lt;/i&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="bi bi-cloud"&gt;&lt;/i&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="bi bi-border-all"&gt;&lt;/i&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="bi bi-bounding-box"&gt;&lt;/i&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="bi bi-chat-right-dots"&gt;&lt;/i&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="bi bi-check2-square"&gt;&lt;/i&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="bi bi-code-square"&gt;&lt;/i&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="bi bi-gear-fill"&gt;&lt;/i&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="bi bi-grid-3x3-gap"&gt;&lt;/i&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="bi bi-reception-4"&gt;&lt;/i&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="bi bi-trash3"&gt;&lt;/i&gt; <br> <br>
-
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Styled Bootstrap Icons (with Size and Color):&lt;/p&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="bi bi-suit-heart-fill"&gt;&lt;/i&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="bi bi-suit-heart-fill" style="font-size:24px; color: green;"&gt;&lt;/i&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="bi bi-suit-heart-fill" style="font-size:36px; color: red;"&gt;&lt;/i&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="bi bi-suit-heart-fill" style="font-size:48px; color: lightblue;"&gt;&lt;/i&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="bi bi-suit-heart-fill" style="font-size:60px; color: blue;"&gt;&lt;/i&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="bi bi-suit-heart-fill" style="font-size:72px; color: deeppink;"&gt;&lt;/i&gt; <br> <br>
-
-        &lt;/body&gt; <br>
-        &lt;/html&gt;
-
-      </td>
-      <td>
-
-        <h4>Bootstrap Icon Library</h4>
-        <br><br>
-        <p>Some Bootstrap Icons:</p> <br>
-        <i class="bi bi-house" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
-        <i class="bi bi-person-lines-fill" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
-        <i class="bi bi-speedometer" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
-        <i class="bi bi-cloud" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
-        <i class="bi bi-border-all" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
-        <i class="bi bi-bounding-box" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
-        <i class="bi bi-chat-right-dots" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
-        <i class="bi bi-check2-square" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
-        <i class="bi bi-code-square" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
-        <i class="bi bi-gear-fill" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
-        <i class="bi bi-grid-3x3-gap" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
-        <i class="bi bi-reception-4" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
-        <i class="bi bi-trash3" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
-        <br><br>
-
-        <p>Styled Bootstrap Icons (with Size and Color):</p>
-        <br>
-        <i class="bi bi-suit-heart-fill" style="border: 1px solid grey; padding: 5px; border-radius: 5px;"></i>
-        <i class="bi bi-suit-heart-fill" style="font-size:24px; color: green; border: 1px solid grey; padding: 5px; border-radius: 5px;"></i>
-        <i class="bi bi-suit-heart-fill" style="font-size:36px; color: red; border: 1px solid grey; padding: 5px; border-radius: 5px;"></i>
-        <i class="bi bi-suit-heart-fill" style="font-size:48px; color: lightblue; border: 1px solid grey; padding: 5px; border-radius: 5px;"></i>
-        <i class="bi bi-suit-heart-fill" style="font-size:60px; color: blue; border: 1px solid grey; padding: 5px; border-radius: 5px;"></i>
-        <i class="bi bi-suit-heart-fill" style="font-size:72px; color: deeppink; border: 1px solid grey; padding: 5px; border-radius: 5px;"></i>
-
-      </td>
-    </tr>
-    </tbody>
-  </table>
-
-  <p><strong><i>Note: </i></strong>For the Complete Reference of all Bootstrap Icons, visit our <a href="bootstrap_icons.html">Bootstrap Icon Reference</a>.</p>
-</section>
-
-<section class="content">
-  <h3>Google Icons</h3>
-  <hr>
-  <p style="padding-top: 10px; padding-bottom: 10px;">
-    To use the Bootstrap glyphicons, go to fontawesome.com, sign in, and get a code to add in the <span class="code">&lt;head&gt;</span> section of your HTML page:
-  </p>
-  <p style="padding-top: 10px; padding-bottom: 10px;">
-    <span class="code">&lt;link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"&gt;</span>
-  </p>
-  <p style="padding-top: 10px; padding-bottom: 10px;">
-    <strong><i>Note: </i></strong>No downloading or installation is required.
-  </p>
-
-  <table>
-    <thead>
-    <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>
-
-        &lt;!DOCTYPE html&gt; <br>
-        &lt;html&gt; <br>
-        &lt;head&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;title&gt;Google Icons&lt;/title&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"&gt; <br>
-        &lt;/head&gt; <br>
-        &lt;body&gt; <br> <br>
-
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3&gt;Google icon library&lt;/h3&gt; <br> <br>
-
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Some Google icons:&lt;/p&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="material-icons"&gt;cloud&lt;/i&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="material-icons"&gt;favorite&lt;/i&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="material-icons"&gt;attachment&lt;/i&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="material-icons"&gt;computer&lt;/i&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="material-icons"&gt;traffic&lt;/i&gt; <br> <br>
-
-
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Styled Google icons (size and color):&lt;/p&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="material-icons" style="font-size:24px;"&gt;cloud&lt;/i&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="material-icons" style="font-size:36px;"&gt;cloud&lt;/i&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="material-icons" style="font-size:48px;color:red;"&gt;cloud&lt;/i&gt; <br>
-        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="material-icons" style="font-size:60px;color:lightblue;"&gt;cloud&lt;/i&gt; <br> <br>
-
-        &lt;/body&gt; <br>
-        &lt;/html&gt;
-
-      </td>
-      <td>
-
-        <h3>Google Icon Library</h3>
-
-        <p>Some Google Icons:</p>
-        <i class="material-icons" style="border: 1px solid grey; padding: 5px; border-radius: 2px;">home</i>
-        <i class="material-icons" style="border: 1px solid grey; padding: 5px; border-radius: 2px;">apps</i>
-        <i class="material-icons" style="border: 1px solid grey; padding: 5px; border-radius: 2px;">brightness_5</i>
-        <i class="material-icons" style="border: 1px solid grey; padding: 5px; border-radius: 2px;">chat</i>
-        <i class="material-icons" style="border: 1px solid grey; padding: 5px; border-radius: 2px;">cast</i>
-        <i class="material-icons" style="border: 1px solid grey; padding: 5px; border-radius: 2px;">filter_vintage</i>
-        <i class="material-icons" style="border: 1px solid grey; padding: 5px; border-radius: 2px;">cloud</i>
-        <i class="material-icons" style="border: 1px solid grey; padding: 5px; border-radius: 2px;">favorite</i>
-        <i class="material-icons" style="border: 1px solid grey; padding: 5px; border-radius: 2px;">attachment</i>
-        <i class="material-icons" style="border: 1px solid grey; padding: 5px; border-radius: 2px;">computer</i>
-        <i class="material-icons" style="border: 1px solid grey; padding: 5px; border-radius: 2px;">traffic</i>
-        <br><br>
-
-        <p>Styled Google Ions (with Size and Color):</p>
-        <i class="material-icons" style="font-size:24px; color: black; border: 1px solid grey; padding: 5px; border-radius: 5px;">cloud</i>
-        <i class="material-icons" style="font-size:36px; color: green; border: 1px solid grey; padding: 5px; border-radius: 5px;">cloud</i>
-        <i class="material-icons" style="font-size:48px; color:red; border: 1px solid grey; padding: 5px; border-radius: 5px;">cloud</i>
-        <i class="material-icons" style="font-size:60px; color:lightblue; border: 1px solid grey; padding: 5px; border-radius: 5px;">cloud</i>
-        <i class="material-icons" style="font-size:72px; color:pink; border: 1px solid grey; padding: 5px; border-radius: 5px;">cloud</i>
-
-      </td>
-    </tr>
-    </tbody>
-  </table>
-
-  <p><strong><i>Note: </i></strong>For the Complete Reference of all Google Icons, visit our <a href="google_icons.html">Google Icon Reference</a>.</p>
-</section>
-<br>
-
 <!--Main Section End-->
 
 <!--External JavaScript Library Inclusion Start-->
