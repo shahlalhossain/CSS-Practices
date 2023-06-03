@@ -199,7 +199,7 @@ body.dark {
   transform: rotate(90deg);
 }
 .submenu .sublink {
-  padding: 15px 15px 15px 52px;
+  padding: 5px 5px 5px 50px;
 }
 .bottom_content {
   position: fixed;
