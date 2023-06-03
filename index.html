@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <title>CSS | Introduction</title>
+
+    <!--Meta Section Start-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web Design Tutorial Step by Step using HTML5">
+    <meta name="keywords" content="HTML, CSS, Bootstrap, JavaScript, jQuery">
+    <meta name="author" content="Shahlal Hossain">
+    <!--Meta Section End-->
+
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
+    <!--External CSS Library Inclusion Start-->
+    <!-- Boxicons CSS -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <!--External CSS Library Inclusion End-->
+
+    <!--Internal CSS Library Inclusion Start-->
+    <link type="text/css" rel="stylesheet" href="css/main.css">
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <!--Internal CSS Library Inclusion End-->
+
+    <!--External JavaScript Library Inclusion Start-->
+    <!--<script type="text/javascript" rel="script" src="#"></script>-->
+    <!--External JavaScript Library Inclusion End-->
+
+    <!--Internal JavaScript Library Inclusion Start-->
+    <!--<script type="text/javascript" rel="script" src="#"></script>-->
+    <!--Internal JavaScript Library Inclusion End-->
+
+    <!--Page Specific Custom CSS Start-->
+    <style type="text/css">
+
+    </style>
+    <!--Page Specific Custom CSS End-->
+  </head>
+  <body>
+    <!-- Navigation-Bar-Top-Fixed Start -->
+    <nav class="navbar">
+      <div class="logo_item">
+        <i class="bx bx-menu" id="sidebarOpen"></i>
+        <!--<img src="images/SHTech_Logo.png" alt="SHTech">-->
+        <span style="font-size: 36px;"><strong>SHTech</strong></span>
+      </div>
+
+      <div class="search_bar">
+        <input type="text" placeholder="Search" />
+      </div>
+
+      <div class="navbar_content">
+        <i class="bi bi-grid"></i>
+        <i class='bx bx-sun' id="darkLight"></i>
+        <img src="images/shahlal.jpg" alt="" class="profile" />
+      </div>
+    </nav>
+    <!-- Navigation-Bar-Top-Fixed End -->
+
+    <!-- Left-Side-Navigation-Bar Start-->
+    <nav class="sidebar">
+      <!-- Menu Content Start -->
+      <div class="menu_content">
+
+        <!-- Menu Section Start -->
+        <ul class="menu_items">
+          <!-- Main Menu with Sub Menu Start -->
+          <li class="item">
+            <div href="#" class="nav_link submenu_item">
+              <span class="navlink_icon"><i class="bx bx-home-alt"></i></span>
+              <span class="navlink">Home</span><i class="bx bx-chevron-right arrow-left"></i>
+            </div>
+            <!--Sub-Menu Start -->
+            <ul class="menu_items submenu">
+              <a href="#" class="nav_link sublink">Nav Sub Link</a>
+              <a href="#" class="nav_link sublink">Nav Sub Link</a>
+              <a href="#" class="nav_link sublink">Nav Sub Link</a>
+              <a href="#" class="nav_link sublink">Nav Sub Link</a>
+            </ul>
+            <!-- Sub-Menu End -->
+          </li>
+          <!-- Main Menu with Sub Menu End -->
+
+          <!-- Main Menu with Sub Menu Start -->
+          <li class="item">
+            <div href="#" class="nav_link submenu_item">
+              <span class="navlink_icon"><i class="bx bx-grid-alt"></i></span>
+              <span class="navlink">Overview</span><i class="bx bx-chevron-right arrow-left"></i>
+            </div>
+            <!--Sub-Menu Start -->
+            <ul class="menu_items submenu">
+              <a href="#" class="nav_link sublink">Nav Sub Link</a>
+              <a href="#" class="nav_link sublink">Nav Sub Link</a>
+              <a href="#" class="nav_link sublink">Nav Sub Link</a>
+              <a href="#" class="nav_link sublink">Nav Sub Link</a>
+            </ul>
+            <!--Sub-Menu End -->
+          </li>
+          <!-- Main Menu with Sub Menu End -->
+        </ul>
+        <!-- Menu Section End -->
+
+        <!-- Menu Section Start -->
+        <ul class="menu_items">
+          <!-- Main Menu Item Start -->
+          <li class="item">
+            <a href="#" class="nav_link">
+              <span class="navlink_icon"><i class="bx bxs-magic-wand"></i></span>
+              <span class="navlink">Magic Build</span>
+            </a>
+          </li>
+
+          <li class="item">
+            <a href="#" class="nav_link">
+              <span class="navlink_icon"><i class="bx bx-loader-circle"></i></span>
+              <span class="navlink">Filters</span>
+            </a>
+          </li>
+
+          <li class="item">
+            <a href="#" class="nav_link">
+              <span class="navlink_icon"><i class="bx bx-filter"></i></span>
+              <span class="navlink">Filter</span>
+            </a>
+          </li>
+
+          <li class="item">
+            <a href="#" class="nav_link">
+              <span class="navlink_icon"><i class="bx bx-cloud-upload"></i></span>
+              <span class="navlink">Upload New</span>
+            </a>
+          </li>
+
+          <li class="item">
+            <a href="#" class="nav_link">
+              <span class="navlink_icon"><i class="bx bx-flag"></i></span>
+              <span class="navlink">Notice Board</span>
+            </a>
+          </li>
+
+          <li class="item">
+            <a href="#" class="nav_link">
+              <span class="navlink_icon"><i class="bx bx-medal"></i></span>
+              <span class="navlink">Award</span>
+            </a>
+          </li>
+
+          <li class="item">
+            <a href="#" class="nav_link">
+              <span class="navlink_icon"><i class="bx bx-cog"></i></span>
+              <span class="navlink">Setting</span>
+            </a>
+          </li>
+
+          <li class="item">
+            <a href="#" class="nav_link">
+              <span class="navlink_icon"><i class="bx bx-layer"></i></span>
+              <span class="navlink">Features</span>
+            </a>
+          </li>
+          <!-- Main Menu Item End -->
+        </ul>
+        <!-- Menu Section End -->
+
+        <!-- Sidebar Collapse and Expand Start -->
+        <div class="bottom_content">
+          <div class="bottom expand_sidebar">
+            <span> Expand</span><i class='bx bx-log-in' ></i>
+          </div>
+          <div class="bottom collapse_sidebar">
+            <span> Collapse</span><i class='bx bx-log-out'></i>
+          </div>
+        </div>
+        <!-- Sidebar Collapse and Expand Start -->
+      </div>
+      <!-- Menu Content Start -->
+    </nav>
+    <!-- Left-Side-Navigation-Bar End-->
+
+    <!--Page Header Start-->
+    <header>
+
+    </header>
+    <!--Page Header End-->
+
+    <!--Main Section Start-->
+    <section>
+
+    </section>
+    <!--Main Section End-->
+
+    <!--Footer Start-->
+    <footer>
+
+    </footer>
+    <!--Footer End-->
+
+
+    <!--External JavaScript Library Inclusion Start-->
+    <!--<script type="text/javascript" rel="script" src="#"></script>-->
+    <!--External JavaScript Library Inclusion End-->
+
+    <!--Internal JavaScript Library Inclusion Start-->
+    <script type="text/javascript" rel="script" src="js/script.js"></script>
+    <!--Internal JavaScript Library Inclusion End-->
+
+    <!--Page Specific JavaScript Start-->
+    <script type="text/javascript">
+
+    </script>
+    <!--Page Specific JavaScript End-->
+  </body>
+</html>
