@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-  <title>CSS | Rough</title>
+  <title>CSS | Syntax</title>
 
   <!--Meta Section Start-->
   <meta charset="UTF-8">
@@ -35,7 +35,10 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
-
+    #example1 {
+      color: red;
+      text-align: center;
+    }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -74,7 +77,7 @@
           <span class="navlink">CSS Home</span>
         </a>
       </li>
-      <li class="item">
+      <li class="item active">
         <a href="2_css_syntax.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Syntax</span>
@@ -86,7 +89,7 @@
           <span class="navlink">CSS Selectors</span>
         </a>
       </li>
-      <li class="item active">
+      <li class="item">
         <a href="4_css_types.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Types</span>
@@ -705,34 +708,56 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS Syntax</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    A CSS rule consists of a selector and a declaration block. <br>
+    The selector points to the HTML element you want to style. <br>
+    The declaration block contains one or more declarations separated by semicolons. <br>
+    Each declaration includes a CSS property name and a value, separated by a colon. <br>
+    Multiple CSS declarations are separated with semicolons, and declaration blocks are surrounded by curly braces.
   </p>
-
+  <hr>
+  <br>
+  <div style="text-align: center">
+    <img src="images/css_syntax.gif" alt="CSS Syntax">
+  </div>
+  <br>
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 50%">Example Code</th>
+      <th style="width: 50%">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;style rel="stylesheet" type="text/css"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp; p { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: red; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; text-align: center; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &lt;&sol;style&gt;
+      </td>
+      <td>
+        <p id="example1">
+          This paragraphs is styled with CSS. Font Color is RED and Text Aligned in Center
+        </p>
+      </td>
     </tr>
     </tbody>
   </table>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+  <div>
+    <b><i>Example Explain: </i></b>
+    <ul style="padding-left: 30px;">
+      <li><span class="code">p</span> is a selector in CSS (it points to the HTML element you want to style: &lt;p&gt;).</li>
+      <li><span class="code">color</span> is a property, and <span class="code">red</span> is the property value</li>
+      <li><span class="code">text-align</span> is a property, and <span class="code">center</span> is the property value</li>
+    </ul>
+  </div>
+
 </section>
 <!--Main Section End-->
 
