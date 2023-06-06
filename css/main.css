@@ -9,7 +9,7 @@
 :root {
   --white-color: #fff;
   --blue-color: #4070f4;
-  --grey-color: #707070;
+  /*--grey-color: #707070;*/
   --grey-color-light: #aaa;
   --hr-color: #f2f2f2;
 }
@@ -23,7 +23,7 @@ body.dark {
 body.dark {
   --white-color: #333;
   --blue-color: #fff;
-  --grey-color: #f2f2f2;
+  /*--grey-color: #f2f2f2;*/
   --grey-color-light: #aaa;
 }
 
@@ -169,6 +169,12 @@ hr{
 .nav_link:hover {
   color: var(--white-color);
   background: var(--blue-color);
+}
+
+.active {
+    border-radius: 8px;
+    color: var(--white-color);
+    background: var(--blue-color);
 }
 .sidebar.close .nav_link:hover {
   background: var(--white-color);
