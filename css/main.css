@@ -11,6 +11,7 @@
   --blue-color: #4070f4;
   --grey-color: #707070;
   --grey-color-light: #aaa;
+  --hr-color: #f2f2f2;
 }
 body {
   background-color: #e7f2fd;
@@ -24,6 +25,10 @@ body.dark {
   --blue-color: #fff;
   --grey-color: #f2f2f2;
   --grey-color-light: #aaa;
+}
+
+hr{
+  border-color: var(--hr-color);
 }
 
 /* navbar */
@@ -232,6 +237,29 @@ body.dark {
 #sidebarOpen {
   display: none;
 }
+
+header {
+  margin-left: 290px;
+  margin-top: 80px;
+  /*padding-left: 20px;*/
+  /*padding-top: 10px;*/
+  /*padding-bottom: 10px;*/
+  /*color: var(--grey-color);*/
+  /*background-color: var(--white-color);*/
+  /*box-shadow: 0 0 1px var(--grey-color-light);*/
+}
+.content {
+  margin-left: 290px;
+  margin-top: 15px;
+  padding: 20px 30px 30px 30px; /*Top, Right, Bottom, Left*/
+  color: var(--grey-color);
+  background-color: var(--white-color);
+  box-shadow: 0 0 2px var(--grey-color-light);
+}
+.code {
+  color: blue;
+}
+
 @media screen and (max-width: 768px) {
   #sidebarOpen {
     font-size: 25px;
