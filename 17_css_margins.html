@@ -35,7 +35,14 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
-
+    #individual-margin {
+      border: 1px solid black;
+      margin-top: 100px;
+      margin-bottom: 100px;
+      margin-right: 150px;
+      margin-left: 80px;
+      background-color: lightblue;
+    }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -705,7 +712,7 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS Margins</h3>
   <hr>
   <p>
 
@@ -719,7 +726,7 @@
     <li><span class="code">margin-bottom</span></li>
     <li><span class="code">margin-left</span></li>
   </ul>
-
+  <br>
   <p>
     All the margin properties can have the following values: <br>
   </p>
@@ -730,8 +737,6 @@
     <li>inherit - specifies that the margin should be inherited from the parent element</li>
   </ul>
 
-  <p><strong>Note:</strong>Negative values are allowed.</p>
-
   <table>
     <thead>
     <tr>
@@ -741,13 +746,44 @@
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; div { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 1px solid black; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin-top: 100px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin-bottom: 100px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin-right: 150px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin-left: 80px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: lightblue; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br> <br>
+
+        &lt;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; Here we are using individual margin properties <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; Set different margins for all four sides of a &lt;p&gt; element: <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; This div element has a top margin of 100px, a right margin of 150px, a bottom margin of 100px, and a left margin of 80px. <br>
+        &lt;&sol;div&gt; <br> <br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt; <br>
+      </td>
+      <td>
+        <div id="individual-margin">
+          Here we are using individual margin properties <br>
+          Set different margins for all four sides of a <span class="code">&lt;p&gt;</span> element: <br>
+          This div element has a top margin of 100px, a right margin of 150px, a bottom margin of 100px, and a left margin of 80px.
+        </div>
+      </td>
     </tr>
     </tbody>
   </table>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+  <p><strong>Note:</strong>Negative values are allowed.</p>
 </section>
 <!--Main Section End-->
 
