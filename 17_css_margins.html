@@ -55,6 +55,24 @@
       margin: 25px 50px 75px;
       background-color: lightblue;
     }
+
+    #margin-shorthand-two {
+      border: 1px solid black;
+      margin: 25px 50px;
+      background-color: lightblue;
+    }
+
+    #margin-shorthand-one {
+      border: 1px solid black;
+      margin: 25px;
+      background-color: lightblue;
+    }
+
+    #margin-auto {
+      width: 430px;
+      margin: auto;
+      border: 1px solid green;
+    }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -797,6 +815,7 @@
 
   <p><strong>Note:</strong>Negative values are allowed.</p>
 </section>
+
 <section class="content">
   <h3>Margin - Shorthand Property</h3>
   <hr>
@@ -914,6 +933,184 @@
         </div>
       </td>
     </tr>
+    </tbody>
+  </table>
+  <br><br>
+
+  <p>
+    If the <span class="code">margin</span> property has two values:
+  </p>
+  <ul style="padding-left: 30px;">
+    <li><strong>margin: 25px 50px; </strong></li>
+  </ul>
+  <ul style="padding-left: 60px;">
+    <li>top and bottom margins are 25px</li>
+    <li>right and left margins are 50px</li>
+  </ul>
+  <br>
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 55%;">Example Code</th>
+      <th style="width: 45%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #margin-shorthand-three { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 1px solid black; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin: 25px 50px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: lightblue; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+        &lt;div id="margin-shorthand-two" &gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; The margin shorthand property with 2 values <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; This div element has a top and bottom margin of 25px, and a right and left margin of 50px. <br>
+        &lt;&sol;div&gt; <br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt; <br>
+      </td>
+      <td>
+        <div id="margin-shorthand-two">
+          The margin shorthand property with 2 values <br>
+          This div element has a top and bottom margin of 25px, and a right and left margin of 50px.
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <br><br>
+
+  <p>
+    If the <span class="code">margin</span> property has one values:
+  </p>
+  <ul style="padding-left: 30px;">
+    <li><strong>margin: 25px; </strong></li>
+  </ul>
+  <ul style="padding-left: 60px;">
+    <li>all four margins are 25px</li>
+  </ul>
+  <br>
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 55%;">Example Code</th>
+      <th style="width: 45%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #margin-shorthand-one { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 1px solid black; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin: 25px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: lightblue; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+        &lt;div id="margin-shorthand-one" &gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; The margin shorthand property with 1 values <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; This div element has a top, bottom, left, and right margin of 25px. <br>
+        &lt;&sol;div&gt; <br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt; <br>
+      </td>
+      <td>
+        <div id="margin-shorthand-one">
+          The margin shorthand property with 1 values <br>
+          TThis div element has a top, bottom, left, and right margin of 25px.
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content">
+  <h3>CSS Margin - The auto Value</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    One can set the margin property to <span class="code">auto</span> to horizontally center the element within its container. <br>
+    The element will then take up the specified width, and the remaining space will be split equally between the left and right margins.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 55%;">Example Code</th>
+      <th style="width: 45%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; div { width: 430px; margin: auto; border: 1px solid green; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br> <br>
+
+        &lt;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; One can set the margin property to auto to horizontally center the element within its container. <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; The element will then take up the specified width, and the remaining space will be split equally between the left and right margins. <br>
+        &lt;&sol;p&gt; <br> <br>
+
+        &lt;div id="margin-auto"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; This div will be horizontally centered because it has margin: auto; <br>
+        &lt;&sol;div&gt; <br> <br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt; <br>
+      </td>
+      <td>
+        <p>
+        One can set the margin property to auto to horizontally center the element within its container.
+        The element will then take up the specified width, and the remaining space will be split equally between the left and right margins.
+        </p>
+
+        <div id="margin-auto">
+        This div will be horizontally centered because it has margin: auto;
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p><strong><i>Note: </i></strong>xxxxx</p>
+</section>
+
+<section class="content">
+  <h3>All CSS Margin Properties</h3>
+  <hr>
+  <br>
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 20%;">Property</th>
+      <th style="width: 80%;">Property</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr><td>margin</td><td>A shorthand property for setting all the margin properties in one declaration</td></tr>
+    <tr><td>margin-bottom</td><td>Sets the bottom margin of an element</td></tr>
+    <tr><td>margin-left</td><td>Sets the left margin of an element</td></tr>
+    <tr><td>margin-right</td><td>Sets the right margin of an element</td></tr>
+    <tr><td>margin-top</td><td>Sets the top margin of an element</td></tr>
     </tbody>
   </table>
 </section>
