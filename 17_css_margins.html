@@ -43,6 +43,18 @@
       margin-left: 80px;
       background-color: lightblue;
     }
+
+    #margin-shorthand-four {
+      border: 1px solid black;
+      margin: 25px 50px 75px 100px;
+      background-color: lightblue;
+    }
+
+    #margin-shorthand-three {
+      border: 1px solid black;
+      margin: 25px 50px 75px;
+      background-color: lightblue;
+    }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -784,6 +796,126 @@
   </table>
 
   <p><strong>Note:</strong>Negative values are allowed.</p>
+</section>
+<section class="content">
+  <h3>Margin - Shorthand Property</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    To shorten the code, it is possible to specify all the margin properties in one property. <br>
+    The margin property is a shorthand property for the following individual margin properties:
+  </p>
+  <ul style="padding-left: 30px;">
+    <li><span class="code">margin-top</span></li>
+    <li><span class="code">margin-right</span></li>
+    <li><span class="code">margin-bottom</span></li>
+    <li><span class="code">margin-left</span></li>
+  </ul>
+  <br>
+  <hr>
+  <br>
+  <p>
+    If the <span class="code">margin</span> property has four values:
+  </p>
+  <ul style="padding-left: 30px;">
+    <li><strong>margin: 25px 50px 75px 100px; </strong></li>
+  </ul>
+  <ul style="padding-left: 60px;">
+    <li>top margin is 25px</li>
+    <li>right margin is 50px</li>
+    <li>bottom margin is 75px</li>
+    <li>left margin is 100px</li>
+  </ul>
+  <br>
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 55%;">Example Code</th>
+      <th style="width: 45%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #margin-shorthand-four { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 1px solid black; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin: 25px 50px 75px 100px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: lightblue; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+        &lt;div id="margin-shorthand-four" &gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; The margin shorthand property with 4 values <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; This div element has a top margin of 25px, a right margin of 50px, a bottom margin of 75px, and a left margin of 100px. <br>
+        &lt;&sol;div&gt; <br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt; <br>
+      </td>
+      <td>
+        <div id="margin-shorthand-four">
+          The margin shorthand property with 4 values <br>
+          This div element has a top margin of 25px, a right margin of 50px, a bottom margin of 75px, and a left margin of 100px.
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <br><br>
+
+  <p>
+    If the <span class="code">margin</span> property has three values:
+  </p>
+  <ul style="padding-left: 30px;">
+    <li><strong>margin: 25px 50px 75px; </strong></li>
+  </ul>
+  <ul style="padding-left: 60px;">
+    <li>top margin is 25px</li>
+    <li>right and left margins are 50px</li>
+    <li>bottom margin is 75px</li>
+  </ul>
+  <br>
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 55%;">Example Code</th>
+      <th style="width: 45%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #margin-shorthand-three { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 1px solid black; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin: 25px 50px 75px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: lightblue; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+        &lt;div id="margin-shorthand-three" &gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; The margin shorthand property with 3 values <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; This div element has a top margin of 25px, a right and left margin of 50px, and a bottom margin of 75px. <br>
+        &lt;&sol;div&gt; <br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt; <br>
+      </td>
+      <td>
+        <div id="margin-shorthand-three">
+          The margin shorthand property with 3 values <br>
+          This div element has a top margin of 25px, a right and left margin of 50px, and a bottom margin of 75px.
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
 </section>
 <!--Main Section End-->
 
