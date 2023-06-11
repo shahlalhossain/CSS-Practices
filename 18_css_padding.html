@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-  <title>CSS | Rough</title>
+  <title>CSS | Padding</title>
 
   <!--Meta Section Start-->
   <meta charset="UTF-8">
@@ -35,7 +35,14 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
-
+    #individual-padding {
+      border: 1px solid black;
+      background-color: lightblue;
+      padding-top: 50px;
+      padding-right: 30px;
+      padding-bottom: 50px;
+      padding-left: 80px;
+    }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -86,7 +93,7 @@
           <span class="navlink">CSS Selectors</span>
         </a>
       </li>
-      <li class="item active">
+      <li class="item">
         <a href="4_css_types.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Types</span>
@@ -170,7 +177,7 @@
           <span class="navlink">CSS Margins</span>
         </a>
       </li>
-      <li class="item">
+      <li class="item active">
         <a href="18_css_padding.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Padding</span>
@@ -705,34 +712,78 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS Padding</h3>
   <hr>
   <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+    The CSS <span class="code">padding</span> properties are used to generate space around an element's content, inside of any defined borders. <br>
+    With CSS, designer have full control over the padding. There are properties for setting the padding for each side of an element (top, right, bottom, and left).
   </p>
+  <br>
+  <hr>
+  <br>
+
+  <h3>CSS Padding - Individual Sides</h3>
+  <hr>
+  <p>
+    CSS has properties for specifying the padding for each side of an element:
+  </p>
+  <ul style="padding-left: 30px;">
+    <li><span class="code">padding-top</span></li>
+    <li><span class="code">padding-right</span></li>
+    <li><span class="code">padding-bottom</span></li>
+    <li><span class="code">padding-left</span></li>
+  </ul>
+  <br>
+  <p>All the padding properties can have the following values:</p>
+  <ul style="padding-left: 30px;">
+    <li>length - specifies a padding in px, pt, cm, etc. </li>
+    <li>% - specifies a padding in % of the width of the containing element</li>
+    <li>inherit - specifies that the padding should be inherited from the parent element</li>
+  </ul>
 
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 50%">Example Code</th>
+      <th style="width: 50%">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #individual-padding { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 1px solid black; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: lightblue; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding-top: 50px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding-right: 30px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding-bottom: 50px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding-left: 80px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+        &lt;div id="individual-padding"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; Here we are using individual padding properties <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; This div element has a top padding of 50px, a right padding of 30px, a bottom padding of 50px, and a left padding of 80px. <br>
+        &lt;&sol;div&gt; <br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt; <br>
+      </td>
+      <td>
+        <div id="individual-padding">
+          Here we are using individual padding properties
+          This div element has a top padding of 50px, a right padding of 30px, a bottom padding of 50px, and a left padding of 80px.
+        </div>
+      </td>
     </tr>
     </tbody>
   </table>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+  <p><strong><i>Note: </i></strong>Negative values are NOT allowed.</p>
 </section>
 <!--Main Section End-->
 
