@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-  <title>CSS | Rough</title>
+  <title>CSS | Colors</title>
 
   <!--Meta Section Start-->
   <meta charset="UTF-8">
@@ -86,7 +86,7 @@
           <span class="navlink">CSS Selectors</span>
         </a>
       </li>
-      <li class="item active">
+      <li class="item">
         <a href="4_css_types.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Types</span>
@@ -98,7 +98,7 @@
           <span class="navlink">CSS Comments</span>
         </a>
       </li>
-      <li class="item">
+      <li class="item active">
         <a href="6_css_colors.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Colors</span>
@@ -705,34 +705,203 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS Colors</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Colors are specified using predefined color names, or RGB, HEX, HSL, RGBA, HSLA values.
+  </p>
+</section>
+<section class="content">
+  <h3>CSS Color Names</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    In CSS, a color can be specified by using a predefined color name:
   </p>
 
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 60%;">Example Code</th>
+      <th style="width: 40%;">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;body style=""&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:Tomato;"&gt;Tomato&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:Orange;"&gt;Orange&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:DodgerBlue;"&gt;DodgerBlue&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:MediumSeaGreen;"&gt;MediumSeaGreen&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:Gray;"&gt;Gray&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:SlateBlue;"&gt;SlateBlue&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:Violet;"&gt;Violet&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:LightGray;"&gt;LightGray&lt;&sol;h3&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt; <br>
+      </td>
+      <td>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 100px 10px 100px; background-color:Tomato;">Tomato</h3>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 100px 10px 100px; background-color:Orange;">Orange</h3>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 100px 10px 100px; background-color:DodgerBlue;">DodgerBlue</h3>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 100px 10px 100px; background-color:MediumSeaGreen;">MediumSeaGreen</h3>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 100px 10px 100px; background-color:Gray;">Gray</h3>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 100px 10px 100px; background-color:SlateBlue;">SlateBlue</h3>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 100px 10px 100px; background-color:Violet;">Violet</h3>
+        <h3 style="text-align: center; padding: 10px; margin: 10px 100px 10px 100px; background-color:LightGray;">LightGray</h3>
+      </td>
     </tr>
     </tbody>
   </table>
+  <p><strong><i>Note: </i></strong>HTML & CSS Support <a href="html_css_color_names.html">140 Standard Color Names</a></p>
+</section>
+<section class="content">
+  <h3>CSS Background Color</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    One can set the background color for HTML elements
+  </p>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 60%;">Example Code</th>
+      <th style="width: 40%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;body style=""&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:Tomato;"&gt;Tomato&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:Orange;"&gt;Orange&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:DodgerBlue;"&gt;DodgerBlue&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:MediumSeaGreen;"&gt;MediumSeaGreen&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:Gray;"&gt;Gray&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:SlateBlue;"&gt;SlateBlue&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:Violet;"&gt;Violet&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="background-color:LightGray;"&gt;LightGray&lt;&sol;h3&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt; <br>
+      </td>
+      <td>
+        <h3 style="padding: 10px; background-color:Tomato;">Tomato</h3>
+        <h3 style="padding: 10px; background-color:Orange;">Orange</h3>
+        <h3 style="padding: 10px; background-color:DodgerBlue;">DodgerBlue</h3>
+        <h3 style="padding: 10px; background-color:MediumSeaGreen;">MediumSeaGreen</h3>
+        <h3 style="padding: 10px; background-color:Gray;">Gray</h3>
+        <h3 style="padding: 10px; background-color:SlateBlue;">SlateBlue</h3>
+        <h3 style="padding: 10px; background-color:Violet;">Violet</h3>
+        <h3 style="padding: 10px; background-color:LightGray;">LightGray</h3>
+      </td>
+    </tr>
+
+    </tbody>
+  </table>
+</section>
+<section class="content">
+  <h3>CSS Text Color</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    One can set the color on text
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 60%;">Example Code</th>
+      <th style="width: 40%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;body style=""&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2 style="color:Tomato;"&gt;Tomato Colored Text&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2 style="color:Orange;"&gt;Orange Colored Text&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2 style="color:DodgerBlue;"&gt;DodgerBlue Colored Text&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2 style="color:MediumSeaGreen;"&gt;MediumSeaGreen Colored Text&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2 style="color:Gray;"&gt;Gray Colored Text&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2 style="color:SlateBlue;"&gt;SlateBlue Colored Text&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2 style="color:Violet;"&gt;Violet Colored Text&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2 style="color:LightGray;"&gt;LightGray Colored Text&lt;&sol;h2&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt; <br>
+      </td>
+      <td style="text-align: center;">
+        <h2 style="padding:5px; color:Tomato;">Tomato Colored Text</h2>
+        <h2 style="padding:5px; color:Orange;">Orange Colored Text</h2>
+        <h2 style="padding:5px; color:DodgerBlue;">DodgerBlue Colored Text</h2>
+        <h2 style="padding:5px; color:MediumSeaGreen;">MediumSeaGreen Colored Text</h2>
+        <h2 style="padding:5px; color:Gray;">Gray Colored Text</h2>
+        <h2 style="padding:5px; color:SlateBlue;">SlateBlue Colored Text</h2>
+        <h2 style="padding:5px; color:Violet;">Violet Colored Text</h2>
+        <h2 style="padding:5px; color:LightGray;">LightGray Colored Text</h2>
+      </td>
+    </tr>
+
+    </tbody>
+  </table>
+</section>
+<section class="content">
+  <h3>CSS Border Color</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    One can set the color on borders
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 60%;">Example Code</th>
+      <th style="width: 40%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;body style=""&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2 style="padding:5px; margin: 10px; border:3px solid Tomato;"&gt;Tomato Colored Border&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2 style="padding:5px; margin: 10px; border:3px solid Orange;"&gt;Orange Colored Border&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2 style="padding:5px; margin: 10px; border:3px solid DodgerBlue;"&gt;DodgerBlue Colored Border&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2 style="padding:5px; margin: 10px; border:3px solid MediumSeaGreen;"&gt;MediumSeaGreen Colored Border&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2 style="padding:5px; margin: 10px; border:3px solid Gray;"&gt;Gray Colored Border&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2 style="padding:5px; margin: 10px; border:3px solid SlateBlue;"&gt;SlateBlue Colored Border&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2 style="padding:5px; margin: 10px; border:3px solid Violet;"&gt;Violet Colored Border&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2 style="padding:5px; margin: 10px; border:3px solid LightGray;"&gt;LightGray Colored Border&lt;&sol;h2&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt; <br>
+      </td>
+      <td style="text-align: center;">
+        <h2 style="padding:5px; margin: 10px; border:3px solid Tomato;">Tomato Colored Border</h2>
+        <h2 style="padding:5px; margin: 10px; border:3px solid Orange;">Orange Colored Border</h2>
+        <h2 style="padding:5px; margin: 10px; border:3px solid DodgerBlue;">DodgerBlue Colored Border</h2>
+        <h2 style="padding:5px; margin: 10px; border:3px solid MediumSeaGreen;">MediumSeaGreen Colored Border</h2>
+        <h2 style="padding:5px; margin: 10px; border:3px solid Gray;">Gray Colored Border</h2>
+        <h2 style="padding:5px; margin: 10px; border:3px solid SlateBlue;">SlateBlue Colored Border</h2>
+        <h2 style="padding:5px; margin: 10px; border:3px solid Violet;">Violet Colored Border</h2>
+        <h2 style="padding:5px; margin: 10px; border:3px solid LightGray;">LightGray Colored Border</h2>
+      </td>
+    </tr>
+
+    </tbody>
+  </table>
 </section>
 <!--Main Section End-->
 
