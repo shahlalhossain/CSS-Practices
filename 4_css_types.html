@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-  <title>CSS | Rough</title>
+  <title>CSS | Types of CSS</title>
 
   <!--Meta Section Start-->
   <meta charset="UTF-8">
@@ -23,6 +23,7 @@
   <!--Internal CSS Library Inclusion Start-->
   <link type="text/css" rel="stylesheet" href="css/main.css">
   <link type="text/css" rel="stylesheet" href="css/style.css">
+  <!--<link type="text/css" rel="stylesheet" href="css/mystyle.css">-->
   <!--Internal CSS Library Inclusion End-->
 
   <!--External JavaScript Library Inclusion Start-->
@@ -35,7 +36,21 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
+    .outputBox1 {
+      background-color: linen;
+    }
+    .outputBox1 > h3 {
+      color: maroon;
+      margin-left: 40px;
+    }
 
+    .outputBox2 {
+      background-color: lightblue;
+    }
+    .outputBox2 > h3 {
+      color: navy;
+      margin-left: 20px;
+    }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -705,29 +720,164 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>Types of CSS</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    When a browser reads a style sheet, it will format the HTML document according to the information in the style sheet. <br>
+    There are three ways of using and inserting a style sheet into a HTML Documents.
+  </p>
+  <ul style="padding-left: 30px;">
+    <li>Inline CSS</li>
+    <li>Internal CSS</li>
+    <li>External CSS</li>
+  </ul>
+</section>
+<section class="content">
+  <h3>Inline CSS</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    An inline style may be used to apply a unique style for a single element. <br>
+    To use inline styles, add the style attribute to the relevant element. The style attribute can contain any CSS property. <br>
+    Inline styles are defined within the "style" attribute of the relevant element:
   </p>
 
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;body&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 style="color:blue;text-align:center;"&gt;This is a heading&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p style="color:red;"&gt;This is a paragraph.&lt;&sol;p&gt; <br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td>
+        <h3 style="color:blue;text-align:center;">This is a heading</h3>
+        <p style="color:red;">This is a paragraph.</p>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p><strong><i>Tip: </i></strong>An inline style loses many of the advantages of a style sheet (by mixing content with presentation). Use this method sparingly.</p>
+</section>
+<section class="content">
+  <h3>Internal CSS</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    An internal style sheet may be used if one single HTML page has a unique style. <br>
+    The internal style is defined inside the <span class="code">&lt;style&gt;</span> element, inside the head section. <br>
+    Internal styles are defined within the <span class="code">&lt;style&gt;</span> element, inside the <span class="code">&lt;head&gt;</span> section of an HTML page:
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; body { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: linen; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h3 { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: maroon; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin-left: 40px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3&gt;This is a heading&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;This is a paragraph.&lt;&sol;p&gt; <br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td class="outputBox1">
+        <h3>This is a heading</h3>
+        <p>This is a paragraph.</p>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p><strong><i>Tip: </i></strong>An inline style loses many of the advantages of a style sheet (by mixing content with presentation). Use this method sparingly.</p>
+</section>
+<section class="content">
+  <h3>External CSS</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    With an external style sheet, you can change the look of an entire website by changing just one file! <br>
+    Each HTML page must include a reference to the external style sheet file inside the <span class="code">&lt;link&gt;</span> element, inside the head section. <br>
+    External styles are defined within the <span class="code">&lt;link&gt;</span> element, inside the <span class="code">&lt;head&gt;</span> section of an HTML page <br>
+    An external style sheet can be written in any text editor, and must be saved with a .css extension. <br>
+    The external .css file should not contain any HTML tags.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 10%;">Code Type</th>
+      <th style="width: 40%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>HTML Code</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &lt;link rel="stylesheet" href="mystyle.css"&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3&gt;This is a heading&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;This is a paragraph.&lt;&sol;p&gt; <br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td rowspan="2" class="outputBox2">
+        <h3>This is a heading</h3>
+        <p>This is a paragraph.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        CSS Code <br>
+      </td>
+      <td >
+        <strong><i>External CSS (mystyle.css)</i></strong> <br> <br>
+        body { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; background-color: lightblue; <br>
+        } <br> <br>
+
+        h3 { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; color: navy; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; margin-left: 20px; <br>
+        }
+      </td>
     </tr>
     </tbody>
   </table>

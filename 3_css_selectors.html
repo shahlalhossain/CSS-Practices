@@ -896,6 +896,55 @@
   </table>
 
   <p><strong><i>Note: </i></strong>An <span class="code">class</span> name cannot start with a number</p></section>
+<section class="content">
+  <h3>The CSS Universal Selector</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The universal selector (*) selects all HTML elements on the page. <br>
+    The CSS rule below will affect every HTML element on the page.
+  </p>
+  <div class="bluebox">
+    * { <br>
+    &nbsp;&nbsp;&nbsp;&nbsp; text-align: center; <br>
+    &nbsp;&nbsp;&nbsp;&nbsp; color: blue; <br>
+    }
+  </div>
+</section>
+
+<section class="content">
+  <h3>The CSS Grouping Selector</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The grouping selector selects all the HTML elements with the same style definitions. <br>
+    Look at the following CSS code (the h1, h2, and p elements have the same style definitions).
+  </p>
+  <div class="bluebox">
+    h1 { <br>
+    &nbsp;&nbsp;&nbsp;&nbsp; text-align: center; <br>
+    &nbsp;&nbsp;&nbsp;&nbsp; color: red; <br>
+    } <br> <br>
+
+    h2 { <br>
+    &nbsp;&nbsp;&nbsp;&nbsp; text-align: center; <br>
+    &nbsp;&nbsp;&nbsp;&nbsp; color: red; <br>
+    } <br> <br>
+
+    p { <br>
+    &nbsp;&nbsp;&nbsp;&nbsp; text-align: center; <br>
+    &nbsp;&nbsp;&nbsp;&nbsp; color: red; <br>
+    }
+  </div>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    It will be better to group the selectors, to minimize the code. To group selectors, separate each selector with a comma. <br>
+    In this example we have grouped the selectors from the code above...
+  </p>
+  <div class="bluebox">
+    h1, h2, p { <br>
+    &nbsp;&nbsp;&nbsp;&nbsp; text-align: center; <br>
+    &nbsp;&nbsp;&nbsp;&nbsp; color: red; <br>
+    }
+  </div>
+</section>
 <!--Main Section End-->
 
 <!--External JavaScript Library Inclusion Start-->
