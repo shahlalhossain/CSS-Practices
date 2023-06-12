@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-  <title>CSS | Rough</title>
+  <title>CSS | Comments</title>
 
   <!--Meta Section Start-->
   <meta charset="UTF-8">
@@ -86,13 +86,13 @@
           <span class="navlink">CSS Selectors</span>
         </a>
       </li>
-      <li class="item active">
+      <li class="item">
         <a href="4_css_types.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Types</span>
         </a>
       </li>
-      <li class="item">
+      <li class="item active">
         <a href="5_css_comments.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Comments</span>
@@ -705,34 +705,53 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS Comments</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    CSS comments are not displayed in the browser, but they can help document your source code. <br>
+    Comments are used to explain the code, and may help when you edit the source code at a later date. <br>
+    Comments are ignored by browsers. <br>
+    A CSS comment is placed inside the <span class="code">style</span> element, and starts with /* and ends with */:
   </p>
 
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th>Example 1</th>
+      <th>Example 2</th>
+      <th>Example 3</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        /* This is a single-line comment */ <br>
+        p { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; color: red; <br>
+        }
+      </td>
+      <td>
+        p { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; color: red;  /* Set text color to red */ <br>
+        }
+      </td>
+      <td>
+        /* This is  <br>
+        a multi-line <br>
+        comment */ <br>
+
+        p { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; color: red; <br>
+        }
+      </td>
+    </tr>
+    <tr>
+      <td><i>Simple Comments in CSS</i></td>
+      <td><i>You can add comments wherever you want in the code</i></td>
+      <td><i>Comments can also span multiple lines</i></td>
     </tr>
     </tbody>
   </table>
-
-  <p><strong><i>Note: </i></strong>xxxxx</p>
 </section>
 <!--Main Section End-->
 
