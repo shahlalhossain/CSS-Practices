@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-  <title>CSS | Rough</title>
+  <title>CSS | Background Image</title>
 
   <!--Meta Section Start-->
   <meta charset="UTF-8">
@@ -35,7 +35,8 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
-
+    #output { background-image: url("images/background.gif"); }
+    #paragraph { background-image: url("images/background.gif"); }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -86,7 +87,7 @@
           <span class="navlink">CSS Selectors</span>
         </a>
       </li>
-      <li class="item active">
+      <li class="item">
         <a href="4_css_types.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Types</span>
@@ -110,7 +111,7 @@
           <span class="navlink">Background Color</span>
         </a>
       </li>
-      <li class="item">
+      <li class="item active">
         <a href="8_background_image.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">Background Image</span>
@@ -705,34 +706,73 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS Background Image</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">background-image</span> property specifies an image to use as the background of an element.
   </p>
 
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 40%;">Example Code</th>
+      <th style="width: 60%;">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; body { background-image: url("images/background.gif"); } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;Hello World!&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;This page has an image as the background!&lt;&sol;p&gt; <br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt; <br>
+      </td>
+      <td id="output">
+        <h2 style="padding: 20px;">Hello World!</h2>
+        <p style="padding: 20px;">This page has an image as the background!</p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <strong><i>The background image can also be set for specific elements, like the <span class="code">&lt;p&gt;</span> element</i></strong>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p { background-image: url("images/background.gif"); } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;Hello World!&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;This paragraph has an image as the background!&lt;&sol;p&gt; <br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt; <br>
+      </td>
+      <td>
+        <h2 style="padding: 20px;">Hello World!</h2>
+        <p id="paragraph" style="padding: 20px;">This paragraph has an image as the background!</p>
+      </td>
     </tr>
     </tbody>
   </table>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+  <p><strong><i>Note: </i></strong>By default, the image is repeated so it covers the entire element.</p>
 </section>
 <!--Main Section End-->
 
