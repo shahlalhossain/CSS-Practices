@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-  <title>CSS | Rough</title>
+  <title>CSS | Background Repeat</title>
 
   <!--Meta Section Start-->
   <meta charset="UTF-8">
@@ -35,7 +35,14 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
-
+    #backgroundRepeatOutput1 { background-image: url("images/gradient_bg.png"); height: 300px; }
+    #backgroundRepeatOutput2 { background-image: url("images/gradient_bg.png"); background-repeat: repeat-x; height: 300px; }
+    #backgroundPositionOutput1 {
+      height: 500px;
+      background-image: url("images/img_tree.png");
+      background-repeat: no-repeat;
+      background-position: right top;
+    }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -86,7 +93,7 @@
           <span class="navlink">CSS Selectors</span>
         </a>
       </li>
-      <li class="item active">
+      <li class="item">
         <a href="4_css_types.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Types</span>
@@ -116,7 +123,7 @@
           <span class="navlink">Background Image</span>
         </a>
       </li>
-      <li class="item">
+      <li class="item active">
         <a href="9_background_repeat.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">Background Repeat</span>
@@ -705,34 +712,101 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS Background Repeat</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+  By default, the <span class="code">background-image</span> property repeats an image both horizontally and vertically. <br>
+    Some images should be repeated only horizontally or vertically, or they will look strange, like this:
+  </p>
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        body { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; background-image: url("images/gradient_bg.png"); <br>
+        }
+      </td>
+      <td id="backgroundRepeatOutput1">
+        <h2>Hello World!</h2>
+        <p>Strange background image...</p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <strong><i>If the image above is repeated only horizontally (<span class="code">background-repeat: repeat-x;</span>), the background will look better</i></strong>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        body { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; background-image: url("images/gradient_bg.png"); <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; background-repeat: repeat-x; <br>
+        }
+      </td>
+      <td id="backgroundRepeatOutput2">
+        <h2>Hello World!</h2>
+        <p>Here, a background image is repeated only horizontally!</p>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <p><Strong><i>Tip:</i></Strong>To repeat an image vertically, set <span class="code">background-repeat: repeat-y;</span></p>
+</section>
+<section class="content">
+  <h3>CSS Background Image Position</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">background-position</span> property is used to specify the position of the background image.
   </p>
 
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; body { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-image: url("images/img_tree.png"); <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-repeat: no-repeat; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-position: right top; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin-right: 200px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2&gt;Hello World!&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Here, the background image is only shown once. In addition it is positioned away from the text.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;In this example we have also added a margin on the right side, so that the background image will not disturb the text.&lt;&sol;p&gt; <br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td>
+        <div id="backgroundPositionOutput1">
+          <h2>Hello World!</h2>
+          <p style="margin-right: 200px;">Here, the background image is only shown once. In addition it is positioned away from the text.</p>
+          <p style="margin-right: 200px;">In this example we have also added a margin on the right side, so that the background image will not disturb the text.</p>
+        </div>
+      </td>
     </tr>
     </tbody>
   </table>
-
-  <p><strong><i>Note: </i></strong>xxxxx</p>
 </section>
 <!--Main Section End-->
 
