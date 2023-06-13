@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-  <title>CSS | Rough</title>
+  <title>CSS | Background Color</title>
 
   <!--Meta Section Start-->
   <meta charset="UTF-8">
@@ -86,7 +86,7 @@
           <span class="navlink">CSS Selectors</span>
         </a>
       </li>
-      <li class="item active">
+      <li class="item">
         <a href="4_css_types.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Types</span>
@@ -104,7 +104,7 @@
           <span class="navlink">CSS Colors</span>
         </a>
       </li>
-      <li class="item">
+      <li class="item active">
         <a href="7_background_colors.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">Background Color</span>
@@ -705,34 +705,159 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS Background Color</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The CSS background properties are used to add background effects for elements. <br>
+    The <span class="code">background-color</span> property specifies the background color of an element.
   </p>
 
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 40%;">Example Code</th>
+      <th style="width: 60%;">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; body { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: lightblue; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+
+        &lt;h3&gt;Hello World!&lt;&sol;h3&gt; <br>
+        &lt;p&gt;This page has a light blue background color!&lt;&sol;p&gt; <br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="background-color: lightblue;">
+        <h3>Hello World!</h3>
+        <p>This page has a light blue background color!</p>
+      </td>
     </tr>
     </tbody>
   </table>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    With CSS, a color is most often specified by:
+  </p>
+  <ul style="padding-left: 30px;">
+    <li>a valid color name - like "red"</li>
+    <li>a HEX value - like "#ff0000"</li>
+    <li>an RGB value - like "rgb(255,0,0)"</li>
+  </ul>
+</section>
+<section class="content">
+  <h3>Background with Different Elements</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    One can set the background color for any HTML elements <br>
+    Here, the <span class="code">&lt;h3&gt;</span>, <span class="code">&lt;p&gt;</span>, and <span class="code">&lt;div&gt;</span> elements will have different background colors:
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 40%;">Example Code</th>
+      <th style="width: 60%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt;<br>
+        &lt;html&gt;<br>
+        &lt;head&gt;<br>
+        &lt;style&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp; h3 { background-color: green; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; div { background-color: lightblue; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; p { background-color: yellow; } <br>
+        &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3&gt;CSS background-color example!&lt;&sol;h3&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This is a text inside a div element. <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;This paragraph has its own background color.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; We are still in the div element. <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td>
+        <h3 style="background-color: green;">CSS background-color example!</h3>
+        <div style="background-color: lightblue;">
+          This is a text inside a div element.
+          <p style="background-color: yellow;">This paragraph has its own background color.</p>
+          We are still in the div element.
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+<section class="content">
+  <h3>CSS Background with Opacity/Transparency</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">opacity</span> property specifies the opacity/transparency of an element. It can take a value from 0.0 - 1.0. The lower value, the more transparent:
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 40%;">Example Code</th>
+      <th style="width: 60%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+     <td>
+       &lt;!DOCTYPE html&gt; <br>
+       &lt;html&gt; <br>
+       &lt;head&gt; <br>
+       &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  div { background-color: green; } <br>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  div.first { opacity: 0.1; } <br>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  div.second { opacity: 0.3; } <br>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  div.third { opacity: 0.6; } <br>
+       &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+       &lt;&sol;head&gt; <br>
+       &lt;body&gt; <br>
+
+       &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="first"&gt;&lt;h2&gt;opacity 0.1&lt;&sol;h2&gt;&lt;&sol;div&gt; <br>
+       &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="second"&gt;&lt;h2&gt;opacity 0.3&lt;&sol;h2&gt;&lt;&sol;div&gt; <br>
+       &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="third"&gt;&lt;h2&gt;opacity 0.6&lt;&sol;h2&gt;&lt;&sol;div&gt; <br>
+       &nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;&lt;h2&gt;opacity 1 (default)&lt;&sol;h2&gt;&lt;&sol;div&gt; <br>
+
+       &lt;&sol;body&gt; <br>
+       &lt;&sol;html&gt;
+     </td>
+      <td>
+        <div style="background-color:green; opacity:0.1; padding-top:10px; padding-bottom:10px; text-align:center;"><h2>opacity 0.1</h2></div>
+        <div style="background-color:green; opacity:0.3; padding-top:10px; padding-bottom:10px; text-align:center;"><h2>opacity 0.3</h2></div>
+        <div style="background-color:green; opacity:0.6; padding-top:10px; padding-bottom:10px; text-align:center;"><h2>opacity 0.6</h2></div>
+        <div style="background-color:green; padding-top:10px; padding-bottom:10px; text-align:center;"><h2>opacity 1 (default)</h2></div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    <strong><i>Note: </i></strong>
+    When using the opacity property to add transparency to the background of an element, all of its child elements become transparent as well. This can make the text inside a fully transparent element hard to read.
+  </p>
 </section>
 <!--Main Section End-->
 
