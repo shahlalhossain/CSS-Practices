@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-  <title>CSS | Rough</title>
+  <title>CSS | Border Shorthand</title>
 
   <!--Meta Section Start-->
   <meta charset="UTF-8">
@@ -35,7 +35,36 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
+    p.borderAllSide { margin: 10px 20px; padding: 10px 20px; border: 5px solid red; }
 
+    p.borderLeft {
+      margin: 10px 20px;
+      padding: 10px 20px;
+
+      border-left: 6px solid red;
+      background-color: lightgrey;
+    }
+    p.borderRight {
+      margin: 10px 20px;
+      padding: 10px 20px;
+
+      border-right: 6px solid red;
+      background-color: lightgrey;
+    }
+    p.borderTop {
+      margin: 10px 20px;
+      padding: 10px 20px;
+
+      border-top: 6px solid red;
+      background-color: lightgrey;
+    }
+    p.borderBottom {
+      margin: 10px 20px;
+      padding: 10px 20px;
+
+      border-bottom: 6px solid red;
+      background-color: lightgrey;
+    }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -86,7 +115,7 @@
           <span class="navlink">CSS Selectors</span>
         </a>
       </li>
-      <li class="item active">
+      <li class="item">
         <a href="4_css_types.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Types</span>
@@ -152,7 +181,7 @@
           <span class="navlink">Border Sides</span>
         </a>
       </li>
-      <li class="item">
+      <li class="item active">
         <a href="15_border_shorthand.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">Border Shorthand</span>
@@ -705,34 +734,107 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS Border Shorthand Property</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">border</span> property is a shorthand property for the following individual border properties:
   </p>
+  <ul style="padding-left: 30px;">
+    <li><span class="code">border-style</span>(required)</li>
+    <li><span class="code">border-width</span></li>
+    <li><span class="code">border-color</span></li>
+  </ul>
+  <br>
 
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 65%;">Example Code</th>
+      <th style="width: 35%;">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.borderAllSide { border: 5px solid red; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3&gt;The border Property&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="borderAllSide"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This is a shorthand property for border-width, border-style & border-color. <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;p&gt; <br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <h3>The border Property</h3>
+        <p class="borderAllSide">This property is a shorthand property for border-width, border-style and border-color.</p>
+      </td>
+    </tr>
+    <tr><td colspan="2"><strong><i>You can also specify all the individual border properties for just one side</i></strong></td></tr>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.borderLeft { border-left: 6px solid red; background-color: lightgrey; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.borderRight { border-right: 6px solid red; background-color: lightgrey; }  <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.borderTop { border-top: 6px solid red; background-color: lightgrey; }  <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.borderBottom { border-bottom: 6px solid red; background-color: lightgrey; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3&gt;The border-left Property&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="borderLeft"&gt;This property is a shorthand property for border-left-width, border-left-style and border-left-color.&lt;&sol;p&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3&gt;The border-right Property&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="borderRight"&gt;This property is a shorthand property for border-right-width, border-right-style and border-right-color.&lt;&sol;p&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3&gt;The border-top Property&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="borderTop"&gt;This property is a shorthand property for border-top-width, border-top-style and border-top-color.&lt;&sol;p&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3&gt;The border-bottom Property&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="borderBottom"&gt;This property is a shorthand property for border-bottom-width, border-bottom-style and border-bottom-color.&lt;&sol;p&gt; <br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <div style="border: 1px solid green; border-radius: 5px; padding: 10px;">
+          <h3>The border-left Property</h3>
+          <p class="borderLeft">This property is a shorthand property for border-left-width, border-left-style and border-left-color.</p>
+        </div>
+        <br>
+
+        <div style="border: 1px solid green; border-radius: 5px; padding: 10px;">
+          <h3>The border-right Property</h3>
+          <p class="borderRight">This property is a shorthand property for border-right-width, border-right-style and border-right-color.</p>
+        </div>
+        <br>
+
+        <div style="border: 1px solid green; border-radius: 5px; padding: 10px;">
+          <h3>The border-top Property</h3>
+          <p class="borderTop">This property is a shorthand property for border-top-width, border-top-style and border-top-color.</p>
+        </div>
+        <br>
+
+        <div style="border: 1px solid green; border-radius: 5px; padding: 10px;">
+          <h3>The border-bottom Property</h3>
+          <p class="borderBottom">This property is a shorthand property for border-bottom-width, border-bottom-style and border-bottom-color.</p>
+        </div>
+      </td>
     </tr>
     </tbody>
   </table>
-
-  <p><strong><i>Note: </i></strong>xxxxx</p>
 </section>
 <!--Main Section End-->
 
