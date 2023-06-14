@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-  <title>CSS | Rough</title>
+  <title>CSS | Rounded Borders</title>
 
   <!--Meta Section Start-->
   <meta charset="UTF-8">
@@ -35,7 +35,10 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
-
+    p.normal { margin:10px 20px; padding: 10px 20px; border: 2px solid green; }
+    p.round1 { margin:10px 20px; padding: 10px 20px; border: 2px solid green; border-radius: 5px; }
+    p.round2 { margin:10px 20px; padding: 10px 20px; border: 2px solid green; border-radius: 8px; }
+    p.round3 { margin:10px 20px; padding: 10px 20px; border: 2px solid green; border-radius: 12px; }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -86,7 +89,7 @@
           <span class="navlink">CSS Selectors</span>
         </a>
       </li>
-      <li class="item active">
+      <li class="item">
         <a href="4_css_types.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Types</span>
@@ -158,7 +161,7 @@
           <span class="navlink">Border Shorthand</span>
         </a>
       </li>
-      <li class="item">
+      <li class="item active">
         <a href="16_rounded_borders.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">Rounded Borders</span>
@@ -705,16 +708,10 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS Rounded Borders</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">border-radius</span> property is used to add rounded borders to an element
   </p>
 
   <table>
@@ -726,13 +723,44 @@
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.normal { border: 2px solid green; padding: 5px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.round1 { border: 2px solid green; border-radius: 5px; padding: 5px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.round2 { border: 2px solid green; border-radius: 8px; padding: 5px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.round3 { border: 2px solid green; border-radius: 12px; padding: 5px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3&gt;The border-radius Property&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;This property is used to add rounded borders to an element.&lt;&sol;p&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="normal"&gt;Normal Border with NO Border Radius&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="round1"&gt;Rounded Border with 5 Pixels&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="round2"&gt;Rounder Border with 8 Pixels&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="round3"&gt;Roundest Border with 12 Pixels&lt;&sol;p&gt; <br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <div style="border: 1px solid green; border-radius: 5px; padding: 30px;">
+          <h3>The border-radius Property</h3>
+          <p>This property is used to add rounded borders to an element.</p> <br>
+
+          <p class="normal">Normal Border with NO Border Radius</p>
+          <p class="round1">Rounded Border with 5 Pixels</p>
+          <p class="round2">Rounder Border with 8 Pixels</p>
+          <p class="round3">Roundest Border with 12 Pixels</p>
+        </div>
+      </td>
     </tr>
     </tbody>
   </table>
-
-  <p><strong><i>Note: </i></strong>xxxxx</p>
 </section>
 <!--Main Section End-->
 
