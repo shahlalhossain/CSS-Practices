@@ -45,8 +45,15 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/11_background_shorthand.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="763" column="32" selection-start-line="763" selection-start-column="32" selection-end-line="763" selection-end-column="32" />
+            <state relative-caret-position="480">
+              <caret line="766" column="4" selection-start-line="766" selection-start-column="4" selection-end-line="766" selection-end-column="4" />
+              <caret line="770" column="4" selection-start-line="770" selection-start-column="4" selection-end-line="770" selection-end-column="4" />
+              <caret line="774" column="4" selection-start-line="774" selection-start-column="4" selection-end-line="774" selection-end-column="4" />
+              <caret line="778" column="4" selection-start-line="778" selection-start-column="4" selection-end-line="778" selection-end-column="4" />
+              <caret line="782" column="4" selection-start-line="782" selection-start-column="4" selection-end-line="782" selection-end-column="4" />
+              <caret line="786" column="4" selection-start-line="786" selection-start-column="4" selection-end-line="786" selection-end-column="4" />
+              <caret line="790" column="4" selection-start-line="790" selection-start-column="4" selection-end-line="790" selection-end-column="4" />
+              <caret line="794" column="4" selection-start-line="794" selection-start-column="4" selection-end-line="794" selection-end-column="4" />
               <folding>
                 <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#nav#1;n#body#0;n#html#0;n#!!top" />
@@ -242,12 +249,12 @@
       <workItem from="1686097860302" duration="514000" />
       <workItem from="1686393830683" duration="22117000" />
       <workItem from="1686616236529" duration="10669000" />
-      <workItem from="1686666285236" duration="6969000" />
+      <workItem from="1686666285236" duration="7307000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87615000" />
+    <option name="totallyTimeSpent" value="87953000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -262,7 +269,7 @@
     <frame x="64" y="0" width="1856" height="1080" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49891776" visible="true" weight="0.15944445" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49891776" visible="true" weight="0.15944445" />
       <window_info id="Favorites" order="1" sideWeight="0.50108224" side_tool="true" weight="0.185" />
       <window_info id="Structure" order="2" sideWeight="0.50108224" side_tool="true" weight="0.185" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
@@ -276,7 +283,7 @@
       <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32792208" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32792208" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -1623,8 +1630,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/11_background_shorthand.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="763" column="32" selection-start-line="763" selection-start-column="32" selection-end-line="763" selection-end-column="32" />
+        <state relative-caret-position="480">
+          <caret line="766" column="4" selection-start-line="766" selection-start-column="4" selection-end-line="766" selection-end-column="4" />
+          <caret line="770" column="4" selection-start-line="770" selection-start-column="4" selection-end-line="770" selection-end-column="4" />
+          <caret line="774" column="4" selection-start-line="774" selection-start-column="4" selection-end-line="774" selection-end-column="4" />
+          <caret line="778" column="4" selection-start-line="778" selection-start-column="4" selection-end-line="778" selection-end-column="4" />
+          <caret line="782" column="4" selection-start-line="782" selection-start-column="4" selection-end-line="782" selection-end-column="4" />
+          <caret line="786" column="4" selection-start-line="786" selection-start-column="4" selection-end-line="786" selection-end-column="4" />
+          <caret line="790" column="4" selection-start-line="790" selection-start-column="4" selection-end-line="790" selection-end-column="4" />
+          <caret line="794" column="4" selection-start-line="794" selection-start-column="4" selection-end-line="794" selection-end-column="4" />
           <folding>
             <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#nav#1;n#body#0;n#html#0;n#!!top" />
