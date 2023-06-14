@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-  <title>CSS | Rough</title>
+  <title>CSS | Border Colors</title>
 
   <!--Meta Section Start-->
   <meta charset="UTF-8">
@@ -35,7 +35,29 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
+    p.one { border-style: solid; border-color: red; padding: 10px 30px; }
+    p.two { border-style: solid; border-color: green; padding: 10px 30px; }
+    p.three { border-style: dotted; border-color: blue; padding: 10px 30px; }
+    p.four {
+      border-style: solid;
+      border-color: red green blue yellow; /* red top, green right, blue bottom and yellow left */
+      padding: 10px 30px;
+    }
 
+    /* CSS Border Color by HEX Values */
+    p.hexOne { padding: 10px 30px; border-style: solid; border-color: #ff0000; /* Red */ }
+    p.hexTwo { padding: 10px 30px; border-style: solid; border-color: #0000ff; /* Blue */ }
+    p.hexThree { padding: 10px 30px; border-style: solid; border-color: #bbbbbb; /* Grey */ }
+
+    /* CSS Border Color by RGB Values */
+    p.rgbOne { padding: 10px 30px; border-style: solid; border-color: rgb(255, 0, 0); /* Red */ }
+    p.rgbTwo { padding: 10px 30px; border-style: solid; border-color: rgb(0, 0, 255); /* Blue */ }
+    p.rgbThree { padding: 10px 30px; border-style: solid; border-color: rgb(187, 187, 187); /* Grey */ }
+
+    /* CSS Border Color by HSL Values */
+    p.hslOne { padding: 10px 30px; border-style: solid; border-color: hsl(0, 100%, 50%); /* Red */ }
+    p.hslTwo { padding: 10px 30px; border-style: solid; border-color: hsl(240, 100%, 50%); /* Blue */ }
+    p.hslThree { padding: 10px 30px; border-style: solid; border-color: hsl(0, 0%, 73%); /* Grey */ }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -86,7 +108,7 @@
           <span class="navlink">CSS Selectors</span>
         </a>
       </li>
-      <li class="item active">
+      <li class="item">
         <a href="4_css_types.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Types</span>
@@ -140,7 +162,7 @@
           <span class="navlink">CSS Borders</span>
         </a>
       </li>
-      <li class="item">
+      <li class="item active">
         <a href="13_border_color.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">Border Color</span>
@@ -705,17 +727,24 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS Border Colors</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">border-color</span> property is used to set the color of the four borders. <br>
+    The color can be set by:
   </p>
+  <ul style="padding-left: 30px;">
+    <li>name - specify a color name, like "red"</li>
+    <li>HEX - specify a HEX value, like "#ff0000"</li>
+    <li>RGB - specify a RGB value, like "rgb(255,0,0)"</li>
+    <li>HSL - specify a HSL value, like "hsl(0, 100%, 50%)"</li>
+    <li>transparent</li>
+  </ul>
+
+  <p>
+    <strong><i>Note:</i></strong> If <span class="code">border-color</span> is not set, it inherits the color of the element.
+  </p>
+  <br>
 
   <table>
     <thead>
@@ -726,13 +755,185 @@
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.one { border-style: solid; border-color: red; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.two { border-style: solid; border-color: green; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.three { border-style: dotted; border-color: blue; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3&gt;The border-color Property&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;This property specifies the color of the four borders:&lt;&sol;p&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="one"&gt;A solid red border&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="two"&gt;A solid green border&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="three"&gt;A dotted blue border&lt;&sol;p&gt; <br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td>
+        <h3>The border-color Property</h3> <br>
+        <p class="one">A solid red border</p> <br>
+        <p class="two">A solid green border</p> <br>
+        <p class="three">A dotted blue border</p>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p><strong><i>Note: </i></strong>The "border-color" property does not work if it is used alone. Use the "border-style" property to set the borders first</p>
+</section>
+<section class="content">
+  <h3>Specific Side Colors</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">border-color</span> property can have from one to four values (for the top border, right border, bottom border, and the left border).
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 65%;">Example Code</th>
+      <th style="width: 35%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.one { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border-style: solid; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* red top, green right, blue bottom and yellow left */ <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border-color: red green blue yellow; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3&gt;The border-color Property&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;The border-color property can have from one to four values (for the top border, right border, bottom border, and the left border):&lt;&sol;p&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="one"&gt;A solid multicolor border&lt;&sol;p&gt; <br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td>
+        <h3>The border-color Property</h3>
+        <p>The border-color property can have from one to four values <br>
+          (for the top border, right border, bottom border, and the left border)
+        </p>
+        <p class="four">A solid multicolor border</p>
+
+      </td>
     </tr>
     </tbody>
   </table>
 
   <p><strong><i>Note: </i></strong>xxxxx</p>
+</section>
+<section class="content">
+  <h3>CSS Border Colors</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    CSS Border Colors with Different Kind of Color Values those are supported by all kind of browsers.
+  </p>
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 60%;">Example Code</th>
+      <th style="width: 40%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* CSS Border Color by HEX Values */ <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.hexOne { border-style: solid; border-color: #ff0000; /* Red */ } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.hexTwo { border-style: solid; border-color: #0000ff; /* Blue */ } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.hexThree { border-style: solid; border-color: #bbbbbb; /* Grey */ } <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* CSS Border Color by RGB Values */ <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.rgbOne { border-style: solid; border-color: rgb(255, 0, 0); /* Red */ } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.rgbTwo { border-style: solid; border-color: rgb(0, 0, 255); /* Blue */ } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.rgbThree { border-style: solid; border-color: rgb(187, 187, 187); /* Grey */ } <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* CSS Border Color by HSL Values */ <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.hslOne { border-style: solid; border-color: hsl(0, 100%, 50%); /* Red */ } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.hslTwo { border-style: solid; border-color: hsl(240, 100%, 50%); /* Blue */ } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.hslThree { border-style: solid; border-color: hsl(0, 0%, 73%); /* Grey */ } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3&gt;The border-color Property by HEX Value&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;The color of the border can be specified using a hexadecimal value (HEX):&lt;&sol;p&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="hexOne"&gt;A Solid &lt;span style="color: Red;"&gt;Red Border&lt;&sol;span&gt; with Hexadecimal (HEX) Value&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="hexTwo"&gt;A Solid &lt;span style="color: Blue;"&gt;Blue Border&lt;&sol;span&gt; with Hexadecimal (HEX) Value&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="hexThree"&gt;A Solid &lt;span style="color: Grey;"&gt;Grey Border&lt;&sol;span&gt; with Hexadecimal (HEX) Value&lt;&sol;p&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3&gt;The border-color Property by RGB Value&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;The color of the border can be specified using a RGB value&lt;&sol;p&gt;&lt;br&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="rgbOne"&gt;A Solid &lt;span style="color: Red;"&gt;Red Border&lt;&sol;span&gt; with RGB Value&lt;&sol;p&gt;&lt;br&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="rgbTwo"&gt;A Solid &lt;span style="color: Blue;"&gt;Blue Border&lt;&sol;span&gt; with RGB Value&lt;&sol;p&gt;&lt;br&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="rgbThree"&gt;A Solid &lt;span style="color: Grey;"&gt;Grey Border&lt;&sol;span&gt; with RGB Value&lt;&sol;p&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3&gt;The border-color Property by HSL Value&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;The color of the border can be specified using a HSL value&lt;&sol;p&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="hslOne"&gt;A Solid &lt;span style="color: Red;"&gt;Red Border&lt;&sol;span&gt; with HSL Value&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="hslTwo"&gt;A Solid &lt;span style="color: Blue;"&gt;Blue Border&lt;&sol;span&gt; with HSL Value&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="hslThree"&gt;A Solid &lt;span style="color: Grey;"&gt;Grey Border&lt;&sol;span&gt; with HSL Value&lt;&sol;p&gt; <br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td>
+        <div style="border: 1px solid green; border-radius: 5px; padding: 20px;">
+          <h3>The border-color Property by HEX Value</h3>
+          <p>The color of the border can be specified using a hexadecimal value (HEX)</p><br>
+
+          <p class="hexOne">A Solid <span style="color: Red;">Red Border</span> with Hexadecimal (HEX) Value</p><br>
+          <p class="hexTwo">A Solid <span style="color: Blue;">Blue Border</span> with Hexadecimal (HEX) Value</p><br>
+          <p class="hexThree">A Solid <span style="color: Grey;">Grey Border</span> with Hexadecimal (HEX) Value</p>
+        </div><br>
+
+        <div style="border: 1px solid green; border-radius: 5px; padding: 20px;">
+          <h3>The border-color Property by RGB Value</h3>
+          <p>The color of the border can be specified using a RGB value</p><br>
+
+          <p class="rgbOne">A Solid <span style="color: Red;">Red Border</span> with RGB Value</p><br>
+          <p class="rgbTwo">A Solid <span style="color: Blue;">Blue Border</span> with RGB Value</p><br>
+          <p class="rgbThree">A Solid <span style="color: Grey;">Grey Border</span> with RGB Value</p>
+        </div><br>
+
+        <div style="border: 1px solid green; border-radius: 5px; padding: 20px;">
+          <h3>The border-color Property by HSL Value</h3>
+          <p>The color of the border can be specified using a HSL value</p><br>
+
+          <p class="hslOne">A Solid <span style="color: Red;">Red Border</span> with HSL Value</p><br>
+          <p class="hslTwo">A Solid <span style="color: Blue;">Blue Border</span> with HSL Value</p><br>
+          <p class="hslThree">A Solid <span style="color: Grey;">Grey Border</span> with HSL Value</p>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
 </section>
 <!--Main Section End-->
 
