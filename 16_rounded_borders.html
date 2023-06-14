@@ -39,6 +39,119 @@
     p.round1 { margin:10px 20px; padding: 10px 20px; border: 2px solid green; border-radius: 5px; }
     p.round2 { margin:10px 20px; padding: 10px 20px; border: 2px solid green; border-radius: 8px; }
     p.round3 { margin:10px 20px; padding: 10px 20px; border: 2px solid green; border-radius: 12px; }
+
+    .topLeft {
+      border-radius: 15px 0 0 0;
+      background: green;
+      color: white;
+      padding: 20px;
+      width: 100%;
+      height: 60px;
+    }
+    .topRight {
+      border-radius: 0 15px 0 0;
+      background: green;
+      color: white;
+      padding: 20px;
+      width: 100%;
+      height: 60px;
+    }
+    .topLeftRight {
+      border-radius: 15px 15px 0 0;
+      background: green;
+      color: white;
+      padding: 20px;
+      width: 100%;
+      height: 60px;
+    }
+    .bottomLeft {
+      border-radius: 0 0 0 15px;
+      background: green;
+      color: white;
+      padding: 20px;
+      width: 100%;
+      height: 60px;
+    }
+    .bottomRight {
+      border-radius: 0 0 15px 0;
+      background: green;
+      color: white;
+      padding: 20px;
+      width: 100%;
+      height: 60px;
+    }
+    .bottomLeftRight {
+      border-radius: 0 0 15px 15px;
+      background: green;
+      color: white;
+      padding: 20px;
+      width: 100%;
+      height: 60px;
+    }
+    .topRightBottomRight {
+      border-radius: 0 15px 15px 0;
+      background: green;
+      color: white;
+      padding: 20px;
+      width: 100%;
+      height: 60px;
+    }
+    .topLeftBottomLeft {
+      border-radius: 15px 0 0 15px;
+      background: green;
+      color: white;
+      padding: 20px;
+      width: 100%;
+      height: 60px;
+    }
+    .topLeftBottomRight {
+      border-radius: 15px 0 15px 0;
+      background: green;
+      color: white;
+      padding: 20px;
+      width: 100%;
+      height: 60px;
+    }
+    .topRightBottomLeft {
+      border-radius: 0 15px 0 15px;
+      background: green;
+      color: white;
+      padding: 20px;
+      width: 100%;
+      height: 60px;
+    }
+    .skipTopLeft {
+      border-radius: 0 15px 15px 15px;
+      background: green;
+      color: white;
+      padding: 20px;
+      width: 100%;
+      height: 60px;
+    }
+    .skipTopRight {
+      border-radius: 15px 0 15px 15px;
+      background: green;
+      color: white;
+      padding: 20px;
+      width: 100%;
+      height: 60px;
+    }
+    .skipBottomRight {
+      border-radius: 15px 15px 0 15px;
+      background: green;
+      color: white;
+      padding: 20px;
+      width: 100%;
+      height: 60px;
+    }
+    .skipBottomLeft {
+      border-radius: 15px 15px 15px 0;
+      background: green;
+      color: white;
+      padding: 20px;
+      width: 100%;
+      height: 60px;
+    }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -717,8 +830,8 @@
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
     </tr>
     </thead>
     <tbody>
@@ -756,6 +869,102 @@
           <p class="round1">Rounded Border with 5 Pixels</p>
           <p class="round2">Rounder Border with 8 Pixels</p>
           <p class="round3">Roundest Border with 12 Pixels</p>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+<section class="content">
+  <h3>More Rounded Borders</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">border-radius</span> property is also used to make element rounded borders to specific corner. <br>
+    Four corners are defined as like follows:
+  </p>
+  <ul style="padding-left: 30px;">
+    <li>Top-Left</li>
+    <li>Top-Right</li>
+    <li>Bottom-Left</li>
+    <li>Bottom-Right</li>
+  </ul>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .topLeft { background: green; border-radius: 15px 0 0 0; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .topRight { background: green; border-radius: 0 15px 0 0; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .topLeftRight { background: green; border-radius: 15px 15px 0 0; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .bottomLeft { background: green; border-radius: 0 0 0 15px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .bottomRight { background: green; border-radius: 0 0 15px 0; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .bottomLeftRight { background: green; border-radius: 0 0 15px 15px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .topRightBottomRight { background: green; border-radius: 0 15px 15px 0; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .topLeftBottomLeft { background: green; border-radius: 15px 0 0 15px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .topLeftBottomRight { background: green; border-radius: 15px 0 15px 0; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .topRightBottomLeft { background: green; border-radius: 0 15px 0 15px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .skipTopLeft { background: green; border-radius: 0 15px 15px 15px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .skipTopRight { background: green; border-radius: 15px 0 15px 15px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .skipBottomRight { background: green; border-radius: 15px 15px 0 15px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .skipBottomLeft { background: green; border-radius: 15px 15px 15px 0; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3&gt;The border-radius Property Specific Corner&lt;&sol;h3&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="topLeft">Top Left Rounded&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="topRight">Top Right Rounded&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="topLeftRight">Top Left & Right Rounded&lt;&sol;p&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="bottomLeft">Bottom Left Rounded&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="bottomRight">Bottom Right Rounded&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="bottomLeftRight">Bottom Left & Right Rounded&lt;&sol;p&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="topRightBottomRight">TopRight, BottomRight&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="topLeftBottomLeft">TopLeft, BottomLeft&lt;&sol;p&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="topLeftBottomRight">TopLeft, BottomRight&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="topRightBottomLeft">TopRight, BottomLeft&lt;&sol;p&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="skipTopLeft">TopRight, BottomRight, BottomLeft&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="skipTopRight">TopLeft, BottomRight, BottomLeft&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="skipBottomRight">TopLeft, TopRight, BottomLeft&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="skipBottomLeft">TopLeft, TopRight, BottomRight&lt;&sol;p&gt; <br><br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td>
+        <div style="width: 100%; padding: 30px; text-align: center">
+          <h3>The border-radius Property Specific Corner</h3> <br>
+
+          <p class="topLeft">Top Left Rounded</p> <br>
+          <p class="topRight">Top Right Rounded</p> <br>
+          <p class="topLeftRight">Top Left & Right Rounded</p> <br>
+
+          <p class="bottomLeft">Bottom Left Rounded</p> <br>
+          <p class="bottomRight">Bottom Right Rounded</p> <br>
+          <p class="bottomLeftRight">Bottom Left & Right Rounded</p> <br>
+
+          <p class="topRightBottomRight">TopRight, BottomRight</p> <br>
+          <p class="topLeftBottomLeft">TopLeft, BottomLeft</p> <br>
+
+          <p class="topLeftBottomRight">TopLeft, BottomRight</p> <br>
+          <p class="topRightBottomLeft">TopRight, BottomLeft</p> <br>
+
+          <p class="skipTopLeft">TopRight, BottomRight, BottomLeft</p> <br>
+          <p class="skipTopRight">TopLeft, BottomRight, BottomLeft</p> <br>
+          <p class="skipBottomRight">TopLeft, TopRight, BottomLeft</p> <br>
+          <p class="skipBottomLeft">TopLeft, TopRight, BottomRight</p>
         </div>
       </td>
     </tr>
