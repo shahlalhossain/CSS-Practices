@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-  <title>CSS | Rough</title>
+  <title>CSS | Border Sides</title>
 
   <!--Meta Section Start-->
   <meta charset="UTF-8">
@@ -35,7 +35,26 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
+    p.twoSideBorder1 {
+      border-top-style: dotted;
+      border-right-style: solid;
+      border-bottom-style: dotted;
+      border-left-style: solid;
 
+      padding: 10px 30px;
+      margin: 10px 30px;
+    }
+    p.twoSideBorder2 {
+      border-style: dotted solid;
+
+      padding: 10px 30px;
+      margin: 10px 30px;
+    }
+
+    p.four { margin: 10px 30px; padding: 10px 20px; border-style: dotted solid double dashed; } /* Four Values */
+    p.three { margin: 10px 30px; padding: 10px 20px; border-style: dotted solid double; } /* Three Values */
+    p.two { margin: 10px 30px; padding: 10px 20px; border-style: dotted solid; } /* Two Values */
+    p.one { margin: 10px 30px; padding: 10px 20px; border-style: dotted; } /* One Value */
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -86,7 +105,7 @@
           <span class="navlink">CSS Selectors</span>
         </a>
       </li>
-      <li class="item active">
+      <li class="item">
         <a href="4_css_types.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Types</span>
@@ -146,7 +165,7 @@
           <span class="navlink">Border Color</span>
         </a>
       </li>
-      <li class="item">
+      <li class="item active">
         <a href="14_border_sides.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">Border Sides</span>
@@ -705,16 +724,10 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS Border Sides</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    In CSS, there are some properties for specifying each side of the borders (top, right, bottom and left):
   </p>
 
   <table>
@@ -726,13 +739,147 @@
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.twoSideBorder1 { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border-top-style: dotted; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border-right-style: solid; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border-bottom-style: dotted; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border-left-style: solid; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3&gt;Individual Border Sides&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="twoSideBorder1"&gt;2 different border styles.&lt;&sol;p&gt; <br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <h3>Individual Border Sides</h3>
+        <p class="twoSideBorder1">2 different border styles.</p>
+      </td>
+    </tr>
+    <tr><td colspan="2"><strong><i>Also we can use the following css-style to get the same result</i></strong></td></tr>
+
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.twoSideBorder2 { border-style: dotted solid; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3&gt;Individual Border Sides&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="twoSideBorder1"&gt;2 different border styles.&lt;&sol;p&gt; <br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <h3>Individual Border Sides</h3>
+        <p class="twoSideBorder2">2 different border styles.</p>
+      </td>
     </tr>
     </tbody>
   </table>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    So, here is how it works.
+  </p>
+
+  If the <span class="code">border-style</span> property has four values:
+  <ul style="padding-left: 30px;">
+    <li><strong>border-style: dotted solid double dashed; </strong></li>
+    <ul style="padding-left: 30px;">
+      <li>top border is dotted</li>
+      <li>right border is solid</li>
+      <li>bottom border is double</li>
+      <li>left border is dashed</li>
+    </ul>
+  </ul>
+  <br>
+
+  If the <span class="code">border-style</span> property has three values:
+  <ul style="padding-left: 30px;">
+    <li><strong>border-style: dotted solid double; </strong></li>
+    <ul style="padding-left: 30px;">
+      <li>top border is dotted</li>
+      <li>right and left borders are solid</li>
+      <li>bottom border is double</li>
+    </ul>
+  </ul>
+  <br>
+
+  If the <span class="code">border-style</span> property has two values:
+  <ul style="padding-left: 30px;">
+    <li><strong>border-style: dotted solid; </strong></li>
+    <ul style="padding-left: 30px;">
+      <li>top and bottom borders are dotted</li>
+      <li>right and left borders are solid</li>
+    </ul>
+  </ul>
+  <br>
+
+  If the <span class="code">border-style</span> property has one value:
+  <ul style="padding-left: 30px;">
+    <li><strong>border-style: dotted; </strong></li>
+    <ul style="padding-left: 30px;">
+      <li>all four borders are dotted</li>
+    </ul>
+  </ul>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 40%;">Example Code</th>
+      <th style="width: 60%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.four { border-style: dotted solid double dashed; } /* Four Values */ <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.three { border-style: dotted solid double; } /* Three Values */ <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.two { border-style: dotted solid; } /* Two Values */ <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.one { border-style: dotted; } /* One Value */ <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3&gt;Individual Border Sides&lt;&sol;h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="four"&gt;4 different border styles.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="three"&gt;3 different border styles.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="two"&gt;2 different border styles.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="one"&gt;1 border style.&lt;&sol;p&gt; <br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="text-align: center;">
+        <h3>Individual Border Sides</h3>
+        <p class="four">4 different border styles.</p>
+        <p class="three">3 different border styles.</p>
+        <p class="two">2 different border styles.</p>
+        <p class="one">1 border style.</p>
+      </td>
+    </tr>
+    </tbody>
+  </table>
 </section>
 <!--Main Section End-->
 
