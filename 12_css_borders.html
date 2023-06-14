@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-  <title>CSS | Rough</title>
+  <title>CSS | Borders</title>
 
   <!--Meta Section Start-->
   <meta charset="UTF-8">
@@ -35,7 +35,15 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
-
+    p.dotted {border-style: dotted;}
+    p.dashed {border-style: dashed;}
+    p.solid {border-style: solid;}
+    p.double {border-style: double;}
+    p.groove {border-style: groove;}
+    p.ridge {border-style: ridge;}
+    p.inset {border-style: inset;}
+    p.outset {border-style: outset;}
+    p.mix {border-style: dotted dashed solid double;}
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -86,7 +94,7 @@
           <span class="navlink">CSS Selectors</span>
         </a>
       </li>
-      <li class="item active">
+      <li class="item">
         <a href="4_css_types.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Types</span>
@@ -134,7 +142,7 @@
           <span class="navlink">Background Shorthand</span>
         </a>
       </li>
-      <li class="item">
+      <li class="item active">
         <a href="12_css_borders.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Borders</span>
@@ -705,34 +713,102 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS Borders</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The CSS border properties allow you to specify the style, width, and color of an element's border.
   </p>
 
+  <div style="padding-left:20px; padding-top:10px; padding-bottom:10px; border:1px solid black;">I have borders on all sides.</div> <br>
+  <div style="padding-left:20px; padding-top:10px; padding-bottom:10px; border-bottom:1px solid red;">I have a red bottom border.</div> <br>
+  <div style="padding-left:20px; padding-top:10px; padding-bottom:10px; border:1px solid grey; border-radius: 10px;">I have rounded borders.</div> <br>
+  <div style="padding-left:20px; padding-top:10px; padding-bottom:10px; border-left:6px solid blue; background-color: lightblue">I have a blue left border with background color.</div>
+</section>
+<section class="content">
+  <h3>CSS Border Style</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">border-style</span> property specifies what kind of border to display. <br>
+    The following values are allowed:
+  </p>
+  <ul style="padding-left: 30px;">
+    <li><span class="code">dotted</span> - Defines a dotted border</li>
+    <li><span class="code">dashed</span> - Defines a dashed border</li>
+    <li><span class="code">solid</span> - Defines a solid border</li>
+    <li><span class="code">double</span> - Defines a double border</li>
+    <li><span class="code">groove</span> - Defines a 3D grooved border. The effect depends on the border-color value</li>
+    <li><span class="code">ridge</span> - Defines a 3D ridged border. The effect depends on the border-color value</li>
+    <li><span class="code">inset</span> - Defines a 3D inset border. The effect depends on the border-color value</li>
+    <li><span class="code">outset</span> - Defines a 3D outset border. The effect depends on the border-color value</li>
+    <li><span class="code">hidden</span> - Defines a hidden border</li>
+    <li><span class="code">none</span> - Defines no border</li>
+    <li><span class="code">xxxxxx</span> - xxxxxxxxxx</li>
+    <li><span class="code">xxxxxx</span> - xxxxxxxxxx</li>
+    <li><span class="code">xxxxxx</span> - xxxxxxxxxx</li>
+  </ul>
+
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">border-style</span> property can have from one to four values (for the top border, right border, bottom border, and the left border).
+  </p>
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 40%;">Example Code</th>
+      <th style="width: 60%;">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.dotted {border-style: dotted;} <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.dashed {border-style: dashed;} <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.solid {border-style: solid;} <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.double {border-style: double;} <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.groove {border-style: groove;} <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.ridge {border-style: ridge;} <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.inset {border-style: inset;} <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.outset {border-style: outset;} <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.mix {border-style: dotted dashed solid double;} <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3&gt;The border-style Property&lt;&sol;h3&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="dotted"&gt;A dotted border.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="dashed"&gt;A dashed border.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="solid"&gt;A solid border.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="double"&gt;A double border.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="groove"&gt;A groove border.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="ridge"&gt;A ridge border.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="inset"&gt;An inset border.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="outset"&gt;An outset border.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="mix"&gt;A mixed border.&lt;&sol;p&gt; <br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+
+      </td>
+      <td>
+        <h3>The border-style Property</h3> <br><br>
+
+        <p style="border-color: green;" class="dotted">A dotted border.</p> <br>
+        <p style="border-color: green;" class="dashed">A dashed border.</p> <br>
+        <p style="border-color: green;" class="solid">A solid border.</p> <br>
+        <p style="border-color: green;" class="double">A double border.</p> <br>
+        <p style="border-color: green;" class="groove">A groove border.</p> <br>
+        <p style="border-color: green;" class="ridge">A ridge border.</p> <br>
+        <p style="border-color: green;" class="inset">An inset border.</p> <br>
+        <p style="border-color: green;" class="outset">An outset border.</p> <br>
+        <p style="border-color: green;" class="mix">A mixed border.</p>
+      </td>
     </tr>
     </tbody>
   </table>
-
-  <p><strong><i>Note: </i></strong>xxxxx</p>
 </section>
 <!--Main Section End-->
 
