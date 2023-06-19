@@ -43,6 +43,30 @@
       padding-bottom: 50px;
       padding-left: 80px;
     }
+
+    #padding-shorthand-four {
+      border: 1px solid black;
+      padding: 25px 50px 75px 100px;
+      background-color: lightblue;
+    }
+
+    #padding-shorthand-three {
+      border: 1px solid black;
+      padding: 25px 50px 75px;
+      background-color: lightblue;
+    }
+
+    #padding-shorthand-two {
+      border: 1px solid black;
+      padding: 25px 50px;
+      background-color: lightblue;
+    }
+
+    #padding-shorthand-one {
+      border: 1px solid black;
+      padding: 25px;
+      background-color: lightblue;
+    }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -784,6 +808,249 @@
   </table>
 
   <p><strong><i>Note: </i></strong>Negative values are NOT allowed.</p>
+</section>
+
+<section class="content">
+  <h3>CSS Padding - Shorthand Property</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    To shorten the code, it is possible to specify all the padding properties in one property. <br>
+    The padding property is a shorthand property for the following individual padding properties:
+  </p>
+  <ul style="padding-left: 30px;">
+    <li><span class="code">padding-top</span></li>
+    <li><span class="code">padding-right</span></li>
+    <li><span class="code">padding-bottom</span></li>
+    <li><span class="code">padding-left</span></li>
+  </ul>
+  <br>
+  <hr>
+  <br>
+  <p>
+    If the <span class="code">padding</span> property has four values:
+  </p>
+  <ul style="padding-left: 30px;">
+    <li><strong>padding: 25px 50px 75px 100px; </strong></li>
+  </ul>
+  <ul style="padding-left: 60px;">
+    <li>top padding is 25px</li>
+    <li>right padding is 50px</li>
+    <li>bottom padding is 75px</li>
+    <li>left padding is 100px</li>
+  </ul>
+  <br>
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 55%;">Example Code</th>
+      <th style="width: 45%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #padding-shorthand-four { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 1px solid black; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 25px 50px 75px 100px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: lightblue; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+        &lt;div id="padding-shorthand-four" &gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; The padding shorthand property with 4 values <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; This div element has a top padding of 25px, a right padding of 50px, a bottom padding of 75px, and a left padding of 100px. <br>
+        &lt;&sol;div&gt; <br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt; <br>
+      </td>
+      <td>
+        <div id="padding-shorthand-four">
+          The padding shorthand property with 4 values <br>
+          This div element has a top padding of 25px, a right padding of 50px, a bottom padding of 75px, and a left padding of 100px.
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <br><br>
+
+  <p>
+    If the <span class="code">padding</span> property has three values:
+  </p>
+  <ul style="padding-left: 30px;">
+    <li><strong>padding: 25px 50px 75px; </strong></li>
+  </ul>
+  <ul style="padding-left: 60px;">
+    <li>top padding is 25px</li>
+    <li>right and left paddings are 50px</li>
+    <li>bottom padding is 75px</li>
+  </ul>
+  <br>
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 55%;">Example Code</th>
+      <th style="width: 45%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #padding-shorthand-three { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 1px solid black; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 25px 50px 75px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: lightblue; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+        &lt;div id="padding-shorthand-three" &gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; The padding shorthand property with 3 values <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; This div element has a top padding of 25px, a right and left padding of 50px, and a bottom padding of 75px. <br>
+        &lt;&sol;div&gt; <br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt; <br>
+      </td>
+      <td>
+        <div id="padding-shorthand-three">
+          The padding shorthand property with 3 values <br>
+          This div element has a top padding of 25px, a right and left padding of 50px, and a bottom padding of 75px.
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <br><br>
+
+  <p>
+    If the <span class="code">padding</span> property has two values:
+  </p>
+  <ul style="padding-left: 30px;">
+    <li><strong>padding: 25px 50px; </strong></li>
+  </ul>
+  <ul style="padding-left: 60px;">
+    <li>top and bottom paddings are 25px</li>
+    <li>right and left paddings are 50px</li>
+  </ul>
+  <br>
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 55%;">Example Code</th>
+      <th style="width: 45%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #padding-shorthand-three { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 1px solid black; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 25px 50px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: lightblue; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+        &lt;div id="padding-shorthand-two" &gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; The padding shorthand property with 2 values <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; This div element has a top and bottom padding of 25px, and a right and left padding of 50px. <br>
+        &lt;&sol;div&gt; <br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt; <br>
+      </td>
+      <td>
+        <div id="padding-shorthand-two">
+          The padding shorthand property with 2 values <br>
+          This div element has a top and bottom padding of 25px, and a right and left padding of 50px.
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <br><br>
+
+  <p>
+    If the <span class="code">padding</span> property has one values:
+  </p>
+  <ul style="padding-left: 30px;">
+    <li><strong>padding: 25px; </strong></li>
+  </ul>
+  <ul style="padding-left: 60px;">
+    <li>all four paddings are 25px</li>
+  </ul>
+  <br>
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 55%;">Example Code</th>
+      <th style="width: 45%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #padding-shorthand-one { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 1px solid black; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 25px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: lightblue; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+        &lt;div id="padding-shorthand-one" &gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; The padding shorthand property with 1 values <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; This div element has a top, bottom, left, and right padding of 25px. <br>
+        &lt;&sol;div&gt; <br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt; <br>
+      </td>
+      <td>
+        <div id="padding-shorthand-one">
+          The padding shorthand property with 1 values <br>
+          TThis div element has a top, bottom, left, and right padding of 25px.
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content">
+  <h3>All CSS Padding Properties</h3>
+  <hr>
+  <br>
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 20%;">Property</th>
+      <th style="width: 80%;">Property</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr><td>padding</td><td>A shorthand property for setting all the padding properties in one declaration</td></tr>
+    <tr><td>padding-bottom</td><td>Sets the bottom padding of an element</td></tr>
+    <tr><td>padding-left</td><td>Sets the left padding of an element</td></tr>
+    <tr><td>padding-right</td><td>Sets the right padding of an element</td></tr>
+    <tr><td>padding-top</td><td>Sets the top padding of an element</td></tr>
+    </tbody>
+  </table>
 </section>
 <!--Main Section End-->
 
