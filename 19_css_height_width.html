@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-  <title>CSS | Rough</title>
+  <title>CSS | Height & Width</title>
 
   <!--Meta Section Start-->
   <meta charset="UTF-8">
@@ -35,7 +35,17 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
+    #height-width-1 {
+      height: 200px;
+      width: 50%;
+      background-color: powderblue;
+    }
 
+    #height-width-2 {
+      height: 100px;
+      width: 500px;
+      background-color: powderblue;
+    }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -86,7 +96,7 @@
           <span class="navlink">CSS Selectors</span>
         </a>
       </li>
-      <li class="item active">
+      <li class="item">
         <a href="4_css_types.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Types</span>
@@ -176,8 +186,8 @@
           <span class="navlink">CSS Padding</span>
         </a>
       </li>
-      <li class="item">
-        <a href="19_css_height_weight.html" class="nav_link">
+      <li class="item active">
+        <a href="19_css_height_width.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Height/Weight</span>
         </a>
@@ -705,17 +715,24 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS Height, Width and Max-width</h3>
   <hr>
   <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+    The <span class="code">height</span> and <span class="code">width</span> properties are used to set the height and width of an element. <br>
+    The <span class="code">max-width</span> property is used to set the maximum width of an element. <br>
+    The height and width properties do not include padding, borders, or margins. It sets the height/width of the area inside the padding, border, and margin of the element.
   </p>
+  <br>
+  <p>
+    The height and width properties may have the following values:
+  </p>
+  <ul style="padding-left: 30px;">
+    <li><span class="code">auto</span> - This is default. The browser calculates the height and width</li>
+    <li><span class="code">length</span> - Defines the height/width in px, cm, etc.</li>
+    <li><span class="code">%</span> - Defines the height/width in percent of the containing block</li>
+    <li><span class="code">initial</span> - Sets the height/width to its default value</li>
+    <li><span class="code">inherit</span>- The height/width will be inherited from its parent value</li>
+  </ul>
 
   <table>
     <thead>
@@ -726,14 +743,57 @@
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #height-width-1 { height: 200px; width: 50%; background-color: powderblue; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #height-width-2 { height: 200px; width: 50%; background-color: powderblue; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div id="height-width-1"&gt;This div element has a height of 200px and a width of 50%.&lt;&sol;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div id="height-width-2"&gt;This div element has a height of 100px and a width of 500px.&lt;&sol;div&gt; <br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td>
+        <div id="height-width-1">This div element has a height of 200px and a width of 50%.</div>
+        <br>
+        <div id="height-width-2">This div element has a height of 100px and a width of 500px.</div>
+      </td>
     </tr>
     </tbody>
   </table>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+  <p><strong><i>Note: </i></strong>The <span class="code">height</span> and <span class="code">width</span> properties do not include padding, borders, or margins! They set the height/width of the area inside the padding, border, and margin of the element!</p>
 </section>
+
+<section class="content">
+  <h3>All CSS Dimension Properties</h3>
+  <hr>
+  <br>
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 30%;">Property</th>
+      <th style="width: 70%;">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr><td>height</td><td>Sets the height of an element</td></tr>
+    <tr><td>max-height</td><td>Sets the maximum height of an element</td></tr>
+    <tr><td>min-height</td><td>Sets the minimum height of an element</td></tr>
+    <tr><td>width</td><td>Sets the width of an element</td></tr>
+    <tr><td>max-width</td><td>Sets the maximum width of an element</td></tr>
+    <tr><td>min-width</td><td>Sets the minimum width of an element</td></tr>
+    </tbody>
+  </table>
+</section>
+<br>
 <!--Main Section End-->
 
 <!--External JavaScript Library Inclusion Start-->
