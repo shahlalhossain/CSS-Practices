@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-  <title>CSS | Rough</title>
+  <title>CSS | Box Model</title>
 
   <!--Meta Section Start-->
   <meta charset="UTF-8">
@@ -35,7 +35,17 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
+    .center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
+    #box {
+      background-color: lightgrey;
+      border: 40px solid green;
+      padding: 50px; margin: 50px;
+    }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -86,7 +96,7 @@
           <span class="navlink">CSS Selectors</span>
         </a>
       </li>
-      <li class="item active">
+      <li class="item">
         <a href="4_css_types.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Types</span>
@@ -182,7 +192,7 @@
           <span class="navlink">CSS Height/Weight</span>
         </a>
       </li>
-      <li class="item">
+      <li class="item active">
         <a href="20_css_box_model.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Box Model</span>
@@ -705,34 +715,107 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>The CSS Box Model</h3>
   <hr>
   <p>
     <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+    All HTML elements can be considered as boxes. <br>
+    In CSS, the term "box model" is used when talking about design and layout. <br>
+    The CSS box model is essentially a box that wraps around every HTML element. It consists of: margins, borders, padding, and the actual content. The image below illustrates the box model.
   </p>
+  <img src="images/css_box_model.png" alt="CSS Box Model" class="center">
 
+  <p>Explanation of the different parts:</p>
+  <ul style="padding-left: 30px;">
+    <li><strong>Content</strong> - The content of the box, where text and images appear </li>
+    <li><strong>Padding</strong> - Clears an area around the content. The padding is transparent </li>
+    <li><strong>Border</strong> - A border that goes around the padding and content </li>
+    <li><strong>Margin</strong> - Clears an area outside the border. The margin is transparent </li>
+  </ul>
+  <br>
+  <p>The box model allows us to add a border around elements, and to define space between elements.</p>
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 40%;">Example Code</th>
+      <th style="width: 60%;">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #box { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: lightgrey; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 40px solid green; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 50px; margin: 50px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+
+        &lt;div id="box"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; The CSS box model is essentially a box that wraps around every HTML element. <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; It consists of: borders, padding, margins, and the actual content. <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; This text is the content of the box. <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; We have added a 50px padding, 50px margin and a 40px green border. <br>
+        &lt;&sol;div&gt; <br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td>
+        <div id="box">
+          The CSS box model is essentially a box that wraps around every HTML element.
+          It consists of: borders, padding, margins, and the actual content.
+          This text is the content of the box. We have added a 50px padding, 50px margin and a 40px green border.
+        </div>
+      </td>
     </tr>
     </tbody>
   </table>
+</section>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+<section class="content">
+  <h3>Width and Height of an Element</h3>
+  <hr>
+  <p>
+    In order to set the width and height of an element correctly in all browsers, you need to know how the box model works. <br>
+    When you set the width and height properties of an element with CSS, you just set the width and height of the content area. To calculate the full size of an element, you must also add padding, borders and margins.
+  </p>
+  <br>
+
+  <p>This &lt;div&gt; element will have a total width of 350px: </p>
+  <div class="bluebox">
+    div { <br>
+    &nbsp;&nbsp;&nbsp;&nbsp; width: 320px; <br>
+    &nbsp;&nbsp;&nbsp;&nbsp; padding: 10px; <br>
+    &nbsp;&nbsp;&nbsp;&nbsp; border: 5px solid gray; <br>
+    &nbsp;&nbsp;&nbsp;&nbsp; margin: 0; <br>
+    }
+  </div>
+  <br>
+
+  <p>Here is the calculation:</p>
+  <div class="greenbox">
+    320px (width)
+    + 20px (left + right padding)
+    + 10px (left + right border)
+    + 0px (left + right margin)
+    <b>= 350px</b>
+  </div>
+  <br>
+
+  <div class="whitebox">
+    The total width of an element should be calculated like this: <br>
+    Total element width = width + left padding + right padding + left border + right border + left margin + right margin
+    <br><br>
+    The total height of an element should be calculated like this:<br>
+    Total element height = height + top padding + bottom padding + top border + bottom border + top margin + bottom margin
+  </div>
 </section>
 <!--Main Section End-->
 

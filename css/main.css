@@ -283,6 +283,19 @@ td, th {
   background-color: gainsboro;
 }
 
+.greenbox {
+  border: 1px solid darkgreen;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: gainsboro;
+}
+
+.whitebox {
+  border: 1px solid darkgreen;
+  border-radius: 5px;
+  padding: 5px;
+}
+
 @media screen and (max-width: 768px) {
   #sidebarOpen {
     font-size: 25px;
