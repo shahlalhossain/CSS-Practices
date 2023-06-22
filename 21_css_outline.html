@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-  <title>CSS | Rough</title>
+  <title>CSS | Outline</title>
 
   <!--Meta Section Start-->
   <meta charset="UTF-8">
@@ -35,7 +35,24 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
+    #outline {
+      border: 2px solid black;
+      outline: #4CAF50 solid 10px;
+      margin: auto;
+      padding: 20px;
+      text-align: center;
+    }
 
+    .outline {outline-color:darkgreen; outline-width: thick; text-align: center;}
+
+    #dotted-outline {outline-style: dotted;}
+    #dashed-outline {outline-style: dashed;}
+    #solid-outline {outline-style: solid;}
+    #double-outline {outline-style: double;}
+    #groove-outline {outline-style: groove;}
+    #ridge-outline {outline-style: ridge;}
+    #inset-outline {outline-style: inset;}
+    #outset-outline {outline-style: outset;}
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -86,7 +103,7 @@
           <span class="navlink">CSS Selectors</span>
         </a>
       </li>
-      <li class="item active">
+      <li class="item">
         <a href="4_css_types.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Types</span>
@@ -188,7 +205,7 @@
           <span class="navlink">CSS Box Model</span>
         </a>
       </li>
-      <li class="item">
+      <li class="item active">
         <a href="21_css_outline.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Outline</span>
@@ -705,35 +722,111 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS Outline</h3>
   <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    An outline is a line drawn outside the element's border. <br>
+    Outline differs from borders! Unlike border, the outline is drawn outside the element's border, and may overlap other content. <br>
+    Also, the outline is NOT a part of the element's dimensions; the element's total width and height is not affected by the width of the outline. <br>
+    An outline is a line that is drawn around elements, OUTSIDE the borders, to make the element "stand out".
+  </p>
+  <br>
+  <div id="outline">
+    This element has a 2px black border and a green outline with a width of 10px.
+  </div>
+  <br>
+
   <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+    CSS has the following outline properties:
+  </p>
+  <ul style="padding-left: 30px;">
+    <li><span class="code"> outline-style</span></li>
+    <li><span class="code"> outline-color</span></li>
+    <li><span class="code"> outline-width</span></li>
+    <li><span class="code"> outline-offset</span></li>
+    <li><span class="code"> outline</span></li>
+  </ul>
+</section>
+
+<section class="content">
+  <h3>CSS Outline Style</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">outline-style</span> property specifies the style of the outline, and can have one of the following values:
+  </p>
+  <ul style="padding-left: 30px;">
+    <li><span class="code"> dotted </span> - Defines a Dotted Outline</li>
+    <li><span class="code"> dashed </span> - Defines a Dashed Outline</li>
+    <li><span class="code"> solid </span> - Defines a Solid Outline</li>
+    <li><span class="code"> double </span> - Defines a Double Outline</li>
+    <li><span class="code"> groove </span> - Defines a 3D Grooved Outline</li>
+    <li><span class="code"> ridge </span> - Defines a 3D Ridged Outline</li>
+    <li><span class="code"> inset </span> - Defines a 3D Inset Outline</li>
+    <li><span class="code"> outset </span> - Defines a 3D Outset Outline</li>
+    <li><span class="code"> none </span> - Defines no Outline</li>
+    <li><span class="code"> hidden </span> - Defines a Hidden Outline</li>
+  </ul>
+
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The following example shows the different outline-style values:
   </p>
 
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 55%;">Example Code</th>
+      <th style="width: 45%;">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .outline {outline-color:darkgreen; outline-width: thick; text-align: center;} <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #dotted-outline {outline-style: dotted;} <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #dashed-outline {outline-style: dashed;} <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #solid-outline {outline-style: solid;} <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #double-outline {outline-style: double;} <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #groove-outline {outline-style: groove;} <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #ridge-outline {outline-style: ridge;} <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #inset-outline {outline-style: inset;} <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #outset-outline {outline-style: outset;} <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="outline" id="dotted-outline"&gt;A dotted outline&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="outline" id="dashed-outline"&gt;A dashed outline&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="outline" id="solid-outline"&gt;A solid outline&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="outline" id="double-outline"&gt;A double outline&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="outline" id="groove-outline"&gt;A groove outline. The effect depends on the outline-color value.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="outline" id="ridge-outline"&gt;A ridge outline. The effect depends on the outline-color value.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="outline" id="inset-outline"&gt;An inset outline. The effect depends on the outline-color value.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="outline" id="outset-outline"&gt;An outset outline. The effect depends on the outline-color value.&lt;&sol;p&gt; <br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td>
+        <div style="margin-left: 20px; margin-right: 20px;">
+          <p class="outline" id="dotted-outline">A dotted outline</p> <br><br>
+          <p class="outline" id="dashed-outline">A dashed outline</p> <br><br>
+          <p class="outline" id="solid-outline">A solid outline</p> <br><br>
+          <p class="outline" id="double-outline">A double outline</p> <br><br>
+          <p class="outline" id="groove-outline">A groove outline. The effect depends on the outline-color value.</p> <br><br>
+          <p class="outline" id="ridge-outline">A ridge outline. The effect depends on the outline-color value.</p> <br><br>
+          <p class="outline" id="inset-outline">An inset outline. The effect depends on the outline-color value.</p> <br><br>
+          <p class="outline" id="outset-outline">An outset outline. The effect depends on the outline-color value.</p>
+        </div>
+      </td>
     </tr>
     </tbody>
   </table>
-
-  <p><strong><i>Note: </i></strong>xxxxx</p>
 </section>
+<br>
 <!--Main Section End-->
 
 <!--External JavaScript Library Inclusion Start-->
