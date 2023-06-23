@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-  <title>CSS | Rough</title>
+  <title>CSS | Outline Width</title>
 
   <!--Meta Section Start-->
   <meta charset="UTF-8">
@@ -35,7 +35,15 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
-
+      .outline {
+          border: 1px solid black;
+          outline-style: solid;
+          outline-color: darkgreen;
+      }
+      .outline-example1 { outline-width: thin; }
+      .outline-example2 { outline-width: medium; }
+      .outline-example3 { outline-width: thick; }
+      .outline-example4 { outline-width: 8px; }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -86,7 +94,7 @@
           <span class="navlink">CSS Selectors</span>
         </a>
       </li>
-      <li class="item active">
+      <li class="item">
         <a href="4_css_types.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Types</span>
@@ -194,7 +202,7 @@
           <span class="navlink">CSS Outline</span>
         </a>
       </li>
-      <li class="item">
+      <li class="item active">
         <a href="22_outline_width.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">Outline Width</span>
@@ -705,35 +713,66 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
-  <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
-  </p>
+    <h3>CSS Outline Width</h3>
+    <hr>
+    <p style="padding-top: 10px; padding-bottom: 10px;">
+        The <span class="code">outline-width</span> property specifies the width of the outline, and can have one of the following values:
+    </p>
+    <ul style="padding-left: 30px;">
+        <li>thin (typically 1px)</li>
+        <li>medium (typically 3px)</li>
+        <li>thick (typically 5px)</li>
+        <li>A specific size (in px, pt, cm, em, etc)</li>
+    </ul>
+
+    <p style="padding-top: 10px; padding-bottom: 10px;">
+    The following example shows some outlines with different widths:
+    </p>
 
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+          &lt;!DOCTYPE html&gt; <br>
+          &lt;html&gt; <br>
+          &lt;head&gt; <br>
+          &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .outline { border: 1px solid black; outline-style: solid; outline-color: darkgreen; } <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .outline-example1 { outline-width: thin; } <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .outline-example2 { outline-width: medium; } <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .outline-example3 { outline-width: thick; } <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .outline-example4 { outline-width: 8px; } <br>
+          &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+          &lt;&sol;head&gt; <br>
+          &lt;body&gt; <br>
+
+          &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="outline outline-example1"&gt;A thin outline along with the outline-width property.&lt;&sol;p&gt; <br>
+          &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="outline outline-example2"&gt;A medium outline along with the outline-width property.&lt;&sol;p&gt; <br>
+          &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="outline outline-example3"&gt;A thick outline along with the outline-width property.&lt;&sol;p&gt; <br>
+          &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="outline outline-example4"&gt;A 4px thick outline along with the outline-width property.&lt;&sol;p&gt; <br>
+
+          &lt;&sol;body&gt; <br>
+          &lt;&sol;html&gt;
+      </td>
+      <td>
+          <div style="padding: 20px;">
+              <p class="outline outline-example1">A thin outline along with the outline-width property.</p> <br><br>
+              <p class="outline outline-example2">A medium outline along with the outline-width property.</p> <br><br>
+              <p class="outline outline-example3">A thick outline along with the outline-width property.</p> <br><br>
+              <p class="outline outline-example4">A 4px thick outline along with the outline-width property.</p>
+          </div>
+      </td>
     </tr>
     </tbody>
   </table>
-
-  <p><strong><i>Note: </i></strong>xxxxx</p>
 </section>
+<br>
 <!--Main Section End-->
 
 <!--External JavaScript Library Inclusion Start-->
