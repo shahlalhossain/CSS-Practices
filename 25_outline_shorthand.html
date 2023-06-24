@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-  <title>CSS | Rough</title>
+  <title>CSS | Outline Shorthand</title>
 
   <!--Meta Section Start-->
   <meta charset="UTF-8">
@@ -35,7 +35,10 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
-
+    .outline-shorthand-example1 { outline: 8px dashed blue; }
+    .outline-shorthand-example2 { outline: 8px dotted red; }
+    .outline-shorthand-example3 { outline: 8px solid darkgreen; }
+    .outline-shorthand-example4 { outline: 8px ridge pink; }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -86,7 +89,7 @@
           <span class="navlink">CSS Selectors</span>
         </a>
       </li>
-      <li class="item active">
+      <li class="item">
         <a href="4_css_types.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Types</span>
@@ -212,7 +215,7 @@
           <span class="navlink">Outline Offset</span>
         </a>
       </li>
-      <li class="item">
+      <li class="item active">
         <a href="25_outline_shorthand.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">Outline Shorthand</span>
@@ -705,34 +708,66 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS Outline Shorthand</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">outline</span> property is a shorthand property for setting the following individual outline properties:
   </p>
 
+  <ul style="padding-left: 30px;">
+    <li><span class="code">outline-width</span></li>
+    <li><span class="code">outline-style</span> (required) </li>
+    <li><span class="code">outline-color</span></li>
+  </ul>
+
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">outline</span> is specified as one, two, or three values from the list above. The order of the values does not matter.
+  </p>
+
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The following example shows some outlines specified with the shorthand outline property:
+  </p>
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .outline-shorthand-example1 { outline: 8px dashed blue; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .outline-shorthand-example2 { outline: 8px dotted red; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .outline-shorthand-example3 { outline: 8px solid darkgreen; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .outline-shorthand-example4 { outline: 8px ridge pink; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="outline-shorthand-example1"&gt;A 8px dashed outline.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="outline-shorthand-example2"&gt;A 8px dotted red outline.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="outline-shorthand-example3"&gt;A 8px solid green outline.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="outline-shorthand-example4"&gt;A 8px ridge pink outline.&lt;&sol;p&gt; <br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td>
+        <div style="margin: 20px;">
+          <p class="outline-shorthand-example1">A 8px dashed outline.</p> <br><br>
+          <p class="outline-shorthand-example2">A 8px dotted red outline.</p> <br><br>
+          <p class="outline-shorthand-example3">A 8px solid green outline.</p> <br><br>
+          <p class="outline-shorthand-example4">A 8px ridge pink outline.</p>
+        </div>
+      </td>
     </tr>
     </tbody>
   </table>
-
-  <p><strong><i>Note: </i></strong>xxxxx</p>
 </section>
 <!--Main Section End-->
 
