@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-  <title>CSS | Rough</title>
+  <title>CSS | Outline Color</title>
 
   <!--Meta Section Start-->
   <meta charset="UTF-8">
@@ -35,7 +35,17 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
-
+    .outline {
+      border: 2px solid black;
+      outline-style: solid;
+      outline-width: 8px;
+      padding: 5px;
+    }
+    .outline-color1 { outline-color: darkgreen; }
+    .outline-color2 { outline-color: red; }
+    .outline-color3 { outline-color: blue; }
+    .outline-color4 { outline-color: orange; }
+    .outline-color5 { outline-color: dimgray; }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -86,7 +96,7 @@
           <span class="navlink">CSS Selectors</span>
         </a>
       </li>
-      <li class="item active">
+      <li class="item">
         <a href="4_css_types.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Types</span>
@@ -200,7 +210,7 @@
           <span class="navlink">Outline Width</span>
         </a>
       </li>
-      <li class="item">
+      <li class="item active">
         <a href="23_outline_color.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">Outline Color</span>
@@ -705,35 +715,72 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS Outline Color</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">outline-color</span> property is used to set the color of the outline. <br>
+    The color can be set by:
+  </p>
+  <ul style="padding-left: 30px;">
+    <li>name - specify a color name, like "red"</li>
+    <li>HEX - specify a hex value, like "#ff0000"</li>
+    <li>RGB - specify a RGB value, like "rgb(255,0,0)"</li>
+    <li>HSL - specify a HSL value, like "hsl(0, 100%, 50%)"</li>
+    <li>invert - performs a color inversion (which ensures that the outline is visible, regardless of color background)</li>
+  </ul>
+
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The following example shows some outlines with different colors.
+    Also notice that these elements also have a thin black border inside the outline:
   </p>
 
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .outline { border: 1px solid black; outline-style: solid; outline-width: 8px; padding: 5px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .outline-color1 { outline-color: darkgreen; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .outline-color2 { outline-color: red; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .outline-color3 { outline-color: blue; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .outline-color4 { outline-color: orange; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .outline-color5 { outline-color: dimgray; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="outline outline-color1"&gt;A green outline along with the outline-width property.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="outline outline-color2"&gt;A red outline along with the outline-width property.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="outline outline-color3"&gt;A blue outline along with the outline-width property.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="outline outline-color4"&gt;A orange thick outline along with the outline-width property.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="outline outline-color4"&gt;A dimgray thick outline along with the outline-width property.&lt;&sol;p&gt; <br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td>
+        <div style="padding: 20px;">
+          <p class="outline outline-color1">A green outline along with the outline-width property.</p> <br><br>
+          <p class="outline outline-color2">A red outline along with the outline-width property.</p> <br><br>
+          <p class="outline outline-color3">A blue outline along with the outline-width property.</p> <br><br>
+          <p class="outline outline-color4">A orange thick outline along with the outline-width property.</p><br><br>
+          <p class="outline outline-color5">A dimgray thick outline along with the outline-width property.</p>
+        </div>
+      </td>
     </tr>
     </tbody>
   </table>
-
-  <p><strong><i>Note: </i></strong>xxxxx</p>
 </section>
+<br>
 <!--Main Section End-->
 
 <!--External JavaScript Library Inclusion Start-->
