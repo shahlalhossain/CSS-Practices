@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-  <title>CSS | Rough</title>
+  <title>CSS | Text Color</title>
 
   <!--Meta Section Start-->
   <meta charset="UTF-8">
@@ -35,7 +35,11 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
+    #heading1 {color:green;}
+    #para3 {color:red;}
 
+    #heading2 {background-color: black; color: white;}
+    #para5 {background-color: blue; color: white;}
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -86,7 +90,7 @@
           <span class="navlink">CSS Selectors</span>
         </a>
       </li>
-      <li class="item active">
+      <li class="item">
         <a href="4_css_types.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Types</span>
@@ -218,7 +222,7 @@
           <span class="navlink">Outline Shorthand</span>
         </a>
       </li>
-      <li class="item">
+      <li class="item active">
         <a href="26_css_text_color.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Text Color</span>
@@ -705,35 +709,106 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS Text Color</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    CSS has a lot of properties for formatting text. <br>
+    The default text color for a page is defined in the body selector. <br>
+    The <span class="code">color</span> property is used to set the color of the text. The color is specified by:
+  </p>
+  <ul style="padding-left: 30px;">
+    <li>a color name - like "red"</li>
+    <li>a HEX value - like "#ff0000"</li>
+    <li>an RGB value - like "rgb(255,0,0)"</li>
+  </ul>
+  <br>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 60%;">Example Code</th>
+      <th style="width: 40%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; body {color:blue;} <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h4 {color:green;} <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #para3 {color:red;} <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h4&gt;This is Heading One&lt;&sol;h4&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;This is an ordinary paragraph. Notice that this text is blue. The default text color for a page is defined in the body selector.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;This is an another simple paragraph with inherited color of the body selector.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p id="para3"&gt;This paragraph's text color is differently defined by it's id selector&lt;&sol;p&gt; <br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="color: blue; padding: 40px;">
+        <h4 id="heading1">This is Heading One</h4> <br>
+        <p id="para1">This is an ordinary paragraph. Notice that this text is blue. The default text color for a page is defined in the body selector.</p> <br>
+        <p id="para2">This is an another simple paragraph with inherited color of the body selector.</p> <br>
+        <p id="para3">This paragraph's text color is differently defined by it's id selector</p>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p><strong><i>Important Note: </i></strong>High contrast is very important for people with vision problems. So, always ensure that the contrast between the text color and the background color (or background image) is good!</p>
+</section>
+
+<section class="content">
+  <h3>Text Color and Background Color</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    In the following example, we define both the <span class="code">background-color</span> property and the <span class="code">color</span> property:
   </p>
 
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 60%;">Example Code</th>
+      <th style="width: 40%;">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; body {background-color: lightgrey; color: blue;} <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h1 {background-color: black; color: white;} <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; div {background-color: blue; color: white;} <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;This is a Heading&lt;&sol;h1&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;This page has a grey background color and a blue text.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt;This is a div with white color text and blue background.&lt;&sol;div&gt; <br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt; <br>
+      </td>
+      <td style="background-color: lightgrey; color: blue; padding: 40px;">
+        <h1 id="heading2">This is a Heading</h1> <br>
+        <p id="para4">This page has a grey background color and a blue text.</p> <br>
+        <div id="para5">This is a div with white color text and blue background.</div>
+      </td>
     </tr>
     </tbody>
   </table>
-
-  <p><strong><i>Note: </i></strong>xxxxx</p>
 </section>
+<br>
 <!--Main Section End-->
 
 <!--External JavaScript Library Inclusion Start-->
