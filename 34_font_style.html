@@ -41,8 +41,10 @@
 
     p.normal { font-weight: normal; }
     p.light { font-weight: lighter; }
-    p.thick { font-weight: bold;  }
+    p.thick { font-weight: bold; }
     p.thicker { font-weight: 900; }
+
+    p.variant { font-variant: small-caps; }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -826,6 +828,54 @@
         </p> <br>
         <p class="thicker">
           This is a paragraph with thicker font weight.  <br>
+          CSS, or Cascading Style Sheets, offers a flexible way to style web content, with styles originating from browser defaults, user preferences, or web designers. These styles can be applied inline, within an HTML document, or through external .css files for broader consistency. Not only does this simplify web development by promoting reusability and maintainability, it also improves site performance because styles can be offloaded into dedicated .css files that browsers can cache.
+        </p>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content">
+  <h3>CSS Font Variant</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">font-variant</span> property specifies whether or not a text should be displayed in a small-caps font. <br>
+    In a small-caps font, all lowercase letters are converted to uppercase letters. However, the converted uppercase letters appears in a smaller font size than the original uppercase letters in the text.
+  </p>
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 40%">Example Code</th>
+      <th style="width: 60%">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td style="width: 40%">
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.normal { font-weight: normal; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.variant { font-variant: small-caps; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+
+        &lt;p class="normal"&gt;My name is Shahlal Hossain.&lt;&sol;p&gt; <br>
+        &lt;p class="variant"&gt;My name is Shahlal Hossain.&lt;&sol;p&gt; <br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt; <br>
+      </td>
+      <td style="width: 60%">
+        <p class="normal">
+          My name is Shahlal Hossain. <br>
+          CSS, or Cascading Style Sheets, offers a flexible way to style web content, with styles originating from browser defaults, user preferences, or web designers. These styles can be applied inline, within an HTML document, or through external .css files for broader consistency. Not only does this simplify web development by promoting reusability and maintainability, it also improves site performance because styles can be offloaded into dedicated .css files that browsers can cache.
+        </p> <br>
+        <p class="variant">
+          My name is Shahlal Hossain. <br>
           CSS, or Cascading Style Sheets, offers a flexible way to style web content, with styles originating from browser defaults, user preferences, or web designers. These styles can be applied inline, within an HTML document, or through external .css files for broader consistency. Not only does this simplify web development by promoting reusability and maintainability, it also improves site performance because styles can be offloaded into dedicated .css files that browsers can cache.
         </p>
       </td>
