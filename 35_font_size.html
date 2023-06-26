@@ -835,16 +835,11 @@
 </section>
 
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>Responsive Font Size</h3>
   <hr>
   <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+    The text size can be set with a <span class="code">vw</span> unit, which means the "viewport width". <br>
+    That way the text size will follow the size of the browser window:
   </p>
 
   <table>
@@ -856,13 +851,29 @@
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; <br>
+        &lt;body&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h1 style="font-size:10vw;"&gt;Responsive Text&lt;/h1&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p style="font-size:5vw;"&gt;Resize the browser window to see how the text size scales.&lt;/p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p style="font-size:5vw;"&gt;Use the "vw" unit when sizing the text. 10vw will set the size to 10% of the viewport width.&lt;/p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Viewport is the browser window size. 1vw = 1% of viewport width. If the viewport is 50cm wide, 1vw is 0.5cm.&lt;/p&gt; <br>
+        &lt;/body&gt; <br>
+        &lt;/html&gt;
+      </td>
+      <td>
+        <h3 style="font-size:3vw;">Responsive Text</h3>
+        <p style="font-size:2vw;">Resize the browser window to see how the text size scales.</p>
+        <p style="font-size:2vw;">Use the "vw" unit when sizing the text. 10vw will set the size to 10% of the viewport width.</p>
+        <p>Viewport is the browser window size. 1vw = 1% of viewport width. If the viewport is 50cm wide, 1vw is 0.5cm.</p>
+      </td>
     </tr>
     </tbody>
   </table>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+  <p><strong><i>Note: </i></strong>Viewport is the browser window size. 1vw = 1% of viewport width. If the viewport is 50cm wide, 1vw is 0.5cm.</p>
 </section>
 
 <br>
