@@ -1,4 +1,6 @@
 .idea/*
+.idea/workspace.xml
+**/.idea/workspace.xml
 
 # Logs and Databases #
 ######################
@@ -15,3 +17,13 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Ignore all local history of files
+.history
