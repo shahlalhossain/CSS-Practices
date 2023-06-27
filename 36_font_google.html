@@ -17,7 +17,8 @@
 
   <!--External CSS Library Inclusion Start-->
   <!-- Boxicons CSS -->
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
   <!--External CSS Library Inclusion End-->
 
   <!--Internal CSS Library Inclusion Start-->
@@ -34,8 +35,8 @@
   <!--Internal JavaScript Library Inclusion End-->
 
   <!--Page Specific Custom CSS Start-->
-  <style type="text/css">
-
+  <style>
+    div.google-font-sofia { font-family: "Sofia", sans-serif !important; }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -705,20 +706,17 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS Google Fonts</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    If you do not want to use any of the standard fonts in HTML, you can use Google Fonts. <br>
+    Google Fonts are free to use, and have more than 1000 fonts to choose from. <br>
+    Just add a special style sheet link in the &lt;head&gt; section and then refer to the font in the CSS. <br>
   </p>
 
   <table>
     <thead>
+    <tr><th colspan="2">Example 1 -- Here, we want to use a font named "Sofia" from Google Fonts:</th></tr>
     <tr>
       <th>Example Code</th>
       <th>Sample Output</th>
@@ -726,13 +724,221 @@
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .google-font-sofia { font-family: "Sofia", sans-serif; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;/style&gt; <br>
+        &lt;/head&gt; <br>
+        &lt;body&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="sofia-font"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;h3&gt;Sofia Font&lt;/h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Name: Shahlal Hossain&lt;/p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Mobile: +8801731479874&lt;/p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Email: shahlalhossain@gmail.com&lt;/p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Address: Koyel, Tanore, Rajshahi&lt;/p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt; <br>
+        &lt;/body&gt; <br>
+        &lt;/html&gt;
+      </td>
+      <td>
+        <div class="google-font-sofia">
+          <h3>Sofia Font</h3>
+          <p>Name: Shahlal Hossain</p>
+          <p>Mobile: +8801731479874</p>
+          <p>Email: shahlalhossain@gmail.com</p>
+          <p>Address: Koyel, Tanore, Rajshahi</p>
+        </div>
+      </td>
     </tr>
     </tbody>
   </table>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+  <p><strong><i>Note: </i></strong>Font is NOT Working here properly</p>
+
+  <br>
+  <table>
+    <thead>
+    <tr><th colspan="2">Example 2 -- Here, we want to use a font named "Trirong" from Google Fonts:</th></tr>
+    <tr>
+      <th>Example Code</th>
+      <th>Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .google-font-trirong { font-family: "Trirong", serif; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;/style&gt; <br>
+        &lt;/head&gt; <br>
+        &lt;body&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="google-font-trirong"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;h3&gt;Trirong Font&lt;/h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Name: Shahlal Hossain&lt;/p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Mobile: +8801731479874&lt;/p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Email: shahlalhossain@gmail.com&lt;/p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Address: Koyel, Tanore, Rajshahi&lt;/p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt; <br>
+        &lt;/body&gt; <br>
+        &lt;/html&gt;
+      </td>
+      <td>
+        <div class="google-font-trirong">
+          <h3>Trirong Font</h3>
+          <p>Name: Shahlal Hossain</p>
+          <p>Mobile: +8801731479874</p>
+          <p>Email: shahlalhossain@gmail.com</p>
+          <p>Address: Koyel, Tanore, Rajshahi</p>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p><strong><i>Note: </i></strong>Font is NOT Working here properly</p>
+
+  <br>
+  <table>
+    <thead>
+    <tr><th colspan="2">Example 3 -- Here, we want to use a font named "Audiowide" from Google Fonts:</th></tr>
+    <tr>
+      <th>Example Code</th>
+      <th>Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .google-font-audiowide { font-family: "Audiowide", sans-serif; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;/style&gt; <br>
+        &lt;/head&gt; <br>
+        &lt;body&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="google-font-audiowide"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;h3&gt;Audiowide Font&lt;/h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Name: Shahlal Hossain&lt;/p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Mobile: +8801731479874&lt;/p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Email: shahlalhossain@gmail.com&lt;/p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Address: Koyel, Tanore, Rajshahi&lt;/p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt; <br>
+        &lt;/body&gt; <br>
+        &lt;/html&gt;
+      </td>
+      <td>
+        <div class="google-font-sofia">
+          <h3>Audiowide Font</h3>
+          <p>Name: Shahlal Hossain</p>
+          <p>Mobile: +8801731479874</p>
+          <p>Email: shahlalhossain@gmail.com</p>
+          <p>Address: Koyel, Tanore, Rajshahi</p>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p><strong><i>Note: </i></strong>Font is NOT Working here properly</p>
+
+</section>
+
+<section class="content">
+  <h3>Use Multiple Google Fonts</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    To use multiple Google fonts, just separate the font names with a pipe character (|), like this:
+  </p>
+
+  <table>
+    <thead>
+    <tr><th colspan="2">Example 4 -- Here, we requesting multiple fonts:</th></tr>
+    <tr>
+      <th>Example Code</th>
+      <th>Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .google-font-sofia { font-family: "Sofia", sans-serif; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .google-font-trirong { font-family: "Trirong", serif; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .google-font-audiowide { font-family: "Audiowide", sans-serif; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;/style&gt; <br>
+        &lt;/head&gt; <br>
+        &lt;body&gt; <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="google-font-sofia"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;h3&gt;Sofia Font&lt;/h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Name: Shahlal Hossain&lt;/p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Mobile: +8801731479874&lt;/p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Email: shahlalhossain@gmail.com&lt;/p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Address: Koyel, Tanore, Rajshahi&lt;/p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="google-font-trirong"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;h3&gt;Trirong Font&lt;/h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Name: Shahlal Hossain&lt;/p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Mobile: +8801731479874&lt;/p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Email: shahlalhossain@gmail.com&lt;/p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Address: Koyel, Tanore, Rajshahi&lt;/p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="google-font-audiowide"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;h3&gt;Audiowide Font&lt;/h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Name: Shahlal Hossain&lt;/p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Mobile: +8801731479874&lt;/p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Email: shahlalhossain@gmail.com&lt;/p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Address: Koyel, Tanore, Rajshahi&lt;/p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt; <br><br>
+
+        &lt;/body&gt; <br>
+        &lt;/html&gt;
+      </td>
+      <td>
+        <div class="google-font-sofia">
+          <h3>Sofia Font</h3>
+          <p>Name: Shahlal Hossain</p>
+          <p>Mobile: +8801731479874</p>
+          <p>Email: shahlalhossain@gmail.com</p>
+          <p>Address: Koyel, Tanore, Rajshahi</p>
+        </div><br>
+
+        <div class="google-font-trirong">
+          <h3>Trirong Font</h3>
+          <p>Name: Shahlal Hossain</p>
+          <p>Mobile: +8801731479874</p>
+          <p>Email: shahlalhossain@gmail.com</p>
+          <p>Address: Koyel, Tanore, Rajshahi</p>
+        </div><br>
+
+        <div class="google-font-audiowide">
+          <h3>Audiowide Font</h3>
+          <p>Name: Shahlal Hossain</p>
+          <p>Mobile: +8801731479874</p>
+          <p>Email: shahlalhossain@gmail.com</p>
+          <p>Address: Koyel, Tanore, Rajshahi</p>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p><strong><i>Note: </i></strong>Font is NOT Working here properly</p>
 </section>
 <!--Main Section End-->
 
