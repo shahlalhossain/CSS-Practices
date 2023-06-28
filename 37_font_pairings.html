@@ -34,8 +34,21 @@
   <!--Internal JavaScript Library Inclusion End-->
 
   <!--Page Specific Custom CSS Start-->
-  <style type="text/css">
+  <style>
+    .pair-one-heading { font-family: Georgia, serif; }
+    .pair-one-paragraph { font-family: Verdana, sans-serif; }
 
+    .pair-two-heading { font-family: Helvetica, sans-serif; }
+    .pair-two-paragraph { font-family: Garamond, serif; }
+
+    .pair-three-heading { font-family: Merriweather, serif; }
+    .pair-three-paragraph { font-family: "Open Sans", sans-serif; }
+
+    .pair-four-heading { font-family: Lora, serif; }
+    .pair-four-paragraph { font-family: Ubuntu, sans-serif; }
+
+    .pair-five-heading { font-family: 'Abril Fatface', serif; }
+    .pair-five-paragraph { font-family: Poppins, sans-serif; }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -705,18 +718,79 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS Great Font Pairings</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Great font pairings are essential to great design.
   </p>
 
+  <h4>Font Pairing Rules</h4>
+  <p>Here are some basic rules to create great font pairings:</p>
+
+  <table>
+    <thead>
+    <tr>
+      <th>SN</th>
+      <th>Head</th>
+      <th>Rules</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>1</td>
+      <td>Complement</td>
+      <td>
+        <ul style="padding-left: 30px;">
+          <li>It is always safe to find font pairings that complement one another.</li>
+          <li>A great font combination should harmonize, without being too similar or too different.</li>
+        </ul>
+      </td>
+    </tr>
+
+    <tr>
+      <td>2</td>
+      <td>Use Font Superfamilies</td>
+      <td>
+        <ul style="padding-left: 30px;">
+          <li>A font superfamily is a set of fonts designed to work well together. So, using different fonts within the same superfamily is safe. </li>
+          <li>For example, the Lucida superfamily contains the following fonts: Lucida Sans, Lucida Serif, Lucida Typewriter Sans, Lucida Typewriter Serif and Lucida Math.</li>
+        </ul>
+      </td>
+    </tr>
+
+    <tr>
+      <td>3</td>
+      <td>Contrast is King</td>
+      <td>
+        <ul style="padding-left: 30px;">
+          <li>Two fonts that are too similar will often conflict. However, contrasts, done the right way, brings out the best in each font.</li>
+          <li>Example: Combining serif with sans serif is a well known combination.</li>
+          <li>A strong superfamily includes both serif and sans serif variations of the same font (e.g. Lucida and Lucida Sans).</li>
+        </ul>
+      </td>
+    </tr>
+
+    <tr>
+      <td>4</td>
+      <td>Choose Only One Boss</td>
+      <td>
+        <ul style="padding-left: 30px;">
+          <li>One font should be the boss. This establishes a hierarchy for the fonts on your page. This can be achieved by varying the size, weight and color.</li>
+        </ul>
+      </td>
+    </tr>
+
+    </tbody>
+  </table>
+</section>
+
+<section class="content">
+  <h3>Georgia and Verdana</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Georgia and Verdana is a classic combination. It also sticks to the web safe font standards. <br>
+    Here we are using the "Georgia" font for headings, and "Verdana" for text:
+  </p>
   <table>
     <thead>
     <tr>
@@ -726,14 +800,302 @@
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &lt;link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Georgia|Verdana"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .pair-one-heading { font-family: Georgia, serif; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .pair-one-paragraph { font-family: Verdana, sans-serif; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;/style&gt; <br>
+        &lt;/head&gt; <br>
+        &lt;body&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 class="pair-one-heading"&gt; Beautiful Bangladesh&lt;/h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="pair-one-paragraph"&gt; <br>
+        Bangladesh contains greater biodiversity than that of many countries taken together. Indeed, few countries in the world can match its rich and varied flora and fauna which are not only a unique biological phenomenon but are also a great natural resource of the country.<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt; <br>
+        &lt;/body&gt; <br>
+        &lt;/html&gt; <br>
+
+      </td>
+      <td>
+        <div>
+          <h3 class="pair-one-heading">Beautiful Bangladesh</h3>
+          <p class="pair-one-paragraph">
+            Bangladesh contains greater biodiversity than that of many countries taken together. Indeed, few countries in the world can match its rich and varied flora and fauna which are not only a unique biological phenomenon but are also a great natural resource of the country.
+          </p>
+        </div>
+      </td>
     </tr>
     </tbody>
   </table>
-
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+  <p><strong><i>Note: </i></strong>Use the Example Code in Separate File to Get/See the Font Style/Impact</p>
 </section>
+
+<section class="content">
+  <h3>Helvetica and Garamond</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Helvetica and Garamond is another classic combination that uses web safe fonts. <br>
+    Here we are using the "Helvetica" font for headings, and "Garamond" for text:
+  </p>
+  <table>
+    <thead>
+    <tr>
+      <th>Example Code</th>
+      <th>Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &lt;link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica|Garamond"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .pair-two-heading { font-family: Helvetica, sans-serif; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .pair-two-paragraph { font-family: Garamond, serif; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;/style&gt; <br>
+        &lt;/head&gt; <br>
+        &lt;body&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 class="pair-two-heading"&gt; Beautiful Bangladesh&lt;/h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="pair-two-paragraph"&gt; <br>
+        Bangladesh contains greater biodiversity than that of many countries taken together. Indeed, few countries in the world can match its rich and varied flora and fauna which are not only a unique biological phenomenon but are also a great natural resource of the country.<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt; <br>
+        &lt;/body&gt; <br>
+        &lt;/html&gt; <br>
+
+      </td>
+      <td>
+        <div>
+          <h3 class="pair-two-heading">Beautiful Bangladesh</h3>
+          <p class="pair-two-paragraph">
+            Bangladesh contains greater biodiversity than that of many countries taken together. Indeed, few countries in the world can match its rich and varied flora and fauna which are not only a unique biological phenomenon but are also a great natural resource of the country.
+          </p>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <p><strong><i>Note: </i></strong>Use the Example Code in Separate File to Get/See the Font Style/Impact</p>
+</section>
+
+<section class="content">
+  <h3>Merriweather and Open Sans</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Merriweather and Open Sans is another classic combination that uses web safe fonts. <br>
+    Here we are using the "Merriweather" font for headings, and "Open Sans" for text:
+  </p>
+  <table>
+    <thead>
+    <tr>
+      <th>Example Code</th>
+      <th>Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &lt;link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .pair-three-heading { font-family: Merriweather, serif; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .pair-three-paragraph { font-family: "Open Sans", sans-serif; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;/style&gt; <br>
+        &lt;/head&gt; <br>
+        &lt;body&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 class="pair-three-heading"&gt; Beautiful Bangladesh&lt;/h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="pair-three-paragraph"&gt; <br>
+        Bangladesh contains greater biodiversity than that of many countries taken together. Indeed, few countries in the world can match its rich and varied flora and fauna which are not only a unique biological phenomenon but are also a great natural resource of the country.<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt; <br>
+        &lt;/body&gt; <br>
+        &lt;/html&gt; <br>
+
+      </td>
+      <td>
+        <div>
+          <h3 class="pair-three-heading">Beautiful Bangladesh</h3>
+          <p class="pair-three-paragraph">
+            Bangladesh contains greater biodiversity than that of many countries taken together. Indeed, few countries in the world can match its rich and varied flora and fauna which are not only a unique biological phenomenon but are also a great natural resource of the country.
+          </p>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <p><strong><i>Note: </i></strong>Use the Example Code in Separate File to Get/See the Font Style/Impact</p>
+</section>
+
+<section class="content">
+  <h3>Ubuntu and Lora</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Ubuntu and Lora is another classic combination that uses web safe fonts. <br>
+    Here we are using the "Ubuntu" font for headings, and "Lora" for text:
+  </p>
+  <table>
+    <thead>
+    <tr>
+      <th>Example Code</th>
+      <th>Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &lt;link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora|Ubuntu"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .pair-four-heading { font-family: Lora, serif; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .pair-four-paragraph { font-family: Ubuntu, sans-serif; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;/style&gt; <br>
+        &lt;/head&gt; <br>
+        &lt;body&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 class="pair-four-heading"&gt; Beautiful Bangladesh&lt;/h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="pair-four-paragraph"&gt; <br>
+        Bangladesh contains greater biodiversity than that of many countries taken together. Indeed, few countries in the world can match its rich and varied flora and fauna which are not only a unique biological phenomenon but are also a great natural resource of the country.<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt; <br>
+        &lt;/body&gt; <br>
+        &lt;/html&gt; <br>
+
+      </td>
+      <td>
+        <div>
+          <h3 class="pair-four-heading">Beautiful Bangladesh</h3>
+          <p class="pair-four-paragraph">
+            Bangladesh contains greater biodiversity than that of many countries taken together. Indeed, few countries in the world can match its rich and varied flora and fauna which are not only a unique biological phenomenon but are also a great natural resource of the country.
+          </p>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <p><strong><i>Note: </i></strong>Use the Example Code in Separate File to Get/See the Font Style/Impact</p>
+</section>
+
+<section class="content">
+  <h3>Abril Fatface and Poppins</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Abril Fatface and Poppins is another classic combination that uses web safe fonts. <br>
+    Here we are using the "Abril Fatface" font for headings, and "Poppins" for text:
+  </p>
+  <table>
+    <thead>
+    <tr>
+      <th>Example Code</th>
+      <th>Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &lt;link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|Poppins"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .pair-five-heading { font-family: 'Abril Fatface', serif; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .pair-five-paragraph { font-family: Poppins, sans-serif; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;/style&gt; <br>
+        &lt;/head&gt; <br>
+        &lt;body&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 class="pair-five-heading"&gt; Beautiful Bangladesh&lt;/h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="pair-five-paragraph"&gt; <br>
+        Bangladesh contains greater biodiversity than that of many countries taken together. Indeed, few countries in the world can match its rich and varied flora and fauna which are not only a unique biological phenomenon but are also a great natural resource of the country.<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt; <br>
+        &lt;/body&gt; <br>
+        &lt;/html&gt; <br>
+
+      </td>
+      <td>
+        <div>
+          <h3 class="pair-five-heading">Beautiful Bangladesh</h3>
+          <p class="pair-five-paragraph">
+            Bangladesh contains greater biodiversity than that of many countries taken together. Indeed, few countries in the world can match its rich and varied flora and fauna which are not only a unique biological phenomenon but are also a great natural resource of the country.
+          </p>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <p><strong><i>Note: </i></strong>Use the Example Code in Separate File to Get/See the Font Style/Impact</p>
+</section>
+
+<section class="content">
+  <h3>Abril Fatface and Poppins</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Abril Fatface and Poppins is another classic combination that uses web safe fonts. <br>
+    Here we are using the "Abril Fatface" font for headings, and "Poppins" for text:
+  </p>
+  <table>
+    <thead>
+    <tr>
+      <th>Example Code</th>
+      <th>Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &lt;link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|Poppins"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .pair-five-heading { font-family: 'Abril Fatface', serif; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .pair-five-paragraph { font-family: Poppins, sans-serif; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;/style&gt; <br>
+        &lt;/head&gt; <br>
+        &lt;body&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;h3 class="pair-five-heading"&gt; Beautiful Bangladesh&lt;/h3&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="pair-five-paragraph"&gt; <br>
+        Bangladesh contains greater biodiversity than that of many countries taken together. Indeed, few countries in the world can match its rich and varied flora and fauna which are not only a unique biological phenomenon but are also a great natural resource of the country.<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt; <br>
+        &lt;/body&gt; <br>
+        &lt;/html&gt; <br>
+
+      </td>
+      <td>
+        <div>
+          <h3 class="pair-five-heading">Beautiful Bangladesh</h3>
+          <p class="pair-five-paragraph">
+            Bangladesh contains greater biodiversity than that of many countries taken together. Indeed, few countries in the world can match its rich and varied flora and fauna which are not only a unique biological phenomenon but are also a great natural resource of the country.
+          </p>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <p><strong><i>Note: </i></strong>Use the Example Code in Separate File to Get/See the Font Style/Impact</p>
+</section>
+<br>
 <!--Main Section End-->
 
 <!--External JavaScript Library Inclusion Start-->
