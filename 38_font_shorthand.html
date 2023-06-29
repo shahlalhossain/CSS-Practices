@@ -34,8 +34,9 @@
   <!--Internal JavaScript Library Inclusion End-->
 
   <!--Page Specific Custom CSS Start-->
-  <style type="text/css">
-
+  <style>
+    p.a { font: 20px Arial, sans-serif; }
+    p.b { font: italic small-caps bold 12px/30px Georgia, serif; }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -705,18 +706,20 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>The CSS Font Property</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">font</span> property is a shorthand property for: <br>
   </p>
+  <ul style="padding-left: 30px;">
+    <li><span class="code">font-style</span></li>
+    <li><span class="code">font-variant</span></li>
+    <li><span class="code">font-weight</span></li>
+    <li><span class="code">font-size/line-height</span></li>
+    <li><span class="code">font-family</span></li>
+  </ul>
 
+  <p style="padding-top: 10px; padding-bottom: 10px;"><strong>Note:</strong> The <span class="code">font-size</span> and <span class="code">font-family</span> values are required. If one of the other values is missing, their default value are used.</p>
   <table>
     <thead>
     <tr>
@@ -726,14 +729,52 @@
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.a { font: 20px Arial, sans-serif; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.b { font: italic small-caps bold 12px/30px Georgia, serif; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="a"&gt;This is a paragraph. The font size is set to 20 pixels, and the font family is Arial.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="b"&gt;This is a paragraph. The font is set to italic, small-caps and bold, the font size is set to 12 pixels, the line height is set to 30 pixels, and the font family is Georgia.&lt;&sol;p&gt; <br>
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+
+      </td>
+      <td>
+        <p class="a">This is a paragraph. The font size is set to 20 pixels, and the font family is Arial.</p>
+        <p class="b">This is a paragraph. The font is set to italic, small-caps and bold, the font size is set to 12 pixels, the line height is set to 30 pixels, and the font family is Georgia.</p>
+      </td>
     </tr>
     </tbody>
   </table>
-
-  <p><strong><i>Note: </i></strong>xxxxx</p>
 </section>
+
+<section class="content">
+  <h3>All CSS Font Properties</h3>
+  <hr><br>
+  <table>
+    <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr><td>font</td><td>Sets all the font properties in one declaration</td></tr>
+    <tr><td>font-family</td><td>Specifies the font family for text</td></tr>
+    <tr><td>font-size</td><td> 	Specifies the font size of text</td></tr>
+    <tr><td>font-style</td><td>Specifies the font style for text</td></tr>
+    <tr><td>font-variant</td><td>Specifies whether or not a text should be displayed in a small-caps font</td></tr>
+    <tr><td>font-weight</td><td>Specifies the weight of a font</td></tr>
+    </tbody>
+  </table>
+</section>
+<br>
 <!--Main Section End-->
 
 <!--External JavaScript Library Inclusion Start-->
