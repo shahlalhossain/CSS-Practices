@@ -26,7 +26,13 @@
   <!--Internal CSS Library Inclusion End-->
 
   <!--External JavaScript Library Inclusion Start-->
-  <!--<script type="text/javascript" rel="script" src="#"></script>-->
+  <!--<script type="text/javascript" rel="script" src="#" crossorigin="anonymous"></script>-->
+  <!-- Fontawesome Icon CSS -->
+  <script src="https://kit.fontawesome.com/772ca826a4.js" crossorigin="anonymous"></script>
+  <!-- Bootstrap Icon CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <!-- Google Icon CSS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <!--External JavaScript Library Inclusion End-->
 
   <!--Internal JavaScript Library Inclusion Start-->
@@ -34,7 +40,7 @@
   <!--Internal JavaScript Library Inclusion End-->
 
   <!--Page Specific Custom CSS Start-->
-  <style type="text/css">
+  <style>
 
   </style>
   <!--Page Specific Custom CSS End-->
@@ -705,16 +711,32 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS Icons</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Icons can easily be added to your HTML page, by using an icon library.
+  </p>
+
+  <h4>How To Add Icons</h4>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The simplest way to add an icon to your HTML page, is with an icon library, such as Font Awesome. <br>
+    Add the name of the specified icon class to any inline HTML element (like <span class="code">&lt;i&gt;</span> or <span class="code">&lt;span&gt;</span>). <br>
+    All the icons in the icon libraries below, are scalable vectors that can be customized with CSS (size, color, shadow, etc.)
+  </p>
+</section>
+
+<section class="content">
+  <h3>Font Awesome Icons</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    To use the Font Awesome icons, go to fontawesome.com, sign in, and get a code to add in the <span class="code">&lt;head&gt;</span> section of your HTML page:
+  </p>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    <span class="code">&lt;script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"&gt;&lt;&sol;script&gt;</span>
+  </p>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    <strong><i>Note: </i></strong>No downloading or installation is required.
   </p>
 
   <table>
@@ -726,14 +748,257 @@
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;title&gt;Font Awesome Icons&lt;&sol;title&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"&gt;&lt;&sol;script&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br> <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Some Font Awesome icons:&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="fas fa-cloud"&gt;&lt;&sol;i&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="fas fa-heart"&gt;&lt;&sol;i&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="fas fa-car"&gt;&lt;&sol;i&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="fas fa-file"&gt;&lt;&sol;i&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="fas fa-bars"&gt;&lt;&sol;i&gt; <br> <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Styled Font Awesome icons (size and color):&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="fas fa-heart" style="font-size:24px;"&gt;&lt;&sol;i&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="fas fa-heart" style="font-size:36px;"&gt;&lt;&sol;i&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="fas fa-heart" style="font-size:48px;color:red;"&gt;&lt;&sol;i&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="fas fa-heart" style="font-size:60px;color:lightblue;"&gt;&lt;&sol;i&gt; <br> <br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+
+      </td>
+      <td>
+
+        <h4>Font Awesome Icon Library</h4>
+        <br><br>
+
+        <p>Some Font Awesome Icons:</p>
+        <i class="fas fa-home" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
+        <i class="fas fa-cloud" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
+        <i class="fas fa-heart" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
+        <i class="fas fa-car" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
+        <i class="fas fa-file" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
+        <i class="fas fa-bars" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
+        <i class="fas fa-star" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
+        <i class="fas fa-hand" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
+        <i class="fas fa-globe" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
+        <i class="fas fa-database" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
+        <i class="fas fa-link" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
+        <i class="fas fa-address-card" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
+        <i class="fas fa-signal" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
+        <br><br><br>
+
+        <p>Styled Font Awesome Icons (with Size and Color):</p>
+        <i class="fas fa-heart" style="font-size:24px;color:black; border: 1px solid grey; padding: 5px; border-radius: 5px;"></i>
+        <i class="fas fa-heart" style="font-size:36px;color:green; border: 1px solid grey; padding: 5px; border-radius: 5px;"></i>
+        <i class="fas fa-heart" style="font-size:48px;color:red; border: 1px solid grey; padding: 5px; border-radius: 5px;"></i>
+        <i class="fas fa-heart" style="font-size:60px;color:lightblue; border: 1px solid grey; padding: 5px; border-radius: 5px;"></i>
+        <i class="fas fa-heart" style="font-size:72px;color:blue; border: 1px solid grey; padding: 5px; border-radius: 5px;"></i>
+
+      </td>
     </tr>
     </tbody>
   </table>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+  <p><strong><i>Note: </i></strong>For the Complete Reference of all Font Awesome Icons, visit our <a href="fontawesome.html">Font Awesome Icon Reference</a>.</p>
+
 </section>
+
+<section class="content">
+  <h3>Bootstrap Icons</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    To use the Bootstrap glyphicons, go to fontawesome.com, sign in, and get a code to add in the <span class="code">&lt;head&gt;</span> section of your HTML page:
+  </p>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    <span class="code">&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"&gt;</span>
+  </p>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    <strong><i>Note: </i></strong>No downloading or installation is required.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th>Example Code</th>
+      <th>Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;title&gt;Bootstrap Icons&lt;/title&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"&gt; <br>
+        &lt;/head&gt; <br>
+        &lt;body class="container"&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h4&gt;Bootstrap Icon Library&lt;/h4&gt; <br><br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Some Bootstrap Icons:&lt;/p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="bi bi-house"&gt;&lt;/i&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="bi bi-person-lines-fill"&gt;&lt;/i&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="bi bi-speedometer"&gt;&lt;/i&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="bi bi-cloud"&gt;&lt;/i&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="bi bi-border-all"&gt;&lt;/i&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="bi bi-bounding-box"&gt;&lt;/i&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="bi bi-chat-right-dots"&gt;&lt;/i&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="bi bi-check2-square"&gt;&lt;/i&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="bi bi-code-square"&gt;&lt;/i&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="bi bi-gear-fill"&gt;&lt;/i&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="bi bi-grid-3x3-gap"&gt;&lt;/i&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="bi bi-reception-4"&gt;&lt;/i&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="bi bi-trash3"&gt;&lt;/i&gt; <br> <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Styled Bootstrap Icons (with Size and Color):&lt;/p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="bi bi-suit-heart-fill"&gt;&lt;/i&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="bi bi-suit-heart-fill" style="font-size:24px; color: green;"&gt;&lt;/i&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="bi bi-suit-heart-fill" style="font-size:36px; color: red;"&gt;&lt;/i&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="bi bi-suit-heart-fill" style="font-size:48px; color: lightblue;"&gt;&lt;/i&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="bi bi-suit-heart-fill" style="font-size:60px; color: blue;"&gt;&lt;/i&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="bi bi-suit-heart-fill" style="font-size:72px; color: deeppink;"&gt;&lt;/i&gt; <br> <br>
+
+        &lt;/body&gt; <br>
+        &lt;/html&gt;
+
+      </td>
+      <td>
+
+        <h4>Bootstrap Icon Library</h4>
+        <br><br>
+        <p>Some Bootstrap Icons:</p> <br>
+        <i class="bi bi-house" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
+        <i class="bi bi-person-lines-fill" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
+        <i class="bi bi-speedometer" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
+        <i class="bi bi-cloud" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
+        <i class="bi bi-border-all" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
+        <i class="bi bi-bounding-box" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
+        <i class="bi bi-chat-right-dots" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
+        <i class="bi bi-check2-square" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
+        <i class="bi bi-code-square" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
+        <i class="bi bi-gear-fill" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
+        <i class="bi bi-grid-3x3-gap" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
+        <i class="bi bi-reception-4" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
+        <i class="bi bi-trash3" style="border: 1px solid grey; padding: 5px; border-radius: 2px;"></i>
+        <br><br>
+
+        <p>Styled Bootstrap Icons (with Size and Color):</p>
+        <br>
+        <i class="bi bi-suit-heart-fill" style="border: 1px solid grey; padding: 5px; border-radius: 5px;"></i>
+        <i class="bi bi-suit-heart-fill" style="font-size:24px; color: green; border: 1px solid grey; padding: 5px; border-radius: 5px;"></i>
+        <i class="bi bi-suit-heart-fill" style="font-size:36px; color: red; border: 1px solid grey; padding: 5px; border-radius: 5px;"></i>
+        <i class="bi bi-suit-heart-fill" style="font-size:48px; color: lightblue; border: 1px solid grey; padding: 5px; border-radius: 5px;"></i>
+        <i class="bi bi-suit-heart-fill" style="font-size:60px; color: blue; border: 1px solid grey; padding: 5px; border-radius: 5px;"></i>
+        <i class="bi bi-suit-heart-fill" style="font-size:72px; color: deeppink; border: 1px solid grey; padding: 5px; border-radius: 5px;"></i>
+
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p><strong><i>Note: </i></strong>For the Complete Reference of all Bootstrap Icons, visit our <a href="bootstrap_icons.html">Bootstrap Icon Reference</a>.</p>
+</section>
+
+<section class="content">
+  <h3>Google Icons</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    To use the Bootstrap glyphicons, go to fontawesome.com, sign in, and get a code to add in the <span class="code">&lt;head&gt;</span> section of your HTML page:
+  </p>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    <span class="code">&lt;link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"&gt;</span>
+  </p>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    <strong><i>Note: </i></strong>No downloading or installation is required.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th>Example Code</th>
+      <th>Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;title&gt;Google Icons&lt;/title&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"&gt; <br>
+        &lt;/head&gt; <br>
+        &lt;body&gt; <br> <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3&gt;Google icon library&lt;/h3&gt; <br> <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Some Google icons:&lt;/p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="material-icons"&gt;cloud&lt;/i&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="material-icons"&gt;favorite&lt;/i&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="material-icons"&gt;attachment&lt;/i&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="material-icons"&gt;computer&lt;/i&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="material-icons"&gt;traffic&lt;/i&gt; <br> <br>
+
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Styled Google icons (size and color):&lt;/p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="material-icons" style="font-size:24px;"&gt;cloud&lt;/i&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="material-icons" style="font-size:36px;"&gt;cloud&lt;/i&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="material-icons" style="font-size:48px;color:red;"&gt;cloud&lt;/i&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;i class="material-icons" style="font-size:60px;color:lightblue;"&gt;cloud&lt;/i&gt; <br> <br>
+
+        &lt;/body&gt; <br>
+        &lt;/html&gt;
+
+      </td>
+      <td>
+
+        <h3>Google Icon Library</h3>
+
+        <p>Some Google Icons:</p>
+        <i class="material-icons" style="border: 1px solid grey; padding: 5px; border-radius: 2px;">home</i>
+        <i class="material-icons" style="border: 1px solid grey; padding: 5px; border-radius: 2px;">apps</i>
+        <i class="material-icons" style="border: 1px solid grey; padding: 5px; border-radius: 2px;">brightness_5</i>
+        <i class="material-icons" style="border: 1px solid grey; padding: 5px; border-radius: 2px;">chat</i>
+        <i class="material-icons" style="border: 1px solid grey; padding: 5px; border-radius: 2px;">cast</i>
+        <i class="material-icons" style="border: 1px solid grey; padding: 5px; border-radius: 2px;">filter_vintage</i>
+        <i class="material-icons" style="border: 1px solid grey; padding: 5px; border-radius: 2px;">cloud</i>
+        <i class="material-icons" style="border: 1px solid grey; padding: 5px; border-radius: 2px;">favorite</i>
+        <i class="material-icons" style="border: 1px solid grey; padding: 5px; border-radius: 2px;">attachment</i>
+        <i class="material-icons" style="border: 1px solid grey; padding: 5px; border-radius: 2px;">computer</i>
+        <i class="material-icons" style="border: 1px solid grey; padding: 5px; border-radius: 2px;">traffic</i>
+        <br><br>
+
+        <p>Styled Google Ions (with Size and Color):</p>
+        <i class="material-icons" style="font-size:24px; color: black; border: 1px solid grey; padding: 5px; border-radius: 5px;">cloud</i>
+        <i class="material-icons" style="font-size:36px; color: green; border: 1px solid grey; padding: 5px; border-radius: 5px;">cloud</i>
+        <i class="material-icons" style="font-size:48px; color:red; border: 1px solid grey; padding: 5px; border-radius: 5px;">cloud</i>
+        <i class="material-icons" style="font-size:60px; color:lightblue; border: 1px solid grey; padding: 5px; border-radius: 5px;">cloud</i>
+        <i class="material-icons" style="font-size:72px; color:pink; border: 1px solid grey; padding: 5px; border-radius: 5px;">cloud</i>
+
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p><strong><i>Note: </i></strong>For the Complete Reference of all Google Icons, visit our <a href="google_icons.html">Google Icon Reference</a>.</p>
+</section>
+<br>
+
 <!--Main Section End-->
 
 <!--External JavaScript Library Inclusion Start-->
