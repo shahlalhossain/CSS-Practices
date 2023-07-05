@@ -34,7 +34,52 @@
   <!--Internal JavaScript Library Inclusion End-->
 
   <!--Page Specific Custom CSS Start-->
-  <style type="text/css">
+  <style>
+    #normal_link a:link { color: red; } /* Unvisited Link */
+    #normal_link a:visited { color: green; } /* Visited Link */
+    #normal_link a:hover { color: hotpink; }  /* Mouse Over Link */
+    #normal_link a:active { color: blue; } /* Selected Link */
+
+    #text_decoration_link a:link { text-decoration: none; }
+    #text_decoration_link a:visited { text-decoration: none; }
+    #text_decoration_link a:hover { text-decoration: underline; }
+    #text_decoration_link a:active { text-decoration: underline; }
+
+    #background_color_link a:link { background-color: yellow; }
+    #background_color_link a:visited { background-color: cyan; }
+    #background_color_link a:hover { background-color: lightgreen; }
+    #background_color_link a:active { background-color: hotpink; }
+
+    #content a, #content a:link, #content a:visited {base style rules}
+    #content a:hover, #content a:visited:hover, #content a:active {over style rules}
+
+    #button_link_1 a, #button_link_1 a:link, #button_link_1 a:visited {
+      background-color: #f44336;
+      color: white;
+      padding: 14px 25px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    #button_link_1 a:hover, #button_link_1 a:active {
+      background-color: red;
+    }
+
+    #button_link_2 a, #button_link_2 a:link, #button_link_2 a:visited {
+      background-color: white;
+      color: black;
+      border: 2px solid green;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    #button_link_2 a:hover, #button_link_2 a:active {
+      background-color: green;
+      color: white;
+    }
 
   </style>
   <!--Page Specific Custom CSS End-->
@@ -705,16 +750,89 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS Links</h3>
   <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    With CSS, links can be styled in many different ways.
+  </p>
+
+  <h3>Styling Links</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Links can be styled with any CSS property (e.g.  <span class="code">color</span>, <span class="code">font-family</span>, <span class="code">background</span>, etc.).
+  </p>
+
   <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+    In addition, links can be styled differently depending on what state they are in. <br>
+    The four links states are:
+  </p>
+  <ul style="padding-left: 30px;">
+    <li><span class="code">a:link</span> - a normal, unvisited link</li>
+    <li><span class="code">a:visited</span> - a link the user has visited</li>
+    <li><span class="code">a:hover</span> - a link when the user mouses over it</li>
+    <li><span class="code">a:active</span> - a link the moment it is clicked</li>
+  </ul>
+
+  <table>
+    <thead>
+    <tr>
+      <th>Example Code</th>
+      <th>Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a:link { color: red; } /* Unvisited Link */ <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a:visited { color: green; } /* Visited Link */ <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a:hover { color: hotpink; }  /* Mouse Over Link */ <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a:active { color: blue; } /* Selected Link */ <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;/style&gt; <br>
+        &lt;/head&gt; <br>
+        &lt;body&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3&gt;Styling a Link Depending on State&lt;/h3&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;&lt;b&gt;&lt;a href="https://google.com" target="_blank"&gt;This is a link&lt;/a&gt;&lt;/b&gt;&lt;/p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;&lt;b&gt;Note:&lt;/b&gt; a:hover MUST come after a:link and a:visited in the CSS definition in order to be effective.&lt;/p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;&lt;b&gt;Note:&lt;/b&gt; a:active MUST come after a:hover in the CSS definition in order to be effective.&lt;/p&gt; <br>
+
+        &lt;/body&gt; <br>
+        &lt;/html&gt;
+
+      </td>
+      <td>
+        <h3>Styling a Link Depending on State</h3>
+
+        <div id="normal_link">
+          <p><b><a href="https://google.com" target="_blank">This is a link</a></b></p>
+        </div>
+
+        <p><b>Note:</b> a:hover MUST come after a:link and a:visited in the CSS definition in order to be effective.</p>
+        <p><b>Note:</b> a:active MUST come after a:hover in the CSS definition in order to be effective.</p>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p>
+    <strong><i>Note: </i></strong>When setting the style for several link states, there are some order rules:
+  </p>
+  <ul style="padding-left: 30px;">
+    <li>a:hover MUST come after a:link and a:visited</li>
+    <li>a:active MUST come after a:hover</li>
+  </ul>
+</section>
+
+<section class="content">
+  <h3>Text Decoration</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">text-decoration</span> property is mostly used to remove underlines from links:
   </p>
 
   <table>
@@ -726,14 +844,159 @@
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a:link { text-decoration: none; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a:visited { text-decoration: none; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a:hover { text-decoration: underline; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a:active { text-decoration: underline; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;/style&gt; <br>
+        &lt;/head&gt; <br>
+        &lt;body&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3&gt;Styling a Link with text-decoration Property&lt;/h3&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;&lt;b&gt;&lt;a href="https://google.com" target="_blank"&gt;This is a link&lt;/a&gt;&lt;/b&gt;&lt;/p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;&lt;b&gt;Note:&lt;/b&gt; a:hover MUST come after a:link and a:visited in the CSS definition in order to be effective.&lt;/p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;&lt;b&gt;Note:&lt;/b&gt; a:active MUST come after a:hover in the CSS definition in order to be effective.&lt;/p&gt; <br>
+
+        &lt;/body&gt; <br>
+        &lt;/html&gt;
+
+      </td>
+      <td>
+        <h3>Styling a Link with text-decoration Property</h3>
+
+        <div id="text_decoration_link">
+          <p><b><a href="https://google.com" target="_blank">This is a link</a></b></p>
+        </div>
+        <p><b>Note:</b> a:hover MUST come after a:link and a:visited in the CSS definition in order to be effective.</p>
+        <p><b>Note:</b> a:active MUST come after a:hover in the CSS definition in order to be effective.</p>
+      </td>
     </tr>
     </tbody>
   </table>
-
-  <p><strong><i>Note: </i></strong>xxxxx</p>
 </section>
+
+<section class="content">
+  <h3>Background Color</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">background-color</span> property can be used to specify a background color for links:
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th>Example Code</th>
+      <th>Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a:link { background-color: yellow; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a:visited { background-color: cyan; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a:hover { background-color: lightgreen; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a:active { background-color: hotpink; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;/style&gt; <br>
+        &lt;/head&gt; <br>
+        &lt;body&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3&gt;Styling a Link with background-color Property&lt;/h3&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;&lt;b&gt;&lt;a href="https://google.com" target="_blank"&gt;This is a link&lt;/a&gt;&lt;/b&gt;&lt;/p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;&lt;b&gt;Note:&lt;/b&gt; a:hover MUST come after a:link and a:visited in the CSS definition in order to be effective.&lt;/p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;&lt;b&gt;Note:&lt;/b&gt; a:active MUST come after a:hover in the CSS definition in order to be effective.&lt;/p&gt; <br>
+
+        &lt;/body&gt; <br>
+        &lt;/html&gt;
+
+      </td>
+      <td>
+        <h3>Styling a Link with background-color Property</h3>
+
+        <div id="background_color_link">
+          <p><b><a href="https://google.com" target="_blank">This is a link</a></b></p>
+        </div>
+        <p><b>Note:</b> a:hover MUST come after a:link and a:visited in the CSS definition in order to be effective.</p>
+        <p><b>Note:</b> a:active MUST come after a:hover in the CSS definition in order to be effective.</p>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content">
+  <h3>Text Decoration</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">text-decoration</span> property is mostly used to remove underlines from links:
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th>Example Code</th>
+      <th>Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a:link, a:visited { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: #f44336; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: white; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 14px 25px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; text-align: center; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; text-decoration: none; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: inline-block; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a:hover, a:active { background-color: red; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;/style&gt; <br>
+        &lt;/head&gt; <br>
+        &lt;body&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3&gt;Link Button&lt;/h3&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;A Link Styled as a Button:&lt;/p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;a href="https://google.com" target="_blank">This is a Button Link&lt;/a&gt; <br>
+
+        &lt;/body&gt; <br>
+        &lt;/html&gt;
+
+      </td>
+      <td>
+        <h3>Styling Button as a Link</h3>
+
+        <p>A link Styled as a Button:</p> <br>
+
+        <div id="button_link_1">
+          <a href="https://google.com" target="_blank">Button Link - Example 1</a>
+        </div>
+        <br>
+
+        <div id="button_link_2">
+          <a href="https://google.com" target="_blank">Button Link - Example 2</a>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<br>
 <!--Main Section End-->
 
 <!--External JavaScript Library Inclusion Start-->
