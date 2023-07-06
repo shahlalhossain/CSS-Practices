@@ -34,7 +34,21 @@
   <!--Internal JavaScript Library Inclusion End-->
 
   <!--Page Specific Custom CSS Start-->
-  <style type="text/css">
+  <style>
+    #list_example_one ul.a { list-style-type: circle; }
+    #list_example_one ul.b { list-style-type: square; }
+    #list_example_one ol.c { list-style-type: upper-roman; }
+    #list_example_one ol.d { list-style-type: lower-alpha; }
+
+    /*#list_example_two ul.b { background: #3399ff; padding: 20px; }*/
+    /*#list_example_two ol.a { background: #ff9999; padding: 20px; }*/
+    /*#list_example_two ol li { background: #ffe5e5; color: darkred; padding: 5px; margin-left: 35px; }*/
+    /*#list_example_two ul li { background: #cce5ff; color: darkblue; margin: 5px; }*/
+
+    #list_example_two ul { background: #3399ff; padding: 20px; }
+    #list_example_two ul li { background: #cce5ff; color: darkblue; margin: 5px; }
+    #list_example_two ol { background: #ff9999; padding: 20px; }
+    #list_example_two ol li { background: #ffe5e5; color: darkred; padding: 5px; margin-left: 35px; }
 
   </style>
   <!--Page Specific Custom CSS End-->
@@ -705,16 +719,30 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS Lists - HTML Lists and CSS List Properties</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">In HTML, there are two main types of lists:</p>
+  <ul style="padding-left: 30px;">
+    <li>unordered lists (&lt;ul&gt;) - the list items are marked with bullets</li>
+    <li>ordered lists (&lt;ol&gt;) - the list items are marked with numbers or letters</li>
+  </ul>
+
+  <p style="padding-top: 10px; padding-bottom: 10px;">The CSS list properties allow you to:</p>
+  <ul style="padding-left: 30px;">
+    <li>Set different list item markers for ordered lists</li>
+    <li>Set different list item markers for unordered lists</li>
+    <li>Set an image as the list item marker</li>
+    <li>Add background colors to lists and list items</li>
+  </ul>
+
+</section>
+
+<section class="content">
+  <h3>Different List Item Markers</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The list-style-type property specifies the type of list item marker.<br>
+    The following example shows some of the available list item markers:
   </p>
 
   <table>
@@ -726,14 +754,185 @@
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ul.a { list-style-type: circle; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ul.b { list-style-type: square; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ol.c { list-style-type: upper-roman; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ol.d { list-style-type: lower-alpha; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;/style&gt; <br>
+        &lt;/head&gt; <br>
+        &lt;body&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h3&gt;The list-style-type Property&lt;/h3&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Example of Unordered Lists:&lt;/p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;ul class="a"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;Mango&lt;/li&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;Jackfruit&lt;/li&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;Litchi&lt;/li&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;Banana&lt;/li&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;Starfruit&lt;/li&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;/ul&gt; <br> <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;ul class="b"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;Mango&lt;/li&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;Jackfruit&lt;/li&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;Litchi&lt;/li&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;Banana&lt;/li&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;Starfruit&lt;/li&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;/ul&gt; <br> <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Example of Ordered Lists:&lt;/p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;ol class="c"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;Mango&lt;/li&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;Jackfruit&lt;/li&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;Litchi&lt;/li&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;Banana&lt;/li&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;Starfruit&lt;/li&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;/ol&gt; <br> <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;ol class="d"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;Mango&lt;/li&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;Jackfruit&lt;/li&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;Litchi&lt;/li&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;Banana&lt;/li&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;Starfruit&lt;/li&gt; <br>
+        &lt;/ol&gt; <br> <br>
+
+        &lt;/body&gt; <br>
+        &lt;/html&gt;
+
+      </td>
+      <td id="list_example_one">
+        <h3>The list-style-type Property</h3>
+        <br>
+        <p>Example of Unordered Lists:</p>
+        <ul class="a" style="padding-left: 30px;">
+          <li>Mango</li>
+          <li>Jackfruit</li>
+          <li>Litchi</li>
+          <li>Banana</li>
+          <li>Starfruit</li>
+        </ul>
+        <br>
+        <ul class="b" style="padding-left: 30px;">
+          <li>Mango</li>
+          <li>Jackfruit</li>
+          <li>Litchi</li>
+          <li>Banana</li>
+          <li>Starfruit</li>
+        </ul>
+        <br>
+        <p>Example of Ordered Lists:</p>
+        <ol class="c" style="padding-left: 30px;">
+          <li>Mango</li>
+          <li>Jackfruit</li>
+          <li>Litchi</li>
+          <li>Banana</li>
+          <li>Starfruit</li>
+        </ol>
+        <br>
+        <ol class="d" style="padding-left: 30px;">
+          <li>Mango</li>
+          <li>Jackfruit</li>
+          <li>Litchi</li>
+          <li>Banana</li>
+          <li>Starfruit</li>
+        </ol>
+      </td>
     </tr>
     </tbody>
   </table>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+  <p><strong><i>Note: </i></strong>Some of the values are for unordered lists, and some for ordered lists.</p>
 </section>
+
+<section class="content">
+  <h3>Styling List With Colors</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    We can also style lists with colors, to make them look a little more interesting.<br>
+    Anything added to the &lt;ol&gt; or &lt;ul&gt; tag, affects the entire list, while properties added to the &lt;li&gt; tag will affect the individual list items:
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th>Example Code</th>
+      <th>Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ol { background: #ff9999; padding: 20px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ul { background: #3399ff; padding: 20px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ol li { background: #ffe5e5; color: darkred; padding: 5px; margin-left: 35px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ul li { background: #cce5ff; color: darkblue; margin: 5px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;/style&gt; <br>
+        &lt;/head&gt; <br>
+        &lt;body&gt; <br>
+
+        &lt;h3&gt;Styling Lists With Colors&lt;/h3&gt; <br>
+
+        &lt;p&gt;Example of Unordered Lists:&lt;/p&gt; <br>
+        &lt;ul&gt; <br>
+          &nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;Mango&lt;/li&gt; <br>
+          &nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;Jackfruit&lt;/li&gt; <br>
+          &nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;Litchi&lt;/li&gt; <br>
+          &nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;Banana&lt;/li&gt; <br>
+          &nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;Starfruit&lt;/li&gt; <br>
+        &lt;/ul&gt; <br>
+
+        &lt;p&gt;Example of Ordered Lists:&lt;/p&gt; <br>
+        &lt;ol&gt; <br>
+          &nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;Mango&lt;/li&gt; <br>
+          &nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;Jackfruit&lt;/li&gt; <br>
+          &nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;Litchi&lt;/li&gt; <br>
+          &nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;Banana&lt;/li&gt; <br>
+          &nbsp;&nbsp;&nbsp;&nbsp; &lt;li&gt;Starfruit&lt;/li&gt; <br>
+        &lt;/ol&gt; <br>
+
+        &lt;/body&gt; <br>
+        &lt;/html&gt;
+
+      </td>
+      <td id="list_example_two">
+        <h3>Styling Lists With Colors</h3>
+        <br>
+        <p>Example of Unordered Lists:</p>
+        <ul style="padding-left: 30px;">
+          <li>Mango</li>
+          <li>Jackfruit</li>
+          <li>Litchi</li>
+          <li>Banana</li>
+          <li>Starfruit</li>
+        </ul>
+        <br>
+        <p>Example of Ordered Lists:</p>
+        <ol style="padding-left: 30px;">
+          <li>Mango</li>
+          <li>Jackfruit</li>
+          <li>Litchi</li>
+          <li>Banana</li>
+          <li>Starfruit</li>
+        </ol>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+<br>
 <!--Main Section End-->
 
 <!--External JavaScript Library Inclusion Start-->
