@@ -34,7 +34,52 @@
   <!--Internal JavaScript Library Inclusion End-->
 
   <!--Page Specific Custom CSS Start-->
-  <style type="text/css">
+  <style>
+    #customers {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    #customers td, #customers th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+
+    #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+    #customers tr:hover {background-color: #ddd;}
+
+    #customers th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #04AA6D;
+      color: white;
+    }
+
+    .section_content {
+      overflow:auto;
+    }
+
+    .col_left {
+      width: 30%;
+      float:left;
+      border: 1px solid;
+      border-radius: 5px;
+      padding: 10px;
+    }
+
+    .col_right {
+      width: 70%;
+      float:right;
+      padding-left: 10px;
+    }
+
+    #bordered_table th, td { border: 1px solid; }
+
+    #full_width_table th, td { border: 1px solid; }
+    #full_width_table { width: 100%; }
 
   </style>
   <!--Page Specific Custom CSS End-->
@@ -705,35 +750,91 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS Tables</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The look of an HTML table can be greatly improved with CSS:
   </p>
 
-  <table>
-    <thead>
-    <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
-    </tr>
-    </tbody>
+  <table id="customers">
+    <tr><th>SN</th><th>Software Firm</th><th>Contact Number</th><th>Est. Year</th><th>Employees</th><th>City</th></tr>
+    <tr><td>1</td><td>BJIT Ltd.</td><td>+8801711123456</td><td>1998</td><td>1250</td><td>Dhaka</td></tr>
+    <tr><td>2</td><td>Brain Station 23</td><td>+8801712234567</td><td>1998</td><td>1250</td><td>Chattogram</td></tr>
+    <tr><td>3</td><td>DataSoft Systems Ltd.</td><td>+8801713345678</td><td>1998</td><td>1250</td><td>Khulna</td></tr>
+    <tr><td>4</td><td>Tiger IT Bangladesh Ltd.</td><td>+8801714456789</td><td>1998</td><td>1250</td><td>Rajshahi</td></tr>
+    <tr><td>5</td><td>LeadSoft Bangladesh Ltd.</td><td>+8801715567890</td><td>1998</td><td>1250</td><td>Sylhet</td></tr>
+    <tr><td>6</td><td>Grameenphone IT Ltd.</td><td>+8801716678901</td><td>1998</td><td>1250</td><td>Barishal</td></tr>
+    <tr><td>7</td><td>Enosis Solutions</td><td>+8801717789012</td><td>1998</td><td>1250</td><td>Rangpur</td></tr>
+    <tr><td>8</td><td>Southtech Limited</td><td>+8801718890123</td><td>1998</td><td>1250</td><td>Comilla</td></tr>
+    <tr><td>9</td><td>REVE Systems</td><td>+8801719901234</td><td>1998</td><td>1250</td><td>Narayanganj</td></tr>
+    <tr><td>10</td><td>Synesis IT Ltd.</td><td>+8801720012345</td><td>1998</td><td>1250</td><td>Gazipur</td></tr>
+    <tr><td>11</td><td>Kaz Software</td><td>+8801721123456</td><td>1998</td><td>1250</td><td>Mymensingh</td></tr>
+    <tr><td>12</td><td>Systech Digital Limited</td><td>+8801722234567</td><td>1998</td><td>1250</td><td>Jessore</td></tr>
+    <tr><td>13</td><td>BRAC IT Services Ltd.</td><td>+8801723345678</td><td>1998</td><td>1250</td><td>Bogura</td></tr>
+    <tr><td>14</td><td>Workspace Infotech Ltd.</td><td>+8801724456789</td><td>1998</td><td>1250</td><td>Pabna</td></tr>
+    <tr><td>15</td><td>Dynamic Solution Innovators</td><td>+8801725567890</td><td>1998</td><td>1250</td><td>Cox’s Bazar</td></tr>
+    <tr><td>16</td><td>SELISE Digital Platforms</td><td>+8801726678901</td><td>1998</td><td>1250</td><td>Feni</td></tr>
+    <tr><td>17</td><td>Bording Vista Ltd.</td><td>+8801727789012</td><td>1998</td><td>1250</td><td>Noakhali</td></tr>
+    <tr><td>18</td><td>Orbitax Bangladesh</td><td>+8801728890123</td><td>1998</td><td>1250</td><td>Natore</td></tr>
+    <tr><td>19</td><td>eGeneration Ltd.</td><td>+8801729901234</td><td>1998</td><td>1250</td><td>Sirajganj</td></tr>
+    <tr><td>20</td><td>Magnito Digital</td><td>+8801730012345</td><td>1998</td><td>1250</td><td>Tangail</td></tr>
   </table>
-
-  <p><strong><i>Note: </i></strong>xxxxx</p>
 </section>
+
+<section class="content">
+  <h3>CSS Table Borders</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    To specify table borders in CSS, use the <span class="code">border</span> property. <br>
+    The example below specifies a solid border for &lt;table&gt;, &lt;th&gt;, and &lt;td&gt; elements:
+  </p>
+
+  <div class="section_content">
+    <div class="col_left">
+      &lt;style&gt; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; table, th, td { border: 1px solid; } <br>
+      &lt;/style&gt;
+    </div>
+
+    <div class="col_right">
+      <table id="bordered_table">
+        <tr><th>Name</th><th>Mobile</th><th>Email</th><th>Age</th><th>Gender</th><th>City</th></tr>
+        <tr><td>Shahlal Hossain</td><td>+8801731479874</td><td>shahlal@gmail.com</td><td>34 Years</td><td>Male</td><td>Rajshahi</td></tr>
+        <tr><td>Kamal Hossain</td><td>+8801731479635</td><td>kamal@gmail.com</td><td>33 Years</td><td>Male</td><td>Khulna</td></tr>
+        <tr><td>Habiba Khan</td><td>+8801735639635</td><td>habiba@gmail.com</td><td>32 Years</td><td>Female</td><td>Dhaka</td></tr>
+      </table>
+    </div>
+  </div>
+
+</section>
+
+<section class="content">
+  <h3>CSS Full-Width Table</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The table above might seem small in some cases. If you need a table that should span the entire screen (full-width), add <span class="code">width: 100%</span> to the &lt;table&gt; element:
+  </p>
+
+  <div class="section_content">
+    <div class="col_left">
+      &lt;style&gt; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; table, th, td { border: 1px solid; } <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; table { width: 100%; } <br>
+      &lt;/style&gt;
+    </div>
+
+    <div class="col_right">
+      <table id="full_width_table">
+        <tr><th>Name</th><th>Age</th><th>Gender</th><th>City</th></tr>
+        <tr><td>Shahlal Hossain</td><td>34 Years</td><td>Male</td><td>Rajshahi</td></tr>
+        <tr><td>Kamal Hossain</td><td>33 Years</td><td>Male</td><td>Khulna</td></tr>
+        <tr><td>Habiba Khan</td><td>32 Years</td><td>Female</td><td>Dhaka</td></tr>
+      </table>
+    </div>
+  </div>
+
+</section>
+<br>
 <!--Main Section End-->
 
 <!--External JavaScript Library Inclusion Start-->
