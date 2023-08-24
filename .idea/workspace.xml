@@ -206,7 +206,6 @@
       <find>opacity</find>
       <find>Act</find>
       <find>59</find>
-      <find>active</find>
       <find>60</find>
       <find>61</find>
       <find>62</find>
@@ -219,6 +218,7 @@
       <find>70</find>
       <find>Text</find>
       <find>Brown</find>
+      <find>active</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
