@@ -15,20 +15,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/22_outline_width.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="92">
-              <caret line="714" column="52" selection-start-line="714" selection-start-column="52" selection-end-line="714" selection-end-column="52" />
+              <caret line="714" selection-start-line="714" selection-end-line="714" selection-end-column="53" />
               <folding>
                 <element signature="n#head#0;n#html#0;n#!!top" />
                 <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#nav#1;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#style#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#section#0;n#body#0;n#html#0;n#!!top" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/23_outline_color.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="716" column="53" selection-start-line="716" selection-start-column="53" selection-end-line="716" selection-end-column="53" />
+              <folding>
+                <element signature="n#head#0;n#html#0;n#!!top" />
+                <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#nav#1;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#style#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/24_outline_offset.html">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -82,7 +101,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/28_text_decoration.html" />
         <option value="$PROJECT_DIR$/28_text_transformation.html" />
         <option value="$PROJECT_DIR$/29_text_spacing.html" />
         <option value="$PROJECT_DIR$/31_css_font_family.html" />
@@ -133,10 +151,11 @@
         <option value="$PROJECT_DIR$/20_css_box_model.html" />
         <option value="$PROJECT_DIR$/21_css_outline.html" />
         <option value="$PROJECT_DIR$/22_outline_width.html" />
+        <option value="$PROJECT_DIR$/23_outline_color.html" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="62" />
     <option name="width" value="1858" />
     <option name="height" value="1080" />
@@ -232,12 +251,12 @@
       <workItem from="1698581945435" duration="1277000" />
       <workItem from="1699254639273" duration="23000" />
       <workItem from="1701011709779" duration="6880000" />
-      <workItem from="1701087954195" duration="5856000" />
+      <workItem from="1701087954195" duration="6301000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="206977000" />
+    <option name="totallyTimeSpent" value="207422000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -249,9 +268,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="62" y="0" width="1858" height="1080" extended-state="7" />
+    <frame x="62" y="0" width="1858" height="1080" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49891776" visible="true" weight="0.22461368" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49891776" visible="true" weight="0.22461368" />
       <window_info id="Favorites" order="1" sideWeight="0.50108224" side_tool="true" weight="0.185" />
       <window_info id="Structure" order="2" sideWeight="0.50108224" side_tool="true" weight="0.185" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
@@ -265,7 +285,7 @@
       <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.37182203" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.37182203" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -276,20 +296,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/35_font_size.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="280" column="28" selection-start-line="280" selection-start-column="28" selection-end-line="280" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/36_font_google.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="286" column="28" selection-start-line="286" selection-start-column="22" selection-end-line="286" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/37_font_pairings.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="259">
@@ -1022,16 +1028,31 @@
     <entry file="file://$PROJECT_DIR$/22_outline_width.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
-          <caret line="714" column="52" selection-start-line="714" selection-start-column="52" selection-end-line="714" selection-end-column="52" />
+          <caret line="714" selection-start-line="714" selection-end-line="714" selection-end-column="53" />
           <folding>
             <element signature="n#head#0;n#html#0;n#!!top" />
             <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#nav#1;n#body#0;n#html#0;n#!!top" />
             <element signature="n#style#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#section#0;n#body#0;n#html#0;n#!!top" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/23_outline_color.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="716" column="53" selection-start-line="716" selection-start-column="53" selection-end-line="716" selection-end-column="53" />
+          <folding>
+            <element signature="n#head#0;n#html#0;n#!!top" />
+            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#nav#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/24_outline_offset.html">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
