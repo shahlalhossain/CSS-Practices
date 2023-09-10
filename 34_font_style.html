@@ -34,8 +34,15 @@
   <!--Internal JavaScript Library Inclusion End-->
 
   <!--Page Specific Custom CSS Start-->
-  <style type="text/css">
+  <style>
+    p.normal { font-style: normal; }
+    p.italic { font-style: italic; }
+    p.oblique { font-style: oblique; }
 
+    p.normal { font-weight: normal; }
+    p.light { font-weight: lighter; }
+    p.thick { font-weight: bold;  }
+    p.thicker { font-weight: 900; }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -49,7 +56,9 @@
   </div>
 
   <div class="search_bar">
-    <input type="text" placeholder="Search" />
+    <label>
+      <input type="text" id="search_keywords" name="search_keywords" placeholder="Search" />
+    </label>
   </div>
 
   <div class="navbar_content">
@@ -705,35 +714,127 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS Font Style</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">font-style</span> property is mostly used to specify italic text.
   </p>
+  <p>This property has three values:</p>
+  <ul style="padding-left: 30px;">
+    <li>normal - The text is shown normally</li>
+    <li>italic - The text is shown in italics</li>
+    <li>oblique - The text is "leaning" (oblique is very similar to italic, but less supported)</li>
+  </ul>
+  <br><br>
 
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 40%">Example Code</th>
+      <th style="width: 60%">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td style="width: 40%">
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.normal { font-style: normal; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.italic { font-style: italic; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.oblique { font-style: oblique; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="normal"&gt;This is a paragraph in normal style.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="italic"&gt;This is a paragraph in italic style.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="oblique"&gt;This is a paragraph in oblique style.&lt;&sol;p&gt; <br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt; <br>
+
+      </td>
+      <td style="width: 60%">
+        <p class="normal">
+          This is a paragraph in normal style. <br>
+          CSS, or Cascading Style Sheets, offers a flexible way to style web content, with styles originating from browser defaults, user preferences, or web designers. These styles can be applied inline, within an HTML document, or through external .css files for broader consistency. Not only does this simplify web development by promoting reusability and maintainability, it also improves site performance because styles can be offloaded into dedicated .css files that browsers can cache.
+        </p> <br>
+        <p class="italic">
+          This is a paragraph in italic style. <br>
+          CSS, or Cascading Style Sheets, offers a flexible way to style web content, with styles originating from browser defaults, user preferences, or web designers. These styles can be applied inline, within an HTML document, or through external .css files for broader consistency. Not only does this simplify web development by promoting reusability and maintainability, it also improves site performance because styles can be offloaded into dedicated .css files that browsers can cache.
+        </p> <br>
+        <p class="oblique">
+          This is a paragraph in oblique style. <br>
+          CSS, or Cascading Style Sheets, offers a flexible way to style web content, with styles originating from browser defaults, user preferences, or web designers. These styles can be applied inline, within an HTML document, or through external .css files for broader consistency. Not only does this simplify web development by promoting reusability and maintainability, it also improves site performance because styles can be offloaded into dedicated .css files that browsers can cache.
+        </p>
+      </td>
     </tr>
     </tbody>
   </table>
-
-  <p><strong><i>Note: </i></strong>xxxxx</p>
 </section>
+
+<section class="content">
+  <h3>CSS Font Weight</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">font-weight</span> property specifies the weight of a font:
+  </p>
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 40%">Example Code</th>
+      <th style="width: 60%">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td style="width: 40%">
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.normal { font-weight: normal; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.light { font-weight: lighter; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.thick { font-weight: bold; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.thicker { font-weight: 900; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+
+        &lt;p class="normal"&gt;This is a paragraph.&lt;&sol;p&gt; <br>
+        &lt;p class="light"&gt;This is a paragraph.&lt;&sol;p&gt; <br>
+        &lt;p class="thick"&gt;This is a paragraph.&lt;&sol;p&gt; <br>
+        &lt;p class="thicker"&gt;This is a paragraph.&lt;&sol;p&gt; <br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt; <br>
+      </td>
+      <td style="width: 60%">
+        <p class="normal">
+          This is a paragraph with normal font weight. <br>
+          CSS, or Cascading Style Sheets, offers a flexible way to style web content, with styles originating from browser defaults, user preferences, or web designers. These styles can be applied inline, within an HTML document, or through external .css files for broader consistency. Not only does this simplify web development by promoting reusability and maintainability, it also improves site performance because styles can be offloaded into dedicated .css files that browsers can cache.
+        </p> <br>
+        <p class="light">
+          This is a paragraph with light font weight. <br>
+          CSS, or Cascading Style Sheets, offers a flexible way to style web content, with styles originating from browser defaults, user preferences, or web designers. These styles can be applied inline, within an HTML document, or through external .css files for broader consistency. Not only does this simplify web development by promoting reusability and maintainability, it also improves site performance because styles can be offloaded into dedicated .css files that browsers can cache.
+        </p> <br>
+        <p class="thick">
+          This is a paragraph with thick font weight.  <br>
+          CSS, or Cascading Style Sheets, offers a flexible way to style web content, with styles originating from browser defaults, user preferences, or web designers. These styles can be applied inline, within an HTML document, or through external .css files for broader consistency. Not only does this simplify web development by promoting reusability and maintainability, it also improves site performance because styles can be offloaded into dedicated .css files that browsers can cache.
+        </p> <br>
+        <p class="thicker">
+          This is a paragraph with thicker font weight.  <br>
+          CSS, or Cascading Style Sheets, offers a flexible way to style web content, with styles originating from browser defaults, user preferences, or web designers. These styles can be applied inline, within an HTML document, or through external .css files for broader consistency. Not only does this simplify web development by promoting reusability and maintainability, it also improves site performance because styles can be offloaded into dedicated .css files that browsers can cache.
+        </p>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<br>
 <!--Main Section End-->
 
 <!--External JavaScript Library Inclusion Start-->
