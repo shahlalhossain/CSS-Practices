@@ -36,6 +36,14 @@
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
 
+    p.shadow-normal { text-shadow: 2px 1px; }
+    p.color-shadow { text-shadow: 2px 1px green; }
+    p.color-shadow-blur { text-shadow: 2px 1px 5px green; }
+    p.color-shadow-text { color: white; text-shadow: 2px 1px 4px #000000; }
+    p.shadow-red-neon-glow { text-shadow: 0 0 3px #FF0000; }
+    p.shadow-red-blue-neon-glow { text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF; }
+    p.shadow-example-one { color: white; text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue; }
+
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -704,36 +712,138 @@
 <!--Page Header End-->
 
 <!--Main Section Start-->
-<section class="content">
-  <h3>SectionTitle</h3>
+<section class="content" style="margin-right: 10px;">
+  <h3>CSS Text Shadow</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">text-shadow</span> property adds shadow to text.
   </p>
-
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 65%;">Example Code</th>
+      <th style="width: 35%;">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td style="width: 65%;">
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.shadow-normal { text-shadow: 2px 1px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.color-shadow { text-shadow: 2px 1px green; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.color-shadow-blur { text-shadow: 2px 1px 5px green; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.color-shadow-text { color: white; text-shadow: 2px 1px 4px #000000; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.shadow-red-neon-glow { text-shadow: 0 0 3px #FF0000; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.shadow-red-blue-neon-glow { text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.shadow-example-one { color: white; text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+
+        &lt;fieldset&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;legend&gt;Normal Shadow&lt;&sol;legend&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="shadow-normal"&gt;Newspapers are the mirror of the world. It plays an important role in modern civilization.&lt;&sol;p&gt; <br>
+        &lt;&sol;fieldset&gt; <br>
+
+        &lt;fieldset&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;legend&gt;Shadow with Color&lt;&sol;legend&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="color-shadow"&gt;Newspapers are the mirror of the world. It plays an important role in modern civilization.&lt;&sol;p&gt; <br>
+        &lt;&sol;fieldset&gt; <br>
+
+        &lt;fieldset&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;legend&gt;Shadow with Color and Blur Effect&lt;&sol;legend&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="color-shadow-blur"&gt;Newspapers are the mirror of the world. It plays an important role in modern civilization.&lt;&sol;p&gt; <br>
+        &lt;&sol;fieldset&gt; <br>
+
+        &lt;fieldset&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;legend&gt;Shadow with Text Color&lt;&sol;legend&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="color-shadow-text"&gt;Newspapers are the mirror of the world. It plays an important role in modern civilization.&lt;&sol;p&gt; <br>
+        &lt;&sol;fieldset&gt; <br>
+
+        &lt;fieldset&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;legend&gt;Shadow with Red Neon Glow&lt;&sol;legend&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="shadow-red-neon-glow"&gt;Newspapers are the mirror of the world. It plays an important role in modern civilization.&lt;&sol;p&gt; <br>
+        &lt;&sol;fieldset&gt; <br>
+
+        &lt;fieldset&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;legend&gt;Shadow with Red and Blue Neon Glow&lt;&sol;legend&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="shadow-red-blue-neon-glow"&gt;Newspapers are the mirror of the world. It plays an important role in modern civilization.&lt;&sol;p&gt; <br>
+        &lt;&sol;fieldset&gt; <br>
+
+        &lt;fieldset&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;legend&gt;Another Complex Shadow on Text&lt;&sol;legend&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="shadow-example-one"&gt;Newspapers are the mirror of the world. It plays an important role in modern civilization.&lt;&sol;p&gt; <br>
+        &lt;&sol;fieldset&gt; <br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="width: 35%; padding: 20px; margin: 20px;">
+
+        <fieldset>
+          <legend style="margin-left: 15px;">Normal Shadow</legend>
+          <p class="shadow-normal" style="padding: 10px;">
+            Newspapers are the mirror of the world. It plays an important role in modern civilization.
+          </p>
+        </fieldset>
+        <br>
+
+        <fieldset>
+          <legend style="margin-left: 15px;">Shadow with Color</legend>
+          <p class="color-shadow" style="padding: 10px;">
+            Newspapers are the mirror of the world. It plays an important role in modern civilization.
+          </p>
+        </fieldset>
+        <br>
+
+        <fieldset>
+          <legend style="margin-left: 15px;">Shadow with Color and Blur Effect</legend>
+          <p class="color-shadow-blur" style="padding: 10px;">
+            Newspapers are the mirror of the world. It plays an important role in modern civilization.
+          </p>
+        </fieldset>
+        <br>
+
+        <fieldset>
+          <legend style="margin-left: 15px;">Shadow with Text Color</legend>
+          <p class="color-shadow-text" style="padding: 10px;">
+            Newspapers are the mirror of the world. It plays an important role in modern civilization.
+          </p>
+        </fieldset>
+        <br>
+
+        <fieldset>
+          <legend style="margin-left: 15px;">Shadow with Red Neon Glow</legend>
+          <p class="shadow-red-neon-glow" style="padding: 10px;">
+            Newspapers are the mirror of the world. It plays an important role in modern civilization.
+          </p>
+        </fieldset>
+        <br>
+
+        <fieldset>
+          <legend style="margin-left: 15px;">Shadow with Red and Blue Neon Glow</legend>
+          <p class="shadow-red-blue-neon-glow" style="padding: 10px;">
+            Newspapers are the mirror of the world. It plays an important role in modern civilization.
+          </p>
+        </fieldset>
+        <br>
+
+        <fieldset>
+          <legend style="margin-left: 15px;">Another Complex Shadow on Text</legend>
+          <p class="shadow-example-one" style="padding: 10px;">
+            Newspapers are the mirror of the world. It plays an important role in modern civilization.
+          </p>
+        </fieldset>
+
+      </td>
     </tr>
     </tbody>
   </table>
-
-  <p><strong><i>Note: </i></strong>xxxxx</p>
 </section>
+<br>
 <!--Main Section End-->
 
 <!--External JavaScript Library Inclusion Start-->

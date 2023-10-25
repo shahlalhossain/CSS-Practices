@@ -35,7 +35,9 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
-
+    p.uppercase { text-transform: uppercase; }
+    p.lowercase { text-transform: lowercase; }
+    p.capitalize { text-transform: capitalize; }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -704,17 +706,12 @@
 <!--Page Header End-->
 
 <!--Main Section Start-->
-<section class="content">
-  <h3>SectionTitle</h3>
+<section class="content" style="margin-right: 10px;">
+  <h3>Text Transformation</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">text-transform</span> property is used to specify uppercase and lowercase letters in a text. <br>
+    It can be used to turn everything into uppercase or lowercase letters, or capitalize the first letter of each word:
   </p>
 
   <table>
@@ -726,13 +723,33 @@
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.uppercase { text-transform: uppercase; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.lowercase { text-transform: lowercase; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.capitalize { text-transform: capitalize; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="uppercase"&gt;This text is transformed to uppercase.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="lowercase"&gt;This text is transformed to lowercase.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="capitalize"&gt;This text is capitalized.&lt;&sol;p&gt; <br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="padding: 20px; margin: 20px;">
+        <p class="uppercase">This text is transformed to uppercase.</p> <br>
+        <p class="lowercase">This text is transformed to lowercase.</p> <br>
+        <p class="capitalize">This text is capitalized.</p>
+      </td>
     </tr>
     </tbody>
   </table>
-
-  <p><strong><i>Note: </i></strong>xxxxx</p>
 </section>
 <!--Main Section End-->
 

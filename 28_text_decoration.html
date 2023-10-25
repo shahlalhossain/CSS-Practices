@@ -35,6 +35,27 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
+    #overline { text-decoration: overline; }
+    #line-through { text-decoration: line-through; }
+    #underline { text-decoration: underline; }
+    #overline-underline { text-decoration: overline underline; }
+
+    #overline-color { text-decoration: overline; text-decoration-color: blue; }
+    #line-through-color { text-decoration: line-through; text-decoration-color: red; }
+    #underline-color { text-decoration: underline; text-decoration-color: green; }
+    #overline-underline-color { text-decoration: overline underline; text-decoration-color: purple; }
+
+    #overline-thickness { text-decoration: underline; text-decoration-color: green; text-decoration-thickness: auto;  /* default */}
+    #line-through-thickness { text-decoration: underline; text-decoration-color: green; text-decoration-thickness: 5px; }
+    #underline-thickness { text-decoration: underline; text-decoration-color: green; text-decoration-thickness: 20%; }
+    #overline-underline-thickness { text-decoration: underline; text-decoration-color: green; text-decoration-style: double; text-decoration-thickness: 2px; }
+
+    #tds-one { text-decoration: underline; }
+    #tds-two { text-decoration: underline green; }
+    #tds-three { text-decoration: underline green double; }
+    #tds-four { text-decoration: underline green double 3px; }
+
+    #tds-five { text-decoration: none; }
 
   </style>
   <!--Page Specific Custom CSS End-->
@@ -704,17 +725,27 @@
 <!--Page Header End-->
 
 <!--Main Section Start-->
-<section class="content">
-  <h3>SectionTitle</h3>
+<section class="content" style="margin-right: 10px;">
+  <h3>CSS Text Decoration</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    In this chapter we will discuss, learn and practice about the following properties:
+  </p>
+  <ul style="padding-left: 30px;">
+    <li><span class="code">text-decoration-line</span></li>
+    <li><span class="code">text-decoration-color</span></li>
+    <li><span class="code">text-decoration-style</span></li>
+    <li><span class="code">text-decoration-thickness</span></li>
+    <li><span class="code">text-decoration</span></li>
+  </ul>
+</section>
+
+<section class="content" style="margin-right: 10px;">
+  <h3>Add a Decoration Line to Text</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">text-decoration-line</span> property is used to add a decoration line to text. <br>
+    We can combine more than one value, like overline and underline to display lines both over and under a text.
   </p>
 
   <table>
@@ -726,14 +757,219 @@
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #overline { text-decoration: overline; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #line-through { text-decoration: line-through; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #underline { text-decoration: underline; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #overline-underline { text-decoration: overline underline; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p id="overline"&gt;&lt;strong&gt;Overline text decoration&lt;&sol;strong&gt;&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p id="line-through"&gt;&lt;strong&gt;Line-through text decoration&lt;&sol;strong&gt;&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p id="underline"&gt;&lt;strong&gt;Underline text decoration&lt;&sol;strong&gt;&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p id="overline-underline"&gt;&lt;strong&gt;Overline and underline text decoration.&lt;&sol;strong&gt;&lt;&sol;p&gt; <br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="padding: 20px; margin: 20px;">
+        <p id="overline"><strong>Overline text decoration</strong></p> <br>
+        <p id="line-through"><strong>Line-through text decoration</strong></p> <br>
+        <p id="underline"><strong>Underline text decoration</strong></p> <br>
+        <p id="overline-underline"><strong>Overline and underline text decoration.</strong></p>
+      </td>
     </tr>
     </tbody>
   </table>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+  <p><strong><i>Note: </i></strong>It is not recommended to underline text that is not a link, as this often confuses the reader.</p>
 </section>
+
+<section class="content" style="margin-right: 10px;">
+  <h3>Specify a Color for the Decoration Line</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">text-decoration-color</span> property is used to set the color of the decoration line.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th>Example Code</th>
+      <th>Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #overline-color { text-decoration: overline; text-decoration-color: blue; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #line-through-color { text-decoration: line-through; text-decoration-color: red; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #underline-color { text-decoration: underline; text-decoration-color: green; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #overline-underline-color { text-decoration: overline underline; text-decoration-color: purple; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p id="overline-color"&gt;&lt;strong&gt;Blue: Overline text decoration&lt;&sol;strong&gt;&lt;&sol;p&gt; &lt;br&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p id="line-through-color"&gt;&lt;strong&gt;Red: Line-through text decoration&lt;&sol;strong&gt;&lt;&sol;p&gt; &lt;br&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p id="underline-color"&gt;&lt;strong&gt;Green: Underline text decoration&lt;&sol;strong&gt;&lt;&sol;p&gt; &lt;br&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p id="overline-underline-color"&gt;&lt;strong&gt;Purple: Overline and underline text decoration.&lt;&sol;strong&gt;&lt;&sol;p&gt; <br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+
+      </td>
+      <td style="padding: 20px; margin: 20px;">
+        <p id="overline-color"><strong>Blue: Overline text decoration</strong></p> <br>
+        <p id="line-through-color"><strong>Red: Line-through text decoration</strong></p> <br>
+        <p id="underline-color"><strong>Green: Underline text decoration</strong></p> <br>
+        <p id="overline-underline-color"><strong>Purple: Overline and underline text decoration.</strong></p>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content" style="margin-right: 10px;">
+  <h3>Specify a Thickness for the Decoration Line</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">text-decoration-thickness</span> property is used to set the thickness of the decoration line.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th>Example Code</th>
+      <th>Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #overline-thickness { text-decoration: underline; text-decoration-color: green; text-decoration-thickness: auto;  /* default */} <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #line-through-thickness { text-decoration: underline; text-decoration-color: green; text-decoration-thickness: 5px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #underline-thickness { text-decoration: underline; text-decoration-color: green; text-decoration-thickness: 20%; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #overline-underline-thickness { text-decoration: underline; text-decoration-color: green; text-decoration-style: double; text-decoration-thickness: 2px; } <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p id="overline-thickness"&gt;&lt;strong&gt;Auto (Default): Underline text decoration&lt;&sol;strong&gt;&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p id="line-through-thickness"&gt;&lt;strong&gt;5px: Underline text decoration&lt;&sol;strong&gt;&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p id="underline-thickness"&gt;&lt;strong&gt;20%: Underline text decoration&lt;&sol;strong&gt;&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p id="overline-underline-thickness"&gt;&lt;strong&gt;2px (with double style): Underline text decoration.&lt;&sol;strong&gt;&lt;&sol;p&gt; <br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+
+      </td>
+      <td style="padding: 20px; margin: 20px;">
+        <p id="overline-thickness"><strong>Auto (Default): Underline text decoration</strong></p> <br>
+        <p id="line-through-thickness"><strong>5px: Underline text decoration</strong></p> <br>
+        <p id="underline-thickness"><strong>20%: Underline text decoration</strong></p> <br>
+        <p id="overline-underline-thickness"><strong>2px (with double style): Underline text decoration.</strong></p>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content" style="margin-right: 10px;">
+  <h3>The Shorthand Property for Text Decoration</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">text-decoration</span> property is a shorthand property for:
+  </p>
+  <ul style="padding-left: 30px;">
+    <li><span class="code">text-decoration-line</span>(required)</li>
+    <li><span class="code">text-decoration-color</span>(optional)</li>
+    <li><span class="code">text-decoration-style</span>(optional)</li>
+    <li><span class="code">text-decoration-thickness</span>(optional)</li>
+  </ul>
+  <br>
+
+  <table>
+    <thead>
+    <tr>
+      <th>Example Code</th>
+      <th>Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #tds-one { text-decoration: underline; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #tds-two { text-decoration: underline green; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #tds-three { text-decoration: underline green double; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #tds-four { text-decoration: underline green double 3px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #tds-five { text-decoration: none; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p id="tds-one"&gt;&lt;strong&gt;Text Decoration Shorthand with One Property&lt;&sol;strong&gt;&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p id="tds-two"&gt;&lt;strong&gt;Text Decoration Shorthand with Two Property&lt;&sol;strong&gt;&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p id="tds-three"&gt;&lt;strong&gt;Text Decoration Shorthand with Three Property&lt;&sol;strong&gt;&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p id="tds-four"&gt;&lt;strong&gt;Text Decoration Shorthand with Four Property&lt;&sol;strong&gt;&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p id="tds-five"&gt;A link with no underline: &lt;a href="https://shahlalhossain.github.io/shahlalhossain"&gt;Shahlal Hossain&lt;&sol;a&gt;&lt;&sol;p&gt; <br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+
+      </td>
+      <td style="padding: 20px; margin: 20px;">
+        <p id="tds-one"><strong>Text Decoration Shorthand with One Property</strong></p> <br>
+        <p id="tds-two"><strong>Text Decoration Shorthand with Two Property</strong></p> <br>
+        <p id="tds-three"><strong>Text Decoration Shorthand with Three Property</strong></p> <br>
+        <p id="tds-four"><strong>Text Decoration Shorthand with Four Property</strong></p> <br> <br>
+        <p id="tds-five">A link with no underline: <a href="https://shahlalhossain.github.io/shahlalhossain/">Shahlal Hossain</a></p>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content" style="margin-right: 10px;">
+  <h3>All CSS text-decoration Properties</h3>
+  <table>
+    <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr><td>text-decoration</td><td>Sets all the text-decoration properties in one declaration</td></tr>
+    <tr><td>text-decoration-color</td><td>Specifies the color of the text-decoration</td></tr>
+    <tr><td>text-decoration-line</td><td>Specifies the kind of text decoration to be used (underline, overline, etc.)</td></tr>
+    <tr><td>text-decoration-style</td><td>Specifies the style of the text decoration (solid, dotted, etc.)</td></tr>
+    <tr><td>text-decoration-thickness</td><td>Specifies the thickness of the text decoration line</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<br>
 <!--Main Section End-->
 
 <!--External JavaScript Library Inclusion Start-->

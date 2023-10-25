@@ -35,7 +35,9 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
-
+    .p1 { font-family: "Times New Roman", Times, serif; }
+    .p2 { font-family: Arial, Helvetica, sans-serif; }
+    .p3 { font-family: "Lucida Console", "Courier New", monospace; }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -704,36 +706,128 @@
 <!--Page Header End-->
 
 <!--Main Section Start-->
-<section class="content">
-  <h3>SectionTitle</h3>
+<section class="content" style="margin-right: 10px;">
+  <h3>CSS Fonts</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Choosing the right font for website is important. <br>
+    The right font can create a strong identity for your brand. <br>
+    Choosing the right font has a huge impact on how the readers experience a website. <br>
+    Using a font that is easy to read is important. The font adds value to your text. It is also important to choose the correct color and text size for the font.
   </p>
 
+  <h3>Generic Font Families</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    In CSS there are five generic font families:
+  </p>
+  <ol style="padding-left: 30px;">
+    <li><strong>Serif</strong> fonts have a small stroke at the edges of each letter. They create a sense of formality and elegance.</li>
+    <li><strong>Sans-serif</strong> fonts have clean lines (no small strokes attached). They create a modern and minimalistic look.</li>
+    <li><strong>Monospace</strong> fonts - here all the letters have the same fixed width. They create a mechanical look. </li>
+    <li><strong>Cursive</strong> fonts imitate human handwriting.</li>
+    <li><strong>Fantasy</strong> fonts are decorative/playful fonts.</li>
+  </ol>
+
+  <p style="padding-top: 10px; padding-bottom: 10px;">All the different font names belong to one of the generic font families. </p>
+
+</section>
+
+<section class="content" style="margin-right: 10px;">
+  <h3>Some Font Examples</h3>
+
+  <table>
+    <tbody>
+    <tr>
+      <th style="width:20%">Generic Font Family</th>
+      <th style="width:30%">Examples of Font Names</th>
+    </tr>
+    <tr>
+      <td>Serif</td>
+      <td><span style="font-size:130%;font-family:'Times New Roman',serif">Times New Roman</span><br>
+        <span style="font-size:130%;font-family:Georgia,serif">Georgia</span><br>
+        <span style="font-size:130%;font-family:Garamond,serif">Garamond</span><br>
+      </td>
+    </tr>
+    <tr>
+      <td>Sans-serif</td>
+      <td><span style="font-size:130%;font-family:Arial,sans-serif">Arial</span><br>
+        <span style="font-size:130%;font-family:Verdana,sans-serif">Verdana</span><br>
+        <span style="font-size:130%;font-family:Helvetica,sans-serif">Helvetica</span><br>
+      </td>
+    </tr>
+    <tr>
+      <td>Monospace</td>
+      <td><span style="font-size:130%;font-family:'Courier New',monospace">Courier New</span><br>
+        <span style="font-size:130%;font-family:'Lucida Console',monospace">Lucida Console</span><br>
+        <span style="font-size:130%;font-family:Monaco,monospace">Monaco</span>
+      </td>
+    </tr>
+    <tr>
+      <td>Cursive</td>
+      <td><span style="font-size:130%;font-family:'Brush Script MT',cursive">Brush Script MT</span><br>
+        <span style="font-size:130%;font-family:'Lucida Handwriting',cursive">Lucida Handwriting</span><br>
+      </td>
+    </tr>
+    <tr>
+      <td>Fantasy</td>
+      <td><span style="font-size:130%;font-family:Copperplate,fantasy">Copperplate</span><br>
+        <span style="font-size:130%;font-family:Papyrus,fantasy">Papyrus</span>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content" style="margin-right: 10px;">
+  <h3>The CSS font-family Property</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    In CSS, we use the <span class="code">font-family</span> property to specify the font of a text. <br>
+    Start with the font we want, and end with a generic family. The font names should be separated with comma. <br>
+    The font-family property should hold several font names as a "fallback" system, to ensure maximum compatibility between browsers/operating systems.
+  </p>
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td style="width: 50%;">
+
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .p1 { font-family: "Times New Roman", Times, serif; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .p2 { font-family: Arial, Helvetica, sans-serif; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .p3 { font-family: "Lucida Console", "Courier New", monospace; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="p1"&gt;This is a paragraph, shown in the Times New Roman font.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="p2"&gt;This is a paragraph, shown in the Arial font.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="p3"&gt;This is a paragraph, shown in the Lucida Console font.&lt;&sol;p&gt; <br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt; <br>
+
+      </td>
+      <td style="width: 50%;">
+        <p class="p1" style="padding: 10px; border: green 1px solid;">This is a paragraph, shown in the Times New Roman font.</p> <br>
+        <p class="p2" style="padding: 10px; border: green 1px solid;">This is a paragraph, shown in the Arial font.</p> <br>
+        <p class="p3" style="padding: 10px; border: green 1px solid;">This is a paragraph, shown in the Lucida Console font.</p>
+      </td>
     </tr>
     </tbody>
   </table>
-
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+  <p><strong><i>Note: </i></strong>If the font name is more than one word, it must be in quotation marks, like: "Times New Roman".</p>
 </section>
+<br>
 <!--Main Section End-->
 
 <!--External JavaScript Library Inclusion Start-->

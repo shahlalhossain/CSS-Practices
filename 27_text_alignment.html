@@ -36,6 +36,67 @@
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
 
+    #heading-center { border: green 1px solid; text-align: center; }
+    #heading-left { border: green 1px solid; text-align: left; }
+    #heading-right { border: green 1px solid; text-align: right; }
+
+    #justify-content {
+      margin-left: 150px;
+      border: 1px solid black;
+      padding: 20px;
+      width: 300px;
+      height: 300px;
+      text-align: justify;
+    }
+
+    p.a { text-align-last: right; padding: 20px; }
+    p.b { text-align-last: center; padding: 20px; }
+    p.c { text-align-last: justify; padding: 20px; }
+
+    p.left-to-right { direction: ltr; }
+    p.right-to-left { direction: rtl; unicode-bidi: bidi-override; text-align: right; }
+
+    img.a { vertical-align: baseline; }
+    img.b { vertical-align: text-top; }
+    img.c { vertical-align: text-bottom; }
+    img.d { vertical-align: sub; }
+    img.e { vertical-align: super; }
+
+    div.example {
+      border: solid black 1px;
+      display: inline-block;
+      height: 350px;
+      width: 250px;
+      margin: 5px;
+    }
+
+    p.mixed1 {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+    }
+
+    p.mixed2 {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      transform: rotate(180deg);
+    }
+
+    p.mixed3 {
+      writing-mode: vertical-lr;
+      text-orientation: sideways;
+    }
+
+    p.mixed4 {
+      writing-mode: vertical-lr;
+      text-orientation: sideways;
+      transform: rotate(180deg);
+    }
+
+    p.sideways {
+      writing-mode: vertical-lr;
+      text-orientation: upright;
+    }
+
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -704,36 +765,454 @@
 <!--Page Header End-->
 
 <!--Main Section Start-->
-<section class="content">
-  <h3>SectionTitle</h3>
+<section class="content" style="margin-right: 10px;">
+  <h3>Text Alignment and Text Direction</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    In CSS Text Alignment - we will learn about the following properties:
+  </p>
+  <ul style="padding-left: 30px;">
+    <li><span class="code">text-align</span></li>
+    <li><span class="code">text-align-last</span></li>
+    <li><span class="code">direction</span></li>
+    <li><span class="code">unicode-bidi</span></li>
+    <li><span class="code">vertical-align</span></li>
+  </ul>
+</section>
+
+<section class="content" style="margin-right: 10px;">
+
+  <h3>Text Alignment (Center, Left & Right)</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The text-align property is used to set the horizontal alignment of a text. <br>
+    A text can be left or right aligned, centered, or justified. <br>
+    The following example shows center aligned, and left and right aligned text.
   </p>
 
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td style="width: 50%;">
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #heading-center { text-align: center; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #heading-left { text-align: left; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #heading-right { text-align: right; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2 id="heading-center"&gt;Heading 1 (Center Aligned)&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2 id="heading-left"&gt;Heading 2 (Left Aligned)&lt;&sol;h2&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h2 id="heading-right"&gt;Heading 3 (Right Aligned)&lt;&sol;h2&gt; <br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="width: 50%;">
+        <h2 id="heading-center">Heading 1 (Center Aligned)</h2> <br>
+        <h2 id="heading-left">Heading 2 (Left Aligned)</h2> <br>
+        <h2 id="heading-right">Heading 3 (Right Aligned)</h2>
+      </td>
     </tr>
     </tbody>
   </table>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+  <p><strong><i>Note: </i></strong>Left Alignment is Default if Text Direction is Left-to-Right and Right Alignment is Default if Text Direction is Right-to-Left.</p>
 </section>
+
+<section class="content" style="margin-right: 10px;">
+
+  <h3>Text Alignment (Justify)</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    When the <span class="code">text-align</span> property is set to "justify", each line is stretched so that every line has equal width, and the left and right margins are straight.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td style="width: 50%;">
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #justify-content { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 1px solid black; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 10px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; width: 200px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; height: 200px; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; text-align: justify; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <br>
+
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;div id="justify-content"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;The text-align: justify; value stretches the lines so that each line has equal width (like in newspapers and magazines).&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;br&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since. 'Whenever you feel like criticizing anyone,' he told me, 'just remember that all the people in this world haven't had the advantages that you've had.'&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;div&gt; <br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="width: 50%;">
+        <div id="justify-content">
+          <p>
+            The text-align: justify; value stretches the lines so that each line has equal width (like in newspapers and magazines).
+          </p>
+          <br>
+          <p>
+            In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since. 'Whenever you feel like criticizing anyone,' he told me, 'just remember that all the people in this world haven't had the advantages that you've had.'
+          </p>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content" style="margin-right: 10px;">
+
+  <h3>Text Align Last</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">text-align-last</span> property specifies how to align the last line of a text.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td style="width: 50%;">
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.a { text-align-last: right; padding: 20px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.b { text-align-last: center; padding: 20px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.c { text-align-last: justify; padding: 20px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br> <br>
+
+        &lt;fieldset style="margin: 10px;"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;legend style="margin-left: 30px;"&gt;&lt;strong&gt;text-align-last: right:&lt;&sol;strong&gt;&lt;&sol;legend&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="a"&gt;The computer is a miraculous scientific invention. It can store data and perform complex calculations in a very short period of time. Its primary characteristics are speed and accuracy. As a result, computers facilitate quick transactions and communication. It’s now common in schools, colleges, libraries, hospitals, offices, and banks. It is used in factories to save manual and mental labour as well as for quality control. It is also used in various fields of research, such as space research. Computer courses at various levels are now being introduced in schools and colleges. The use of computers in specific fields is required for efficient service.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;fieldset&gt; <br><br>
+
+        &lt;fieldset style="margin: 10px;"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;legend style="margin-left: 30px;"&gt;&lt;strong&gt;text-align-last: center:&lt;&sol;strong&gt;&lt;&sol;legend&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="b"&gt;The computer is a miraculous scientific invention. It can store data and perform complex calculations in a very short period of time. Its primary characteristics are speed and accuracy. As a result, computers facilitate quick transactions and communication. It’s now common in schools, colleges, libraries, hospitals, offices, and banks. It is used in factories to save manual and mental labour as well as for quality control. It is also used in various fields of research, such as space research. Computer courses at various levels are now being introduced in schools and colleges. The use of computers in specific fields is required for efficient service.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;fieldset&gt; <br><br>
+
+        &lt;fieldset style="margin: 10px;"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;legend style="margin-left: 30px;"&gt;&lt;strong&gt;text-align-last: justify:&lt;&sol;strong&gt;&lt;&sol;legend&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="c"&gt;The computer is a miraculous scientific invention. It can store data and perform complex calculations in a very short period of time. Its primary characteristics are speed and accuracy. As a result, computers facilitate quick transactions and communication. It’s now common in schools, colleges, libraries, hospitals, offices, and banks. It is used in factories to save manual and mental labour as well as for quality control. It is also used in various fields of research, such as space research. Computer courses at various levels are now being introduced in schools and colleges. The use of computers in specific fields is required for efficient service.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;fieldset&gt; <br> <br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+
+      </td>
+      <td style="width: 50%;">
+
+        <fieldset style="margin: 10px;">
+          <legend style="margin-left: 30px;"><strong>text-align-last: right:</strong></legend>
+          <p class="a">The computer is a miraculous scientific invention. It can store data and perform complex calculations in a very short period of time. Its primary characteristics are speed and accuracy. As a result, computers facilitate quick transactions and communication. It’s now common in schools, colleges, libraries, hospitals, offices, and banks. It is used in factories to save manual and mental labour as well as for quality control. It is also used in various fields of research, such as space research. Computer courses at various levels are now being introduced in schools and colleges. The use of computers in specific fields is required for efficient service.</p>
+        </fieldset>
+
+        <fieldset style="margin: 10px;">
+          <legend style="margin-left: 30px;"><strong>text-align-last: center:</strong></legend>
+          <p class="b">The computer is a miraculous scientific invention. It can store data and perform complex calculations in a very short period of time. Its primary characteristics are speed and accuracy. As a result, computers facilitate quick transactions and communication. It’s now common in schools, colleges, libraries, hospitals, offices, and banks. It is used in factories to save manual and mental labour as well as for quality control. It is also used in various fields of research, such as space research. Computer courses at various levels are now being introduced in schools and colleges. The use of computers in specific fields is required for efficient service.</p>
+        </fieldset>
+
+        <fieldset style="margin: 10px;">
+          <legend style="margin-left: 30px;"><strong>text-align-last: justify:</strong></legend>
+          <p class="c">The computer is a miraculous scientific invention. It can store data and perform complex calculations in a very short period of time. Its primary characteristics are speed and accuracy. As a result, computers facilitate quick transactions and communication. It’s now common in schools, colleges, libraries, hospitals, offices, and banks. It is used in factories to save manual and mental labour as well as for quality control. It is also used in various fields of research, such as space research. Computer courses at various levels are now being introduced in schools and colleges. The use of computers in specific fields is required for efficient service.</p>
+        </fieldset>
+
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content" style="margin-right: 10px;">
+
+  <h3>Text Direction</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">direction</span> and <span class="code">unicode-bidi</span> properties can be used to change the text direction of an element.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td style="width: 50%;">
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.left-to-right { direction: ltr; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.right-to-left { direction: rtl; unicode-bidi: bidi-override; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br> <br>
+
+        &lt;fieldset style="margin: 10px; padding: 20px;"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;legend style="margin-left: 30px;"&gt;&lt;strong&gt;default text direction: left-to-right:&lt;&sol;strong&gt;&lt;&sol;legend&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;This is the default text direction.&lt;&sol;p&gt; <br>
+        &lt;&sol;fieldset&gt; <br> <br>
+
+        &lt;fieldset style="margin: 10px; padding: 20px;"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;legend style="margin-left: 30px;"&gt;&lt;strong&gt;specified text direction: left-to-right:&lt;&sol;strong&gt;&lt;&sol;legend&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="left-to-right"&gt;This is left-to-right text direction which is specified.&lt;&sol;p&gt; <br>
+        &lt;&sol;fieldset&gt; <br> <br>
+
+        &lt;fieldset style="margin: 10px; padding: 20px;"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;legend style="margin-left: 30px;"&gt;&lt;strong&gt;specified text direction: right-to-left:&lt;&sol;strong&gt;&lt;&sol;legend&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="right-to-left"&gt;This is right-to-left text direction which is specified.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="right-to-left"&gt;هذا هو اتجاه النص من اليمين إلى اليسار المحدد&lt;&sol;p&gt; <br>
+        &lt;&sol;fieldset&gt; <br> <br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+
+      </td>
+      <td style="width: 50%;">
+
+        <fieldset style="margin: 10px; padding: 20px;">
+          <legend style="margin-left: 20px;"><strong>default text direction: left-to-right:</strong></legend>
+          <p>This is the default text direction.</p>
+        </fieldset>
+
+        <fieldset style="margin: 10px; padding: 20px;">
+          <legend style="margin-left: 20px;"><strong>specified text direction: left-to-right:</strong></legend>
+          <p class="left-to-right">This is left-to-right text direction which is specified.</p>
+        </fieldset>
+
+        <fieldset style="margin: 10px; padding: 20px;">
+          <legend style="margin-left: 20px;"><strong>specified text direction: right-to-left:</strong></legend>
+          <p class="right-to-left">This is right-to-left text direction which is specified.</p>
+          <p class="right-to-left">هذا هو اتجاه النص من اليمين إلى اليسار المحدد</p>
+        </fieldset>
+
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content" style="margin-right: 10px;">
+
+  <h3>Vertical Alignment</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">vertical-align</span> property sets the vertical alignment of an element.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td style="width: 50%;">
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; img.a { vertical-align: baseline; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; img.b { vertical-align: text-top; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; img.c { vertical-align: text-bottom; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; img.d { vertical-align: sub; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; img.e { vertical-align: super; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br> <br>
+
+        &lt;fieldset style="margin: 10px; padding: 20px;"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;legend style="margin-left: 20px;"&gt;&lt;strong&gt;vertical-align: baseline (default):&lt;&sol;strong&gt;&lt;&sol;legend&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;An &lt;img class="a" src="images&sol;sqpurple.gif" width="10" height="10" alt=""&gt; image with a default alignment.&lt;&sol;p&gt; <br>
+        &lt;&sol;fieldset&gt; <br> <br>
+
+        &lt;fieldset style="margin: 10px; padding: 20px;"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;legend style="margin-left: 20px;"&gt;&lt;strong&gt;vertical-align: text-top:&lt;&sol;strong&gt;&lt;&sol;legend&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;An &lt;img class="b" src="images&sol;sqpurple.gif" width="10" height="10" alt=""&gt; image with a text-top alignment.&lt;&sol;p&gt; <br>
+        &lt;&sol;fieldset&gt; <br> <br>
+
+        &lt;fieldset style="margin: 10px; padding: 20px;"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;legend style="margin-left: 20px;"&gt;&lt;strong&gt;vertical-align: text-bottom:&lt;&sol;strong&gt;&lt;&sol;legend&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;An &lt;img class="c" src="images&sol;sqpurple.gif" width="10" height="10" alt=""&gt; image with a text-bottom alignment.&lt;&sol;p&gt; <br>
+        &lt;&sol;fieldset&gt; <br> <br>
+
+        &lt;fieldset style="margin: 10px; padding: 20px;"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;legend style="margin-left: 20px;"&gt;&lt;strong&gt;vertical-align: sub:&lt;&sol;strong&gt;&lt;&sol;legend&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;An &lt;img class="d" src="images&sol;sqpurple.gif" width="10" height="10" alt=""&gt; image with a sub alignment.&lt;&sol;p&gt; <br>
+        &lt;&sol;fieldset&gt; <br> <br>
+
+        &lt;fieldset style="margin: 10px; padding: 20px;"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;legend style="margin-left: 20px;"&gt;&lt;strong&gt;vertical-align: sup:&lt;&sol;strong&gt;&lt;&sol;legend&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;An &lt;img class="e" src="images&sol;sqpurple.gif" width="10" height="10" alt=""&gt; image with a super alignment.&lt;&sol;p&gt; <br>
+        &lt;&sol;fieldset&gt; <br> <br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+
+      </td>
+      <td style="width: 50%;">
+
+        <fieldset style="margin: 10px; padding: 20px;">
+          <legend style="margin-left: 20px;"><strong>vertical-align: baseline (default):</strong></legend>
+          <p>An <img class="a" src="images/sqpurple.gif" width="10" height="10" alt=""> image with a default alignment.</p>
+        </fieldset>
+
+        <fieldset style="margin: 10px; padding: 20px;">
+          <legend style="margin-left: 20px;"><strong>vertical-align: text-top:</strong></legend>
+          <p>An <img class="b" src="images/sqpurple.gif" width="10" height="10" alt=""> image with a text-top alignment.</p>
+        </fieldset>
+
+        <fieldset style="margin: 10px; padding: 20px;">
+          <legend style="margin-left: 20px;"><strong>vertical-align: text-bottom:</strong></legend>
+          <p>An <img class="c" src="images/sqpurple.gif" width="10" height="10" alt=""> image with a text-bottom alignment.</p>
+        </fieldset>
+
+        <fieldset style="margin: 10px; padding: 20px;">
+          <legend style="margin-left: 20px;"><strong>vertical-align: sub:</strong></legend>
+          <p>An <img class="d" src="images/sqpurple.gif" width="10" height="10" alt=""> image with a sub alignment.</p>
+        </fieldset>
+
+        <fieldset style="margin: 10px; padding: 20px;">
+          <legend style="margin-left: 20px;"><strong>vertical-align: sup:</strong></legend>
+          <p>An <img class="e" src="images/sqpurple.gif" width="10" height="10" alt=""> image with a super alignment.</p>
+        </fieldset>
+
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content" style="margin-right: 10px;">
+
+  <h3>Text Orientation</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">text-orientation</span> property sets the orientation of the text characters in a line of an element. <br>
+    It only affects text in vertical mode. It is useful for controlling the display of languages that use vertical script, and also for making vertical table headers.
+  </p>
+
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td style="width: 50%;">
+        <div class="example" style="padding: 20px;">
+          <h4>mixed: vertical-rl</h4><br>
+          <p class="mixed1">
+            This is simply dummy text - First Line. <br>
+            This is simply dummy text - Second Line.
+          </p>
+        </div>
+
+        <div class="example" style="padding: 20px;">
+          <h4>mixed: vertical-rl (rotate):</h4><br>
+          <p class="mixed2">
+            This is simply dummy text - First Line. <br>
+            This is simply dummy text - Second Line.
+          </p>
+        </div>
+
+
+        <div class="example" style="padding: 20px;">
+          <h4>sideways: vertical-lr</h4><br>
+          <p class="mixed3">
+            This is simply dummy text - First Line. <br>
+            This is simply dummy text - Second Line.
+          </p>
+        </div>
+
+        <div class="example" style="padding: 20px;">
+          <h4>sideways: vertical-lr (rotate)</h4><br>
+          <p class="mixed4">
+            This is simply dummy text - First Line. <br>
+            This is simply dummy text - Second Line.
+          </p>
+        </div>
+
+        <div class="example" style="padding: 20px; height: 500px;">
+          <h4>sideways:</h4><br>
+          <p class="sideways">
+            This is simply dummy text First Line <br> <br> <br>
+            This is simply dummy text Second Line
+          </p>
+        </div>
+
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+
+<section class="content" style="margin-right: 10px;">
+
+  <h3>The CSS Text Alignment/Direction Properties</h3>
+  <table>
+    <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr><td>direction</td><td>Specifies the text direction/writing direction</td></tr>
+    <tr><td>text-align</td><td>Specifies the horizontal alignment of text</td></tr>
+    <tr><td>text-align-last</td><td>Specifies how to align the last line of a text</td></tr>
+    <tr><td>unicode-bidi</td><td>Used together with the direction property to set or return whether the text should be overridden to support multiple languages in the same document</td></tr>
+    <tr><td>vertical-align</td><td>Sets the vertical alignment of an element</td></tr>
+    </tbody>
+  </table>
+
+</section>
+<br>
 <!--Main Section End-->
 
 <!--External JavaScript Library Inclusion Start-->

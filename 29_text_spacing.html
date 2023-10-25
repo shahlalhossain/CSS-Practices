@@ -35,7 +35,20 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
+    p.text-indent { text-indent: 50px; border: green 1px solid; }
 
+    p.ls1 { letter-spacing: 4px; }
+    p.ls2 { letter-spacing: -2px; }
+
+    p.normal { border: green 1px solid; padding: 10px; }
+    p.small { line-height: 0.7; border: green 1px solid; padding: 10px; }
+    p.big { line-height: 1.8; border: green 1px solid; padding: 10px; }
+
+    p.ws-more { word-spacing: 10px; border: green 1px solid; padding: 10px; }
+    p.ws-less { word-spacing: -2px; border: green 1px solid; padding: 10px; }
+
+    /*p.wrap {  }*/
+    p.nowrap { white-space: nowrap; }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -704,36 +717,249 @@
 <!--Page Header End-->
 
 <!--Main Section Start-->
-<section class="content">
-  <h3>SectionTitle</h3>
+<section class="content" style="margin-right: 10px;">
+  <h3>Text Spacing and Indentation</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    In this chapter we will discuss, learn and practice about the following properties:
   </p>
 
+  <ul style="padding-left: 30px;">
+    <li><span class="code">text-indent</span></li>
+    <li><span class="code">letter-spacing</span></li>
+    <li><span class="code">line-height</span></li>
+    <li><span class="code">word-spacing</span></li>
+    <li><span class="code">white-space</span></li>
+  </ul>
+</section>
+
+<section class="content" style="margin-right: 10px;">
+  <h3>Text Indentation</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">text-indent</span> property is used to specify the indentation of the first line of a text:
+  </p>
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td style="width: 50%;">
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.text-indent { text-indent: 50px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="text-indent"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The computer is a miraculous scientific invention. It can store data and perform complex calculations in a very short period of time. Its primary characteristics are speed and accuracy. As a result, computers facilitate quick transactions and communication. It’s now common in schools, colleges, libraries, hospitals, offices, and banks. It is used in factories to save manual and mental labour as well as for quality control. It is also used in various fields of research, such as space research. Computer courses at various levels are now being introduced in schools and colleges. The use of computers in specific fields is required for efficient service. <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;p&gt;<br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="width: 50%; padding: 20px; margin: 20px;">
+        <p class="text-indent">
+          The computer is a miraculous scientific invention. It can store data and perform complex calculations in a very short period of time. Its primary characteristics are speed and accuracy. As a result, computers facilitate quick transactions and communication. It’s now common in schools, colleges, libraries, hospitals, offices, and banks. It is used in factories to save manual and mental labour as well as for quality control. It is also used in various fields of research, such as space research. Computer courses at various levels are now being introduced in schools and colleges. The use of computers in specific fields is required for efficient service.
+        </p>
+      </td>
     </tr>
     </tbody>
   </table>
-
-  <p><strong><i>Note: </i></strong>xxxxx</p>
 </section>
+
+<section class="content" style="margin-right: 10px;">
+  <h3>Letter Spacing</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">letter-spacing</span> property is used to specify the space between the characters in a text. <br>
+    The following example demonstrates how to increase or decrease the space between characters:
+  </p>
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td style="width: 50%;">
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.ls1 { letter-spacing: 4px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.ls2 { letter-spacing: -2px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="ls1"&gt;The computer is a miraculous scientific invention.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="ls2"&gt;The computer is a miraculous scientific invention.&lt;&sol;p&gt; <br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="width: 50%; padding: 20px; margin: 20px;">
+        <p class="ls1">
+          The computer is a miraculous scientific invention. It can store data and perform complex calculations in a very short period of time. Its primary characteristics are speed and accuracy. As a result, computers facilitate quick transactions and communication. It’s now common in schools, colleges, libraries, hospitals, offices, and banks. It is used in factories to save manual and mental labour as well as for quality control. It is also used in various fields of research, such as space research. Computer courses at various levels are now being introduced in schools and colleges. The use of computers in specific fields is required for efficient service.
+        </p> <br><br>
+
+        <p class="ls2">
+          The computer is a miraculous scientific invention. It can store data and perform complex calculations in a very short period of time. Its primary characteristics are speed and accuracy. As a result, computers facilitate quick transactions and communication. It’s now common in schools, colleges, libraries, hospitals, offices, and banks. It is used in factories to save manual and mental labour as well as for quality control. It is also used in various fields of research, such as space research. Computer courses at various levels are now being introduced in schools and colleges. The use of computers in specific fields is required for efficient service.
+        </p>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content" style="margin-right: 10px;">
+  <h3>Line Height</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">line-height</span> property is used to specify the space between lines:
+  </p>
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td style="width: 50%;">
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  p.small { line-height: 0.7; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.big { line-height: 1.8; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br> <br>
+
+        &lt;p class="normal"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; This is a paragraph with a standard line-height.&lt;br&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; The default line height in most browsers is about 110% to 120%.&lt;br&gt; <br>
+        &lt;&sol;p&gt; <br> <br>
+
+        &lt;p class="small"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; This is a paragraph with a smaller line-height.&lt;br&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; This is a paragraph with a smaller line-height.&lt;br&gt; <br>
+        &lt;&sol;p&gt; <br> <br>
+
+        &lt;p class="big"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; This is a paragraph with a bigger line-height.&lt;br&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; This is a paragraph with a bigger line-height.&lt;br&gt; <br>
+        &lt;&sol;p&gt; <br><br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="width: 50%; padding: 20px; margin: 20px;">
+        <p class="normal">
+          This is a paragraph with a standard line-height.<br>
+          The default line height in most browsers is about 110% to 120%.<br>
+        </p><br><br>
+
+        <p class="small">
+          This is a paragraph with a smaller line-height.<br>
+          This is a paragraph with a smaller line-height.<br>
+        </p><br> <br>
+
+        <p class="big">
+          This is a paragraph with a bigger line-height.<br>
+          This is a paragraph with a bigger line-height.<br>
+        </p>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content" style="margin-right: 10px;">
+  <h3>Word Spacing</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">word-spacing</span> property is used to specify the space between the words in a text. <br>
+    The following example demonstrates how to increase or decrease the space between words:
+  </p>
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td style="width: 50%;">
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.ws-more { word-spacing: 10px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.ws-less { word-spacing: -2px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="normal"&gt;This is a paragraph with normal word spacing.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="ws-more"&gt;This is a paragraph with more word spacing.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="ws-less"&gt;This is a paragraph with less word spacing.&lt;&sol;p&gt; <br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+      </td>
+      <td style="width: 50%; padding: 20px; margin: 20px;">
+        <p class="normal">
+          This is a paragraph with normal word spacing. <br>
+          The standard of television programmes for commercial purposes has steadily declined over the years.
+        </p> <br>
+        <p class="ws-more">
+          This is a paragraph with more word spacing. <br>
+          There are a number of distinctions between reading books and watching television.
+        </p> <br>
+        <p class="ws-less">
+          This is a paragraph with less word spacing. <br>
+          Newspapers are the mirror of the world. It plays an important role in modern civilization.
+        </p>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content" style="margin-right: 10px;">
+  <h3>The CSS Text Spacing Properties</h3>
+  <table>
+    <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr><td>letter-spacing</td><td>Specifies the space between characters in a text</td></tr>
+    <tr><td>line-height</td><td>Specifies the line height</td></tr>
+    <tr><td>text-indent</td><td>Specifies the indentation of the first line in a text-block</td></tr>
+    <tr><td>word-spacing</td><td> 	Specifies the space between words in a text</td></tr>
+    <tr><td>white-space</td><td>Specifies how to handle white-space inside an element</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<br>
 <!--Main Section End-->
 
 <!--External JavaScript Library Inclusion Start-->
