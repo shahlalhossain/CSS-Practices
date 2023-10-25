@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-  <title>CSS | Rough</title>
+  <title>CSS | Font Web Safe</title>
 
   <!--Meta Section Start-->
   <meta charset="UTF-8">
@@ -34,10 +34,23 @@
   <!--Internal JavaScript Library Inclusion End-->
 
   <!--Page Specific Custom CSS Start-->
+  <!--Page Specific Custom CSS End-->
   <style type="text/css">
+    .p1 { font-family: Tahoma, Verdana, sans-serif; }
+
+    .example { border: green 1px solid; padding: 10px; margin: 10px; }
+
+    .example1 { font-family: Arial, sans-serif; }
+    .example2 { font-family: Verdana, sans-serif; }
+    .example3 { font-family: Tahoma, sans-serif; }
+    .example4 { font-family: 'Trebuchet MS', sans-serif; }
+    .example5 { font-family: 'Times New Roman', serif; }
+    .example6 { font-family: Georgia, serif; }
+    .example7 { font-family: Garamond, serif; }
+    .example8 { font-family: 'Courier New', monospace; }
+    .example9 { font-family: 'Brush Script MT', cursive; }
 
   </style>
-  <!--Page Specific Custom CSS End-->
 </head>
 <body>
 <!-- Navigation-Bar-Top-Fixed Start -->
@@ -86,7 +99,7 @@
           <span class="navlink">CSS Selectors</span>
         </a>
       </li>
-      <li class="item active">
+      <li class="item">
         <a href="4_css_types.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">CSS Types</span>
@@ -260,7 +273,7 @@
           <span class="navlink">CSS Font Family</span>
         </a>
       </li>
-      <li class="item">
+      <li class="item active">
         <a href="32_font_web_safe.html" class="nav_link">
           <span class="navlink_icon"><i class='bx bxs-file-css'></i></span>
           <span class="navlink">Font Web Safe</span>
@@ -704,36 +717,283 @@
 <!--Page Header End-->
 
 <!--Main Section Start-->
-<section class="content">
-  <h3>SectionTitle</h3>
+<section class="content" style="margin-right: 10px;">
+  <h3>CSS Web Safe Fonts</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Web safe fonts are fonts that are universally installed across all browsers and devices. <br>
+    There are no 100% completely web safe fonts. There is always a chance that a font is not found or is not installed properly. <br>
+    Therefore, it is very important to always use fallback fonts. <br>
+    This means that you should add a list of similar "backup fonts" in the <span class="code">font-family</span> property. If the first font does not work, the browser will try the next one, and the next one, and so on. Always end the list with a generic font family name.
   </p>
-
   <table>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td style="width: 50%;">
+
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .p1 { font-family: Tahoma, Verdana, sans-serif; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="p1"&gt;The computer is a miraculous scientific invention.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p class="p1"&gt;The computer is a miraculous scientific invention.&lt;&sol;p&gt; <br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt; <br>
+
+      </td>
+      <td style="width: 50%;">
+
+        <p class="p1" style="padding: 10px; border: green 1px solid;">
+          The computer is a miraculous scientific invention. It can store data and perform complex calculations in a very short period of time. Its primary characteristics are speed and accuracy. As a result, computers facilitate quick transactions and communication. It’s now common in schools, colleges, libraries, hospitals, offices, and banks. It is used in factories to save manual and mental labour as well as for quality control. It is also used in various fields of research, such as space research. Computer courses at various levels are now being introduced in schools and colleges. The use of computers in specific fields is required for efficient service.
+        </p>
+
+        <br>
+
+        <p class="p1" style="padding: 10px; border: green 1px solid;">
+          The computer is a miraculous scientific invention. It can store data and perform complex calculations in a very short period of time. Its primary characteristics are speed and accuracy. As a result, computers facilitate quick transactions and communication. It’s now common in schools, colleges, libraries, hospitals, offices, and banks. It is used in factories to save manual and mental labour as well as for quality control. It is also used in various fields of research, such as space research. Computer courses at various levels are now being introduced in schools and colleges. The use of computers in specific fields is required for efficient service.
+        </p>
+      </td>
     </tr>
     </tbody>
   </table>
-
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+  <p><strong><i>Note: </i></strong>Here, there are three font types: Tahoma, Verdana, and sans-serif. The second and third fonts are backups, in case the first one is not found.</p>
 </section>
+
+<section class="content" style="margin-right: 10px;">
+  <h3>Best Web Safe Fonts for HTML and CSS</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The following list are the best web safe fonts for HTML and CSS:
+  </p>
+
+  <ul style="padding-left: 30px;">
+    <li>Arial (sans-serif)</li>
+    <li>Verdana (sans-serif)</li>
+    <li>Tahoma (sans-serif)</li>
+    <li>Trebuchet MS (sans-serif)</li>
+    <li>Times New Roman (serif)</li>
+    <li>Georgia (serif)</li>
+    <li>Garamond (serif)</li>
+    <li>Courier New (monospace)</li>
+    <li>Brush Script MT (cursive)</li>
+  </ul>
+  <br>
+
+  <p><strong><i>Note: </i></strong>Before you publish your website, always check how your fonts appear on different browsers and devices, and always use fallback fonts.</p>
+
+  <br>
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 50%;">Example Code</th>
+      <th style="width: 50%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td style="width: 50%;">
+
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .example { border: green 1px solid; padding: 10px; margin: 10px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .example1 { font-family: Arial, sans-serif; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .example2 { font-family: Verdana, sans-serif; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .example3 { font-family: Tahoma, sans-serif; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .example4 { font-family: 'Trebuchet MS', sans-serif; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .example5 { font-family: 'Times New Roman', serif; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .example6 { font-family: Georgia, serif; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .example7 { font-family: Garamond, serif; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .example8 { font-family: 'Courier New', monospace; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .example9 { font-family: 'Brush Script MT', cursive; } <br>
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br>
+
+        &lt;div class="example example1"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h4&gt;Font Name: Arial (sans-serif)&lt;&sol;h4&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;&lt;strong&gt;Description: &lt;&sol;strong&gt;Arial is the most widely used font for both online and printed media. Arial is also the default font in Google Docs. Arial is one of the safest web fonts, and it is available on all major operating systems.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;&lt;strong&gt;Example Words: &lt;&sol;strong&gt;The quick brown fox jumped over the lazy dog.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;&lt;strong&gt;Example Numbers: &lt;&sol;strong&gt;0 1 2 3 4 5 6 7 8 9&lt;&sol;p&gt; <br>
+        &lt;&sol;div&gt; <br>
+
+        &lt;div class="example example2"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h4&gt;Font Name: Verdana (sans-serif)&lt;&sol;h4&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;&lt;strong&gt;Description: &lt;&sol;strong&gt;Verdana is a very popular font. Verdana is easily readable even for small font sizes.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;&lt;strong&gt;Example Words: &lt;&sol;strong&gt;The quick brown fox jumped over the lazy dog.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;&lt;strong&gt;Example Numbers: &lt;&sol;strong&gt;0 1 2 3 4 5 6 7 8 9&lt;&sol;p&gt; <br>
+        &lt;&sol;div&gt; <br>
+
+        &lt;div class="example example3"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h4&gt;Font Name: Tahoma (sans-serif)&lt;&sol;h4&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;&lt;strong&gt;Description: &lt;&sol;strong&gt;The Tahoma font has less space between the characters.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;&lt;strong&gt;Example Words: &lt;&sol;strong&gt;The quick brown fox jumped over the lazy dog.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;&lt;strong&gt;Example Numbers: &lt;&sol;strong&gt;0 1 2 3 4 5 6 7 8 9&lt;&sol;p&gt; <br>
+        &lt;&sol;div&gt; <br>
+
+        &lt;div class="example example4"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h4&gt;Font Name: Trebuchet MS (sans-serif)&lt;&sol;h4&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;&lt;strong&gt;Description: &lt;&sol;strong&gt;Trebuchet MS was designed by Microsoft in 1996. Use this font carefully. Not supported by all mobile operating systems.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;&lt;strong&gt;Example Words: &lt;&sol;strong&gt;The quick brown fox jumped over the lazy dog.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;&lt;strong&gt;Example Numbers: &lt;&sol;strong&gt;0 1 2 3 4 5 6 7 8 9&lt;&sol;p&gt; <br>
+        &lt;&sol;div&gt; <br>
+
+        &lt;div class="example example5"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h4&gt;Font Name: Times New Roman (serif)&lt;&sol;h4&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;&lt;strong&gt;Description: &lt;&sol;strong&gt;Times New Roman is one of the most recognizable fonts in the world. It looks professional and is used in many newspapers and "news" websites. It is also the primary font for Windows devices and applications.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;&lt;strong&gt;Example Words: &lt;&sol;strong&gt;The quick brown fox jumped over the lazy dog.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;&lt;strong&gt;Example Numbers: &lt;&sol;strong&gt;0 1 2 3 4 5 6 7 8 9&lt;&sol;p&gt; <br>
+        &lt;&sol;div&gt; <br>
+
+        &lt;div class="example example6"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h4&gt;Font Name: Georgia (serif)&lt;&sol;h4&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;&lt;strong&gt;Description: &lt;&sol;strong&gt;Georgia is an elegant serif font. It is very readable at different font sizes, so it is a good candidate for mobile-responsive design.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;&lt;strong&gt;Example Words: &lt;&sol;strong&gt;The quick brown fox jumped over the lazy dog.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;&lt;strong&gt;Example Numbers: &lt;&sol;strong&gt;0 1 2 3 4 5 6 7 8 9&lt;&sol;p&gt; <br>
+        &lt;&sol;div&gt; <br>
+
+        &lt;div class="example example7"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h4&gt;Font Name: Garamond (serif)&lt;&sol;h4&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;&lt;strong&gt;Description: &lt;&sol;strong&gt;Garamond is a classical font used for many printed books. It has a timeless look and good readability.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;&lt;strong&gt;Example Words: &lt;&sol;strong&gt;The quick brown fox jumped over the lazy dog.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;&lt;strong&gt;Example Numbers: &lt;&sol;strong&gt;0 1 2 3 4 5 6 7 8 9&lt;&sol;p&gt; <br>
+        &lt;&sol;div&gt; <br>
+
+        &lt;div class="example example8"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h4&gt;Font Name: Courier New (monospace)&lt;&sol;h4&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;&lt;strong&gt;Description: &lt;&sol;strong&gt;Courier New is the most widely used monospace serif font. Courier New is often used with coding displays, and many email providers use it as their default font. Courier New is also the standard font for movie screenplays.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;&lt;strong&gt;Example Words: &lt;&sol;strong&gt;The quick brown fox jumped over the lazy dog.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;&lt;strong&gt;Example Numbers: &lt;&sol;strong&gt;0 1 2 3 4 5 6 7 8 9&lt;&sol;p&gt; <br>
+        &lt;&sol;div&gt; <br>
+
+        &lt;div class="example example9"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h4&gt;Font Name: Brush Script MT (cursive)&lt;&sol;h4&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;&lt;strong&gt;Description: &lt;&sol;strong&gt;The Brush Script MT font was designed to mimic handwriting. It is elegant and sophisticated, but can be hard to read. Use it carefully.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;&lt;strong&gt;Example Words: &lt;&sol;strong&gt;The quick brown fox jumped over the lazy dog.&lt;&sol;p&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;&lt;strong&gt;Example Numbers: &lt;&sol;strong&gt;0 1 2 3 4 5 6 7 8 9&lt;&sol;p&gt; <br>
+        &lt;&sol;div&gt; <br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt; <br>
+
+      </td>
+
+      <td style="width: 50%;">
+
+        <div class="example">
+          <h3 class="example1">Font Name: Arial (sans-serif)</h3>
+          <p class="example1">
+            <strong>Description: </strong>
+            Arial is the most widely used font for both online and printed media. Arial is also the default font in Google Docs.
+            Arial is one of the safest web fonts, and it is available on all major operating systems.
+          </p><br>
+          <p class="example1"><strong>Example Words: </strong>The quick brown fox jumped over the lazy dog.</p>
+          <p class="example1"><strong>Example Numbers: </strong>0 1 2 3 4 5 6 7 8 9</p>
+        </div>
+
+        <div class="example">
+          <h4 class="example2">Font Name: Verdana (sans-serif)</h4>
+          <p class="example2">
+            <strong>Description: </strong>
+            Verdana is a very popular font. Verdana is easily readable even for small font sizes.
+          </p><br>
+          <p class="example2"><strong>Example Words: </strong>The quick brown fox jumped over the lazy dog.</p>
+          <p class="example2"><strong>Example Numbers: </strong>0 1 2 3 4 5 6 7 8 9</p>
+        </div>
+
+        <div class="example">
+          <h4 class="example3">Font Name: Tahoma (sans-serif)</h4>
+          <p class="example3">
+            <strong>Description: </strong>
+            The Tahoma font has less space between the characters.
+          </p><br>
+          <p class="example3"><strong>Example Words: </strong>The quick brown fox jumped over the lazy dog.</p>
+          <p class="example3"><strong>Example Numbers: </strong>0 1 2 3 4 5 6 7 8 9</p>
+        </div>
+
+        <div class="example">
+          <h4 class="example4">Font Name: Trebuchet MS (sans-serif)</h4>
+          <p class="example4">
+            <strong>Description: </strong>
+            Trebuchet MS was designed by Microsoft in 1996. Use this font carefully. Not supported by all mobile operating systems.
+          </p><br>
+          <p class="example4"><strong>Example Words: </strong>The quick brown fox jumped over the lazy dog.</p>
+          <p class="example4"><strong>Example Numbers: </strong>0 1 2 3 4 5 6 7 8 9</p>
+        </div>
+
+        <div class="example">
+          <h4 class="example5">Font Name: Times New Roman (serif)</h4>
+          <p class="example5">
+            <strong>Description: </strong>
+            Times New Roman is one of the most recognizable fonts in the world. It looks professional and is used in many newspapers and "news" websites.
+            It is also the primary font for Windows devices and applications.
+          </p><br>
+          <p class="example5"><strong>Example Words: </strong>The quick brown fox jumped over the lazy dog.</p>
+          <p class="example5"><strong>Example Numbers: </strong>0 1 2 3 4 5 6 7 8 9</p>
+        </div>
+
+        <div class="example">
+          <h4 class="example6">Font Name: Georgia (serif)</h4>
+          <p class="example6">
+            <strong>Description: </strong>
+            Georgia is an elegant serif font. It is very readable at different font sizes, so it is a good candidate for mobile-responsive design.
+          </p><br>
+          <p class="example6"><strong>Example Words: </strong>The quick brown fox jumped over the lazy dog.</p>
+          <p class="example6"><strong>Example Numbers: </strong>0 1 2 3 4 5 6 7 8 9</p>
+        </div>
+
+        <div class="example">
+          <h4 class="example7">Font Name: Garamond (serif)</h4>
+          <p class="example7">
+            <strong>Description: </strong>
+            Garamond is a classical font used for many printed books. It has a timeless look and good readability.
+          </p><br>
+          <p class="example7"><strong>Example Words: </strong>The quick brown fox jumped over the lazy dog.</p>
+          <p class="example7"><strong>Example Numbers: </strong>0 1 2 3 4 5 6 7 8 9</p>
+        </div>
+
+        <div class="example">
+          <h4 class="example8">Font Name: Courier New (monospace)</h4>
+          <p class="example8">
+            <strong>Description: </strong>
+            Courier New is the most widely used monospace serif font.
+            Courier New is often used with coding displays, and many email providers use it as their default font.
+            Courier New is also the standard font for movie screenplays.
+          </p><br>
+          <p class="example8"><strong>Example Words: </strong>The quick brown fox jumped over the lazy dog.</p>
+          <p class="example8"><strong>Example Numbers: </strong>0 1 2 3 4 5 6 7 8 9</p>
+        </div>
+
+        <div class="example">
+          <h4 class="example9">Font Name: Brush Script MT (cursive)</h4>
+          <p class="example9">
+            <strong>Description: </strong>
+            The Brush Script MT font was designed to mimic handwriting. It is elegant and sophisticated, but can be hard to read. Use it carefully.
+          </p><br>
+          <p class="example9"><strong>Example Words: </strong>The quick brown fox jumped over the lazy dog.</p>
+          <p class="example9"><strong>Example Numbers: </strong>0 1 2 3 4 5 6 7 8 9</p>
+        </div>
+
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+<br>
 <!--Main Section End-->
 
 <!--External JavaScript Library Inclusion Start-->
