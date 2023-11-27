@@ -35,7 +35,14 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
+    .font-times-serif { font-family: "Times New Roman", Times, serif; }
+    .font-georgia-serif { font-family: Georgia, serif; }
+    .font-garamond-serif { font-family: Garamond, serif; }
 
+    .font-sans-serif-arial { font-family: Arial, Helvetica, sans-serif; }
+    .font-sans-serif-tahoma { font-family: Tahoma, Verdana, sans-serif; }
+    .font-sans-serif-trebuchet-ms { font-family: "Trebuchet MS", Helvetica, sans-serif; }
+    .font-sans-serif-geneva { font-family: Geneva, Verdana, sans-serif; }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -705,34 +712,102 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS Font Fallback</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    Below are some commonly used font fallbacks, organized by the 5 generic font families:
   </p>
 
+  <ul style="padding-left: 30px;">
+    <li><b>Serif</b></li>
+    <li><b>Sans-serif</b></li>
+    <li><b>Monospace</b></li>
+    <li><b>Cursive</b></li>
+    <li><b>Fantasy</b></li>
+  </ul>
+  <br><br>
+
   <table>
+    <caption style="text-align: left;"><h3>Serif Fonts</h3></caption>
     <thead>
     <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
+      <th style="width: 30%;">Font Family</th>
+      <th style="width: 70%;">Example Text</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
+      <td>"Times New Roman", Times, serif</td>
+      <td style="padding: 20px;">
+        <h2 class="font-times-serif">The Brown Fox</h2>
+        <p class="font-times-serif">The quick brown fox jumps over the lazy dog. Sphinx of black quartz, judge my vow.</p>
+        <p class="font-times-serif">0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20</p>
+      </td>
+    </tr>
+    <tr>
+      <td>Georgia, serif</td>
+      <td style="padding: 20px;">
+        <h2 class="font-georgia-serif">The Brown Fox</h2>
+        <p class="font-georgia-serif">The quick brown fox jumps over the lazy dog. Sphinx of black quartz, judge my vow.</p>
+        <p class="font-georgia-serif">0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20</p>
+      </td>
+    </tr>
+    <tr>
+      <td>Garamond, serif</td>
+      <td style="padding: 20px;">
+        <h2 class="font-garamond-serif">The Brown Fox</h2>
+        <p class="font-garamond-serif">The quick brown fox jumps over the lazy dog. Sphinx of black quartz, judge my vow.</p>
+        <p class="font-garamond-serif">0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20</p>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <br>
+
+  <table>
+    <caption style="text-align: left;"><h3>Sans-Serif Fonts</h3></caption>
+    <thead>
+    <tr>
+      <th style="width: 30%;">Font Family</th>
+      <th style="width: 70%;">Example Text</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>Arial, Helvetica, sans-serif</td>
+      <td style="padding: 20px;">
+        <h2 class="font-sans-serif-arial">The Brown Fox</h2>
+        <p class="font-sans-serif-arial">The quick brown fox jumps over the lazy dog. Sphinx of black quartz, judge my vow.</p>
+        <p class="font-sans-serif-arial">0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20</p>
+      </td>
+    </tr>
+    <tr>
+      <td>Tahoma, Verdana, sans-serif</td>
+      <td style="padding: 20px;">
+        <h2 class="font-sans-serif-tahoma">The Brown Fox</h2>
+        <p class="font-sans-serif-tahoma">The quick brown fox jumps over the lazy dog. Sphinx of black quartz, judge my vow.</p>
+        <p class="font-sans-serif-tahoma">0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20</p>
+      </td>
+    </tr>
+    <tr>
+      <td>"Trebuchet MS", Helvetica, sans-serif</td>
+      <td style="padding: 20px;">
+        <h2 class="font-sans-serif-trebuchet-ms">The Brown Fox</h2>
+        <p class="font-sans-serif-trebuchet-ms">The quick brown fox jumps over the lazy dog. Sphinx of black quartz, judge my vow.</p>
+        <p class="font-sans-serif-trebuchet-ms">0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20</p>
+      </td>
+    </tr>
+    <tr>
+      <td>Geneva, Verdana, sans-serif</td>
+      <td style="padding: 20px;">
+        <h2 class="font-sans-serif-geneva">The Brown Fox</h2>
+        <p class="font-sans-serif-geneva">The quick brown fox jumps over the lazy dog. Sphinx of black quartz, judge my vow.</p>
+        <p class="font-sans-serif-geneva">0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20</p>
+      </td>
     </tr>
     </tbody>
   </table>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
 </section>
 <!--Main Section End-->
 

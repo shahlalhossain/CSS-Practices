@@ -34,6 +34,7 @@
   <!--Internal JavaScript Library Inclusion End-->
 
   <!--Page Specific Custom CSS Start-->
+  <!--Page Specific Custom CSS End-->
   <style type="text/css">
 
     p.shadow-normal { text-shadow: 2px 1px; }
@@ -44,8 +45,13 @@
     p.shadow-red-blue-neon-glow { text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF; }
     p.shadow-example-one { color: white; text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue; }
 
+    .box-shadow-normal { border: 1px solid; box-shadow: 10px 10px; }
+    .box-shadow-color { border: 1px solid; box-shadow: 10px 10px lightblue; }
+    .box-shadow-blur-color { border: 1px solid; box-shadow: 10px 10px 5px lightblue; }
+    .box-shadow-multi-color { border: 1px solid; box-shadow: 5px 5px blue, 10px 10px red, 15px 15px green; }
+    .box-shadow-multi-color-blur { border: 1px solid; box-shadow: 5px 5px 8px blue, 10px 10px 8px red, 15px 15px 8px green; }
+
   </style>
-  <!--Page Specific Custom CSS End-->
 </head>
 <body>
 <!-- Navigation-Bar-Top-Fixed Start -->
@@ -837,6 +843,113 @@
             Newspapers are the mirror of the world. It plays an important role in modern civilization.
           </p>
         </fieldset>
+
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="content" style="margin-right: 10px;">
+  <h3>CSS Box Shadow</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">box-shadow</span> property is used to apply one or more shadows to an element.
+  </p>
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 65%;">Example Code</th>
+      <th style="width: 35%;">Sample Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td style="width: 65%;">
+
+        &lt;!DOCTYPE html&gt; <br>
+        &lt;html&gt; <br>
+        &lt;head&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;style&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .box-shadow-normal { border: 1px solid; box-shadow: 10px 10px; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .box-shadow-color { border: 1px solid; box-shadow: 10px 10px lightblue; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .box-shadow-blur-color { border: 1px solid; box-shadow: 10px 10px 5px lightblue; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .box-shadow-multi-color { border: 1px solid; box-shadow: 5px 5px blue, 10px 10px red, 15px 15px green; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .box-shadow-multi-color-blur { border: 1px solid; box-shadow: 5px 5px 8px blue, 10px 10px 8px red, 15px 15px 8px green; } <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;&sol;style&gt; <br>
+        &lt;&sol;head&gt; <br>
+        &lt;body&gt; <br> <br>
+
+        &lt;div class="box-shadow-normal"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h4 style="padding: 10px;"&gt;Box Shadow - Horizontal and Vertical&lt;&sol;h4&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p style="padding: 10px;"&gt;Newspapers are the mirror of the world. It plays an important role in modern civilization.&lt;&sol;p&gt; <br>
+        &lt;&sol;div&gt; <br> <br>
+
+        &lt;div class="box-shadow-color"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h4 style="padding: 10px;"&gt;Box Shadow with Color&lt;&sol;h4&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p style="padding: 10px;"&gt;Newspapers are the mirror of the world. It plays an important role in modern civilization.&lt;&sol;p&gt; <br>
+        &lt;&sol;div&gt; <br> <br>
+
+        &lt;div class="box-shadow-blur-color"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h4 style="padding: 10px;"&gt;Box Shadow - with Blur Color&lt;&sol;h4&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p style="padding: 10px;"&gt;Newspapers are the mirror of the world. It plays an important role in modern civilization.&lt;&sol;p&gt; <br>
+        &lt;&sol;div&gt; <br> <br>
+
+        &lt;div class="box-shadow-multi-color"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h4 style="padding: 10px;"&gt;Box Shadow - Multi Colors&lt;&sol;h4&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p style="padding: 10px;"&gt;Newspapers are the mirror of the world. It plays an important role in modern civilization.&lt;&sol;p&gt; <br>
+        &lt;&sol;div&gt; <br> <br>
+
+        &lt;div class="box-shadow-multi-color-blur"&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;h4 style="padding: 10px;"&gt;Box Shadow - Multi Colors with Blur Effect&lt;&sol;h4&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;p style="padding: 10px;"&gt;Newspapers are the mirror of the world. It plays an important role in modern civilization.&lt;&sol;p&gt; <br>
+        &lt;&sol;div&gt; <br> <br>
+
+        &lt;&sol;body&gt; <br>
+        &lt;&sol;html&gt;
+
+      </td>
+      <td style="width: 35%; padding: 20px; margin: 20px;">
+
+        <div class="box-shadow-normal">
+          <h4 style="padding: 10px;">Box Shadow - Horizontal and Vertical</h4>
+          <p style="padding: 10px;">
+            Newspapers are the mirror of the world. It plays an important role in modern civilization.
+          </p>
+        </div>
+        <br><br>
+
+        <div class="box-shadow-color">
+          <h4 style="padding: 10px;">Box Shadow with Color</h4>
+          <p style="padding: 10px;">
+            Newspapers are the mirror of the world. It plays an important role in modern civilization.
+          </p>
+        </div>
+        <br><br>
+
+        <div class="box-shadow-blur-color">
+          <h4 style="padding: 10px;">Box Shadow - with Blur Color</h4>
+          <p style="padding: 10px;">
+            Newspapers are the mirror of the world. It plays an important role in modern civilization.
+          </p>
+        </div>
+        <br><br>
+
+        <div class="box-shadow-multi-color">
+          <h4 style="padding: 10px;">Box Shadow - Multi Colors</h4>
+          <p style="padding: 10px;">
+            Newspapers are the mirror of the world. It plays an important role in modern civilization.
+          </p>
+        </div>
+        <br><br><br>
+
+        <div class="box-shadow-multi-color-blur">
+          <h4 style="padding: 10px;">Box Shadow - Multi Colors with Blur Effect</h4>
+          <p style="padding: 10px;">
+            Newspapers are the mirror of the world. It plays an important role in modern civilization.
+          </p>
+        </div>
+        <br>
 
       </td>
     </tr>
