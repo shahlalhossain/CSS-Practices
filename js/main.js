@@ -1,5 +1,3 @@
-const body = document.querySelector("body");
-const darkLight = document.querySelector("#darkLight");
 const sidebar = document.querySelector(".sidebar");
 const submenuItems = document.querySelectorAll(".submenu_item");
 const sidebarOpen = document.querySelector("#sidebarOpen");
@@ -22,15 +20,6 @@ sidebar.addEventListener("mouseenter", () => {
 sidebar.addEventListener("mouseleave", () => {
   if (sidebar.classList.contains("hoverable")) {
     sidebar.classList.add("close");
-  }
-});
-
-darkLight.addEventListener("click", () => {
-  body.classList.toggle("dark");
-  if (body.classList.contains("dark")) {
-    darkLight.classList.replace("bx-sun", "bx-moon");
-  } else {
-    darkLight.classList.replace("bx-moon", "bx-sun");
   }
 });
 
