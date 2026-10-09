@@ -35,7 +35,50 @@
 
   <!--Page Specific Custom CSS Start-->
   <style type="text/css">
+    .section_content {
+      overflow: auto;
+    }
 
+    .col_left {
+      width: 30%;
+      float: left;
+      border: 1px solid;
+      border-radius: 5px;
+      padding: 10px;
+    }
+
+    .col_right {
+      width: 70%;
+      float: right;
+      padding-left: 10px;
+    }
+
+    #text_align_table, #vertical_align_table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    #text_align_table th, #text_align_table td,
+    #vertical_align_table th, #vertical_align_table td {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+
+    #text_align_table td:nth-child(2) {
+      text-align: right;
+    }
+
+    #vertical_align_table td {
+      height: 80px;
+    }
+
+    #vertical_align_table td:nth-child(2) {
+      vertical-align: top;
+    }
+
+    #vertical_align_table td:nth-child(3) {
+      vertical-align: bottom;
+    }
   </style>
   <!--Page Specific Custom CSS End-->
 </head>
@@ -704,35 +747,65 @@
 
 <!--Main Section Start-->
 <section class="content">
-  <h3>SectionTitle</h3>
+  <h3>CSS Table Alignment</h3>
   <hr>
-  <p>
-    <span class="code">xxxxxx</span>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription <br>
-    SectionDescription
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    By default, &lt;th&gt; content is center-aligned and &lt;td&gt; content is left-aligned, and both are vertically middle-aligned. Use the <span class="code">text-align</span> and <span class="code">vertical-align</span> properties to change this.
+  </p>
+</section>
+
+<section class="content">
+  <h3>Horizontal Alignment</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">text-align</span> property sets the horizontal alignment (<span class="code">left</span>, <span class="code">right</span> or <span class="code">center</span>) of the content inside &lt;th&gt; or &lt;td&gt;:
   </p>
 
-  <table>
-    <thead>
-    <tr>
-      <th>Example Code</th>
-      <th>Sample Output</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>xxxxxxxxxx</td>
-      <td>xxxxxxxxxx</td>
-    </tr>
-    </tbody>
-  </table>
+  <div class="section_content">
+    <div class="col_left">
+      &lt;style&gt; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; td:nth-child(2) { text-align: right; } <br>
+      &lt;/style&gt;
+    </div>
 
-  <p><strong><i>Note: </i></strong>xxxxx</p>
+    <div class="col_right">
+      <table id="text_align_table">
+        <tr><th>Firstname</th><th>Savings</th></tr>
+        <tr><td>Shahlal Hossain</td><td>$50</td></tr>
+        <tr><td>Kamal Hossain</td><td>$94</td></tr>
+        <tr><td>Habiba Khan</td><td>$67</td></tr>
+      </table>
+    </div>
+  </div>
 </section>
+
+<section class="content">
+  <h3>Vertical Alignment</h3>
+  <hr>
+  <p style="padding-top: 10px; padding-bottom: 10px;">
+    The <span class="code">vertical-align</span> property sets the vertical alignment (<span class="code">top</span>, <span class="code">bottom</span> or <span class="code">middle</span>) of the content inside &lt;th&gt; or &lt;td&gt;, which matters once a row has extra height:
+  </p>
+
+  <div class="section_content">
+    <div class="col_left">
+      &lt;style&gt; <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; td { height: 80px; } <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; td:nth-child(2) { vertical-align: top; } <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; td:nth-child(3) { vertical-align: bottom; } <br>
+      &lt;/style&gt;
+    </div>
+
+    <div class="col_right">
+      <table id="vertical_align_table">
+        <tr><th>Default (middle)</th><th>Top</th><th>Bottom</th></tr>
+        <tr><td>Centered content</td><td>Top-aligned content</td><td>Bottom-aligned content</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <p><strong><i>Note: </i></strong><span class="code">text-align</span> and <span class="code">vertical-align</span> can be combined on the same cell, and are often set on <span class="code">th, td</span> together rather than per column.</p>
+</section>
+<br>
 <!--Main Section End-->
 
 <!--External JavaScript Library Inclusion Start-->
